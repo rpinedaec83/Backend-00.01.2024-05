@@ -1,6 +1,7 @@
 # Backend-00.01.2024-05
 Repo Backend 00.01.2024-05
 
+Cristian Cordova PT73243512
 
 Giuliano Romano SV70593490
 
@@ -32,3 +33,9 @@ Jose Sarmiento SV74254815
 
 Rodrigo Torres A19004349
 
+
+Carlos SV71199500
+
+
+
+Roberto Pineda d19423
