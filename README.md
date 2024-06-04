@@ -2,6 +2,9 @@
 Repo Backend 00.01.2024-05
 
 
+Nicole
+
+
 
 
 
@@ -20,7 +23,6 @@ Francisco Jesús A1820310
 Maria José sv70935987
 
 Jorge Holguin SV73101361
-
 
 
 
