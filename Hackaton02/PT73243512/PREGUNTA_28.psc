@@ -8,6 +8,4 @@ Proceso PREGUNTA_28
     Hasta Que contador > 100
 	
     Escribir "La suma de los primeros cien números es: ", suma
-
-
 FinProceso

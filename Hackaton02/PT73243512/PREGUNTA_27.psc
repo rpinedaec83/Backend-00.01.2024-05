@@ -2,10 +2,10 @@ Proceso PREGUNTA_27
 	suma = 0
     contador = 0
 	
-    Escribir "Escriba una lista de numeros positivos. Ingrese un número negativo para terminar."
+    Escribir "Escriba una lista de numeros positivos. Ingrese un numero negativo para terminar."
 	
     Repetir
-        Escribir "Ingrese un número:"
+        Escribir "Ingrese un nï¿½mero:"
         Leer N1
 		
         Si N1< 0 Entonces

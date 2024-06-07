@@ -6,6 +6,6 @@ Proceso PREGUNTA_22
         Escribir "El valor de n debe ser mayor que cero."
     Sino
         suma = (n * (n + 1)) / 2
-        Escribir "La suma de los primeros ", n, " números es: ", suma
+        Escribir "La suma de los primeros ", n, " numeros es: ", suma
     FinSi
 FinProceso
