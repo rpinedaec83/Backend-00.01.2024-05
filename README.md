@@ -11,19 +11,13 @@ git merge fuentes/main main
 
 
 
-
-
-
 Cristian Cordova PT73243512
 
 Giuliano Romano SV70593490
 
 Nemecio Laguna sv45879513
 
-
-
 Acosta Figueroa a17011123
-
 
 Allie Martínez Ontaneda SV47854767
 
