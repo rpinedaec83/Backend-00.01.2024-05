@@ -1,4 +1,4 @@
-Proceso PREGUNTA_11
+Proceso PREGUNTA_12
 	Escribir "Ingrese el primer numero"
 	Leer primer_numero
 	
