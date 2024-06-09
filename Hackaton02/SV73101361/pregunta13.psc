@@ -1,7 +1,6 @@
 // 13. Hacer un algoritmo en Pseint que lea una letra y diga si es una vocal.
 
 Algoritmo pregunta13
-
     Definir letra como Caracter;
     Escribir "Ingrese una letra";
     Leer letra;

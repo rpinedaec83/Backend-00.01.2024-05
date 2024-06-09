@@ -16,9 +16,9 @@ Algoritmo pregunta8
     promedio <- (nota1 + nota2 + nota3) / 3;
 
     si promedio > 13.5 Entonces
-        Escribir "El estudiante aprobó con un promedio de: ", promedio;
+        Escribir "El estudiante aprobo con un promedio de: ", promedio;
     SiNo
-        Escribir "El estudiante no aprobó. Su promedio es de: ", promedio;
+        Escribir "El estudiante no aprobo. Su promedio es de: ", promedio;
     FinSi
 
 FinAlgoritmo

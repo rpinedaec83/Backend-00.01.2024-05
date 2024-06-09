@@ -4,7 +4,7 @@ Algoritmo pregunta6
     Definir horasTrabajadas Como Entero;
     Definir sueldoSemanal Como Entero;
     
-    Escribir "Ingrese el número de horas trabajadas en la semana: ";
+    Escribir "Ingrese el numero de horas trabajadas en la semana: ";
     Leer horasTrabajadas;
     
     Si horasTrabajadas <= 40 Entonces

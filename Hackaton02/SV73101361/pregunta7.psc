@@ -6,13 +6,13 @@ Algoritmo pregunta7
     Definir tipoMembresia Como Caracter;
     Definir montoCompra, montoDescuento, montoFinal Como Real;
     
-    Escribir "Ingrese el tipo de membresía (A, B, C): ";
+    Escribir "Ingrese el tipo de membresia (A, B, C): ";
     Leer tipoMembresia;
     
     Escribir "Ingrese el monto de la compra: ";
     Leer montoCompra;
     
-    Segun tipoMembresia Hacer
+    Segun (tipoMembresia) Hacer
         Caso "A":
             montoDescuento <- montoCompra * 0.10;
         Caso "B":
@@ -21,7 +21,7 @@ Algoritmo pregunta7
             montoDescuento <- montoCompra * 0.20;
         De Otro Modo:
             montoDescuento <- 0;
-            Escribir "Tipo de membresía no válida.";
+            Escribir "Tipo de membresia no valida.";
     FinSegun
     
     montoFinal <- montoCompra - montoDescuento;

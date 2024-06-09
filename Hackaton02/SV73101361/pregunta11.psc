@@ -1,24 +1,28 @@
 // 11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
 
-Algoritmo calcularMayorDe3
-	Escribir "Ingrese el primer numero";
-	leer num1;
-	Escribir  "Ingrese el segundo numero";
-	Leer  num2;
-	Escribir  "Ingrese el tercer numero";
-	leer num3;
+Algoritmo pregunta11
 
-	si num1==num2 y num2 == num3 Entonces
-		Escribir  "Los 3 numeros son iguales"		
-	SiNo
-		si num1 >num2 y num1>num3 Entonces
-		Escribir  "El mayor es el numero 1"
-		SiNo
-			si num2>num1 y num2>num3 Entonces
-				Escribir "El mayor es el numero 2"
-			SiNo
-				Escribir  "El mayor es el numero 3"
-			FinSi
-	FinSi
-FinSi
+	Dimensionar numeros[3];
+    Definir i Como Entero;
+
+    Para i <- 1 Hasta 3 Con Paso 1 Hacer
+        Escribir "Ingrese el numero ", i, ":";
+        Leer numeros[i];
+    FinPara
+
+    Si numeros[1] = numeros[2] y numeros[2] = numeros[3] Entonces
+        Escribir "Los 3 numeros son iguales";
+    SiNo
+        Definir mayor Como Entero;
+        mayor <- numeros[1];
+        
+        Para i <- 2 Hasta 3 Con Paso 1 Hacer
+            Si numeros[i] > mayor Entonces
+                mayor <- numeros[i];
+            FinSi
+        FinPara
+        
+        Escribir "El mayor numero es: ", mayor;
+    FinSi
+
 FinAlgoritmo

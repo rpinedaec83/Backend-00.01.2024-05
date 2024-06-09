@@ -1,13 +1,16 @@
+//14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
+
+
 Algoritmo pregunta14
 
     Definir numero Como Entero;
     Definir esPrimo Como Logico;
     
-    Escribir "Ingrese un número entero positivo del 1 al 10:";
+    Escribir "Ingrese un numero entero positivo del 1 al 10:";
     Leer numero;
     
-    Si numero < 1 o numero > 10 Entonces
-        Escribir "Número fuera del rango permitido.";
+    Si numero < 1 o numero > 1000 Entonces
+        Escribir "Numero fuera del rango permitido.";
     SiNo
         esPrimo <- Verdadero;
         Si numero = 1 Entonces
@@ -17,18 +20,17 @@ Algoritmo pregunta14
         Si numero = 2 Entonces
             esPrimo <- Verdadero;
         SiNo
-            Para i <- 2 Hasta numero - 1 Con Paso 1 Hacer
+            Para i <- 2 Hasta numero-1 Con Paso 1 Hacer
                 Si numero % i = 0 Entonces
                     esPrimo <- Falso;
-                    Salir Para;  // Salir del bucle ya que se encontró un divisor
                 FinSi
             FinPara
         FinSi
         
         Si esPrimo Entonces
-            Escribir "El número ", numero, " es primo.";
+            Escribir "El numero ", numero, " es primo.";
         SiNo
-            Escribir "El número ", numero, " no es primo.";
+            Escribir "El numero ", numero, " no es primo.";
         FinSi
     FinSi
 

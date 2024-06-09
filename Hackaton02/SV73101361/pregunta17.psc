@@ -1,6 +1,6 @@
 // 17. Hacer un algoritmo en Pseint donde se ingrese una hora y nos calcule la hora dentro de un segundo.
 
-Algoritmo  calcularHoraSiguiente
+Algoritmo  pregunta17
 	Escribir  "ingrese la hora (formato 24 horas)"
 	leer hora
 	Escribir  "ingrese los minutos"
