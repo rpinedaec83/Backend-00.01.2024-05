@@ -10,7 +10,12 @@ archivos = [
     "pregunta5.psc", "pregunta6.psc", "pregunta7.psc", "pregunta8.psc",
     "pregunta9.psc", "pregunta10.psc", "pregunta11.psc", "pregunta12.psc",
     "pregunta13.psc", "pregunta14.psc", "pregunta15.psc", "pregunta16.psc",
-    "pregunta17.psc", "pregunta18.psc", "pregunta19.psc", "pregunta20.psc"
+    "pregunta17.psc", "pregunta18.psc", "pregunta19.psc", "pregunta20.psc",
+    "pregunta21.psc", "pregunta22.psc", "pregunta23.psc", "pregunta24.psc",
+    "pregunta25.psc", "pregunta26.psc", "pregunta27.psc", "pregunta28.psc",
+    "pregunta29.psc", "pregunta30.psc", "pregunta31.psc", "pregunta32.psc",
+    "pregunta33.psc", "pregunta34.psc", "pregunta35.psc", "pregunta36.psc",
+    "pregunta37.psc", "pregunta38.psc", "pregunta39.psc", "pregunta40.psc"
 ]
 
 # Definir los casos de prueba esperados para cada archivo
@@ -34,7 +39,27 @@ casos_de_prueba = {
     "pregunta17.psc": [((2, 3), "6")],
     "pregunta18.psc": [((10, 2), "20")],
     "pregunta19.psc": [(9, "Primo"), (4, "No Primo")],
-    "pregunta20.psc": [(30, "40%")]
+    "pregunta20.psc": [(30, "40%")],
+    "pregunta21.psc": [((2, 3), "5")],
+    "pregunta22.psc": [(4, "Par")],
+    "pregunta23.psc": [((6, 2), "12")],
+    "pregunta24.psc": [((7, 3), "21")],
+    "pregunta25.psc": [(9, "Impar")],
+    "pregunta26.psc": [((8, 4), "2")],
+    "pregunta27.psc": [((5, 5), "Iguales")],
+    "pregunta28.psc": [((6, 2), "6 es mayor")],
+    "pregunta29.psc": [(10, "Menor que 10")],
+    "pregunta30.psc": [((15, 5), "Multiplo")],
+    "pregunta31.psc": [(3, "Numero impar")],
+    "pregunta32.psc": [(4, "Numero par")],
+    "pregunta33.psc": [((6, 6), "36")],
+    "pregunta34.psc": [(10, "Menor que 20")],
+    "pregunta35.psc": [((5, 3), "2")],
+    "pregunta36.psc": [((9, 3), "Multiplo de 3")],
+    "pregunta37.psc": [(11, "Numero primo")],
+    "pregunta38.psc": [(12, "Numero compuesto")],
+    "pregunta39.psc": [(15, "Numero positivo")],
+    "pregunta40.psc": [((4, 2), "4 es mayor")]
 }
 
 # Función para ejecutar PSeInt desde la línea de comandos
