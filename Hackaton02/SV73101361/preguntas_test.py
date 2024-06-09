@@ -1,8 +1,4 @@
 import subprocess
-import os
-
-# Definir el directorio de los archivos
-directorio = "./Hackaton02/SV73101361/"
 
 # Lista de archivos a probar
 archivos = [
@@ -20,58 +16,63 @@ archivos = [
 
 # Definir los casos de prueba esperados para cada archivo
 casos_de_prueba = {
-    "pregunta1.psc": [((5, 3), "5")],
-    "pregunta2.psc": [((3, 4), "7")],
-    "pregunta3.psc": [((6, 6), "36")],
-    "pregunta4.psc": [(5, "Impar")],
-    "pregunta5.psc": [(15, "El estudiante aprobó con un promedio de: 15.0")],
-    "pregunta6.psc": [(41, "865")],
-    "pregunta7.psc": [('A', "10%"), ('B', "15%"), ('C', "20%")],
-    "pregunta8.psc": [((15, 10), "5")],
-    "pregunta9.psc": [(7, "Primo"), (4, "No Primo")],
-    "pregunta10.psc": [((8, 9), "17")],
-    "pregunta11.psc": [((5, 5, 5), "Los 3 numeros son iguales"), ((8, 3, 5), "El mayor es el numero 1")],
-    "pregunta12.psc": [((5, 3), "El mayor es el numero 1"), ((2, 9), "El mayor es el numero 2")],
+    "pregunta1.psc": [(123, "Este numero tiene tres digitos"), (50, "Este numero no tiene tres digitos")],
+    "pregunta2.psc": [(-5, "el numero es negativo"), (7, "el numero es positivo")],
+    "pregunta3.psc": [(54, "El numero 54 es un numero que termina en 4"), (51, "El numero 51 no es un numero que termina en 4")],
+    "pregunta4.psc": [((3, 1, 2), "Los numeros de menor a mayor son: 1, 2, 3"), ((5, 8, 6), "Los numeros de menor a mayor son: 5, 6, 8")],
+    "pregunta5.psc": [(5, "Total a pagar con descuento: $400"), (25, "Total a pagar con descuento: $1600"), (35, "Total a pagar con descuento: $1680")],
+    "pregunta6.psc": [(40, "El sueldo semanal es: $800"), (45, "El sueldo semanal es: $925")],
+    "pregunta7.psc": [(('A', 100), "El monto final a pagar es: $90"), (('B', 100), "El monto final a pagar es: $85"), (('C', 100), "El monto final a pagar es: $80"), (('D', 100), "Tipo de membresia no valida.")],
+    "pregunta8.psc": [((15, 14, 13), "El estudiante aprobo con un promedio de: 14"), ((12, 13, 14), "El estudiante no aprobo. Su promedio es de: 13")],
+    "pregunta9.psc": [(2500, "El aumento del trabajador ha sido de 0.05% por tanto su sueldo ahora es: 2625"), (1500, "El aumento del trabajador ha sido de 0.1% por tanto su sueldo ahora es: 1650")],
+    "pregunta10.psc": [(4, "El numero: 4 es par"), (5, "El numero: 5 es impar")], 
+    "pregunta11.psc": [((5, 8, 7), "El mayor numero es: 8"), ((4, 4, 4), "Los 3 numeros son iguales")],
+    "pregunta12.psc": [((6, 3), "El mayor numero es: 6"), ((7, 7), "Los 2 numeros son iguales")],
     "pregunta13.psc": [('a', "Ingresaste la vocal A"), ('b', "No es una vocal")],
-    "pregunta14.psc": [(7, "Primo"), (9, "No Primo")],
-    "pregunta15.psc": [((15, 8), "15")],
-    "pregunta16.psc": [(20, "Descuento aplicado: 0.20")],
-    "pregunta17.psc": [((2, 3), "6")],
-    "pregunta18.psc": [((10, 2), "20")],
-    "pregunta19.psc": [(9, "Primo"), (4, "No Primo")],
-    "pregunta20.psc": [(30, "40%")],
-    "pregunta21.psc": [((2, 3), "5")],
-    "pregunta22.psc": [(4, "Par")],
-    "pregunta23.psc": [((6, 2), "12")],
-    "pregunta24.psc": [((7, 3), "21")],
-    "pregunta25.psc": [(9, "Impar")],
-    "pregunta26.psc": [((8, 4), "2")],
-    "pregunta27.psc": [((5, 5), "Iguales")],
-    "pregunta28.psc": [((6, 2), "6 es mayor")],
-    "pregunta29.psc": [(10, "Menor que 10")],
-    "pregunta30.psc": [((15, 5), "Multiplo")],
-    "pregunta31.psc": [(3, "Numero impar")],
-    "pregunta32.psc": [(4, "Numero par")],
-    "pregunta33.psc": [((6, 6), "36")],
-    "pregunta34.psc": [(10, "Menor que 20")],
-    "pregunta35.psc": [((5, 3), "2")],
-    "pregunta36.psc": [((9, 3), "Multiplo de 3")],
-    "pregunta37.psc": [(11, "Numero primo")],
-    "pregunta38.psc": [(12, "Numero compuesto")],
-    "pregunta39.psc": [(15, "Numero positivo")],
-    "pregunta40.psc": [((4, 2), "4 es mayor")]
+    "pregunta14.psc": [(7, "El numero 7 es primo."), (9, "El numero 9 no es primo.")],
+    "pregunta15.psc": [((1, 100), "100 centímetros son 39.3700787402 pulgadas."), ((2, 150), "150 libras son 68.0388 kilogramos.")],
+    "pregunta16.psc": [(3, "Miercoles"), (8, "Numero fuera del rango permitido.")],
+    "pregunta17.psc": [((23, 59, 59), "La hora dentro de un segundo es: 0:0:0"), ((12, 30, 45), "La hora dentro de un segundo es: 12:30:46")],
+    "pregunta18.psc": [(5, "El precio total para el cliente fue de: $50"), (150, "El precio total para el cliente fue de: $1050")],
+    "pregunta19.psc": [(12, "El pago total para el empleado es: 336$"), (23, "El pago total para el empleado es: 384$")],
+    "pregunta20.psc": [((2, 3, 4, 5), "Cantidad de numeros pares: 3"), ((1, 7, 5, 2), "El numero mayor es: 7")],
+    "pregunta21.psc": [(5, "El factorial de 5 es: 120"), (0, "El factorial de 0 es: 1")],
+    "pregunta22.psc": [(10, "La suma de los 10 primeros numeros es: 55"), (5, "La suma de los 5 primeros numeros es: 15")],
+    "pregunta23.psc": [(10, "La suma de los numeros impares menores o iguales a 10 es: 25"), (7, "La suma de los numeros impares menores o iguales a 7 es: 16")],
+    "pregunta24.psc": [("", "La suma de todos los numeros pares hasta 1000 es: 250500")],
+    "pregunta25.psc": [(5, "El factorial de 5 es: 120"), (0, "El factorial de 0 es: 1")],
+    "pregunta26.psc": [((20, 3), "El cociente es: 6\nEl resto es: 2"), ((15, 4), "El cociente es: 3\nEl resto es: 3")],
+    "pregunta27.psc": [("10\n20\n30\n-1", "La media de los numeros ingresados es: 20"), ("5\n15\n-1", "La media de los numeros ingresados es: 10")],
+    "pregunta28.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
+    "pregunta29.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
+    "pregunta30.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
+    "pregunta31.psc": [((2, 4, 6, 8, 10, 1, 3, 5, 7, 9), "La media de los números pares es: 6.0\nLa media de los números impares es: 5.0")],
+    "pregunta32.psc": [("", "La ciudad con la mayor poblacion es: ...")],
+    "pregunta33.psc": [("S\nS\nN", "Programa terminado."), ("s\nn", "Programa terminado.")],
+    "pregunta34.psc": [("", "Tabla de multiplicar del 1: ... Tabla de multiplicar del 9: ...")],
+    "pregunta35.psc": [((5, 7, 9, 2, 4, 6, 8, 1, 3, 10, 12, 14, 16, 18, 20, 11, 13, 15, 17, 19), "El número mayor es: 20\nEl número menor es: 1")],
+    "pregunta36.psc": [(10, "Serie de Fibonacci: 0 1 1 2 3 5 8 13 21 34")],
+    "pregunta37.psc": [((30, 45), "El MCD de 30 y 45 es: 15")],
+    "pregunta38.psc": [(28, "El numero 28 es un numero perfecto."), (12, "El numero 12 no es un numero perfecto.")],
+    "pregunta39.psc": [(10, "La aproximacion de pi con 10 terminos es: ...")],
+    "pregunta40.psc": [(10, "La aproximacion de pi con 10 terminos es: ...")]
 }
 
-# Función para ejecutar PSeInt desde la línea de comandos
-def ejecutar_pseint(archivo, entrada):
+# Función para ejecutar PSeInt desde la línea de comandos con límite de tiempo
+def ejecutar_pseint(archivo, entrada, timeout=20):
     comando = f"pseint {archivo}"
-    resultado = subprocess.run(comando, input=entrada, text=True, capture_output=True, shell=True)
-    return resultado.stdout
+    try:
+        resultado = subprocess.run(comando, input=entrada, text=True, capture_output=True, shell=True, timeout=timeout)
+        return resultado.stdout
+    except subprocess.TimeoutExpired:
+        return "Tiempo de ejecución excedido"
 
-# Función para realizar pruebas
+# Función para realizar pruebas y generar un resumen
 def realizar_pruebas():
+    exitosas = 0
+    fallidas = 0
+
     for archivo in archivos:
-        ruta_archivo = os.path.join(directorio, archivo)
         if archivo in casos_de_prueba:
             for entrada, esperado in casos_de_prueba[archivo]:
                 # Convertir la entrada a string adecuada para el input
@@ -80,14 +81,21 @@ def realizar_pruebas():
                 else:
                     entrada_str = str(entrada)
                 
-                salida = ejecutar_pseint(ruta_archivo, entrada_str)
+                salida = ejecutar_pseint(archivo, entrada_str)
                 
                 if str(esperado) in salida:
                     print(f"Prueba para {archivo} con entrada {entrada}: PASADA")
+                    exitosas += 1
                 else:
                     print(f"Prueba para {archivo} con entrada {entrada}: FALLIDA")
                     print(f"Salida obtenida: {salida}")
                     print(f"Salida esperada: {esperado}")
+                    fallidas += 1
+
+    # Mostrar resumen
+    print("\nResumen de pruebas:")
+    print(f"Pruebas exitosas: {exitosas}")
+    print(f"Pruebas fallidas: {fallidas}")
 
 # Ejecutar las pruebas
 realizar_pruebas()
