@@ -2,13 +2,13 @@
 
 Algoritmo  pregunta17
 	Escribir  "ingrese la hora (formato 24 horas)"
-	leer hora
+	Leer hora
 	Escribir  "ingrese los minutos"
-	leer minutos
+	Leer minutos
 	Escribir "ingrese los segundos"
-	leer segundo
+	Leer segundo
 
-	si hora <0 o hora >23 o minutos<0 o minutos>59 o segundo<0 o segundo>59 Entonces
+	Si hora <0 o hora >23 o minutos<0 o minutos>59 o segundo<0 o segundo>59 Entonces
 		Escribir "Valores no válidos"
 	SiNo
 		segundo <- segundo +1;
