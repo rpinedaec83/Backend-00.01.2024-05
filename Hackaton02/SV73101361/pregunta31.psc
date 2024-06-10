@@ -39,7 +39,7 @@ Algoritmo pregunta31
         mediaImpares <- 0
     FinSi
 
-    Escribir "La media de los números pares es: ", mediaPares
-    Escribir "La media de los números impares es: ", mediaImpares
+    Escribir "La media de los numeros pares es: ", mediaPares
+    Escribir "La media de los numeros impares es: ", mediaImpares
 
 FinAlgoritmo

@@ -22,6 +22,9 @@ Este proyecto contiene un script de Python que ejecuta pruebas automáticas para
 ```sh
 python preguntas_test.py
 ```
+
+Durante la ejecución de las pruebas, puedes usar *Control + C* o las flechas del teclado *(↑)* o *(↓)* para avanzar de un test a otro.
+
 ## Descripción del Script
 El script test_pseint.py hace lo siguiente:
 

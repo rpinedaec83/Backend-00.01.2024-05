@@ -13,7 +13,8 @@
 
 Algoritmo pregunta20
     Dimensionar numeros[4]
-    Definir pares, mayor, media, suma Como Entero
+    Definir pares, mayor, suma Como Entero
+    Definir media como Real
 
     Escribir "Ingrese 4 numeros:"
     Para i <- 1 Hasta 4 Hacer

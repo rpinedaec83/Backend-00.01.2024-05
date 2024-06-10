@@ -10,13 +10,11 @@ def run_test(ejercicio, entradas, salidas_esperadas):
     )
     stdout, stderr = process.communicate(input=entradas)
     
-    # Imprimir la salida y el error del proceso
     print("Salida del proceso:")
     print(stdout)
     print("Error del proceso:")
     print(stderr)
     
-    # Validar solo las líneas específicas
     lines = stdout.strip().split('\n')
     for expected_line in salidas_esperadas:
         if expected_line not in lines:
@@ -26,9 +24,7 @@ def run_test(ejercicio, entradas, salidas_esperadas):
     return True
 
 def main():
-    # Asumimos que el archivo .psc está en el mismo directorio que este script
     ejercicio = 'Calculadora_digito_DNI.psc'
-    # Entradas para el proceso, incluyendo el número de DNI y la respuesta a la pregunta
     entradas = '73101361\nN\n'
     salidas_esperadas = [
         "El digito verificador numerico es: 1",
