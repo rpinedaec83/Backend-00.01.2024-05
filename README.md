@@ -2,10 +2,30 @@
 Repo Backend 00.01.2024-05
 
 
+git remote add fuentes https://github.com/rpinedaec83/Backend-00.01.2024-05.git
+
+
+git fetch fuentes
+git merge fuentes/main main
 
 
 
-Allie Martínez Ontaneda
+
+
+
+
+Cristian Cordova PT73243512
+
+Giuliano Romano SV70593490
+
+Nemecio Laguna sv45879513
+
+
+
+
+
+
+Allie Martínez Ontaneda SV47854767
 
 Elmer Silva SV43927702
 
@@ -21,7 +41,16 @@ Maria José sv70935987
 
 Jorge Holguin SV73101361
 
+<<<<<<< HEAD
 Alvaro Jesus SV71393556
+=======
+
+Jose Sarmiento SV74254815
+
+
+Carlos SV71199500
+>>>>>>> fuentes/main
 
 
 
+Roberto Pineda d19423
