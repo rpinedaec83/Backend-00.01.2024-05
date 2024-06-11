@@ -3,3 +3,4 @@ document.getElementById("btn3").addEventListener("click", function(){
 })
 
 console.log("Hola desde el console log");
+
