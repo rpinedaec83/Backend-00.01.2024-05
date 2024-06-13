@@ -40,13 +40,17 @@
 //         break;
 // }
 
-
+//bandera para detener el ciclo repetitivo
 let bandera = true;
+//respuesta de la operacion 
 let respuesta = 0;
+// array donde se almacenan los numero para realizar la operacion
 let arrNumeros = [];
+//inicia el ciclo repetitivo
 while (bandera) {
-
+    //capturo lo que escribio el usuario
     let valor = (prompt("Ingrese los datos; si desea el resultado presione ="));
+    //verifico que lo que escribio el usuario sea = para detener el ciclo
     if (valor === "=") {
         bandera = false
         
@@ -63,10 +67,17 @@ while (bandera) {
                     respuesta = arrNumeros.reduce((anterior, actual) => anterior - actual, 0);
                     break;
                 case "*":
-                    respuesta = arrNumeros.reduce((anterior, actual) => anterior *  actual, 0);
+                    respuesta = arrNumeros[0]
+                    for (let index = 1; index < arrNumeros.length; index++) {
+                        respuesta *= arrNumeros[index];
+                    }
+                   // respuesta = arrNumeros.reduce((anterior, actual) => anterior *  actual, 0);
                     break;
-                case "+/":
-                    respuesta = arrNumeros.reduce((anterior, actual) => anterior / actual, 0);
+                case "/":
+                    respuesta = arrNumeros[0]
+                    for (let index = 1; index < arrNumeros.length; index++) {
+                        respuesta /= arrNumeros[index];
+                    }
                     break;
             }
         }
