@@ -51,3 +51,47 @@ if(numero1 === numero2){
 else{
     console.log("No son iguales")
 }
+
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.toString())
+console.log(fruits.join(" * "))
+console.log(fruits.join("|"))
+
+let strDatos = "Banana|Orange|Apple|Mango|Kiwi"
+let fruits2 = strDatos.split('|');
+console.log(fruits2)
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+console.log(fruits)
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();
+console.log(fruits)
+
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");
+console.log(fruits)
+
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);
+console.log(myChildren)
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+;
+console.log(fruits.includes("Mango"))
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+console.log(fruits)
+
+let i =0;
+while (i < 10) {
+    console.log( "The number is " + i);
+    i++;
+  }
