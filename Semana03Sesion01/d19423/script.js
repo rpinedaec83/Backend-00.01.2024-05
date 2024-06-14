@@ -113,3 +113,6 @@ text = "Please visit Microsoft and Microsoft!";
 console.log(text.replace("Microsoft", "W3Schools"));
 text = "Please visit Microsoft!";
 console.log(text.replace(/MICROSOFT/i, "W3Schools"))
+
+
+
