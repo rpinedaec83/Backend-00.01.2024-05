@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hola desde HTML</h1>
+    <h1 style="color: chartreuse;">estilo desde html</h1>
+    <button onclick="alert('Hola desde el js del bton')"> Click Me</button>
+    <button id="btn2"> Click Me version 2</button>
+    <button id="btn3"> Click Me version 3</button>
+
+    <script>
+        document.getElementById("btn2").addEventListener("click", function(){
+            alert("Hola desde el segundo boton")
+        })
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
