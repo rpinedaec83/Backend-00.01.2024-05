@@ -38,6 +38,9 @@ Maria José sv70935987
 
 Jorge Holguin SV73101361
 
+<<<<<<< HEAD
+Alvaro Jesus SV71393556
+=======
 
 Jose Sarmiento SV74254815
 
@@ -45,6 +48,7 @@ Rodrigo Torres A19004349
 
 
 Carlos SV71199500
+>>>>>>> fuentes/main
 
 Waldo Castro SV70057872%%%
 
