@@ -1,6 +1,9 @@
 # Backend-00.01.2024-05
 Repo Backend 00.01.2024-05
 
+<<<<<<< HEAD
+moises ccahua WI73825391 
+=======
 
 git remote add fuentes https://github.com/rpinedaec83/Backend-00.01.2024-05.git
 
@@ -46,3 +49,4 @@ Carlos SV71199500
 
 
 Roberto Pineda d19423
+>>>>>>> fuentes/main
