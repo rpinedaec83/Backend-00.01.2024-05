@@ -2,7 +2,8 @@
 Repo Backend 00.01.2024-05
 
 
-moises ccahua WI73825391 
+
+
 
 
 git remote add fuentes https://github.com/rpinedaec83/Backend-00.01.2024-05.git
@@ -12,7 +13,9 @@ git fetch fuentes
 git merge fuentes/main main
 
 
+Sergio De la Cruz Torres SV70251915
 
+moises ccahua WI73825391 
 
 Cristian Cordova PT73243512
 
