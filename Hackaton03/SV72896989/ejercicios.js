@@ -193,7 +193,19 @@ function ejercicio12(){
 }
 
 function ejercicio13(){
+    let letra = prompt("Ingrese una letra:");
 
+    switch (letra.toLowerCase()) {
+        case "a":
+        case "e":
+        case "i":
+        case "o":
+        case "u":
+            alert("La letra ingresada es una vocal");
+            break;
+        default:
+            alert("La letra ingresada no es una vocal");
+    }    
 }
 
 function ejercicio14(){
