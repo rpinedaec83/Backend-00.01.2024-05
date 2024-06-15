@@ -469,14 +469,14 @@ function ejercicio35(){
 let menor = 9999999;
 
 for (let i = 1; i <= 20; i++) {
-    let numero = parseInt(prompt("Escriba el número " + i + ":"));
+    let numero1 = parseInt(prompt("Escriba el número " + i + ":"));
 
-    if (numero > mayor) {
-        mayor = numero;
+    if (numero1 > mayor) {
+        mayor = numero1;
     }
 
-    if (numero < menor) {
-        menor = numero;
+    if (numero1 < menor) {
+        menor = numero1;
     }
 }
 
