@@ -592,7 +592,24 @@ function ejercicio31(){
 }
 
 function ejercicio32(){
-
+    let ciudad_mas_poblada = "";
+    let poblacion_maxima = 0;
+    
+    for (let i = 1; i <= 11; i++) {
+        let poblacion_ciudad = 0;
+    
+        for (let j = 1; j <= 3; j++) {
+            let poblacion_provincia = parseInt(prompt(`Ingrese la población de la provincia ${j} de la ciudad ${i}:`));
+            poblacion_ciudad += poblacion_provincia;
+        }
+    
+        if (poblacion_ciudad > poblacion_maxima) {
+            ciudad_mas_poblada = `ciudad ${i}`;
+            poblacion_maxima = poblacion_ciudad;
+        }
+    }
+    
+    alert(`La ciudad con la población más alta es ${ciudad_mas_poblada} con una población de ${poblacion_maxima}`);    
 }
 
 function ejercicio33(){
