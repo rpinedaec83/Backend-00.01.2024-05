@@ -108,7 +108,22 @@ function ejercicio7(){
 }
 
 function ejercicio8(){
-
+    //Considero como nota aprobatoria 12.5 o más
+    let nota_1 = prompt("Ingrese nota 1");
+    let nota_2 = prompt("Ingrese nota 2");
+    let nota_3 = prompt("Ingrese nota 3");
+    
+    nota_1 = parseFloat(nota_1);
+    nota_2 = parseFloat(nota_2);
+    nota_3 = parseFloat(nota_3);
+    
+    let promedio = (nota_1 + nota_2 + nota_3) / 3;
+    
+    if (promedio >= 12.5) {
+        alert("El estudiante aprobó");
+    } else {
+        alert("El estudiante no aprobó");
+    }    
 }
 
 function ejercicio9(){
