@@ -613,7 +613,19 @@ function ejercicio32(){
 }
 
 function ejercicio33(){
+    let continuar = true;
 
+    while (continuar) {
+        let respuesta = prompt("¿Desea continuar? (Sí/No):");
+    
+        respuesta = respuesta.toLowerCase();
+    
+        if (respuesta === "no") {
+            continuar = false;
+        }
+    }
+    
+    alert("¡Hasta la próxima!");    
 }
 
 function ejercicio34(){
