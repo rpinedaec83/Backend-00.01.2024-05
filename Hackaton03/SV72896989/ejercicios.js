@@ -251,7 +251,33 @@ function ejercicio15(){
 }
 
 function ejercicio16(){
+    let numero = parseInt(prompt("Ingrese un número"));
 
+    switch (numero) {
+        case 1:
+            alert("El número ingresado corresponde al día lunes");
+            break;
+        case 2:
+            alert("El número ingresado corresponde al día martes");
+            break;
+        case 3:
+            alert("El número ingresado corresponde al día miércoles");
+            break;
+        case 4:
+            alert("El número ingresado corresponde al día jueves");
+            break;
+        case 5:
+            alert("El número ingresado corresponde al día viernes");
+            break;
+        case 6:
+            alert("El número ingresado corresponde al día sábado");
+            break;
+        case 7:
+            alert("El número ingresado corresponde al día domingo");
+            break;
+        default:
+            alert("El número ingresado no corresponde a un día válido");
+    }    
 }
 
 function ejercicio17(){
