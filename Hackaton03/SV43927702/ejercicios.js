@@ -224,3 +224,138 @@ alert("El total sin descuento es: "+total+" Descuento : "+descuento+" Total a Pa
     alert(centimetros+" Centrimetros Es igual a :"+pulgadas+" Pulgadas")
     alert(libras+" Libras Es igual a :"+kilogramos+" Pulgadas")
  }
+ 
+ function ejercicio17(){
+    let hora=0, minutos=0 ,segundos=0;
+    hora=parseInt(prompt("Ingrese la hora (0-23): "));
+    minutos=parseInt(prompt("Ingrese los minutos (0-59): "));
+    segundos=parseInt(prompt("Ingrese los segundos (0-59): "));
+    segundos = segundos + 1
+    if (segundos>=60){
+        segundos=0;
+        minutos=minutos+1;
+    } if(minutos>=60){
+        minutos = 0;
+        hora = hora + 1;
+    } if(hora>=24){
+        hora = 0
+    }
+    alert("La hora dentro de un segundo es: "+ hora+ ":"+ minutos+ ":"+ segundos)
+ }
+/**
+Definir n Como Entero
+    Definir suma Como Entero
+    Escribir "Ingrese el valor de n: "
+    Leer n
+    suma = 0
+    Para i desde 1 hasta n Hacer
+        suma = suma + i
+    FinPara
+    Escribir "La suma de los primeros ", n, " n�meros es: ", suma
+	
+	
+  */
+function ejercicio18(){
+    let PRECIO_UNIDAD_2=0;
+    let PRECIO_UNIDAD_3=0;
+    let PRECIO_UNIDAD_4=0;
+    let GANANCIA_VENDEDOR=0;
+    PRECIO_UNIDAD_1 = 10;
+    PRECIO_UNIDAD_2 = 8;
+    PRECIO_UNIDAD_3 = 7;
+    PRECIO_UNIDAD_4 = 6;
+    GANANCIA_VENDEDOR = 0.0825;
+    let cantidadCDs=parseInt(prompt("Ingrese la Cantidad de CDS :"))
+    let precioTotal=0;
+    let gananciaVendedor=0;
+   if (cantidadCDs <= 9){
+        precioTotal = cantidadCDs * PRECIO_UNIDAD_1
+   }else if (cantidadCDs >= 10 && cantidadCDs <= 99){
+        precioTotal = cantidadCDs * PRECIO_UNIDAD_2
+   }if (cantidadCDs >= 100 && cantidadCDs <= 499){
+         precioTotal = cantidadCDs * PRECIO_UNIDAD_3
+   }else{precioTotal = cantidadCDs * PRECIO_UNIDAD_4}
+   gananciaVendedor = precioTotal * GANANCIA_VENDEDOR
+		alert("El precio total para el cliente es: $"+ precioTotal+"La ganancia para el vendedor es: $ "+gananciaVendedor)
+}
+function ejercicio20(){
+    let num1, num2, num3, num4;
+    let pares;
+    let mayor;
+    let media;
+    let suma;
+    num1=parseInt(prompt("Ingrese el primer numero:"))
+    num2=parseInt(prompt("Ingrese el Segundo numero:"))
+    num3=parseInt(prompt("Ingrese el Tercer numero:"))
+    num4=parseInt(prompt("Ingrese el Cuarto numero:"))
+    pares = 0;
+    mayor = num1;
+    media = 0;
+    suma = 0;
+    if(num1 % 2 == 0) {pares = pares + 1;}
+    if(num2 % 2 == 0){pares = pares + 1;} 
+    if(num3 % 2 == 0){ pares =pares + 1;}
+    if(num4 % 2 == 0){ pares =pares + 1;}
+    if(num2 > mayor){mayor = num2;}
+    if(num3 > mayor){mayor = num3;}
+    if(num4 > mayor){mayor = num4;}
+    if(num3 % 2 == 0) {num2 = num2 * num2;}
+    if(num1 < num4){ media = (num1 + num2 + num3 + num4) / 4;}
+    if(num2 > num3 && num3 >= 50 && num3 <= 700) {suma = num1 + num2 + num3 + num4;}
+    alert("Cantidad de nueros pares: "+ pares) 
+    alert("El mayor de todos es: "+ mayor) 
+    alert("El cuadrado del segundo si el tercero es par: "+ num2) 
+    alert("La media de los 4 numeros si el primero es menor que el cuarto: "+ media) 
+    alert( "La suma de los 4 numeros si el segundo es mayor que el tercero y el tercero esta entre 50 y 700: "+ suma)
+}
+function ejercicio21(){
+    let numero,factorial,i;
+    numero=parseInt(prompt("Ingrese un numero entero positivo:"))
+  
+    if(numero < 0) {
+        alert("El factorial no esta definido para numeros negativos.")
+    }else{
+        factorial = 1;
+        for ( i = 1; i <= numero; i++) {
+            factorial=(factorial*i);
+            
+        }
+    }
+    alert("El factorial de "+numero+"es: "+factorial)
+}
+function ejercicio22(){
+    let suma=0,i=0;
+    let n=parseInt(prompt("Ingrese el valor de n:"))
+    for ( i = 1; i<= n; i++) {
+        suma=suma+i;
+        
+    }
+}
+    function ejercicio22(){
+    let suma=0,i=0;
+    let n=parseInt(prompt("Ingrese el valor de n:"))
+    for ( i = 1; i<= n; i++) {
+        suma=suma+i;
+        
+    }
+    alert(suma)
+    }
+    function ejercicio23(){
+        let suma=0,i=0;
+        let n=parseInt(prompt("Ingrese el valor de n:"))
+        for ( i = 1; i<= n; i++) {
+            if(i % 2==0){}
+            else{suma=suma+i;}
+            
+            
+        }
+        alert(suma)
+        }
+        function ejercicio24(){
+            let suma=0,i=0;
+            let n=1000;
+            for ( i = 1; i<= n; i++) {
+                if(i % 2==0){suma=suma+i;}   
+            }
+            alert("La suma de Todos Los Pares es : "+suma)
+            }
