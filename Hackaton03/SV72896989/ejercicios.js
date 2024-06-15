@@ -691,7 +691,16 @@ function ejercicio36(){
 }
 
 function ejercicio37(){
+    let numero1 = parseInt(prompt("Ingrese el primer número:"));
+    let numero2 = parseInt(prompt("Ingrese el segundo número:"));
 
+    while (numero2 !== 0) {
+        let temporal = numero2;
+        numero2 = numero1 % numero2;
+        numero1 = temporal;
+    }
+
+    alert("El M.C.D. es " + Math.abs(numero1));
 }
 
 function ejercicio38(){
