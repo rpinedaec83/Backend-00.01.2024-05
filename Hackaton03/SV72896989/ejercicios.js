@@ -534,7 +534,15 @@ function ejercicio28(){
 }
 
 function ejercicio29(){
-
+    let suma = 0;
+    let contador = 1;
+    
+    while (contador <= 100) {
+        suma = suma + contador;
+        contador = contador + 1;
+    }
+    
+    alert("La suma de los primeros cien números es " + suma);    
 }
 
 function ejercicio30(){
