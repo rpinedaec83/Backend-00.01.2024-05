@@ -205,7 +205,8 @@ function ejercicio13(){
             break;
         default:
             alert("La letra ingresada no es una vocal");
-    }    
+    }
+        
 }
 
 function ejercicio14(){
