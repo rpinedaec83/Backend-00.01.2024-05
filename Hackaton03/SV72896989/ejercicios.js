@@ -69,11 +69,21 @@ function ejercicio5(){
     let total_a_pagar = precio_total * (1 - descuento);
     
     alert("Debe pagarse: $" + total_a_pagar);
-    
 }
 
 function ejercicio6(){
-
+    let horas_trabajadas = prompt("Ingrese número de horas trabajadas");
+    horas_trabajadas = parseInt(horas_trabajadas);
+    
+    let sueldo_semanal;
+    
+    if (horas_trabajadas <= 40) {
+        sueldo_semanal = horas_trabajadas * 20;
+    } else {
+        sueldo_semanal = (40 * 20) + ((horas_trabajadas - 40) * 25);
+    }
+    
+    alert("Su sueldo semanal es de $" + sueldo_semanal);
 }
 
 function ejercicio7(){
