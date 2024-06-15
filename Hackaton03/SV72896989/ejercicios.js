@@ -210,6 +210,24 @@ function ejercicio13(){
 }
 
 function ejercicio14(){
+    let numero = parseInt(prompt("Ingrese un número entre 1 y 10:"));
+    let contador = 0;
+
+    if (numero < 1 || numero > 10) {
+        alert("El número ingresado no está en el rango permitido");
+    } else {
+        for (let divisor = 1; divisor <= 10; divisor++) {
+            if (numero % divisor === 0) {
+             contador++;
+             }
+         }
+
+    if (contador === 2) {
+        alert("El número ingresado es primo");
+    } else {
+        alert("El número ingresado no es primo");
+    }
+}
 
 }
 
