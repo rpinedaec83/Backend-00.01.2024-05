@@ -629,7 +629,17 @@ function ejercicio33(){
 }
 
 function ejercicio34(){
+    let resultado = "";
 
+    for (let i = 1; i <= 9; i++) {
+        for (let j = 1; j <= 10; j++) {
+          let multiplicacion = i * j;
+            resultado += i + " x " + j + " = " + multiplicacion + "\n";
+        }
+        resultado += "\n"; // Agrego una línea en blanco después de cada tabla de multiplicar para que sea más legible
+    }
+
+    alert(resultado);
 }
 
 function ejercicio35(){
