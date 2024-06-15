@@ -361,7 +361,57 @@ function ejercicio19(){
 }
 
 function ejercicio20(){
-
+    let num1, num2, num3, num4;
+    let pares = 0, mayor, media, suma = 0;
+    let mensaje = "";
+    
+    num1 = parseInt(prompt("Ingrese el primer número"));
+    num2 = parseInt(prompt("Ingrese el segundo número"));
+    num3 = parseInt(prompt("Ingrese el tercer número"));
+    num4 = parseInt(prompt("Ingrese el cuarto número"));
+    
+    if (num1 % 2 === 0) {
+        pares++;
+    }
+    if (num2 % 2 === 0) {
+        pares++;
+    }
+    if (num3 % 2 === 0) {
+        pares++;
+    }
+    if (num4 % 2 === 0) {
+        pares++;
+    }
+    
+    mayor = num1;
+    if (num2 > mayor) {
+        mayor = num2;
+    }
+    if (num3 > mayor) {
+        mayor = num3;
+    }
+    if (num4 > mayor) {
+        mayor = num4;
+    }
+    
+    mensaje += "Cantidad de números pares: " + pares + "\n";
+    mensaje += "El número mayor es: " + mayor + "\n";
+    
+    if (num3 % 2 === 0) {
+        mensaje += "El cuadrado del segundo es: " + (num2 * num2) + "\n";
+    }
+    
+    if (num1 < num4) {
+        media = (num1 + num2 + num3 + num4) / 4;
+        mensaje += "La media es: " + media + "\n";
+    }
+    
+    if (num2 > num3 && num3 >= 50 && num3 <= 700) {
+        suma = num1 + num2 + num3 + num4;
+        mensaje += "La suma de los 4 números es: " + suma + "\n";
+    }
+    
+    alert(mensaje);    
 }
 
 function ejercicio21(){
