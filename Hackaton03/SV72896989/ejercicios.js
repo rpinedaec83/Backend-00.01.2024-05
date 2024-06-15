@@ -8,10 +8,16 @@ function ejercicio1(){
     }
 }
 
-function ejercicio2(){
+function ejercicio2() {
+    let numero_ingresado = parseInt(prompt("Ingrese un número entero"));
 
-    
-
+    if (numero_ingresado < 0) {
+        alert("El número ingresado es negativo");
+    } else if (numero_ingresado === 0) {
+        alert("El número ingresado es 0, por lo que no es negativo ni positivo.");
+    } else if (numero_ingresado > 0) {
+        alert("El número ingresado no es negativo.");
+    }
 }
 
 function ejercicio3(){
