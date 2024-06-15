@@ -20,8 +20,16 @@ function ejercicio2() {
     }
 }
 
-function ejercicio3(){
-
+function ejercicio3() {
+    let numero_ingresado = parseFloat(prompt("Ingrese un número"));
+    
+    let ultima_cifra = Math.abs(numero_ingresado) % 10;
+    
+    if (ultima_cifra === 4) {
+        alert("El número ingresado termina en 4.");
+    } else {
+        alert("El número ingresado no termina en 4.");
+    }
 }
 
 function ejercicio4(){
