@@ -232,7 +232,22 @@ function ejercicio14(){
 }
 
 function ejercicio15(){
+    let tipo_conversion = parseInt(prompt("Digita 1 para CONVERTIR CENTIMETROS A PULGADAS y 2 para CONVERTIR LIBRAS A KILOGRAMOS"));
 
+    switch (tipo_conversion) {
+        case 1:
+            let cm = parseFloat(prompt("Ingresa los centímetros a convertir"));
+            let pulg = cm / 2.54;
+            alert("Pulgadas = " + pulg + " pulg");
+            break;
+        case 2:
+            let lb = parseFloat(prompt("Ingresa las libras a convertir"));
+            let kg = lb * 0.453592;
+            alert("Kilogramos = " + kg + " kg");
+            break;
+        default:
+            alert("Opción no válida. Por favor, selecciona 1 o 2.");
+    }    
 }
 
 function ejercicio16(){
