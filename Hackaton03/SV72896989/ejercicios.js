@@ -481,7 +481,21 @@ function ejercicio25(){
 }
 
 function ejercicio26(){
-
+    let dividendo = prompt("Ingrese el dividendo");
+    let divisor = prompt("Ingrese el divisor");
+    
+    dividendo = parseInt(dividendo); // Convertir la entrada del dividendo a entero
+    divisor = parseInt(divisor); // Convertir la entrada del divisor a entero
+    
+    let cociente = 0;
+    let resto = dividendo;
+    
+    while (resto >= divisor) {
+        resto = resto - divisor;
+        cociente = cociente + 1;
+    }
+    
+    alert("El cociente es " + cociente + " y el resto es " + resto);
 }
 
 function ejercicio27(){
