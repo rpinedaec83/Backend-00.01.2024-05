@@ -281,7 +281,31 @@ function ejercicio16(){
 }
 
 function ejercicio17(){
-
+    let hora = parseInt(prompt("Ingrese la hora (formato 24 horas)"));
+    let minutos = parseInt(prompt("Ingrese los minutos"));
+    let segundos = parseInt(prompt("Ingrese los segundos"));
+    
+    if (hora < 0 || hora > 23 || minutos < 0 || minutos > 59 || segundos < 0 || segundos > 59) {
+        alert("Valores no válidos");
+    } else {
+        segundos++;
+    
+        if (segundos === 60) {
+            segundos = 0;
+            minutos++;
+    
+            if (minutos === 60) {
+                minutos = 0;
+                hora++;
+    
+                if (hora === 24) {
+                    hora = 0;
+                }
+            }
+        }
+    
+        alert(`La hora dentro de un segundo es: ${hora}:${minutos}:${segundos}`);
+    }    
 }
 
 function ejercicio18(){
