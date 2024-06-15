@@ -87,7 +87,24 @@ function ejercicio6(){
 }
 
 function ejercicio7(){
-
+    let membresia = prompt("Ingrese el tipo de membresía (A, B o C)");
+    let monto = prompt("Ingrese el monto en dólares a pagar");
+    monto = parseFloat(monto);
+    
+    let descuento;
+    
+    if (membresia.toLowerCase() === "a") {
+        descuento = 0.1;
+    } else if (membresia.toLowerCase() === "b") {
+        descuento = 0.15;
+    } else if (membresia.toLowerCase() === "c") {
+        descuento = 0.2;
+    } else {
+        descuento = 0;
+    }
+    
+    let total_a_pagar = monto * (1 - descuento);
+    alert("Tienes un descuento de " + (descuento * 100) + "%.\nSolo tendrás que pagar $" + total_a_pagar);    
 }
 
 function ejercicio8(){
