@@ -143,7 +143,15 @@ function ejercicio9(){
 }
 
 function ejercicio10(){
+    let numero = prompt("Ingrese un número:");
 
+    numero = parseInt(numero);
+    
+    if (numero % 2 === 0) {
+        alert("El número ingresado es par");
+    } else {
+        alert("El número ingresado es impar");
+    }    
 }
 
 function ejercicio11(){
