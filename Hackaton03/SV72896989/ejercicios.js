@@ -499,7 +499,26 @@ function ejercicio26(){
 }
 
 function ejercicio27(){
-
+    let suma = 0;
+    let contador = 0;
+    let numero;
+    
+    do {
+        numero = prompt("Ingrese un numero positivo (o un numero negativo para terminar este programa):");
+        numero = parseInt(numero);
+    
+        if (numero >= 0) {
+            suma = suma + numero;
+            contador = contador + 1;
+        }
+    } while (numero >= 0);
+    
+    if (contador > 0) {
+        let media = suma / contador;
+        alert("La media de los numeros ingresados es " + media);
+    } else {
+        alert("No se ingreso ningun numero positivo");
+    }    
 }
 
 function ejercicio28(){
