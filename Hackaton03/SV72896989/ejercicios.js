@@ -21,7 +21,7 @@ function ejercicio2() {
 }
 
 function ejercicio3() {
-    let numero_ingresado = parseFloat(prompt("Ingrese un número"));
+    let numero_ingresado = parseInt(prompt("Ingrese un número"));
     
     let ultima_cifra = Math.abs(numero_ingresado) % 10;
     
@@ -32,8 +32,24 @@ function ejercicio3() {
     }
 }
 
-function ejercicio4(){
+function ejercicio4() {
+    let primer_numero = parseInt(prompt("Ingrese el primer número"), 10);
+    let segundo_numero = parseInt(prompt("Ingrese el segundo número"), 10);
+    let tercer_numero = parseInt(prompt("Ingrese el tercer número"), 10);
 
+    if (tercer_numero > segundo_numero && segundo_numero > primer_numero) {
+        alert("Números de menor a mayor: " + primer_numero + ", " + segundo_numero + ", " + tercer_numero);
+    } else if (segundo_numero > tercer_numero && tercer_numero > primer_numero) {
+        alert("Números de menor a mayor: " + primer_numero + ", " + tercer_numero + ", " + segundo_numero);
+    } else if (tercer_numero > primer_numero && primer_numero > segundo_numero) {
+        alert("Números de menor a mayor: " + segundo_numero + ", " + primer_numero + ", " + tercer_numero);
+    } else if (primer_numero > tercer_numero && tercer_numero > segundo_numero) {
+        alert("Números de menor a mayor: " + segundo_numero + ", " + tercer_numero + ", " + primer_numero);
+    } else if (primer_numero > segundo_numero && segundo_numero > tercer_numero) {
+        alert("Números de menor a mayor: " + tercer_numero + ", " + segundo_numero + ", " + primer_numero);
+    } else if (segundo_numero > primer_numero && primer_numero > tercer_numero) {
+        alert("Números de menor a mayor: " + tercer_numero + ", " + primer_numero + ", " + segundo_numero);
+    }
 }
 
 function ejercicio5(){
