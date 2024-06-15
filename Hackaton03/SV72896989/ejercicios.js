@@ -643,7 +643,29 @@ function ejercicio34(){
 }
 
 function ejercicio35(){
+    let mayor = 0;
+    let menor = 0;
 
+    for (let i = 1; i <= 20; i++) {
+        let numero = parseInt(prompt("Ingrese el número " + i + ":"));
+
+        if (i === 1) {
+            mayor = numero;
+            menor = numero;
+        } else {
+            if (numero > mayor) {
+                mayor = numero;
+            }
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
+    }
+
+    let mensaje = "El número mayor es " + mayor + "\n" +
+                "El número menor es " + menor;
+
+    alert(mensaje);
 }
 
 function ejercicio36(){
