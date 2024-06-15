@@ -441,7 +441,18 @@ function ejercicio22(){
 }
 
 function ejercicio23(){
-
+    let n = prompt("Se calculará la suma de los números impares menores o iguales a n. Ingrese el valor de n:");
+    n = parseInt(n);
+    
+    let suma_impares = 0;
+    
+    for (let i = 1; i <= n; i++) {
+        if (i % 2 !== 0) {
+            suma_impares += i;
+        }
+    }
+    
+    alert("La suma de los números impares menores o iguales a " + n + " es " + suma_impares);  
 }
 
 function ejercicio24(){
