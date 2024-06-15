@@ -466,7 +466,18 @@ function ejercicio24(){
 }
 
 function ejercicio25(){
-
+    let numero = prompt("Ingrese un número");
+    numero = parseInt(numero);
+    
+    let factorial = 1;
+    let i = 1;
+    
+    while (i <= numero) {
+        factorial = factorial * i;
+        i = i + 1;
+    }
+    
+    alert("El factorial de " + numero + " es " + factorial);
 }
 
 function ejercicio26(){
