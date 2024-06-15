@@ -546,7 +546,13 @@ function ejercicio29(){
 }
 
 function ejercicio30(){
+    let suma = 0;
 
+    for (let contador = 1; contador <= 100; contador++) {
+        suma = suma + contador;
+    }
+    
+    alert("La suma de los primeros cien números es " + suma);    
 }
 
 function ejercicio31(){
