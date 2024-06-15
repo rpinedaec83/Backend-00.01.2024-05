@@ -556,7 +556,39 @@ function ejercicio30(){
 }
 
 function ejercicio31(){
-
+    let suma_pares = 0;
+    let contador_pares = 0;
+    let suma_impares = 0;
+    let contador_impares = 0;
+    
+    for (let i = 1; i <= 10; i++) {
+        let numero = parseInt(prompt("Ingrese un número:"));
+    
+        if (numero % 2 === 0) {
+            suma_pares += numero;
+            contador_pares++;
+        } else {
+            suma_impares += numero;
+            contador_impares++;
+        }
+    }
+    
+    let mensaje = "";
+    if (contador_pares > 0) {
+        let media_pares = suma_pares / contador_pares;
+        mensaje += "La media de los números pares es " + media_pares + "\n";
+    } else {
+        mensaje += "No se ingresaron números pares.\n";
+    }
+    
+    if (contador_impares > 0) {
+        let media_impares = suma_impares / contador_impares;
+        mensaje += "La media de los números impares es " + media_impares;
+    } else {
+        mensaje += "No se ingresaron números impares.";
+    }
+    
+    alert(mensaje);    
 }
 
 function ejercicio32(){
