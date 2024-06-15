@@ -428,7 +428,16 @@ function ejercicio21(){
 }
 
 function ejercicio22(){
-
+    let n = prompt("Se sumarán los primeros n números. Ingrese el valor de n:");
+    n = parseInt(n);
+    
+    let suma = 0;
+    
+    for (let i = 1; i <= n; i++) {
+        suma += i;
+    }
+    
+    alert("La suma de los primeros " + n + " números es " + suma);
 }
 
 function ejercicio23(){
