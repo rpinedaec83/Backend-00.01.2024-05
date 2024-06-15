@@ -329,7 +329,35 @@ function ejercicio18(){
 }
 
 function ejercicio19(){
+    let identificador = parseInt(prompt("Ingrese el número identificador del empleado"));
+    let salario_diario, dias_trabajados;
 
+    switch (identificador) {
+        case 1:
+            salario_diario = 56;
+            dias_trabajados = parseInt(prompt("Ingrese la cantidad de días que trabajó en la semana"));
+            break;
+        case 2:
+            salario_diario = 64;
+            dias_trabajados = parseInt(prompt("Ingrese la cantidad de días que trabajó en la semana"));
+            break;
+        case 3:
+            salario_diario = 80;
+            dias_trabajados = parseInt(prompt("Ingrese la cantidad de días que trabajó en la semana"));
+            break;
+        case 4:
+            salario_diario = 48;
+            dias_trabajados = parseInt(prompt("Ingrese la cantidad de días que trabajó en la semana"));
+            break;
+        default:
+            alert("El número identificador de empleado no es válido");
+            break;
+    }
+
+    if (identificador >= 1 && identificador <= 4) {
+        let salario_total = salario_diario * dias_trabajados;
+        alert("El dueño de la tienda debe pagar al empleado $" + salario_total);
+    }  
 }
 
 function ejercicio20(){
