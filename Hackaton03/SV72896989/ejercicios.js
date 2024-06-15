@@ -53,7 +53,23 @@ function ejercicio4() {
 }
 
 function ejercicio5(){
-
+    let num_zapatos = parseInt(prompt("Ingrese el número de zapatos que se comprarán"), 10);
+    let descuento = 0;
+    
+    if (num_zapatos > 10 && num_zapatos <= 20) {
+        descuento = 0.1;
+    } else if (num_zapatos > 20 && num_zapatos <= 30) {
+        descuento = 0.2;
+    } else if (num_zapatos > 30) {
+        descuento = 0.4;
+    }
+    
+    let precio_unitario = 80;
+    let precio_total = precio_unitario * num_zapatos;
+    let total_a_pagar = precio_total * (1 - descuento);
+    
+    alert("Debe pagarse: $" + total_a_pagar);
+    
 }
 
 function ejercicio6(){
