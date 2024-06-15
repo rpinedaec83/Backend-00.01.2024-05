@@ -669,7 +669,25 @@ function ejercicio35(){
 }
 
 function ejercicio36(){
+    let termino_anterior = 0;
+    let termino_actual = 1;
 
+    let limite = parseInt(prompt("Ingrese el número de términos de la serie de Fibonacci que desea calcular:"));
+    let resultado = "Serie de Fibonacci hasta el término " + limite + ":\n";
+    resultado += termino_anterior + "\n";
+
+    if (limite > 1) {
+        resultado += termino_actual + "\n";
+
+        for (let i = 3; i <= limite; i++) {
+            let siguiente_termino = termino_anterior + termino_actual;
+            resultado += siguiente_termino + "\n";
+            termino_anterior = termino_actual;
+            termino_actual = siguiente_termino;
+        }
+    }
+
+    alert(resultado);
 }
 
 function ejercicio37(){
