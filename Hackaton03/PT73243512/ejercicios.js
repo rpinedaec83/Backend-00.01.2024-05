@@ -346,3 +346,141 @@ function ejercicio18(){
     alert("El precio total para el cliente es: " +total)
     alert("La ganancia para el vendedor es: " +ganancia)
 }
+
+function ejercicio22(){
+
+    let n = parseInt(prompt("Escriba el valor de n: "));
+
+    if(n <= 0){
+       alert("El valor de n debe ser mayor que cero.");
+
+    }else{
+
+        suma = (n * (n + 1)) / 2
+        alert( "La suma de los primeros "+ n+" numeros es: "+ suma);
+
+    }
+
+}
+
+function ejercicio27(){
+   
+    let suma = 0;
+    let contador = 0;
+    do {
+        n = parseInt(prompt("Escriba una lista de números positivos. Ingrese un número negativo para terminar."));
+    
+        if (n < 0) {
+            if (contador === 0) {
+                alert("No se ingresaron números positivos.");
+            } else {
+                alert("La media de los números ingresados es: " + (suma / contador));
+            }
+        } else {
+            suma = suma + n;
+            contador = contador + 1;
+        }
+    } while (n >= 0);
+}
+
+function ejercicio28(){
+
+let contador = 1;
+let suma = 0;
+
+while (contador <= 100) {
+    suma = suma + contador;
+    contador = contador + 1;
+}
+
+alert("La suma de los primeros cien números es: " + suma);
+
+}
+
+function ejercicio29(){
+    let contador = 1;
+let suma = 0;
+
+while (contador <= 100) {
+    suma = suma + contador;
+    contador = contador + 1;
+}
+
+alert("La suma de los primeros cien números es: " + suma);
+}
+
+function ejercicio30(){
+let suma=0;
+
+for (let numero = 1; numero <= 100; numero++) {
+    suma = suma + numero;
+}
+alert("La suma de los primeros cien numeros es: "+ suma);
+
+}
+
+function ejercicio31(){
+    let sumaPares = 0
+    let sumaImpares = 0
+    let cantidadPares = 0
+    let cantidadImpares = 0
+
+    for (let contador = 1; contador <= 10; contador++) {
+        let numero = parseInt(prompt("Escriba el número " + contador + ":"));
+    
+        if (numero % 2 === 0) {
+            sumaPares = sumaPares + numero;
+            cantidadPares = cantidadPares + 1;
+        } else {
+            sumaImpares = sumaImpares + numero;
+            cantidadImpares = cantidadImpares + 1;
+        }
+    }
+    if(cantidadPares > 0){
+        mediaImpares = sumaImpares / cantidadImpares
+       alert("La media de los números impares es: "+ mediaImpares);
+    }else{
+        alert("No se ingresaron números impares.");
+    }
+}
+
+function ejercicio33(){
+    let continuar;
+
+do {
+    let suma = 0;
+
+    console.log("Ingrese tres números:");
+
+    for (let n = 1; n <= 3; n++) {
+        let numero = parseInt(prompt("Número " + n + ":"));
+        suma = suma + numero;
+    }
+
+    console.log("La suma de los números ingresados es: " + suma);
+
+    continuar = prompt("¿Desea continuar? Escriba 'S' para continuar y 'N' para terminar:").toLowerCase();
+} while (continuar !== 'n');
+}
+
+function ejercicio35(){
+
+    let mayor = -9999999;
+let menor = 9999999;
+
+for (let i = 1; i <= 20; i++) {
+    let numero = parseInt(prompt("Escriba el número " + i + ":"));
+
+    if (numero > mayor) {
+        mayor = numero;
+    }
+
+    if (numero < menor) {
+        menor = numero;
+    }
+}
+
+alert("El número mayor es: "+ mayor);
+alert("El número menor es: "+menor);
+
+}
