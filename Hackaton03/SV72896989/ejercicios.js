@@ -179,7 +179,17 @@ function ejercicio11(){
 }
 
 function ejercicio12(){
-
+    let primer_numero = prompt("Ingrese el primer número:");
+    let segundo_numero = prompt("Ingrese el segundo número:");
+    
+    primer_numero = parseInt(primer_numero);
+    segundo_numero = parseInt(segundo_numero);
+    
+    if (primer_numero > segundo_numero) {
+        alert("El número mayor es " + primer_numero);
+    } else {
+        alert("El número mayor es " + segundo_numero);
+    }    
 }
 
 function ejercicio13(){
