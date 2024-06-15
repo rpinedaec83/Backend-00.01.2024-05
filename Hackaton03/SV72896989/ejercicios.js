@@ -155,7 +155,27 @@ function ejercicio10(){
 }
 
 function ejercicio11(){
-
+    let primer_numero = prompt("Ingrese el primer número:");
+    let segundo_numero = prompt("Ingrese el segundo número:");
+    let tercer_numero = prompt("Ingrese el tercer número:");
+    
+    primer_numero = parseInt(primer_numero);
+    segundo_numero = parseInt(segundo_numero);
+    tercer_numero = parseInt(tercer_numero);
+    
+    if (tercer_numero > segundo_numero && segundo_numero > primer_numero) {
+        alert("El número mayor es " + tercer_numero);
+    } else if (segundo_numero > tercer_numero && tercer_numero > primer_numero) {
+        alert("El número mayor es " + segundo_numero);
+    } else if (tercer_numero > primer_numero && primer_numero > segundo_numero) {
+        alert("El número mayor es " + tercer_numero);
+    } else if (primer_numero > tercer_numero && tercer_numero > segundo_numero) {
+        alert("El número mayor es " + primer_numero);
+    } else if (primer_numero > segundo_numero && segundo_numero > tercer_numero) {
+        alert("El número mayor es " + primer_numero);
+    } else if (segundo_numero > primer_numero && primer_numero > tercer_numero) {
+        alert("El número mayor es " + segundo_numero);
+    }    
 }
 
 function ejercicio12(){
