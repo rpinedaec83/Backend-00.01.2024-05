@@ -127,7 +127,19 @@ function ejercicio8(){
 }
 
 function ejercicio9(){
+    let salario = prompt("Ingrese el salario del trabajador:");
 
+    salario = parseFloat(salario);
+    
+    let aumento;
+    
+    if (salario >= 2000) {
+        aumento = salario * 1.05;
+    } else {
+        aumento = salario * 1.10;
+    }
+    
+    alert("El aumento del trabajador es: $" + aumento);    
 }
 
 function ejercicio10(){
