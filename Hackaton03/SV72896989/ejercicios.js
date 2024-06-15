@@ -456,7 +456,13 @@ function ejercicio23(){
 }
 
 function ejercicio24(){
+    let suma_pares = 0;
 
+    for (let i = 2; i <= 1000; i += 2) {
+        suma_pares += i;
+    }
+    
+    alert("La suma de todos los números pares hasta 1000 es " + suma_pares);    
 }
 
 function ejercicio25(){
