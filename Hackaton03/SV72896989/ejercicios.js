@@ -309,7 +309,23 @@ function ejercicio17(){
 }
 
 function ejercicio18(){
+    let cantidad = parseInt(prompt("Ingrese la cantidad de CDs a vender"));
+    let precio_unitario;
 
+    if (cantidad >= 500) {
+        precio_unitario = 6;
+    } else if (cantidad >= 100 && cantidad <= 499) {
+        precio_unitario = 7;
+    } else if (cantidad >= 10 && cantidad <= 99) {
+        precio_unitario = 8;
+    } else {
+        precio_unitario = 10;
+    }
+
+    let precio_total_cliente = cantidad * precio_unitario;
+    let ganancia_vendedor = precio_total_cliente * 0.0825;
+
+    alert(`El precio total para el cliente es $${precio_total_cliente}.\nLa ganancia para el vendedor es $${ganancia_vendedor}`);
 }
 
 function ejercicio19(){
