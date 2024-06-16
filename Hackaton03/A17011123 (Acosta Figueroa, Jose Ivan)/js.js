@@ -106,7 +106,7 @@ function funcion8() {
     let nota3 = prompt("Ingrese la tercera nota:");
     let promedio = (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) / 3;
 
-    if (promedio >= 60) {
+    if (promedio >= 11) {
         console.log("El estudiante aprobó con un promedio de: ", promedio);
     } else {
         console.log("El estudiante no aprobó. Su promedio es: ", promedio);
