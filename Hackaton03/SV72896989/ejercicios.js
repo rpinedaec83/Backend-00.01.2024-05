@@ -721,7 +721,17 @@ function ejercicio38(){
 }
 
 function ejercicio39(){
-
+    let num_terminos = 1000;
+    let aproximacion_pi = 0;
+    let signo = 1;
+    
+    for (let i = 1; i <= num_terminos; i++) {
+        let termino = 4 / (2 * i - 1) * signo;
+        aproximacion_pi = aproximacion_pi + termino;
+        signo = signo * (-1);
+    }
+    
+    alert("Aproximación de pi con la serie de Gregory-Leibniz: " + aproximacion_pi);    
 }
 
 function ejercicio40(){
