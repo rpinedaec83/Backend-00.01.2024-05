@@ -6,6 +6,7 @@ Proceso CalculadoraV2
 	Escribir "Digita 1 para SUMAR, 2 para RESTAR, 3 para MULTIPLICAR y 4 para DIVIDIR"
 	Leer operacion
 	respuesta = 0
+	
 	Segun operacion Hacer
 		1:
 			respuesta = primer_numero + segundo_numero
@@ -17,6 +18,7 @@ Proceso CalculadoraV2
 			respuesta = primer_numero / segundo_numero
 		De Otro Modo:
 			Escribir "Opcion No Valida"
-	Fin Segun
+	FinSegun
 	Escribir "La respuesta es: ", respuesta
+
 FinProceso
