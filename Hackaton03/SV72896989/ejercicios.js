@@ -704,7 +704,20 @@ function ejercicio37(){
 }
 
 function ejercicio38(){
-
+    let numero = parseInt(prompt("Ingrese un número:"));
+    let suma_divisores = 0;
+    
+    for (let divisor = 1; divisor <= numero / 2; divisor++) {
+        if (numero % divisor === 0) {
+            suma_divisores += divisor;
+        }
+    }
+    
+    if (suma_divisores === numero) {
+        alert("El número es perfecto");
+    } else {
+        alert("El número no es perfecto");
+    }    
 }
 
 function ejercicio39(){
