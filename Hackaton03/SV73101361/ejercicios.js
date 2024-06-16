@@ -61,38 +61,56 @@ alert("El numero es positivo")
 
 // 5. Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
 
-const price = 100; // Asigna un valor de precio para cada zapato.
 
-    function ejercicio5(cantidad) {
-      let descuento = 0;
+function ejercicio5(){
+    let numZapatos=parseInt(prompt("Ingrese el número de zapatos que desea comprar:"));
+    let desc=0;
+    let precioTotal;
 
-      if (cantidad > 30) {
-        descuento = 0.4;
-      } else if (cantidad > 20) {
-        descuento = 0.2;
-      } else if (cantidad > 10) {
-        descuento = 0.1;
-      }
-
-      const precioTotalSinDescuento = cantidad * price;
-      const precioTotalConDescuento = precioTotalSinDescuento - (precioTotalSinDescuento * descuento);
-
-      return precioTotalConDescuento;
+    if (numZapatos > 30) {
+         descuento = 0.4;
+    } else if (numZapatos > 20) {
+         descuento = 0.2;
+    } else if (numZapatos > 10) {
+         descuento = 0.1;
     }
 
-    function ejecutarEjercicio() {
-      const cantidadDeZapatos = parseInt(document.getElementById('cantidad').value);
-      const precioAPagar = ejercicio5(cantidadDeZapatos);
+    precioTotal = numZapatos*80*(1-desc);
+    alert("El precio a pagar por los zapatos es: "+ precioTotal)
+}
 
-      document.getElementById('resultado').textContent = `Precio a pagar: ${precioAPagar}`;
-      console.log(precioAPagar);
-    }
+// const price = 100; // Asigna un valor de precio para cada zapato.
+
+//     function ejercicio5(cantidad) {
+//       let descuento = 0;
+
+//       if (cantidad > 30) {
+//         descuento = 0.4;
+//       } else if (cantidad > 20) {
+//         descuento = 0.2;
+//       } else if (cantidad > 10) {
+//         descuento = 0.1;
+//       }
+
+//       const precioTotalSinDescuento = cantidad * price;
+//       const precioTotalConDescuento = precioTotalSinDescuento - (precioTotalSinDescuento * descuento);
+
+//       return precioTotalConDescuento;
+//     }
+
+//     function ejecutarEjercicio() {
+//       const cantidadDeZapatos = parseInt(document.getElementById('cantidad').value);
+//       const precioAPagar = ejercicio5(cantidadDeZapatos);
+
+//       document.getElementById('resultado').textContent = `Precio a pagar: ${precioAPagar}`;
+//       console.log(precioAPagar);
+//     }
 
 // 6. Hacer un algoritmo en JavaScript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora.
 
 function ejercicio6(){
     let horasTrabajadas=parseInt(prompt("Ingrese el número de horas trabajadas"));
-    const pago;
+    let pago;
 
     if (horasTrabajadas <= 40){
         pago = 20*horasTrabajadas;
@@ -111,57 +129,132 @@ function ejercicio6(){
    Tipo C 20% de descuento
 */
 
-const ejercicio7 = (precioTotal, tipoMembresia) => {
-    let descuento = 0;
-   
-    tipoMembresia= tipoMembresia.toLocaleUpperCase()
-   
+const ejercicio7 = () => {
+    let montoParcial = parseFloat(prompt("Ingrese el monto de compra:"));
+    let tipoMembresia = prompt("Ingrese el tipo de membresía (A, B, C):").toUpperCase();
+    let desc = 0;
+    let precioTotal;
+  
     switch (tipoMembresia) {
-      case "A":
-        descuento = 0.1;
+      case 'A':
+        desc = 0.10;
         break;
-      case "B":
-        descuento = 0.15;
+      case 'B':
+        desc = 0.15;
         break;
-      case "C":
-        descuento = 0.2;
+      case 'C':
+        desc = 0.20;
+        break;
       default:
-        console.log("tipo de membresia no valido, no aplica descuento");
+        console.log("Tipo de membresía no válido, no aplica descuento");
+        alert("Tipo de membresía no válido, no aplica descuento");
+        desc = 0;
+        break;
     }
-   
-    const precioConDescuento = precioTotal - precioTotal * descuento;
-   
-    return precioConDescuento;
+  
+    precioTotal = montoParcial * (1 - desc);
+    alert("Según su tipo de membresía, su monto total es: " + precioTotal.toFixed(2));
   };
+
+  
+// const ejercicio7 = (precioTotal, tipoMembresia) => {
+//     let descuento = 0;
    
-  let precioInput = parseFloat(prompt("Ingrese el precio total de la compra:"));
+//     tipoMembresia= tipoMembresia.toLocaleUpperCase()
    
-  let tipoMembresia = prompt("Ingrese el tipo de menbresia (A,B,C):");
+//     switch (tipoMembresia) {
+//       case "A":
+//         descuento = 0.1;
+//         break;
+//       case "B":
+//         descuento = 0.15;
+//         break;
+//       case "C":
+//         descuento = 0.2;
+//       default:
+//         console.log("tipo de membresia no valido, no aplica descuento");
+//     }
    
-  let precioFinal = calcularPrecioConDescuento(precioInput, tipoMembresia);
+//     const precioConDescuento = precioTotal - precioTotal * descuento;
    
-  console.log("precio con descuento a pagar es igual a: " + precioFinal);
+//     return precioConDescuento;
+//   };
+   
+//   let precioInput = parseFloat(prompt("Ingrese el precio total de la compra:"));
+   
+//   let tipoMembresia = prompt("Ingrese el tipo de menbresia (A,B,C):");
+   
+//   let precioFinal = calcularPrecioConDescuento(precioInput, tipoMembresia);
+   
+//   console.log("precio con descuento a pagar es igual a: " + precioFinal);
 
 
 // 8. Hacer un algoritmo en JavaScript para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
 
+
+function ejercicio8(){
+    let nota1=parseInt(prompt("Ingrese la nota1:"));
+    let nota2=parseInt(prompt("Ingrese la nota2:"));
+    let nota3=parseInt(prompt("Ingrese la nota3:"));
+
+    let promedio= (nota1+nota2+nota3)/3;
+
+    if (promedio >= 11){
+        alert("Usted ha aprobado el curso con:"+ promedio)
+    }
+    else {
+        alert("Usted ha reprobado el curso con:"+ promedio)
+    }
+}
+
+
 // 9. Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
 
+const ejercicio9 = () => {
+    // Obtener el salario actual del trabajador
+    let salarioActual = parseFloat(prompt("Ingrese el salario actual del trabajador:"));
+    let aumento;
+  
+    // Determinar el aumento basado en el salario actual
+    if (salarioActual > 2000) {
+      aumento = salarioActual * 0.05;
+    } else {
+      aumento = salarioActual * 0.10;
+    }
+  
+    // Calcular el nuevo salario
+    let nuevoSalario = salarioActual + aumento;
+  
+    // Mostrar el resultado
+    alert(`El aumento es de: $${aumento.toFixed(2)}\nEl nuevo salario es de: $${nuevoSalario.toFixed(2)}`);
+  };
+  
 // 10. Hacer un algoritmo en JavaScript que diga si un número es par o impar.
 
-const determinarParidad = (numero) => {
+function ejercicio10() {
+    let numero = parseInt(prompt("Ingrese un número:"));
+    
     if (numero % 2 === 0) {
-      return "El numero es par";
+      alert("El número " + numero + " es par.");
+      console.log("El número " + numero + " es par.");
     } else {
-      return "El numero es impar";
+      alert("El número " + numero + " es impar.");
+      console.log("El número " + numero + " es impar.");
     }
-  };
+  }
+// const determinarParidad = (numero) => {
+//     if (numero % 2 === 0) {
+//       return "El numero es par";
+//     } else {
+//       return "El numero es impar";
+//     }
+//   };
    
-  let numeroParidad = parseInt(prompt("Ingrese un numero "));
+//   let numeroParidad = parseInt(prompt("Ingrese un numero "));
    
-  let resultado = determinarParidad(numeroParidad);
+//   let resultado = determinarParidad(numeroParidad);
    
-  console.log(resultado);
+//   console.log(resultado);
 
     // 11. Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
 
@@ -171,30 +264,41 @@ const determinarParidad = (numero) => {
 
 // 14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
 
-const esPrimo = (numero) => {
-    if (numero <= 1) return false;
-    if (numero <= 3) return true;
-    if (numero % 2 === 0 || numero % 3 == 0) return false;
+// const esPrimo = (numero) => {
+//     if (numero <= 1) return false;
+//     if (numero <= 3) return true;
+//     if (numero % 2 === 0 || numero % 3 == 0) return false;
    
-    for (let i = 5; i * i < numero; i += 6) {
-      if (numero % i === 0 || numero % (i + 2) == 0) return false;
+//     for (let i = 5; i * i < numero; i += 6) {
+//       if (numero % i === 0 || numero % (i + 2) == 0) return false;
+//     }
+   
+//     return true;
+//   };
+   
+//   const numeroInput = parseInt(prompt("ingrese un numero entre el 1 y 9"));
+   
+//   if (numeroInput >= 1 && numeroInput <= 9) {
+//     const resultado = esPrimo(numeroInput);
+   
+//     console.log(resultado);
+//   } else {
+//     console.log("numero ingresado esta fuera del rango");
+
+// 15. Hacer un algoritmo en JavaScript que convierta centímetros a pulgadas y libras a kilogramos.
+
+function ejercicio15(){
+    let horasTrabajadas=parseInt(prompt("Ingrese el número de horas trabajadas"));
+    let pago;
+
+    if (horasTrabajadas <= 40){
+        pago = 20*horasTrabajadas;
     }
-   
-    return true;
-  };
-   
-  const numeroInput = parseInt(prompt("ingrese un numero entre el 1 y 9"));
-   
-  if (numeroInput >= 1 && numeroInput <= 9) {
-    const resultado = esPrimo(numeroInput);
-   
-    console.log(resultado);
-  } else {
-    console.log("numero ingresado esta fuera del rango");
-
-    
-
-    // 15. Hacer un algoritmo en JavaScript que convierta centímetros a pulgadas y libras a kilogramos.
+    else {
+        pago =20*horasTrabajadas + 25*(horasTrabajadas-40);
+    }
+     alert("El sueldo semanal del trabajador es "+pago)
+}
 
     // 16. Hacer un algoritmo en JavaScript que lea un número y según ese número, indique el día que corresponde.
 
