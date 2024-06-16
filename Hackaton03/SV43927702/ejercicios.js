@@ -473,3 +473,126 @@ function ejercicio32(){
     alert("La ciudad con la mayor poblacion es: "+ ciudadMaxPoblacion+ " con una poblacion de "+ maxPoblacion+ " personas.") 
 
 }
+function ejercicio33(){
+    let continuar,numero,suma,cantidadNumeros,contador;
+    do {
+        suma = 0
+        contador = 1
+        cantidadNumeros=parseInt(prompt("¿Cuantos numeros desea ingresar? ")) 
+        while (contador <= cantidadNumeros) {
+            numero= parseInt(prompt("Ingrese el numero "+ contador+ ": "))
+           
+            suma = suma + numero;
+            contador = contador + 1;
+        }
+        alert("La suma total de los numeros ingresados es: "+ suma) 
+        continuar=prompt("Desea continuar? (S/N): ").toString ;
+       
+    } while (continuar === 'N' || continuar === 'n');
+}
+function ejercicio34(){
+    let i, j;
+    for (i=1 ;i<=9 ;i++){
+        console.log("Tabla de multiplicar del "+ i) ;
+        for(j = 1 ;j<= 12;j++ ) {
+            console.log(+ i+ " x "+ j+ " = "+(i * j) );
+        }
+   
+    }
+}
+function ejercicio35(){
+    let numero;
+    let maximo;
+    let minimo;
+    numero=parseInt(prompt( "Ingrese el numero 1: "))
+    maximo = numero;
+    minimo = numero;
+    for(let i = 2 ;i<= 20 ;i++) {
+        numero =parseInt(prompt("Ingrese el numero "+ i+ ": "))
+        
+        if(numero > maximo) { maximo = numero;}
+        if(numero < minimo ) { minimo = numero;}
+    }
+    
+    alert("El numero mayor es: "+ maximo)
+    alert("El numero menor es: "+ minimo)
+}
+function ejercicio37(){
+    let a, b,resto;
+    a=parseInt(prompt("Ingrese el primer numero entero: "))
+    b=parseInt(prompt("Ingrese el primer numero entero: "))
+
+    while(b !== 0) {
+        resto = a % b;
+        a = b;
+        b = resto;
+    }
+    alert("El maximo comun divisor (MCD) de los numeros "+ a+ " y "+ b+ " es: "+ a)
+}
+function ejercicio36(){
+    let n, i,termino_actual, termino_anterior, termino_anterior_anterior;
+   
+    n=parseInt(prompt("Ingrese el numero de terminos de la serie de Fibonacci a generar: "))
+   
+    termino_anterior_anterior = 0;
+    termino_anterior = 1;
+    console.log("Los primeros dos terminos de la serie de Fibonacci son: ")
+    console.log(termino_anterior_anterior)
+    console.log(termino_anterior)
+    for(i = 3 ; i<=n ;i++) {
+        termino_actual = termino_anterior + termino_anterior_anterior;
+        console.log( termino_actual)
+        termino_anterior_anterior = termino_anterior
+        termino_anterior = termino_actual
+    }
+        
+    
+}
+function ejercicio38(){
+    let numero, sumaDivisores,divisor;
+    numero=parseInt(prompt("Ingrese un n�mero entero positivo: "))
+    sumaDivisores = 0;
+    for(divisor =1; divisor <=(numero/2); divisor++) {
+        if(numero % divisor == 0){sumaDivisores = sumaDivisores + divisor;}
+    }
+    if(sumaDivisores = numero){ alert("El numero ", numero, " es un numero perfecto.")} 
+       
+    else{alert("El numero "+ numero+ " no es un numero perfecto.")}
+        
+   
+	
+}
+function ejercicio39(){
+    let n,termino,pi;
+  
+    n=parseInt(prompt("Ingrese el numero de terminos para la aproximacion de Pi: "))
+    pi =0.0;
+
+     for(let i = 0 ;i<= n-1 ;i++){
+        termino = 4.0 / (2 * i + 1);
+        if(i % 2 == 0){
+            pi = pi + termino;
+        }
+        else{
+            pi = pi - termino;
+        }
+     }
+    alert("La aproximacion de Pi con "+ n+ " terminos de la serie de Gregory-Leibniz es: "+ pi)
+}
+function ejercicio40(){
+    let n,termino,pi;
+  
+    n=parseInt(prompt("Ingrese el numero de terminos para la aproximacion de Pi: "))
+    pi =0.0;
+
+     for(let i = 0 ;i<= n-1 ;i++){
+        termino = 4.0 / (2 * i + 1);
+        if(i % 2 == 0){
+            pi = pi + termino;
+        }
+        else{
+            pi = pi - termino;
+        }
+     }
+    alert("La aproximacion de Pi con "+ n+ " terminos de la serie de Gregory-Leibniz es: "+ pi)
+}
