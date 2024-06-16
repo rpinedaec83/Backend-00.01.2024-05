@@ -735,5 +735,17 @@ function ejercicio39(){
 }
 
 function ejercicio40(){
-
+    let limite = 1000;
+    let aproximacion_pi = 3;
+    let denominador = 2;
+    let signo = 1;
+    
+    for (let i = 1; i <= limite; i++) {
+        let termino = 4 / (denominador * (denominador + 1) * (denominador + 2)) * signo;
+        aproximacion_pi = aproximacion_pi + termino;
+        denominador = denominador + 2;
+        signo = signo * (-1);
+    }
+    
+    alert("Aproximación de pi con la serie de Nilakantha: " + aproximacion_pi);    
 }
