@@ -242,19 +242,7 @@ alert("El total sin descuento es: "+total+" Descuento : "+descuento+" Total a Pa
     }
     alert("La hora dentro de un segundo es: "+ hora+ ":"+ minutos+ ":"+ segundos)
  }
-/**
-Definir n Como Entero
-    Definir suma Como Entero
-    Escribir "Ingrese el valor de n: "
-    Leer n
-    suma = 0
-    Para i desde 1 hasta n Hacer
-        suma = suma + i
-    FinPara
-    Escribir "La suma de los primeros ", n, " n�meros es: ", suma
-	
-	
-  */
+
 function ejercicio18(){
     let PRECIO_UNIDAD_2=0;
     let PRECIO_UNIDAD_3=0;
@@ -359,3 +347,129 @@ function ejercicio22(){
             }
             alert("La suma de Todos Los Pares es : "+suma)
             }
+function ejercicio25(){
+    let factorial,contador;
+    let numero=parseInt(prompt("Ingrese un numero entero positivo: "))
+    if(numero < 0){alert("El factorial no esta definido para numeros negativos.")}
+   else{
+        factorial = 1;
+        contador =1;
+        while (contador<=numero) {
+            factorial = factorial * contador;
+            contador = contador + 1;
+        }
+   }
+        
+        alert("El factorial de "+ numero+ " es: "+ factorial) 
+   
+}
+function ejercicio26(){
+    let divisor,cociente,resto;
+    dividendo=parseInt(prompt("Ingrese el dividendo:"))
+    divisor=parseInt(prompt("Ingrese el divisor: "))
+
+    if(divisor==0){alert("La division por cero no Esta definida.")}  
+    else{
+    cociente = 0;
+    resto = dividendo;
+    while (resto >= divisor) {
+        resto = resto - divisor;
+        cociente = cociente + 1;
+    }
+    }
+    alert("El cociente es : "+cociente+" El resto es: "+resto)
+}
+function ejercicio27(){
+    let numero,suma,contador,media;
+    suma = 0;
+    contador =0;
+    numero=parseInt(prompt("Ingrese un numero positivo o un numero negativo para terminar"))
+    while (numero >= 0 ) {
+        suma = suma + numero;
+        contador = contador + 1;
+        numero=parseInt(prompt("Ingrese un numero positivo o un numero negativo para terminar"))
+    }
+    if(contador > 0){
+        media = suma / contador;
+        alert("La media de los numeros positivos ingresados es: "+ media)
+        
+    }else{alert("No se ingresaron numeros positivos.") }
+}
+function ejercicio28(){
+    let suma,contador;
+    suma = 0;
+    contador =1;
+    do {
+        suma = suma + contador;
+        contador = contador + 1; 
+    } while (contador <=100);
+    alert("La suma de los primeros 100 numeros es: "+ suma) 
+}
+function ejercicio29(){
+    let suma,contador;
+    suma = 0;
+    contador = 1;
+    while (contador <= 100 ) {
+        suma = suma + contador;
+        contador = contador + 1;
+    } 
+    alert("La suma de los primeros 100 numeros es: "+ suma)
+}
+function ejercicio30(){
+   let suma,i;
+    suma = 0;
+    for (i = 1; i <= 100; i++) {
+        suma = suma + i;
+    }
+       
+    alert("La suma de los primeros 100 numeros es: "+ suma) 
+}
+function ejercicio31(){
+    let numero,sumaPares,sumaImpares,contadorPares,contadorImpares,mediaPares,mediaImpares; 
+    
+    sumaPares = 0;
+    sumaImpares = 0;
+    contadorPares = 0;
+    contadorImpares = 0;
+   
+    for(let i = 1 ;i<= 10; i++) {
+        numero =parseInt(prompt("Ingrese el numero "+ i+ ": "))
+    
+        
+        if(numero % 2 == 0) {
+            sumaPares = sumaPares + numero;
+            contadorPares = contadorPares + 1;
+        }else{
+            sumaImpares = sumaImpares + numero;
+            contadorImpares = contadorImpares + 1;
+        }
+    }    
+    
+    if(contadorPares > 0 ){
+        mediaPares =sumaPares / contadorPares;
+    }else{mediaPares = 0;} 
+    if(contadorImpares > 0){mediaImpares = sumaImpares / contadorImpares;}
+    else{mediaImpares = 0;}
+	
+    alert("La media de los numeros pares es: "+ mediaPares) 
+    alert("La media de los numeros impares es: "+ mediaImpares)
+	
+}
+function ejercicio32(){
+    let nombreCiudad,poblacion,maxPoblacion,ciudadMaxPoblacion;
+    maxPoblacion = 0
+    ciudadMaxPoblacion ="";
+    for(let i = 1 ;i<= 11; i++) {
+        nombreCiudad=prompt("Ingrese el nombre de la ciudad "+ i+ ": ") 
+        poblacion=parseInt(prompt("Ingrese la poblacion de la ciudad; "+nombreCiudad) )
+        
+        if(poblacion > maxPoblacion){
+            maxPoblacion = poblacion;
+            ciudadMaxPoblacion = nombreCiudad;
+        }  
+    }
+        
+   
+    alert("La ciudad con la mayor poblacion es: "+ ciudadMaxPoblacion+ " con una poblacion de "+ maxPoblacion+ " personas.") 
+
+}
