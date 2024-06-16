@@ -24,7 +24,7 @@ Algoritmo Pregunta_31
 	Fin Si
 	Si contadorImpares>0 Entonces
 		mediaImpares<-sumImpares/contadorImpares
-		Escribir "La media de los números pares es: ", mediaImpares
+		Escribir "La media de los números impares es: ", mediaImpares
 	SiNo
 		Escribir "No se ingresaron números impares"
 	Fin Si
