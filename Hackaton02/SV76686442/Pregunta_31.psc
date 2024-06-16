@@ -18,15 +18,15 @@ Algoritmo Pregunta_31
 	Fin Para
 	Si contadorPares>0 Entonces
 		mediaPares<-sumPares/contadorPares
-		Escribir "La media de los números pares es: ", mediaPares
+		Escribir "La media de los nï¿½meros pares es: ", mediaPares
 	SiNo
-		Escribir "No se ingresaron números pares"
+		Escribir "No se ingresaron nï¿½meros pares"
 	Fin Si
 	Si contadorImpares>0 Entonces
 		mediaImpares<-sumImpares/contadorImpares
-		Escribir "La media de los números impares es: ", mediaImpares
+		Escribir "La media de los nÃºmeros pares es: ", mediaImpares
 	SiNo
-		Escribir "No se ingresaron números impares"
+		Escribir "No se ingresaron nï¿½meros impares"
 	Fin Si
 FinAlgoritmo
 
