@@ -22,6 +22,6 @@ Algoritmo pregunta35
         FinSi
     FinPara
 
-    Escribir "El número mayor es: ", mayor
-    Escribir "El número menor es: ", menor
+    Escribir "El numero mayor es: ", mayor
+    Escribir "El numero menor es: ", menor
 FinAlgoritmo

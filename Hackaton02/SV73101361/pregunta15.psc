@@ -14,7 +14,7 @@ Algoritmo pregunta15
             Escribir "Ingrese la cantidad en centimetros:";
             Leer cm;
             pulgadas <- cm / 2.54;
-            Escribir cm, " centímetros son ", pulgadas, " pulgadas.";
+            Escribir cm, " centimetros son ", pulgadas, " pulgadas.";
         2:
             Escribir "Ingrese la cantidad en libras:";
             Leer libras;

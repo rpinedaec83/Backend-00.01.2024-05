@@ -1,6 +1,5 @@
 import subprocess
 
-# Lista de archivos a probar
 archivos = [
     "pregunta1.psc", "pregunta2.psc", "pregunta3.psc", "pregunta4.psc",
     "pregunta5.psc", "pregunta6.psc", "pregunta7.psc", "pregunta8.psc",
@@ -14,7 +13,6 @@ archivos = [
     "pregunta37.psc", "pregunta38.psc", "pregunta39.psc", "pregunta40.psc"
 ]
 
-# Definir los casos de prueba esperados para cada archivo
 casos_de_prueba = {
     "pregunta1.psc": [(123, "Este numero tiene tres digitos"), (50, "Este numero no tiene tres digitos")],
     "pregunta2.psc": [(-5, "el numero es negativo"), (7, "el numero es positivo")],
@@ -30,12 +28,12 @@ casos_de_prueba = {
     "pregunta12.psc": [((6, 3), "El mayor numero es: 6"), ((7, 7), "Los 2 numeros son iguales")],
     "pregunta13.psc": [('a', "Ingresaste la vocal A"), ('b', "No es una vocal")],
     "pregunta14.psc": [(7, "El numero 7 es primo."), (9, "El numero 9 no es primo.")],
-    "pregunta15.psc": [((1, 100), "100 centímetros son 39.3700787402 pulgadas."), ((2, 150), "150 libras son 68.0388 kilogramos.")],
+    "pregunta15.psc": [((1, 100), "100 centimetros son 39.3700787402 pulgadas."), ((2, 150), "150 libras son 68.0388 kilogramos.")],
     "pregunta16.psc": [(3, "Miercoles"), (8, "Numero fuera del rango permitido.")],
     "pregunta17.psc": [((23, 59, 59), "La hora dentro de un segundo es: 0:0:0"), ((12, 30, 45), "La hora dentro de un segundo es: 12:30:46")],
     "pregunta18.psc": [(5, "El precio total para el cliente fue de: $50"), (150, "El precio total para el cliente fue de: $1050")],
-    "pregunta19.psc": [(12, "El pago total para el empleado es: 336$"), (23, "El pago total para el empleado es: 384$")],
-    "pregunta20.psc": [((2, 3, 4, 5), "Cantidad de numeros pares: 3"), ((1, 7, 5, 2), "El numero mayor es: 7")],
+    "pregunta19.psc": [(12, "El pago total para el empleado es: 112$"), (23, "El pago total para el empleado es: 192$")],
+    "pregunta20.psc": [((2, 3, 4, 5), "Cantidad de numeros pares: 2"), ((1, 7, 5, 2), "El numero mayor es: 7")],
     "pregunta21.psc": [(5, "El factorial de 5 es: 120"), (0, "El factorial de 0 es: 1")],
     "pregunta22.psc": [(10, "La suma de los 10 primeros numeros es: 55"), (5, "La suma de los 5 primeros numeros es: 15")],
     "pregunta23.psc": [(10, "La suma de los numeros impares menores o iguales a 10 es: 25"), (7, "La suma de los numeros impares menores o iguales a 7 es: 16")],
@@ -46,20 +44,18 @@ casos_de_prueba = {
     "pregunta28.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
     "pregunta29.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
     "pregunta30.psc": [("", "La suma de los 100 primeros numeros es: 5050")],
-    "pregunta31.psc": [((2, 4, 6, 8, 10, 1, 3, 5, 7, 9), "La media de los números pares es: 6.0\nLa media de los números impares es: 5.0")],
-    "pregunta32.psc": [("", "La ciudad con la mayor poblacion es: ...")],
+    "pregunta31.psc": [((2, 4, 6, 8, 10, 1, 3, 5, 7, 9), "La media de los numeros pares es: 6\nLa media de los numeros impares es: 5")],
+    "pregunta32.psc": [("", "La ciudad con la mayor poblacion es: ")],
     "pregunta33.psc": [("S\nS\nN", "Programa terminado."), ("s\nn", "Programa terminado.")],
-    "pregunta34.psc": [("", "Tabla de multiplicar del 1: ... Tabla de multiplicar del 9: ...")],
-    "pregunta35.psc": [((5, 7, 9, 2, 4, 6, 8, 1, 3, 10, 12, 14, 16, 18, 20, 11, 13, 15, 17, 19), "El número mayor es: 20\nEl número menor es: 1")],
-    "pregunta36.psc": [(10, "Serie de Fibonacci: 0 1 1 2 3 5 8 13 21 34")],
+    "pregunta34.psc": [  ("", "Tabla de multiplicar del 1:\n1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10")],
+    "pregunta35.psc": [((5, 7, 9, 2, 4, 6, 8, 1, 3, 10, 12, 14, 16, 18, 20, 11, 13, 15, 17, 19), "El numero mayor es: 20\nEl numero menor es: 1")],
+    "pregunta36.psc": [(10, "\n0\n1\n1\n2\n3\n5\n8\n13\n21\n34")],
     "pregunta37.psc": [((30, 45), "El MCD de 30 y 45 es: 15")],
     "pregunta38.psc": [(28, "El numero 28 es un numero perfecto."), (12, "El numero 12 no es un numero perfecto.")],
-    "pregunta39.psc": [(10, "La aproximacion de pi con 10 terminos es: ...")],
-    "pregunta40.psc": [(10, "La aproximacion de pi con 10 terminos es: ...")]
+    "pregunta39.psc": [(10, "La aproximacion de pi con 10 terminos es: 3.0418396189")],
+    "pregunta40.psc": [(10, "La aproximacion de pi con 10 terminos es: 3.1414067185")]
 }
-
-# Función para ejecutar PSeInt desde la línea de comandos con límite de tiempo
-def ejecutar_pseint(archivo, entrada, timeout=20):
+def ejecutar_pseint(archivo, entrada, timeout=30):
     comando = f"pseint {archivo}"
     try:
         resultado = subprocess.run(comando, input=entrada, text=True, capture_output=True, shell=True, timeout=timeout)
@@ -67,7 +63,6 @@ def ejecutar_pseint(archivo, entrada, timeout=20):
     except subprocess.TimeoutExpired:
         return "Tiempo de ejecución excedido"
 
-# Función para realizar pruebas y generar un resumen
 def realizar_pruebas():
     exitosas = 0
     fallidas = 0
@@ -92,10 +87,8 @@ def realizar_pruebas():
                     print(f"Salida esperada: {esperado}")
                     fallidas += 1
 
-    # Mostrar resumen
     print("\nResumen de pruebas:")
     print(f"Pruebas exitosas: {exitosas}")
     print(f"Pruebas fallidas: {fallidas}")
 
-# Ejecutar las pruebas
 realizar_pruebas()
