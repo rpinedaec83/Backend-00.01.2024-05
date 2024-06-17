@@ -941,6 +941,43 @@ function ejercicio16() {
 
     //     Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...
 
+
+    const ejercicio39 = () => {
+        let iteraciones = parseInt(prompt("Ingrese el número de iteraciones para aproximar π:"));
+    
+        if (isNaN(iteraciones) || iteraciones <= 0) {
+            alert("Ingrese un número entero positivo válido para las iteraciones");
+            return;
+        }
+        let pi = 0;
+        let signo = 1;
+    
+        for (let i = 0; i < iteraciones; i++) {
+            pi += signo * (4 / (2 * i + 1));
+            signo *= -1;
+        }
+    
+        alert(`La aproximación de π después de ${iteraciones} iteraciones es: ${pi}`);
+    };
+
     // 40. Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es:
 
     //     Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
+
+    const ejercicio40 = () => {
+        let iteraciones = parseInt(prompt("Ingrese el número de iteraciones para aproximar π:"));
+    
+        if (isNaN(iteraciones) || iteraciones <= 0) {
+            alert("Ingrese un número entero positivo válido para las iteraciones");
+            return;
+        }
+        let pi = 3;
+        let signo = 1;
+    
+        for (let i = 1; i <= iteraciones; i++) {
+            pi += signo * (4 / ((2*i)*(2*i+1)*(2*i+2 )));
+            signo *= -1;
+        }
+    
+        alert(`La aproximación de π después de ${iteraciones} iteraciones es: ${pi}`);
+    };
