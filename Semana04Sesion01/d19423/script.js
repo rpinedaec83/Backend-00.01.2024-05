@@ -65,4 +65,7 @@ Agregar crema batida: Si deseas, a√±ade crema batida en la parte superior y roc√
         console.log("Agregando "+ pedido.adicional);
         console.log("Sirviendo "+ pedido.producto +" para "+pedido.nombre)
     }
+    else if(pedido.tipoCafe=="Expreso"){
+        console.log("Expreso")
+    }
 }
