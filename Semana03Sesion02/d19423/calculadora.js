@@ -91,3 +91,5 @@ function isNumber(value) {
     return typeof value === 'number';
 }
 
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
