@@ -189,3 +189,66 @@ function task_10(){
         alert("Numero impar");
     }
 }
+
+/**
+ * 11. Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
+ */
+
+function task_11(){
+    let num1 = parseInt(prompt("Ingrese el primero numero: "));
+    let num2 = parseInt(prompt("Ingrese el segundo numero: "));
+    let num3 = parseInt(prompt("Ingrese el tercer numero: "));
+
+    let mayor1 = resultado(num1, num2);
+    let mayor2 = resultado(mayor1, num3);
+
+    alert(`El numero mayor de ${num1}, ${num2}, ${num3} es: ${mayor2}`)
+}
+
+/**
+ * 12. Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor.
+ */
+
+function task_12(){
+    let num1 = parseInt(prompt("Ingrese el primero numero: "));
+    let num2 = parseInt(prompt("Ingrese el segundo numero: "));
+
+    alert(`El numero mayor de: ${num1}, ${num2} es: ${resultado(num1, num2)}`);
+}
+
+/**
+ * 13. Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal.
+ */
+
+function task_13(){
+    let letra = prompt("Ingrese una letra: ");
+
+    switch(letra) {
+        case "a":
+            alert("Ingreso la vocal 'a'.");
+            break;
+        case "e":
+            alert("Ingreso la vocal 'e'.");
+            break;
+        case "i":
+            alert("Ingreso la vocal 'i'.");
+            break;
+        case "o":
+            alert("Ingreso la vocal 'o'.");
+            break;
+        case "u":
+            alert("Ingreso la vocal 'u'.");
+            break;
+        default:
+            alert("No ingreso una vocal.");
+            break;
+    }
+}
+
+/**
+ * 14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y al 9 y determine
+ * si es un número primo.
+ */
+
+function task_14(){
+}
