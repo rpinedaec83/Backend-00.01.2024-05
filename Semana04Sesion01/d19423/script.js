@@ -38,25 +38,13 @@ function pedirCafe(){
         cremaBatida,
         adicional
     }
-    prepararCafe(objPedido);
+  let estado =  prepararCafe(objPedido);
+  alert(estado)
     console.log(objPedido)
 }
 
 function prepararCafe(pedido){
     if(pedido.tipoCafe=="Frappuccinos"){
-        /**
-         * Preparar el café: Haz una taza de café fuerte y déjalo enfriar. Puedes usar café instantáneo o preparado en cafetera.
-
-Mezclar los ingredientes: En una licuadora, añade el café enfriado, la leche, el azúcar, el hielo y el sirope de chocolate o caramelo si estás usando.
-
-Licuar: Mezcla todo a alta velocidad hasta que el hielo esté completamente triturado y la mezcla tenga una consistencia suave.
-
-Servir: Vierte la mezcla en un vaso grande.
-
-Agregar crema batida: Si deseas, añade crema batida en la parte superior y rocía un poco más de sirope de chocolate o caramelo.
-
-
-         */
         console.log("Buscar Cafe");
         console.log("Mezclar los ingredientes");
         console.log("Agregar la leche "+ pedido.tipoLeche);
@@ -66,6 +54,59 @@ Agregar crema batida: Si deseas, añade crema batida en la parte superior y roc�
         console.log("Sirviendo "+ pedido.producto +" para "+pedido.nombre)
     }
     else if(pedido.tipoCafe=="Expreso"){
-        console.log("Expreso")
+        console.log("Moler y Dosificar el Cafe para "+ pedido.tipoCafe);
+        console.log("Compactando el café molido");
+        console.log("Extraer el expreso");
+        console.log("Servir en un vaso "+ pedido.tamaño)
+        console.log("Agregando "+ pedido.tipoLeche+ " y " + pedido.adicional);
+        console.log("Sirviendo "+ pedido.producto +" para "+pedido.nombre)
+    }
+    pedirMasAzucar()
+    return "El cafe "+pedido.tipoCafe+ " esta listo"
+    
+}
+
+let pedirMasAzucar = function(){
+    console.log("Dame mas azucar")
+}
+
+function multiplcacion(a,b){
+    return a * b
+}
+let multi = function(a,b){
+    return a*b
+}
+
+let myFunction = (a, b) => a * b;
+
+const vehiculo = {
+    marca:"BMW",
+    modelo:"M3",
+    color:"Blanco",
+    año: 2023,
+    trasmision : "StepTronic",
+    combustible: "Gasolina",
+    acelerar(){
+        console.log("El vehiculo "+ this.marca + " esta acelerando")
+    },
+    frenar(){
+        console.log("El vehiculo "+ this.marca + " esta frenando")
+    },
+    girar(direccion){
+        console.log("El vehiculo "+ this.marca + " esta girando a la "+direccion)
+    },
+    encender(){
+        console.log("El vehiculo "+ this.marca + " se esta encendiendo")
+    },
+    apagar(){
+        console.log("El vehiculo "+ this.marca + " se esta apagando")
     }
 }
+
+vehiculo.encender();
+vehiculo.girar("Derecha")
+vehiculo.frenar();
+vehiculo.apagar()
+//vehiculo = "Soy un string"
+vehiculo.marca = "Mercedes"
+console.log(vehiculo)
