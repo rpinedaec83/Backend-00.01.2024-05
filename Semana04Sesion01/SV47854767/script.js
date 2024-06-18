@@ -67,5 +67,14 @@ Agregar crema batida: Si deseas, añade crema batida en la parte superior y roc�
     }
     else if(pedido.tipoCafe=="Expreso"){
         console.log("Expreso")
+        console.log("Moler y Dosificar el Cafe para "+ pedido.tipoCafe);
+        console.log("Compactando el café molido");
+        console.log("Extraer el expreso");
+        console.log("Servir en un vaso "+ pedido.tamaño)
+        console.log("Agregando "+ pedido.tipoLeche+ " y " + pedido.adicional);
+        console.log("Sirviendo "+ pedido.producto +" para "+pedido.nombre)
     }
+   
 }
+
+
