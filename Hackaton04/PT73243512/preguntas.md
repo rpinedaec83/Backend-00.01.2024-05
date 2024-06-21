@@ -1,4 +1,4 @@
-# PREUNTAS
+# PREGUNTAS
 
 ### ¿Cómo defines una función?
  En JavaScript, se puede definir una funciones de varias formas. La forma más común es usando la palabra clave "function".
