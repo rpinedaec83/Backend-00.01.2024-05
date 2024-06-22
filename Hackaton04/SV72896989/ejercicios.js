@@ -103,3 +103,25 @@ function ejercicio1_reto2() {
     alert(mensaje(nombre, apellido, edad));
 
 }
+
+function ejercicio2_reto2(){
+
+    // Como quiero que el usuario ingrese los numeros cuyos cubos se sumaran, pedire que los separe por comas para que ingrese cuantos desee
+    let input = prompt("Ingrese los numeros separados por comas");
+
+    // Ahora convertire el string en un array de numeros
+    let numbers = input.split(",").map(num => Number(num.trim()));
+  
+    // Creo la función para el calculo de la suma de los cubos
+    const sumOfCubes = (...numbers) => {
+      return numbers.reduce(
+        (accumulator, currentValue) => accumulator + Math.pow(currentValue, 3),
+        0
+      );
+    };
+  
+    let resultado = sumOfCubes(...numbers);
+  
+    alert(`La suma de los cubos de los numeros ingresados es ${resultado}`);
+    
+}
