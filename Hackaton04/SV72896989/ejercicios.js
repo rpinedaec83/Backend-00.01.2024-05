@@ -122,7 +122,9 @@ function ejercicio2_reto2(){
   
     let resultado = sumOfCubes(...numbers);
   
-    alert(`La suma de los cubos de los numeros ingresados es ${resultado}`);
+    let formattedResult = `sumOfCubes(${numbers.join(", ")}) ➞ ${resultado}`;
+
+    alert(formattedResult);
     
 }
 
@@ -133,7 +135,7 @@ function ejercicio3_reto2(){
     // Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui. Uso "hola" como ejemplo
     alert("El tipo de valor es " + typeValue("hola"));
 
-};
+}
     
 function ejercicio4_reto2(){
 
@@ -160,13 +162,32 @@ function ejercicio5_reto2(){
 }
 
 function ejercicio6_reto2() {
-
-    let numeros = prompt("Ingrese una matriz de numeros separados por coma para determinar el minimo y maximo").split(",").map(num => Number(num.trim()));
+    let numeros = prompt("Ingrese una matriz de números separados por coma para determinar el mínimo y máximo")
+                    .split(",")
+                    .map(num => Number(num.trim()));
 
     let min = Math.min(...numeros);
     let max = Math.max(...numeros);
 
-    alert(`El numero minimo es ${min} y el numero maximo es ${max}`);
+    let formattedResult = `minMax([${numeros.join(", ")}]) ➞ [${min}, ${max}]`;
+
+    alert(formattedResult);
 }
 
+function ejercicio7_reto2() {
+    try {
+        let phoneNumber = prompt("Ingrese 10 numeros enteros (entre 0 y 9) separados por coma para formar un numero de telefono").split(",").map(num => parseInt(num.trim(), 10));
 
+        if (phoneNumber.length !== 10) {
+            throw new Error(`La matriz debe contener exactamente 10 numeros enteros`);
+        }
+
+        let formattedNumber = `(${phoneNumber.slice(0, 3).join("")}) ${phoneNumber.slice(3, 6).join("")}-${phoneNumber.slice(6, 10).join("")}`;
+
+        // Mostrar el resultado en un alert con el formato solicitado
+        alert(`formatPhoneNumber([${phoneNumber.join(', ')}]) ➞ "${formattedNumber}"`);
+
+    } catch (error) {
+        alert(error.message);
+    }
+}
