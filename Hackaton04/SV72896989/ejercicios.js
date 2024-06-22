@@ -191,3 +191,15 @@ function ejercicio7_reto2() {
         alert(error.message);
     }
 }
+
+function ejercicio8_reto2() {
+
+    let input = prompt("Ingrese una matriz de matrices. Separe los numeros con comas y las matrices con puntos y coma (ejemplo: 4,2,7,1;20,70,40,90;1,2,0)");
+
+    let matriz_unica = input.split(";").map(subArray => subArray.split(",").map(num => parseInt(num.trim(), 10)));
+
+    let numeros_mayores = matriz_unica.map(subArray => Math.max(...subArray));
+
+    alert(`findLargestNums([${matriz_unica.map(subArray => `[${subArray.join(', ')}]`).join(', ')}]) ➞ [${numeros_mayores.join(', ')}]`);
+}
+
