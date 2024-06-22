@@ -6,3 +6,12 @@ function ejercicio1_reto1(){
     alert("La suma de los dos numeros es " + suma);
 
 }
+
+function ejercicio2_reto1(){
+
+    let base = parseFloat(prompt("Ingrese el numero a potenciar"));
+    let exponente = parseFloat(prompt("Ingrese el exponente"))
+    let potencia = Math.pow(base, exponente);
+    alert("La potencia " + base + " elevado a la " + exponente + " es " + potencia)
+
+}
