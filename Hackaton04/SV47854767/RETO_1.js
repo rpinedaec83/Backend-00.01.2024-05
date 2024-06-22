@@ -63,17 +63,18 @@ function calculator(num1, operador, num2) {
 console.log(calculator(2, "/", 3)); 
 console.log(calculator(4, "x", 2)); 
 
-/*/ Pregunta ¿Cómo defines una función?
 
-Usando la palabra clave function -> function nombreFuncion ()
+// 1. Pregunta ¿Cómo defines una función?
 
-Usando una variable -> let nombreFuncion = function ()
+// Usando la palabra clave function -> function nombreFuncion ()
 
-Usando Arrow Function -> let nombreFuntion = () => { }
+// Usando una variable -> let nombreFuncion = function ()
 
-Usando objeto -> const objeto = {nombreFuncion () { } }
+// Usando Arrow Function -> let nombreFuntion = () => { }
 
-// Pregunta ¿Hasta cuantos argumentos puedes declarar en una función? 
+// Usando objeto -> const objeto = {nombreFuncion () { } }
 
-No hay limite, se puede declarar los argumentos que sean necesarios.
+// 2. Pregunta ¿Hasta cuantos argumentos puedes declarar en una función? 
+
+// No hay limite, se puede declarar los argumentos que sean necesarios.
 
