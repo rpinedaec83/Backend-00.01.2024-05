@@ -203,3 +203,14 @@ function ejercicio8_reto2() {
     alert(`findLargestNums([${matriz_unica.map(subArray => `[${subArray.join(', ')}]`).join(', ')}]) ➞ [${numeros_mayores.join(', ')}]`);
 }
 
+function ejercicio9_reto2() {
+
+    let palabra = prompt("Ingrese una palabra");
+    let caracter = prompt("Ingrese un caracter para buscar");
+        
+    let primer_indice = palabra.indexOf(caracter);
+    let ultimo_indice = palabra.lastIndexOf(caracter);
+
+    alert(`charIndex("${palabra}", "${caracter}") ➞ [${primer_indice}, ${ultimo_indice}] // The first "${caracter}" has index ${primer_indice}, the last "${caracter}" has index "${ultimo_indice}".`);
+
+}
