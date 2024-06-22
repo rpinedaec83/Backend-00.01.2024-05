@@ -420,7 +420,7 @@ function repeat(numero, veces){
 
 
 /**
- * Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las 
+ * 20.Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las 
  * vocales en una cadena con una vocal especificada.
  * "apples and bananas".vreplace("u") ➞ "upplus und bununus"
 
@@ -436,3 +436,51 @@ String.prototype.vreplace = function(vocal) {
 let str = "Hola Mundo";
 let resultado = str.vreplace('i');
 // console.log(resultado);
+
+
+
+
+/**
+ * 21.Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta: "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+ * findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+ */
+function findNemo(sentence) {
+  //dividir la cadena en palabras
+  let words = sentence.split(" ");
+  
+  //buscar la palabra "Nemo"
+  let position = words.indexOf("Nemo");
+  
+  //verificar si "Nemo" fue encontrado
+  if (position !== -1) {
+      return `¡Encontré a Nemo en ${position + 1}!`;
+  } else {
+      return "¡No encontré a Nemo!";
+  }
+}
+
+//console.log(findNemo("donde estara el Nemo"));
+
+
+
+
+/**
+ * 22.Cree una función que capitalice la última letra de cada palabra.
+ * capLast("hello") ➞ "hellO"
+ */
+function capLast(sentence) {
+  let words = sentence.split(" ");
+  
+  let result = words.map(word => {
+      if (word.length === 0) return word;
+
+      let lastChar = word.charAt(word.length - 1).toUpperCase();
+      let restOfWord = word.slice(0, -1);
+      return restOfWord + lastChar;
+  });
+
+  //unir las palabras procesadas en una sola cadena
+  return result.join(" ");
+}
+
+// console.log(capLast("holaaaaaaaaaaaaaaaaa"));
