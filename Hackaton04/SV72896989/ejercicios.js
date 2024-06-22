@@ -125,3 +125,14 @@ function ejercicio2_reto2(){
     alert(`La suma de los cubos de los numeros ingresados es ${resultado}`);
     
 }
+
+function ejercicio3_reto2(){
+    
+    const typeValue = (valor) => typeof valor;
+ 
+    // Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui. Uso "hola" como ejemplo
+    alert("El tipo de valor es " + typeValue("hola"));
+
+};
+    
+
