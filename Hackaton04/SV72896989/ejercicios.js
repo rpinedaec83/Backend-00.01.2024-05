@@ -87,3 +87,19 @@ function ejercicio5_reto1() {
 
     alert(`El resultado es ${resultado}`);
 }
+
+//RETO 2
+
+function ejercicio1_reto2() {
+    
+    let nombre = prompt("Ingrese su nombre");
+    let apellido = prompt("Ingrese su apellido");
+    let edad = prompt("Ingrese su edad");
+    
+    const mensaje = (nombre, apellido, edad) => {
+        return `Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`;
+    };
+   
+    alert(mensaje(nombre, apellido, edad));
+
+}
