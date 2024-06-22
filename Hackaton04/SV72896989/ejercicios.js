@@ -1,3 +1,5 @@
+//RETO 1
+
 function ejercicio1_reto1(){
 
     let a = parseFloat(prompt("Ingrese el primer numero"));
@@ -50,4 +52,38 @@ function ejercicio4_reto1() {
 
     alert(`El area del triangulo es ${area}`);
 
+}
+
+function ejercicio5_reto1() {
+    let numero_1 = prompt("Ingrese el primer numero");
+    let operador = prompt("Ingrese la operación matematica (+, -, /, x, %)");
+    let numero_2 = prompt("Ingrese el segundo numero");
+
+    numero_1 = Number(numero_1);
+    numero_2 = Number(numero_2);
+
+    let resultado;
+
+    switch (operador) {
+        case '+':
+            resultado = numero_1 + numero_2;
+            break;
+        case '-':
+            resultado = numero_1 - numero_2;
+            break;
+        case '/':
+            resultado = numero_1 / numero_2;
+            break;
+        case 'x':
+            resultado = numero_1 * numero_2;
+            break;
+        case '%':
+            resultado = numero_1 % numero_2;
+            break;
+        default:
+            resultado = "El parametro no es reconocido";
+            break;
+    }
+
+    alert(`El resultado es ${resultado}`);
 }
