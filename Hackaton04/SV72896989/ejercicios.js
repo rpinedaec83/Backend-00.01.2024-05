@@ -148,3 +148,13 @@ function ejercicio4_reto2(){
     alert(`La suma de los numeros ingresados es ${suma(...numeros)}`);
 
 }
+
+
+function ejercicio5_reto2(){
+    // Array de ejemplo. Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui 
+    let array = [1, "hola", true, "adios", 3.14, "mundo"];
+    
+    let strings = array.filter(valor => typeof valor === 'string');
+
+    alert(`Los valores que son strings son: ${strings.join(', ')}`);
+}
