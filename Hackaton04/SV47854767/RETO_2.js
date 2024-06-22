@@ -163,4 +163,214 @@ console.log(getBudgets([
 ]));
 
 
+// PREGUNTA 12
+// Cree una función que tome una matriz de estudiantes y devuelva una matriz de nombres de estudiantes.
+// getStudentNames([
+//     { name: "Steve" },
+//     { name: "Mike" },
+//     { name: "John" }
+//   ]) ➞ ["Becky", "John", "Steve"]
+  
+function getStudentNames(students) {
+   return students.map(student => student.name);
+}
+
+console.log(getStudentNames([
+  { name: "Steve" },
+  { name: "Mike" },
+  { name: "John" }
+]));
+
+// PREGUNTA 13
+//Escriba una función que convierta un objeto en una matriz de claves y valores.
+// objectToArray({
+//     likes: 2,
+//     dislikes: 3,
+//     followers: 10
+//   }) ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+
+function objectToArray(obj) {
+    return Object.entries(obj);
+}
+
+console.log(objectToArray({
+  likes: 2,
+  dislikes: 3,
+  followers: 10
+}));
+
+// PREGUNTA 14
+// Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados incluyendo n.
+// squaresSum(3) ➞ 14
+// 1² + 2² + 3² =
+// 1 + 4 + 9 =
+// 14
+
+function squaresSum(n) {
+    let sum = 0;
+
+    for (let i = 1; i <= n; i++) {
+        sum += i * i;
+    }
+
+    return sum;
+}
+
+console.log(squaresSum(3));
+
+
+// PREGUNTA 15
+// Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada
+// multiplyByLength([2, 3, 1, 0]) ➞ [8, 12, 4, 0]
+
+function multiplyByLength(arr) {
+    let length = arr.length;
+    let multipliedArray = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        multipliedArray.push(arr[i] * length);
+    }
+
+    return multipliedArray;
+}
+
+console.log(multiplyByLength([2, 3, 1, 0]));
+
+
+
+// PREGUNTA 16
+// Cree una función que tome un número como argumento y devuelva una matriz de números contando desde este número a cero.
+// countdown(5) ➞ [5, 4, 3, 2, 1, 0]
+
+function countdown(num) {
+    let result = [];
+
+    for (let i = num; i >= 0; i--) {
+        result.push(i);
+    }
+
+    return result;
+}
+
+console.log(countdown(8));
+
+
+//PREGUNTA 17
+// Cree una función que tome una matriz y devuelva la diferencia entre los números más grandes y más pequeños.
+// diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
+// Smallest number is -50, biggest is 32.
+
+function diffMaxMin(arr) {
+    if (arr.length === 0) {
+        return 0;
+    }
+
+    let min = arr[0];
+    let max = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    return max - min;
+}
+
+console.log(diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]));
+
+
+
+// PREGUNTA 18
+// Cree una función que filtre las cadenas de una matriz y devuelva una nueva matriz que solo contenga enteros.
+// filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+
+function filterList(arr) {
+    return arr.filter(item => typeof item === 'number' && Number.isInteger(item));
+}
+
+console.log(filterList([1, 2, 3, "x", "y", 10]));
+
+
+
+// PREGUNTA 19
+// Cree una función que tome dos argumentos (elemento, tiempos). El primer argumento (elemento) es el elemento que necesita repetirse, 
+// mientras que el segundo argumento (veces) es la cantidad de veces que se debe repetir el elemento. Devuelve el resultado en una matriz.
+// repeat(13, 5) ➞ [13, 13, 13, 13, 13]
+
+
+function repeat(elemento, veces) {
+    let resultado = [];
+
+    for (let i = 0; i < veces; i++) {
+        resultado.push(elemento);
+    }
+
+    return resultado;
+}
+
+console.log(repeat(16, 7));
+
+
+
+// PREGUNTA 20
+// Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las vocales en una cadena con una vocal especificada.
+// "apples and bananas".vreplace("u") ➞ "upplus und bununus"
+
+String.prototype.vreplace = function(vowel) {
+    let regex = /[aeiou]/gi;
+    return this.replace(regex, vowel);
+};
+
+console.log("manzanas y sandias".vreplace("u"));
+
+
+
+// PREGUNTA 21
+// Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta: 
+//"¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+// findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+
+
+function findNemo(sentence) {
+    let words = sentence.split(' ');
+    
+    let nemoIndex = words.indexOf('Nemo');
+
+    if (nemoIndex !== -1) {
+        return `¡Encontré a Nemo en el ${nemoIndex + 1}!`;
+    } else {
+        return "No encontré a Nemo";
+    }
+}
+
+console.log(findNemo("Buscando a Nemo!"));
+console.log(findNemo("No estoy buscando!"));
+
+
+
+// PREGUNTA 22
+// Cree una función que capitalice la última letra de cada palabra.
+// capLast("hello") ➞ "hellO"
+
+function capLast(str) {
+    let words = str.split(' ');
+
+    let capitalizedWords = words.map(word => {
+       if (word.length > 0) {
+            let lastChar = word.slice(-1).toUpperCase();
+            return word.slice(0, -1) + lastChar;
+        } else {
+            return word;
+        }
+    });
+
+    return capitalizedWords.join(' ');
+}
+
+console.log(capLast("hola"));
+console.log(capLast("allison"));
 
