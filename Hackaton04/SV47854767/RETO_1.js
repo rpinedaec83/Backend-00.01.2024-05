@@ -76,5 +76,4 @@ console.log(calculator(4, "x", 2));
 
 // 2. Pregunta ¿Hasta cuantos argumentos puedes declarar en una función? 
 
-// No hay limite, se puede declarar los argumentos que sean necesarios.
-
+// No hay limite, se puede declarar los argumentos que sean necesarios
