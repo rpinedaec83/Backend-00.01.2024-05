@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
+  </head>
+<body>
+    <h1 id="nombre"></h1>
+    <h2 id="direccion"></h2>
+    <br>
+    <button id="crearCliente">Crear Cliente</button>
+    <br>
+    <button id="verOrdenes">Ver Ordenes</button>
+    <br>
+    <button id="verDespachos">Ver Despachos</button>
+    <br>
+    <button id="verCaja">Ver Caja</button>
+  <br>
+
+  <div id="infoCliente" class="wrapper fadeInDown" style="display: none;">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <h1 id="Nombre">Nuevo Cliente</h1>
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="nombreCliente" class="fadeIn second" name="login" placeholder="username" value="Nombre">
+        <input type="text" id="telefonoCliente" class="fadeIn third" name="login" placeholder="password"
+          value="Telefono">
+        <input type="text" id="saborHelado" class="fadeIn forth" name="login" placeholder="password" value="Sabor">
+        <input type="text" id="tamanoHelado" class="fadeIn five" name="login" placeholder="password" value="Tamaño">
+        <input type="text" id="toppisHelado" class="fadeIn third" name="login" placeholder="password" value="Toppis">
+
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" id="cerrarVentana" href="#">Cerrar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="tblOrdenes" style="display: none;">
+    <h2>Ordenes</h2>
+    <table id="table">
+      <thead>
+        <tr>
+          <th data-field="nombre">Nombre</th>
+          <th data-field="telefono">Telefono</th>
+          <th data-field="helado.sabor">Sabor</th>
+          <th data-field="helado.tamano">Tamaño</th>
+          <th data-field="helado.toppis">Toppins</th>
+          <th data-field="operate" data-formatter="ordenesFormatter" data-events="ordenesEvents">Acciones</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  
+
+  <div id="tblDespachos" style="display: none;">
+    <h2>Despachos</h2>
+    <table id="tableDespachos">
+      <thead>
+        <tr>
+          <th data-field="nombre">Nombre</th>
+          <th data-field="telefono">telefono</th>
+          <th data-field="helado.sabor">Sabor</th>
+          <th data-field="helado.tamano">Tamaño</th>
+          <th data-field="helado.toppis">Toppins</th>
+          <th data-field="operate" data-formatter="despachoFormatter" data-events="despachoEvents">Acciones</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div id="tblCaja" style="display: none;">
+    <h2>Caja</h2>
+    <table id="tableCaja"
+    data-show-footer="true"
+    >
+      <thead>
+        <tr>
+          <th data-field="nombre" data-footer-formatter="idFormatter">Nombre</th>
+          <th data-field="telefono" data-footer-formatter="nameFormatter">telefono</th>
+          <th data-field="helado.sabor">Sabor</th>
+          <th data-field="helado.tamano">Tamaño</th>
+          <th data-field="helado.toppis">Toppins</th>
+          <th data-field="precio" data-footer-formatter="priceFormatter">Precio</th>
+          <th data-field="cobrado" data-formatter="cobradoFormatter">Cobrado</th>
+          <th data-field="operate" data-formatter="cajaFormatter" data-events="cajaEvents">Acciones</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+    <script src="https://kit.fontawesome.com/e59191e4cc.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      let parametros = { nombre: "Vainilla", direccion: "Lince" };
+      const objHeladeria = Heladeria.init(parametros)
+    </script>
+</body>
+</html>
