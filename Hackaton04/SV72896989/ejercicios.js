@@ -37,3 +37,17 @@ function ejercicio3_reto1(){
     alert(`La suma de los cubos de los numeros ingresados es ${resultado}`);
     
 }
+
+function ejercicio4_reto1() {
+
+    let base = prompt("Ingrese la base del triangulo");
+    base = Number(base);
+
+    let altura = prompt("Ingrese la altura del triangulo:");
+    altura = Number(altura);
+
+    let area = (base * altura) / 2;
+
+    alert(`El area del triangulo es ${area}`);
+
+}
