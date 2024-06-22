@@ -233,3 +233,19 @@ function ejercicio10_reto2() {
     alert(`toArray(${JSON.stringify(obj)}) ➞ [${formattedResult}]`);
 
 }
+
+function ejercicio11_reto2() {
+    const presupuestos = (personas) => {
+        let sumaPresupuestos = personas.reduce((acumulador, persona) => acumulador + persona.budget, 0);
+        return sumaPresupuestos;
+    };
+
+    let personas = [
+        { name: "John", age: 21, budget: 23000 },
+        { name: "Steve",  age: 32, budget: 40000 },
+        { name: "Martin",  age: 16, budget: 2700 }
+    ];
+
+    let resultado = presupuestos(personas);
+    alert(`getBudgets(${JSON.stringify(personas)}) ➞ ${resultado}`);
+}
