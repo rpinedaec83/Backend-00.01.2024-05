@@ -135,4 +135,16 @@ function ejercicio3_reto2(){
 
 };
     
+function ejercicio4_reto2(){
 
+    let input = prompt("Ingrese los numeros separados por coma que desea sumar");
+
+    let numeros = input.split(",").map(num => parseFloat(num.trim()));
+
+    let suma = (...numeros) => {
+        return numeros.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    };
+
+    alert(`La suma de los numeros ingresados es ${suma(...numeros)}`);
+
+}
