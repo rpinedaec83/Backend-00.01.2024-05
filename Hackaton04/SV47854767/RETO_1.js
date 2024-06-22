@@ -4,8 +4,8 @@ function suma(a, b) {
     return a + b;
 }
 
-let resultado = suma(5, 5);
-console.log(resultado);
+let resultado1 = suma(5, 5);
+console.log(resultado1);
 
 
 //Pregunta 2. Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el número a potenciar.
@@ -14,8 +14,8 @@ function potencia(base, exponente) {
     return Math.pow(base, exponente);
 }
 
-let resultado = potencia(2, 3);
-console.log(resultado);
+let resultado2 = potencia(2, 3);
+console.log(resultado2);
 
 
 //Pregunta 3. Crea una función que tome números y devuelva la suma de sus cubos. sumOfCubes(1, 5, 9) ➞ 855
@@ -24,8 +24,8 @@ function sumOfCubes(...numeros) {
     return numeros.reduce((acumulador, numero) => acumulador + Math.pow(numero, 3), 0);
 }
 
-let resultado = sumOfCubes(1, 5, 9);
-console.log(resultado); 
+let resultado3 = sumOfCubes(1, 5, 9);
+console.log(resultado3); 
 
 
 //Pregunta 4. Escribe una función que tome la base y la altura de un triángulo y devuelva su área. triArea(3, 2) ➞ 3
@@ -34,8 +34,8 @@ function triArea(base, altura) {
     return (base * altura) / 2;
 }
 
-let resultado = triArea(3, 2);
-console.log(resultado); 
+let resultado4 = triArea(3, 2);
+console.log(resultado4); 
 
 
 
