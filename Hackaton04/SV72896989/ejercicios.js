@@ -184,7 +184,6 @@ function ejercicio7_reto2() {
 
         let formattedNumber = `(${phoneNumber.slice(0, 3).join("")}) ${phoneNumber.slice(3, 6).join("")}-${phoneNumber.slice(6, 10).join("")}`;
 
-        // Mostrar el resultado en un alert con el formato solicitado
         alert(`formatPhoneNumber([${phoneNumber.join(', ')}]) ➞ "${formattedNumber}"`);
 
     } catch (error) {
@@ -212,5 +211,25 @@ function ejercicio9_reto2() {
     let ultimo_indice = palabra.lastIndexOf(caracter);
 
     alert(`charIndex("${palabra}", "${caracter}") ➞ [${primer_indice}, ${ultimo_indice}] // The first "${caracter}" has index ${primer_indice}, the last "${caracter}" has index "${ultimo_indice}".`);
+
+}
+
+function ejercicio10_reto2() {
+
+    const toArray = (obj = {}) => {
+        const result = [];
+    
+        for (const clave in obj) {
+        result.push([clave, obj[clave]]);
+        }
+        return result;
+    };
+    
+    // Objeto de ejemplo. Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui
+    let obj = { a: 1, b: 2 };
+    let result = toArray(obj);
+    
+    let formattedResult = result.map(pair => `[${pair.map(item => JSON.stringify(item)).join(", ")}]`).join(", ");
+    alert(`toArray(${JSON.stringify(obj)}) ➞ [${formattedResult}]`);
 
 }
