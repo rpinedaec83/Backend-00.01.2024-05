@@ -158,3 +158,15 @@ function ejercicio5_reto2(){
 
     alert(`Los valores que son strings son: ${strings.join(', ')}`);
 }
+
+function ejercicio6_reto2() {
+
+    let numeros = prompt("Ingrese una matriz de numeros separados por coma para determinar el minimo y maximo").split(",").map(num => Number(num.trim()));
+
+    let min = Math.min(...numeros);
+    let max = Math.max(...numeros);
+
+    alert(`El numero minimo es ${min} y el numero maximo es ${max}`);
+}
+
+
