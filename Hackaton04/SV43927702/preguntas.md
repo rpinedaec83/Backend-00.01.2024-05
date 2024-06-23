@@ -3,4 +3,4 @@ definir una función en JavaScript es como darle instrucciones muy específicas 
 no necesariamente de utiliza la palabra funtion, las funciones fecha no llevan la palabra reservada function.
 
 **pregunta2
-no hay un limite maximo de argumentos.pero si tiene varios argumentos puede ser dificil de entenderlos.
+no hay un limite maximo de argumentos.pero si tiene varios argumentos puede ser dificil de entenderlos.....
