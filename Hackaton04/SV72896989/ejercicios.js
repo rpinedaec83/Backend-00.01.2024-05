@@ -389,4 +389,18 @@ function ejercicio20_reto2() {
     alert(`"${cadena}".vreplace("${vocal}") ➞ "${resultado}"`);
 }
 
+function ejercicio21_reto2() {
+    
+    let cadena = prompt("Ingrese una cadena de palabras:");
+
+    let palabras = cadena.split(" ");
+    let posicion = palabras.indexOf("Nemo") + 1;
+
+    if (posicion > 0) {
+        let resultado = `findNemo("${cadena}") ➞ "I found Nemo at ${posicion}!"`;
+        alert(resultado);
+    } else {
+        alert(`findNemo("${cadena}") ➞ "I didn't find Nemo"`);
+    }
+}
 
