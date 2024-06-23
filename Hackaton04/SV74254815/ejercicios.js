@@ -631,6 +631,7 @@ function EjerDoc22(){
             }
         }
         return palabras.join(' ');
+
     }
     function mostrarResultado() {
         let cadena = prompt("Ingrese una cadena de palabras:");
