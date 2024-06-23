@@ -636,7 +636,7 @@ function EjerDoc22(){
         let cadena = prompt("Ingrese una cadena de palabras:");
         if (cadena === null || cadena.trim() === "") {
             alert("No se ingresó ninguna cadena. Inténtalo de nuevo.");
-            return;
+            return; 
         }
         let resultado = capitalizarUltimaLetra(cadena);
         alert("Resultado: " + resultado);
