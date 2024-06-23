@@ -240,6 +240,7 @@ function ejercicio11_reto2() {
         return sumaPresupuestos;
     };
 
+    // Objeto de ejemplo. Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui
     let personas = [
         { name: "John", age: 21, budget: 23000 },
         { name: "Steve",  age: 32, budget: 40000 },
@@ -249,3 +250,20 @@ function ejercicio11_reto2() {
     let resultado = presupuestos(personas);
     alert(`getBudgets(${JSON.stringify(personas)}) ➞ ${resultado}`);
 }
+
+function ejercicio12_reto2() {
+    const getStudentNames = (estudiantes) => {
+        return estudiantes.map(estudiante => estudiante.name);
+    };
+
+    // Objeto de ejemplo. Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui
+    let estudiantes = [
+        { name: "Steve" },
+        { name: "Mike" },
+        { name: "John" }
+    ];
+
+    let nombresEstudiantes = getStudentNames(estudiantes);
+    alert(`getStudentNames(${JSON.stringify(estudiantes)}) ➞ ${JSON.stringify(nombresEstudiantes)}`);
+}
+
