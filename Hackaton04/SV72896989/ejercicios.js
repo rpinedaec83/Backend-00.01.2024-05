@@ -342,3 +342,15 @@ function ejercicio17_reto2() {
     alert(`diffMaxMin([${arrayNumeros}]) ➞ ${diferencia}\n// Smallest number is ${minimo}, biggest is ${maximo}.`);
 
 }
+
+function ejercicio18_reto2() {
+
+    let matriz = prompt("Ingrese una matriz de numeros y string separados por coma");
+
+    let arrayMatriz = matriz.split(",").map(item => item.trim());
+
+    let numeros = arrayMatriz.filter(item => !isNaN(item) && Number.isInteger(parseFloat(item)));
+
+    alert(`filterList([${arrayMatriz}]) ➞ [${numeros}]`);
+
+}
