@@ -283,4 +283,24 @@ function ejercicio13_reto2() {
     alert(`objectToArray(${JSON.stringify(objeto)}) ➞ ${JSON.stringify(matrizClavesValores)}`);
 }
 
+function ejercicio14_reto2() {
+    let n = parseInt(prompt("Ingrese un numero para calcular la suma de los cuadrados hasta ese numero"));
+
+    let sumaCuadrados = 0;
+    let sumaDetalles = "";
+
+    for (let i = 1; i <= n; i++) {
+        let cuadrado = i * i;
+        sumaCuadrados += cuadrado;
+        sumaDetalles += `${i}²`;
+        if (i < n) {
+            sumaDetalles += " + ";
+        } else {
+            sumaDetalles += " = ";
+        }
+    }
+
+    sumaDetalles += sumaCuadrados;
+    alert(`squaresSum(${n}) ➞\n// ${sumaDetalles}`);
+}
 
