@@ -345,7 +345,7 @@ function ejercicio17_reto2() {
 
 function ejercicio18_reto2() {
 
-    let matriz = prompt("Ingrese una matriz de numeros y string separados por coma");
+    let matriz = prompt("Ingrese una matriz de numeros y strings separados por coma");
 
     let arrayMatriz = matriz.split(",").map(item => item.trim());
 
@@ -354,3 +354,24 @@ function ejercicio18_reto2() {
     alert(`filterList([${arrayMatriz}]) ➞ [${numeros}]`);
 
 }
+
+function ejercicio19_reto2() {
+    
+    let elemento = prompt("Ingrese el elemento que desea repetir");
+    let veces = prompt("Ingrese la cantidad de veces que desea repetir el elemento");
+
+    veces = parseInt(veces);
+
+    const repeat = (elemento, veces) => {
+        let resultado = [];
+        for (let i = 0; i < veces; i++) {
+            resultado.push(elemento);
+        }
+        return resultado;
+    };
+
+    let resultado = repeat(elemento, veces);
+
+    alert(`repeat(${elemento}, ${veces}) ➞ [${resultado}]`);
+}
+
