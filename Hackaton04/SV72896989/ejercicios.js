@@ -315,3 +315,15 @@ function ejercicio15_reto2() {
 
     alert(`multiplyByLength([${numeros}]) ➞ [${resultado}]`);
 }
+
+function ejercicio16_reto2() {
+
+    let numero = parseInt(prompt("Ingrese un numero para comenzar el conteo hacia cero"));
+
+    let resultado = [];
+    for (let i = numero; i >= 0; i--) {
+        resultado.push(i);
+    }
+    
+    alert(`countdown(${numero}) ➞ [${resultado}]`);
+}
