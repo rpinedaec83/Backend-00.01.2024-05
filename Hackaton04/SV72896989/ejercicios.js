@@ -304,3 +304,14 @@ function ejercicio14_reto2() {
     alert(`squaresSum(${n}) ➞\n// ${sumaDetalles}`);
 }
 
+function ejercicio15_reto2() {
+    let input = prompt("Ingrese una matriz de numeros separados por coma para multiplicar cada uno por la longitud de la matriz");
+
+    let numeros = input.split(",").map(num => Number(num.trim()));
+
+    let longitud = numeros.length;
+
+    let resultado = numeros.map(num => num * longitud);
+
+    alert(`multiplyByLength([${numeros}]) ➞ [${resultado}]`);
+}
