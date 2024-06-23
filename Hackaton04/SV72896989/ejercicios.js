@@ -327,3 +327,18 @@ function ejercicio16_reto2() {
     
     alert(`countdown(${numero}) ➞ [${resultado}]`);
 }
+
+function ejercicio17_reto2() {
+
+    let numeros = prompt("Ingrese una matriz de numeros separados por coma para calcular la diferencia entre el mayor y el menor");
+
+    let arrayNumeros = numeros.split(",").map(num => Number(num.trim()));
+
+    let maximo = Math.max(...arrayNumeros);
+    let minimo = Math.min(...arrayNumeros);
+
+    let diferencia = maximo - minimo;
+
+    alert(`diffMaxMin([${arrayNumeros}]) ➞ ${diferencia}\n// Smallest number is ${minimo}, biggest is ${maximo}.`);
+
+}
