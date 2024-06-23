@@ -36,12 +36,14 @@ function ejercicio3_reto1(){
   
     let resultado = sumOfCubes(...numbers);
   
-    alert(`La suma de los cubos de los numeros ingresados es ${resultado}`);
+    let formattedResult = `sumOfCubes(${numbers.join(", ")}) ➞ ${resultado}`;
+
+    alert(formattedResult);
     
 }
 
 function ejercicio4_reto1() {
-
+    
     let base = prompt("Ingrese la base del triangulo");
     base = Number(base);
 
@@ -50,13 +52,13 @@ function ejercicio4_reto1() {
 
     let area = (base * altura) / 2;
 
-    alert(`El area del triangulo es ${area}`);
-
+    alert(`triArea(${base}, ${altura}) ➞ ${area}`);
 }
+
 
 function ejercicio5_reto1() {
     let numero_1 = prompt("Ingrese el primer numero");
-    let operador = prompt("Ingrese la operación matematica (+, -, /, x, %)");
+    let operador = prompt("Ingrese la operacion matematica (+, -, /, x, %)");
     let numero_2 = prompt("Ingrese el segundo numero");
 
     numero_1 = Number(numero_1);
@@ -82,11 +84,13 @@ function ejercicio5_reto1() {
             break;
         default:
             resultado = "El parametro no es reconocido";
-            break;
+            alert(resultado);
+            return;
     }
 
-    alert(`El resultado es ${resultado}`);
+    alert(`calculator(${numero_1}, "${operador}", ${numero_2}) ➞ ${resultado}`);
 }
+
 
 //RETO 2
 
