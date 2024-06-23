@@ -391,7 +391,7 @@ function ejercicio20_reto2() {
 
 function ejercicio21_reto2() {
     
-    let cadena = prompt("Ingrese una cadena de palabras:");
+    let cadena = prompt("Ingrese una cadena de palabras");
 
     let palabras = cadena.split(" ");
     let posicion = palabras.indexOf("Nemo") + 1;
@@ -404,3 +404,16 @@ function ejercicio21_reto2() {
     }
 }
 
+function ejercicio22_reto2() {
+    let cadena = prompt("Ingrese una cadena de palabras");
+
+    const capLast = (str) => {
+        return str.split(" ").map(word => {
+            return word.slice(0, -1) + word.slice(-1).toUpperCase();
+        }).join(" ");
+    };
+
+    let resultado = capLast(cadena);
+
+    alert(`capLast("${cadena}") ➞ "${resultado}"`);
+}
