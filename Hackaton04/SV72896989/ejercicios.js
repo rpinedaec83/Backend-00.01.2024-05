@@ -267,3 +267,20 @@ function ejercicio12_reto2() {
     alert(`getStudentNames(${JSON.stringify(estudiantes)}) ➞ ${JSON.stringify(nombresEstudiantes)}`);
 }
 
+function ejercicio13_reto2() {
+    const objectToArray = (objeto) => {
+        return Object.entries(objeto);
+    };
+
+    // Objeto de ejemplo. Como prompt cambia cualquier valor que ingrese el usuario a string, opte porque el parametro se modifique desde aqui
+    let objeto = {
+        likes: 2,
+        dislikes: 3,
+        followers: 10
+    };
+
+    let matrizClavesValores = objectToArray(objeto);
+    alert(`objectToArray(${JSON.stringify(objeto)}) ➞ ${JSON.stringify(matrizClavesValores)}`);
+}
+
+
