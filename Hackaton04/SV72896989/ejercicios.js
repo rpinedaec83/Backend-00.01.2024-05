@@ -375,3 +375,18 @@ function ejercicio19_reto2() {
     alert(`repeat(${elemento}, ${veces}) ➞ [${resultado}]`);
 }
 
+function ejercicio20_reto2() {
+   
+    let cadena = prompt("Ingrese la cadena");
+    let vocal = prompt("Ingrese la vocal para reemplazar todas las vocales de la cadena");
+
+       String.prototype.vreplace = function(vocal) {
+        return this.replace(/[aeiouAEIOU]/g, vocal);
+    };
+
+    let resultado = cadena.vreplace(vocal);
+
+    alert(`"${cadena}".vreplace("${vocal}") ➞ "${resultado}"`);
+}
+
+
