@@ -30,7 +30,7 @@
 
 13. Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal.
 
-14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
+14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y determine si es un número primo.
 
 15. Hacer un algoritmo en JavaScript que convierta centímetros a pulgadas y libras a kilogramos.
 
@@ -103,8 +103,8 @@
 34. Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno nueve.
 
 35. Hacer un algoritmo en JavaScript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
-i
-36. Hacer un algoritmo en JavaScript para calcular la serie de Fibonacc.
+
+36. Hacer un algoritmo en JavaScript para calcular la serie de Fibonacci.
 
 37. Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
 
