@@ -11,15 +11,34 @@ const Reserva = function () //a
     }
 
     function crearAviones() {
-        let objAvion = new Aviones("LIM-009", "Airbus 320 Neo", 186, 90);
+        let objAvion = new Aviones("LIM-009", "Airbus 320 Neo", 186, 90, 502.69);
         arrAviones.push(objAvion);
-        let objAvion1 = new Aviones("UIO-011", "Airbus 319", 124, 62);
+        let objAvion1 = new Aviones("UIO-011", "Airbus 319", 124, 62, 502.69);
         arrAviones.push(objAvion1);
     }
 
     function eventos() {
         console.log("Escuchando los eventos")
         $("#reservar").on("click", reservar);
+    }
+
+    function dibujarReserva(reserva){
+        console.log(reserva);
+        $("#idaNombre").val(reserva.avionIda.arrPasajeros[0].nombres);
+        $("#idaApellido").val(reserva.avionIda.arrPasajeros[0].apellidos);
+        $("#idaFecha").val(reserva.fechaIda);
+        $("#idaVuelo").val(reserva.avionIda.matricula);
+        $("#idaOrigen").val(reserva.origen);
+        
+
+        $("#retNombre").val(reserva.avionVuelta.arrPasajeros[0].nombres);
+        $("#retApellido").val(reserva.avionVuelta.arrPasajeros[0].apellidos);
+        $("#retFecha").val(reserva.fechaVuelta);
+        $("#retVuelo").val(reserva.avionVuelta.matricula);
+        $("#retDestino").val(reserva.destino);
+        
+        $("#divReserva").show();
+
     }
     async function reservar(){
         console.log("Empieza el proceso de reserva de vuelos");
@@ -57,12 +76,45 @@ const Reserva = function () //a
                 reserva.asignarAvionVuelta(arrAviones[1]);
                 reserva.avionIda.agregarPasajeros(data);
                 reserva.avionVuelta.agregarPasajeros(data);
-               // dibujarReserva(reserva);
+                dibujarReserva(reserva);
             });
             
             
         }
        
+    }
+
+    async function agregarPasajeros() {
+        console.log("Agregar Pasajeros");
+
+        const { value: formValues } = await Swal.fire({
+            title: "Ingresa los datos del pasajero",
+            icon: "info",
+            html: `
+            <label class="col-md-4 control-label" for="textinput">Nombre</label>  
+            <input id="nombre" class="swal2-input">
+            <label class="col-md-4 control-label" for="textinput">Apellido</label>  
+            <input id="apellido" class="swal2-input">
+            <label class="col-md-4 control-label" for="textinput">Documento</label>  
+            <input id="documento" class="swal2-input">
+            
+            `,
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Guardar",
+            denyButtonText: `Cancelar`,
+            preConfirm: () => {
+                return {
+                    nombre:  document.getElementById("nombre").value,
+                    apellido: document.getElementById("apellido").value,
+                    documento:  document.getElementById("documento").value
+                };
+            }
+        });
+        if (formValues) {
+            let pasajero =new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
+            return pasajero;
+        }
     }
     return {
         init: function (parametros) {
@@ -93,7 +145,7 @@ class Reservas {
 }
 
 class Aviones {
-    constructor(matricula, modelo, nroAsientos, capacidadMinima) {
+    constructor(matricula, modelo, nroAsientos, capacidadMinima, costoVuelo) {
         this.matricula = matricula;
         this.modelo = modelo;
         this.nroAsientos = nroAsientos;
@@ -101,6 +153,7 @@ class Aviones {
         this.arrPasajeros = [];
         this.habilitado = false;
         this.reservado = 0;
+        this.costoVuelo = costoVuelo;
     }
     agregarPasajeros(pasajero) {
         if (this.reservado >= this.capacidadMinima) {
