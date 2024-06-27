@@ -1,0 +1,185 @@
+body{
+    margin: 0px;
+}
+header{
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.Headertitle{
+    margin: 0px;
+    margin-bottom: 20px;
+    
+}
+
+.titulo1{
+
+    color: rgb(235, 255, 84);
+    background-color: rgb(11, 11, 48);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.big-button {
+    padding: 0px; /* Espaciado interno */
+    font-size: 10px; /* Tamaño de la fuente */
+    width: 200px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    background-color: #153bc4; /* Color de fondo */
+    color: rgba(240, 251, 238, 0.885); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    font-weight: bolder;
+}
+
+.big-button:hover {
+    background-color: #07fe34; /* Color de fondo al pasar el mouse */
+    color: black;
+}
+
+.ejer1{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ejer10{
+    list-style-type: none;
+    margin: 10px;
+}
+
+.titulo2{
+
+    color: rgb(238, 84, 53);
+    background-color: rgb(69, 63, 7);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.big-button2 {
+    padding: 0px; /* Espaciado interno */
+    font-size: 10px; /* Tamaño de la fuente */
+    width: 200px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    background-color: #020510; /* Color de fondo */
+    color: rgba(240, 251, 238, 0.885); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    font-weight: bolder;
+}
+
+.big-button2:hover {
+    background-color: #07fe34; /* Color de fondo al pasar el mouse */
+    color: black;
+}
+
+.ejer2{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ejer20{
+    list-style-type: none;
+    margin: 10px;
+}
+
+.titulo3{
+
+    color: rgb(238, 84, 53);
+    background-color: rgb(69, 63, 7);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.big-button3 {
+    padding: 0px; /* Espaciado interno */
+    font-size: 10px; /* Tamaño de la fuente */
+    width: 200px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    background-color: #f7ff08; /* Color de fondo */
+    color: rgba(7, 7, 7, 0.885); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    font-weight: bolder;
+}
+
+.big-button3:hover {
+    background-color: #07fe34; /* Color de fondo al pasar el mouse */
+    color: black;
+}
+
+.ejer3{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ejer30{
+    list-style-type: none;
+    margin: 10px;
+}
+
+.titulo4{
+
+    color: rgb(238, 84, 53);
+    background-color: rgb(69, 63, 7);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.big-button4 {
+    padding: 0px; /* Espaciado interno */
+    font-size: 10px; /* Tamaño de la fuente */
+    width: 200px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    background-color: #fb0c08; /* Color de fondo */
+    color: rgb(8, 25, 120); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    font-weight: bolder;
+}
+
+.big-button4:hover {
+    background-color: #07fe34; /* Color de fondo al pasar el mouse */
+    color: black;
+}
+
+.ejer4{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ejer40{
+    list-style-type: none;
+    margin: 10px;
+}
+
+
+footer{
+    color: rgb(11, 11, 11);
+    background-color: rgba(75, 74, 74, 0.077);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.term{
+padding: 2px;
+}
+
