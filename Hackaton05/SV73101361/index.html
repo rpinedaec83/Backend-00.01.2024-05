@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Reparación - Hackaton 5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Servicio de Reparación</h1>
+    <div class="form-container">
+        <form id="service-form">
+            <label for="numeroDeSerie">Número de Serie:</label>
+            <input type="text" id="numeroDeSerie" name="numeroDeSerie" required>
+
+            <label for="IMEI">IMEI:</label>
+            <input type="text" id="IMEI" name="IMEI" required>
+
+            <label for="nombreCliente">Nombre del Cliente</label>
+            <input type="text" id="nombreCliente" name="nombreCliente" required>
+
+            <label for="abono"> Abono(%):</label>
+            <input type="text" id="abono" name="abono" required>
+
+            <label for="nombreTecnico">Nombre del Técnico:</label>
+            <input type="text" id="nombreTecnico" name="nombreTecnico" required>
+
+            <label for="nombreEstacion">Nombre de la Estación de Trabajo:</label>
+            <input type="text" id="nombreEstacion" name="nombreEstacion" required>
+
+            <button type="button" id="iniciarServicio">Iniciar Servicio</button>
+
+        </form>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
