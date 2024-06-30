@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackaton3</title>
+    <!-- Bootstrap CSS versión 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Estilo personalizado para centrar el contenido */
+      .container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      /* Estilo para los botones */
+      .btn-custom {
+        width: 40%;
+        margin: 10px;
+      }
+      .input-group {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="my-4">Jose Ivan Acosta Figueroa</h1>
+        <h2>Parte 1</h2>
+        <!-- Inputs reutilizables -->
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            id="input1"
+            placeholder="Entrada 1"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="input2"
+            placeholder="Entrada 2"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="input3"
+            placeholder="Entrada 3 (opcional)"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Botones para cada función -->
+        <div class="d-flex flex-wrap justify-content-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-custom"
+            onclick="sumarDemo()"
+          >
+            Sumar dos números
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-custom"
+            onclick="potenciaDemo()"
+          >
+            Potencia de un número
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-custom"
+            onclick="sumaDeCubosDemo()"
+          >
+            Suma de Cubos
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-custom"
+            onclick="areaTrianguloDemo()"
+          >
+            Área del Triángulo
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-custom"
+            onclick="calculatorDemo()"
+          >
+            Calculadora
+          </button>
+        </div>
+
+        <!-- Div para mostrar los resultados -->
+        <div class="mt-4">
+          <h3>Resultado:</h3>
+          <div id="result" class="alert alert-primary" role="alert"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Parte 2</h2>
+      <div class="container mt-5">
+        <h1 class="mb-4">Demostración de Funciones JavaScript</h1>
+    
+        <!-- Función: Concatenar Nombre -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Concatenar Nombre</h5>
+            <div class="form-group">
+              <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+              <input type="text" id="apellido" class="form-control mt-2" placeholder="Apellido">
+              <input type="number" id="edad" class="form-control mt-2" placeholder="Edad">
+              <button onclick="concatenarNombre()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado1"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Suma de Cubos -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Suma de Cubos</h5>
+            <div class="form-group">
+              <input type="text" id="cubosInput" class="form-control" placeholder="Ingresa números separados por comas">
+              <button onclick="sumaDeCubos2()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado2"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Verificar Tipo -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Verificar Tipo</h5>
+            <div class="form-group">
+              <input type="text" id="tipoInput" class="form-control" placeholder="Ingresa un valor">
+              <button onclick="verificarTipo()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado3"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Sumar Todos los Argumentos -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Sumar Todos los Argumentos</h5>
+            <div class="form-group">
+              <input type="text" id="sumarArgumentosInput" class="form-control" placeholder="Ingresa números separados por comas">
+              <button onclick="sumarTodosLosArgumentos()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado4"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Filtrar Cadenas -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Filtrar Cadenas</h5>
+            <div class="form-group">
+              <input type="text" id="filtrarCadenasInput" class="form-control" placeholder="Ingresa valores mezclados separados por comas">
+              <button onclick="filtrarCadenas()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado5"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Min y Max -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Mínimo y Máximo</h5>
+            <div class="form-group">
+              <input type="text" id="minMaxInput" class="form-control" placeholder="Ingresa números separados por comas">
+              <button onclick="minMax()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado6"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Formatear Número de Teléfono -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Formatear Número de Teléfono</h5>
+            <div class="form-group">
+              <input type="text" id="numeroTelefonoInput" class="form-control" placeholder="Ingresa 10 dígitos separados por comas">
+              <button onclick="formatearNumeroTelefono()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado7"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Encontrar los Números más Grandes -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Encontrar los Números más Grandes</h5>
+            <div class="form-group">
+              <textarea id="encontrarNumerosGrandesInput" class="form-control" placeholder="Ingresa matrices de números separados por punto y coma, ej. [1,2,3];[4,5,6]"></textarea>
+              <button onclick="encontrarNumerosMasGrandes()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado8"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Índice de Carácter -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Índice de Carácter</h5>
+            <div class="form-group">
+              <input type="text" id="indiceCaracterCadena" class="form-control" placeholder="Ingresa una cadena">
+              <input type="text" id="indiceCaracter" class="form-control mt-2" placeholder="Ingresa un carácter">
+              <button onclick="indiceCaracter()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado9"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Convertir Objeto a Matriz -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Convertir Objeto a Matriz</h5>
+            <div class="form-group">
+              <input type="text" id="objetoAMatrizInput" class="form-control" placeholder="Ingresa un objeto literal, ej. {a:1,b:2}">
+              <button onclick="convertirObjetoAMatriz()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado10"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Obtener Presupuestos -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Obtener Presupuestos</h5>
+            <div class="form-group">
+              <textarea id="obtenerPresupuestosInput" class="form-control" placeholder="Ingresa una matriz de objetos con 'nombre', 'edad' y 'presupuesto', ej. [{nombre:'Juan',edad:21,presupuesto:23000}]"></textarea>
+              <button onclick="obtenerPresupuestos()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado11"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Obtener Nombres de Estudiantes -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Obtener Nombres de Estudiantes</h5>
+            <div class="form-group">
+              <textarea id="obtenerNombresEstudiantesInput" class="form-control" placeholder="Ingresa una matriz de objetos con 'nombre', ej. [{nombre:'Juan'},{nombre:'María'}]"></textarea>
+              <button onclick="obtenerNombresEstudiantes()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado12"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Convertir Objeto a Matriz de Claves y Valores -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Convertir Objeto a Matriz de Claves y Valores</h5>
+            <div class="form-group">
+              <input type="text" id="objetoAMatrizClavesValoresInput" class="form-control" placeholder="Ingresa un objeto literal, ej. {gusta:2,noGusta:3,seguidores:10}">
+              <button onclick="convertirObjetoAMatrizClavesValores()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado13"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Suma de Cuadrados -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Suma de Cuadrados</h5>
+            <div class="form-group">
+              <input type="number" id="sumaCuadradosInput" class="form-control" placeholder="Ingresa un número">
+              <button onclick="sumaDeCuadrados()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado14"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Multiplicar por Longitud -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Multiplicar por Longitud</h5>
+            <div class="form-group">
+              <input type="text" id="multiplicarPorLongitudInput" class="form-control" placeholder="Ingresa números separados por comas">
+              <button onclick="multiplicarPorLongitud()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado15"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Cuenta Regresiva -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Cuenta Regresiva</h5>
+            <div class="form-group">
+              <input type="number" id="cuentaRegresivaInput" class="form-control" placeholder="Ingresa un número">
+              <button onclick="cuentaRegresiva()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado16"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Diferencia Máximo y Mínimo -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Diferencia Máximo y Mínimo</h5>
+            <div class="form-group">
+              <input type="text" id="diferenciaMaxMinInput" class="form-control" placeholder="Ingresa números separados por comas">
+              <button onclick="diferenciaMaxMin()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado17"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Filtrar Lista -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Filtrar Lista</h5>
+            <div class="form-group">
+              <input type="text" id="filtrarListaInput" class="form-control" placeholder="Ingresa valores mezclados separados por comas">
+              <button onclick="filtrarLista()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado18"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Repetir Elemento -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Repetir Elemento</h5>
+            <div class="form-group">
+              <input type="text" id="repetirElemento" class="form-control" placeholder="Ingresa un elemento">
+              <input type="number" id="repetirVeces" class="form-control mt-2" placeholder="Ingresa la cantidad de veces">
+              <button onclick="repetirElemento()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado19"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Reemplazar Vocales -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Reemplazar Vocales</h5>
+            <div class="form-group">
+              <input type="text" id="reemplazarVocalesInput" class="form-control" placeholder="Ingresa una cadena">
+              <input type="text" id="vocalReemplazo" class="form-control mt-2" placeholder="Ingresa una vocal">
+              <button onclick="reemplazarVocales()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado20"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Encontrar a Nemo -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Encontrar a Nemo</h5>
+            <div class="form-group">
+              <input type="text" id="encontrarNemoInput" class="form-control" placeholder="Ingresa una oración">
+              <button onclick="encontrarNemo()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado21"></div>
+          </div>
+        </div>
+    
+        <!-- Función: Capitalizar Última Letra -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Capitalizar Última Letra</h5>
+            <div class="form-group">
+              <input type="text" id="capitalizarUltimaLetraInput" class="form-control" placeholder="Ingresa una oración">
+              <button onclick="capitalizarUltimaLetra()" class="btn btn-primary mt-3">Enviar</button>
+            </div>
+            <div class="result" id="resultado22"></div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- Bootstrap JS y dependencias (usando versión 5) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Incluir el archivo de funciones JavaScript -->
+    <script src="js.js"></script>
+  </body>
+</html>
