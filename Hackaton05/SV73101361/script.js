@@ -163,3 +163,75 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
+class Ticket {
+    constructor(
+      telefono,
+      diagnostico,
+      autorizacion,
+      abono,
+      estado = "por revisar"
+    ) {
+      this.telefono = telefono;
+      this.diagnostico = diagnostico;
+      this.autorizacion = autorizacion;
+      this.abono = abono;
+      this.estado = estado;
+    }
+    cambiarEstado(estado) {
+      this.estado = estado;
+    }
+  }
+   
+  class Tecnico {
+    constructor(nombre, apellido, dni, celular, direccion, email, skills) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.dni = dni;
+      this.celular = celular;
+      this.direccion = direccion;
+      this.email = email;
+      this.skills = skills;
+    }
+    addSkill(skill) {
+      this.skills.push(skill);
+    }
+  }
+   
+  class System {
+    sucursales = [];
+    telefonosReportados = [];
+    constructor() {
+      this.sucursales = [];
+      this.telefonosReportados = [];
+    }
+   
+    addSucursal(sucursal) {
+      this.sucursales.push(sucursal);
+    }
+    addTelefonoReportado(telefono) {
+      this.telefonosReportados.push(telefono);
+    }
+    estaReportado(imei) {
+      const result = false;
+   
+      for (let i = 0; i < this.telefonosReportados.length; i++) {
+        if (this.telefonosReportados[i].imei === imei) {
+          return true;
+        }
+      }
+      // const telefonoReportado = this.telefonosReportados.find(
+      //   (phone) => phone.imei === imei
+      // );
+   
+      // return telefonoReportado ? true : false;
+      return result;
+    }
+    get sucursales() {
+      return this.sucursales;
+    }
+  }
+   
+  
