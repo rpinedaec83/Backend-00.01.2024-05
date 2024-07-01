@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 04 - MP Tomaylla</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <H1>HACKATHON 04: Javascript y HTTP</H1>
+
+        <!-- Reto 1 -->
+        <div class="mb-5">
+            <h2>Reto 1</h2>
+            <h3>Ejercicios</h3>
+            <div class="mb-3">
+                <div class="row exercise">
+                    <div class="col-md-6">
+                        <p>1. Suma de números. Ingrese 2 números para calcular la sumatoria de ambos</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-primary mb-2" onclick="r1ejercicio1()">Ejercicio 1</button>
+                    </div>
+                </div>
+                <div class="row exercise">
+                    <div class="col-md-6">
+                        <p>2. Potencia de un número. Ingrese 2 números, el primero será la base y el segundo el
+                            exponente</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-primary mb-2" onclick="r1ejercicio2()">Ejercicio 2</button>
+                    </div>
+                </div>
+                <div class="row exercise">
+                    <div class="col-md-6">
+                        <p>3. Suma de cubos. Ingresa números para devolver la suma de sus cubos</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-primary mb-2" onclick="r1ejercicio3()">Ejercicio 3</button>
+                    </div>
+                </div>
+                <div class="row exercise">
+                    <div class="col-md-6">
+                        <p>4. Área de un triángulo. Ingresa la base y la altura de un triángulo para calcular su área
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-primary mb-2" onclick="r1ejercicio4()">Ejercicio 4</button>
+                    </div>
+                </div>
+                <div class="row exercise">
+                    <div class="col-md-6">
+                        <p>5. Calculadora. Ingresa 3 parámetros, dos números y una operación matemática</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button class="btn btn-primary mb-2" onclick="r1ejercicio5()">Ejercicio 5</button>
+                    </div>
+                </div>
+            </div>
+            <h3>Preguntas</h3>
+            <div class="mb-3">
+                <h4>¿Cómo defines una función?</h4>
+                <p>Una función JavaScript es un bloque de código diseñado para realizar una tarea concreta. Se ejecuta
+                    cuando "algo" la invoca o la llama. En ella contenemos un conjunto de instrucciones que se agrupan
+                    para realizar una tarea específica y que se pueden reutilizar fácilmente.</p>
+                <p>La manera más común de declarar una función es utilizando la palabra reservada <code>function</code>,
+                    seguido del nombre de la función, los parámetros entre paréntesis y el bloque de código entre
+                    llaves.</p>
+                <h6>Ejemplo de función</h6>
+                <pre><code class="language-javascript">
+                    function saludar(nombre) {
+                        return `Hola, ${nombre}!`;
+                    }
+                </code></pre>
+                <p>Dentro de la función, los parámetros o argumentos se comportan como variables locales. Una función
+                    puede devolver un resultado utilizando la palabra reservada <code>return</code>, cuando se llama a
+                    esta instrucción finaliza la ejecución de la función.</p>
+                <p>También se pueden definir como expresiones las cuales pueden ser anónimas o tener un nombre.</p>
+                <h6>Ejemplo de función anónima</h6>
+                <pre><code class="language-javascript">
+                    const saludar = function(nombre) {
+                        return `Hola, ${nombre}!`;
+                    };
+                </code></pre>
+                <h6>Ejemplo de función nombrada</h6>
+                <pre><code class="language-javascript">
+                    const saludar = function saludarFuncion(nombre) {
+                        return `Hola, ${nombre}!`;
+                    };
+                </code></pre>
+                <p>Por otro lado es posible compactar las funciones a través del uso de funciones flecha o
+                    <em>arrow</em>. Éstas fueron introducidas en ES6 (ECMAScript 2015) y son siempre anónimas.</p>
+                <h6>Ejemplo de función flecha</h6>
+                <pre><code class="language-javascript">
+                    const saludar = (nombre) => {
+                    return `Hola, ${nombre}!`;
+                    };
+        
+                    console.log(saludar('Roberto'));
+                </code></pre>
+                <p>También puede escribirse omitiendo los paréntesis y llaves, cuando la función es de una sola línea y
+                    devuelve un valor.</p>
+                <pre><code class="language-javascript">
+                    const saludar = nombre => `Hola, ${nombre}!`;
+                    
+                    console.log(saludar('Roberto'));
+                </code></pre>
+
+                <p/>
+                <h4>¿Hasta cuántos argumentos puedes declarar en una función?</h4>
+                <p>En JavaScript, una función puede tener un número ilimitado de parámetros o argumentos. No existe un límite técnico en la cantidad de parámetros pero hay que considerar la legibilidad en nuestros desarrollos. Cuando tenemos demasiados parámetros dentro de una función tiende a ser muy difícil de entender y por ende de dar mantenimiento. Por lo que es necesario que consideremos en nuestra programación únicamente la cantidad necesaria para la implementación de funciones.</p>
+                <p>Considerar también que es posible utilizar parámetros rest que permiten a una función aceptar cualquier número de argumentos como un array.</p>
+                <h6>Ejemplo de uso de parámetros rest</h6>
+                <pre><code class="language-javascript">
+                    function sumarNumeros(...numeros) {
+                        return numeros.reduce((sum, num) => sum + num, 0);
+                    }
+                    
+                    let resultado = sumarNumeros(1, 2, 3, 4, 5);
+                    console.log(resultado); // Imprime 15
+                </code></pre>
+            </div>
+        </div>
+
+        <!-- Línea divisoria entre Reto 1 y Reto 2 -->
+        <hr class="my-5">
+
+        <!-- Reto 2 -->
+        <div>
+            <h2>Reto 2</h2>
+            <h3>Ejercicios</h3>
+            <div class="mb-3">
+                <div class="row" id="ejerciciosReto2">
+                    <!-- Aquí se generan dinámicamente los botones desde JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/prism.js"></script>
+    <!-- Enlazar Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script de JavaScript de los retos -->
+    <script src="reto_1.js"></script>
+    <script src="reto_2.js"></script>
+   
+
+</body>
+</body>
+
+</html>
