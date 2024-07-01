@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+/Hackaton02
+/Hackaton03
+/Hackaton04
 # User-specific files
 *.rsuser
 *.suo
