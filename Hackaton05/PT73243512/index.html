@@ -1,102 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    
+  <title>Sistema de reparaciones de celulares</title>
+  <link rel="stylesheet" href="CSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron">
-                    <h1 id="aerolinea"></h1>
-                        <h2 id="ciudad"></h2>
-                        <p>
-                            SISTEMA DE REPARACIÓN DE CELULARES  </p>
-                        <p>
-                            <a class="btn btn-primary btn-large" id="reservar" href="#">RESERVAR ATENCIÓN EN SAN MIGUEL</a>
-                        </p>
-
-                        <p>
-                            <a class="btn btn-primary btn-large" id="reservar2" href="#">RESERVAR ATENCIÓN EN CHORRILLOS</a>
-                        </p>
-
-                </div>
-
-                 
-                <div id="divReserva" style="display: none;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2></h2>
-                        </div>
-                        <div class="col-md-6">
-                            <h1>Tecnico asignado: Luis Lopez</h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <table class="table">
-
-                                <tr>
-                                    <td> <label for="">PIEZA</label></td>
-                                    <td><input type="text" name="" id="idaNombre" value="Nombre" disabled></td>
-                                </tr>
-                                <tr>
-                                    <td> <label for="">SERIE</label></td>
-                                    <td><input type="text" name="" id="idaOrigen" value="Nombre" disabled></td>
-                                </tr>
-                                <tr>
-                                    <td> <label for="">IMEI</label></td>
-                                    <td><input type="text" name="" id="retDestino" value="Nombre" disabled></td>
-                                </tr>
-                                <tr>
-                                    
-                                </tr>
-
-                            </table>
-                        </div>
-                    
-        
-        
-                            
-                            
-                            
-                        </div>      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <script src="https://kit.fontawesome.com/e59191e4cc.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  
+  <h1>Sistema de reparaciones de celulares</h1>
+  <form id="crear-reparacion-form">
+    <label for="telefono-numero-serie">Numero de serie del telefono:</label>
+    <input type="text" id="telefono-numero-serie" required>
+    <br>
+    <label for="telefono-imei">IMEI del telefono:</label>
+    <input type="text" id="telefono-imei" required>
+    <br>
+    <label for="telefono-marca">Marca del telefono:</label>
+    <input type="text" id="telefono-marca" required>
+    <br>
+    <label for="telefono-modelo">Modelo del telefono:</label>
+    <input type="text" id="telefono-modelo" required>
+    <br>
+    <label for="sucursal">Sucursal:</label>
+    <select id="sucursal" required>
+      <option value="">Seleccione una sucursal</option>
+      <option value="Sucursal 1">Sucursal 1</option>
+      <option value="Sucursal 2">Sucursal 2</option>
+      <option value="Sucursal 3">Sucursal 3</option>
+    </select>
+    <br>
+    <label for="tecnico">Tecnico:</label>
+    <select id="tecnico" required>
+      <option value="">Seleccione un tecnico</option>
+      <option value="Tecnico 1">Tecnico 1</option>
+      <option value="Tecnico 2">Tecnico 2</option>
+      <option value="Tecnico 3">Tecnico 3</option>
+    </select>
+    <br>
     
-    <script src="script.js"></script>
-    <script src="stripe.js"></script>
-    <script>
-        let objDatos = {
-            nombre: "CENTRO DE REPARACIONES DE CELULARES",
-            ciudad: ""
-        }
-        const objReserva = Reserva.init(objDatos);
-    </script>
+    <button type="submit">CONSULATAR</button>
+  </form>
+
+  <div id="reparaciones-list">
+    <h2>Diagnostico</h2>
+    <ul id="reparaciones-ul"></ul>
+  </div>
+  
+  <div id="alert-container" style="display: none;">
+    <div id="alert-box">
+      <h2 id="alert-title">
+        <i class="fas fa-exclamation-triangle" id="alert-icon"></i>
+        Alerta
+      </h2>
+      <p id="alert-message">Este teléfono está reportado como robado. No se puede realizar la reparación.</p>
+      <button id="alert-close">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="datos-ingresados">
+    <h2>Datos ingresados</h2>
+    <p id="telefono-numero-serie-p">Numero de serie: <span id="telefono-numero-serie-span"></span></p>
+    <p id="telefono-imei-p">IMEI: <span id="telefono-imei-span"></span></p>
+    <p id="telefono-marca-p">Marca: <span id="telefono-marca-span"></span></p>
+    <p id="telefono-modelo-p">Modelo: <span id="telefono-modelo-span"></span></p>
+    <p id="sucursal-p">Sucursal: <span id="sucursal-span"></span></p>
+    <p id="tecnico-p">Tecnico: <span id="tecnico-span"></span></p>
+  </div>
+
+  <script src="script.js">
+    
+  </script>
 </body>
 </html>

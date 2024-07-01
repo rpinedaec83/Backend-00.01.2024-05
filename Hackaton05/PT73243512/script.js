@@ -1,301 +1,114 @@
-const Reserva = function () //a
-{
-    let Ciudad;
-    let Nombre;
-    let arrAviones = [];
-
-    function configurar(){
-        $("#aerolinea").text(Nombre);
-        $("#ciudad").text(Ciudad);
-        crearAviones();
+class Sucursal {
+    constructor(nombre, direccion) {
+      this.nombre = nombre;
+      this.direccion = direccion;
     }
-
-    function crearAviones() {
-        let objAvion = new Aviones("LIM-009", "Airbus 320 Neo", 186, 90, 502.69);
-        arrAviones.push(objAvion);
-        let objAvion1 = new Aviones("UIO-011", "Airbus 319", 124, 62, 502.69);
-        arrAviones.push(objAvion1);
+  }
+  
+  class Tecnico {
+    constructor(nombre, especialidades) {
+      this.nombre = nombre;
+      this.especialidades = especialidades;
     }
-
-    function eventos() {
-        console.log("Escuchando los eventos")
-        $("#reservar").on("click", reservar);
-        $("#reservar2").on("click", reservar2);
-      
+  }
+  
+  class Telefono {
+    constructor(numeroSerie, imei, marca, modelo) {
+      this.numeroSerie = numeroSerie;
+      this.imei = imei;
+      this.marca = marca;
+      this.modelo = modelo;
     }
-
-    function dibujarReserva(reserva){
-        console.log(reserva);
-        $("#idaNombre").val(reserva.avionIda.arrPasajeros[0].nombres);
-        $("#idaApellido").val(reserva.avionIda.arrPasajeros[0].apellidos);
-        $("#idaFecha").val(reserva.fechaIda);
-        $("#idaVuelo").val(reserva.avionIda.matricula);
-        $("#idaOrigen").val(reserva.origen);
-        
-
-        $("#retNombre").val(reserva.avionVuelta.arrPasajeros[0].nombres);
-        $("#retApellido").val(reserva.avionVuelta.arrPasajeros[0].apellidos);
-        $("#retFecha").val(reserva.fechaVuelta);
-        $("#retVuelo").val(reserva.avionVuelta.matricula);
-        $("#retDestino").val(reserva.destino);
-        
-        $("#divReserva").show();
-
+  }
+  
+  class Reparacion {
+    constructor(telefono, sucursal, tecnico) {
+      this.telefono = telefono;
+      this.sucursal = sucursal;
+      this.tecnico = tecnico;
+      this.estado = " Se encuentra en proceso de revisión.";
     }
-
-   
-                
-              
-
-                async function reservar() {
-                    console.log("Empieza el proceso de reserva de vuelos");
-                    $("#divReserva").hide();
-                    const { value: formValues } = await Swal.fire({
-                        title: "Ingresa información del telefono",
-                        icon: "info",
-                        html: `
-                            <label class="col-md-4 control-label" for="textinput">Numero de Serie</label>  
-                            <input id="origen" class="swal2-input">
-                            <label class="col-md-4 control-label" for="textinput">IMEI DEL TELEFONO</label>  
-                            <input id="destino" class="swal2-input">
-                        `,
-                        showCloseButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: "Guardar",
-                        denyButtonText: `Cancelar`,
-                        preConfirm: () => {
-                            const origen = document.getElementById("origen").value;
-                            const destino = document.getElementById("destino").value;
-                
-                            const stringSERIE = "12345";
-                            const stringIMEI = "123";
-                
-                            if (origen === stringSERIE && destino === stringIMEI) {
-                                Swal.showValidationMessage("LA SERIE Y EL IMEI ESTAN COMO REPORTADOS EN EL SERVICIO");
-                                return false;
-                            }
-                
-                            return {
-                                origen: origen,
-                                destino: destino
-                            };
-                        }
-                    });
-                
-                    if (formValues) {
-                        let reserva = new Reservas(formValues.origen, formValues.destino);
-                        let objPasajero = await agregarPasajeros2();
-                       
-                            reserva.asignarAvionIda(arrAviones[0]);
-                            reserva.asignarAvionVuelta(arrAviones[1]);
-                            reserva.avionIda.agregarPasajeros2(objPasajero);
-                            reserva.avionVuelta.agregarPasajeros2(objPasajero);
-                            dibujarReserva(reserva);
-                            let pasajero3 = await agregarPasajeros3();
-                    }
-                }
-
-
-                async function reservar2() {
-                    console.log("");
-                    $("#divReserva").hide();
-                    const { value: formValues } = await Swal.fire({
-                        title: "Ingresa información del telefono",
-                        icon: "info",
-                        html: `
-                            <label class="col-md-4 control-label" for="textinput">Numero de Serie</label>  
-                            <input id="origen" class="swal2-input">
-                            <label class="col-md-4 control-label" for="textinput">IMEI DEL TELEFONO</label>  
-                            <input id="destino" class="swal2-input">
-                        `,
-                        showCloseButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: "Guardar",
-                        denyButtonText: `Cancelar`,
-                        preConfirm: () => {
-                            const origen = document.getElementById("origen").value;
-                            const destino = document.getElementById("destino").value;
-                
-                            const stringSERIE = "1234567";
-                            const stringIMEI = "1234";
-                
-                            if (origen === stringSERIE && destino === stringIMEI) {
-                                Swal.showValidationMessage("LA SERIE Y EL IMEI ESTAN COMO REPORTADOS EN EL SERVICIO");
-                                return false;
-                            }
-                
-                            return {
-                                origen: origen,
-                                destino: destino
-                            };
-                        }
-                    });
-                
-                    if (formValues) {
-                        let reserva = new Reservas(formValues.origen, formValues.destino);
-                        let objPasajero = await agregarPasajeros2();
-                       
-                            reserva.asignarAvionIda(arrAviones[0]);
-                            reserva.asignarAvionVuelta(arrAviones[1]);
-                            reserva.avionIda.agregarPasajeros2(objPasajero);
-                            reserva.avionVuelta.agregarPasajeros2(objPasajero);
-                            dibujarReserva(reserva);
-                            let pasajero3 = await agregarPasajeros3();
-                    }
-                }
-
-                
-    async function agregarPasajeros() {
-        console.log("Agregar Pasajeros");
-
-        const { value: formValues } = await Swal.fire({
-            title: "Ingresa descripción de la primera revisión del celular",
-            icon: "icon",
-            html: `
-            <label class="col-md-4 control-label" for="textinput">Descripción</label>  
-            <input id="nombre" class="swal2-input">
-                
-            `,
-            showCloseButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            denyButtonText: `Cancelar`,
-            preConfirm: () => {
-                return {
-                    nombre:  document.getElementById("nombre").value,
-                    
-                };
-            }
-        });
-        if (formValues) {
-            let pasajero =new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
-            return pasajero;
-        }
+  }
+  
+  const sucursales = [
+    new Sucursal("Sucursal 1", "Direccion 1"),
+    new Sucursal("Sucursal 2", "Direccion 2"),
+    new Sucursal("Sucursal 3", "Direccion 3")
+  ];
+  
+  const tecnicos = [
+    new Tecnico("Tecnico 1", ["iPhone", "Samsung"]),
+    new Tecnico("Tecnico 2", ["Huawei", "Xiaomi"])
+  ];
+  
+  const reparaciones = [];
+  
+  document.getElementById("crear-reparacion-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const telefonoNumeroSerie = document.getElementById("telefono-numero-serie").value;
+    const telefonoImei = document.getElementById("telefono-imei").value;
+    const telefonoMarca = document.getElementById("telefono-marca").value;
+    const telefonoModelo = document.getElementById("telefono-modelo").value;
+    const sucursal = sucursales.find((s) => s.nombre === document.getElementById("sucursal").value);
+    const tecnico = tecnicos.find((t) => t.nombre === document.getElementById("tecnico").value);
+    let crearReparacion = true; 
+  
+    if (telefonoImei === "12345" && telefonoNumeroSerie === "123") {
+     
+      document.getElementById("alert-container").style.display = "block";
+  
+      document.getElementById("alert-close").addEventListener("click", function() {
+        document.getElementById("alert-container").style.display = "none";
+        crearReparacion = false; 
+      });
+  
+      crearReparacion = false; 
     }
+  
+    if (crearReparacion) {
+      const telefono = new Telefono(telefonoNumeroSerie, telefonoImei, telefonoMarca, telefonoModelo);
+      const reparacion = new Reparacion(telefono, sucursal, tecnico);
+  
+      reparaciones.push(reparacion);
+      mostrarReparaciones();
+  
 
-    async function agregarPasajeros3() {
-        console.log("Agregar Pasajeros");
+      mostrarDatosIngresados(reparacion);
+    }
+  
 
-        const { value: formValues } = await Swal.fire({
-            title: "CONDICIONES",
-            icon: "info",
-            html: `
-            <label class="col-md-4 control-label" for="textinput">AUTORIZACIÓN</label>  
-            <input id="nombre" class="swal2-input">
-             <label class="col-md-4 control-label" for="textinput">PAGO 50%</label>  
-            <input id="apellido" class="swal2-input">   
-            `,
-            showCloseButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            denyButtonText: `Cancelar`,
-            preConfirm: () => {
-                return {
-                    nombre:  document.getElementById("nombre").value,
-                    apellido:  document.getElementById("apellido").value,
-                };
-            }
-        });
-        if (formValues) {
-            let pasajero =new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
-            return pasajero;
-        }
-    }
+    document.getElementById('telefono-numero-serie').value = '';
+    document.getElementById('telefono-imei').value = '';
+    document.getElementById('telefono-marca').value = '';
+    document.getElementById('telefono-modelo').value = '';
+  });
+  
+  function mostrarReparaciones() {
+    const reparacionesUl = document.getElementById("reparaciones-ul");
+  
 
-    async function agregarPasajeros2() {
-        console.log("Agregar Pasajeros");
-
-        const { value: formValues } = await Swal.fire({
-            title: "Ingresa descripción de la primera revisión del celular",
-            icon: "info",
-            html: `
-            <label class="col-md-4 control-label" for="textinput">Descripción</label>  
-            <input id="nombre" class="swal2-input">
-                
-            `,
-            showCloseButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            denyButtonText: `Cancelar`,
-            preConfirm: () => {
-                return {
-                    nombre:  document.getElementById("nombre").value,
-                    
-                };
-            }
-        });
-        if (formValues) {
-            let pasajero =new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
-            return pasajero;
-        }
-    }
-    return {
-        init: function (parametros) {
-            console.log(parametros)
-            Nombre = parametros.nombre;
-            Ciudad = parametros.ciudad;
-            configurar();
-            eventos();
-        },
-    };
-}();
-
-class Reservas {
-    constructor(origen, destino, fechaIda, fechaVuelta) {
-        this.origen = origen;
-        this.destino = destino;
-        this.fechaIda = fechaIda;
-        this.fechaVuelta = fechaVuelta;
-        this.avionIda = null;
-        this.avionVuelta = null;
-    }
-    asignarAvionIda(avion) {
-        this.avionIda = avion;
-    }
-    asignarAvionVuelta(avion) {
-        this.avionVuelta = avion;
-    }
-}
-
-class Aviones {
-    constructor(matricula, modelo, nroAsientos, capacidadMinima, costoVuelo) {
-        this.matricula = matricula;
-        this.modelo = modelo;
-        this.nroAsientos = nroAsientos;
-        this.capacidadMinima = capacidadMinima;
-        this.arrPasajeros = [];
-        this.habilitado = false;
-        this.reservado = 0;
-        this.costoVuelo = costoVuelo;
-    }
-    agregarPasajeros(pasajero) {
-        if (this.reservado >= this.capacidadMinima) {
-            this.habilitado = true;
-        }
-        this.arrPasajeros.push(pasajero);
-        this.reservado++;
-    }
-    agregarPasajeros2(pasajero) {
-        if (this.reservado >= this.capacidadMinima) {
-            this.habilitado = true;
-        }
-        this.arrPasajeros.push(pasajero);
-        this.reservado++;
-    }
-    agregarPasajeros3(pasajero) {
-        if (this.reservado >= this.capacidadMinima) {
-            this.habilitado = true;
-        }
-        this.arrPasajeros.push(pasajero);
-        this.reservado++;
-    }
-}
-
-
-class Pasajeros{
-    constructor(nombres, apellidos, nrodocumento){
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.nrodocumento = nrodocumento
-    }
-}
+    reparacionesUl.innerHTML = '';
+  
+    reparaciones.forEach((reparacion) => {
+      const li = document.createElement("li");
+      li.textContent = `El celular ${reparacion.telefono.marca} - ${reparacion.telefono.modelo} - ${reparacion.estado}`;
+      reparacionesUl.appendChild(li);
+    });
+    
+  }
+  
+  function mostrarDatosIngresados(reparacion) {
+    const telefonoNumeroSerieSpan = document.getElementById("telefono-numero-serie-span");
+    const telefonoImeiSpan = document.getElementById("telefono-imei-span");
+    const telefonoMarcaSpan = document.getElementById("telefono-marca-span");
+    const telefonoModeloSpan = document.getElementById("telefono-modelo-span");
+    const sucursalSpan = document.getElementById("sucursal-span");
+    const tecnicoSpan = document.getElementById("tecnico-span");
+  
+    telefonoNumeroSerieSpan.textContent = reparacion.telefono.numeroSerie;
+    telefonoImeiSpan.textContent = reparacion.telefono.imei;
+    telefonoMarcaSpan.textContent = reparacion.telefono.marca;
+    telefonoModeloSpan.textContent = reparacion.telefono.modelo;
+    sucursalSpan.textContent = reparacion.sucursal.nombre;
+    tecnicoSpan.textContent = reparacion.tecnico.nombre;
+  }
