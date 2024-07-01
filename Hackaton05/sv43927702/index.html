@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reparaciones de Celulares</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Gestión de Reparaciones de Celulares</h1>
+  <form id="telefonoForm">
+    <h2>Ingreso de Teléfono</h2>
+    <label for="numeroSerie">Número de Serie:</label>
+    <input type="text" id="numeroSerie" required><br>
+    <label for="IMEI">IMEI:</label>
+    <input type="text" id="IMEI" required><br>
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" required><br>
+    <button type="submit">Validar IMEI</button>
+  </form>
+
+  <div id="diagnosticoSection" style="display: none;">
+    <form id="diagnosticoForm">
+      <h2>Primera Revisión</h2>
+      <label for="diagnostico">Diagnóstico:</label>
+      <input type="text" id="diagnostico" required><br>
+      <label for="costo">Costo Estimado:</label>
+      <input type="number" id="costo" required><br>
+      <button type="submit">Registrar Diagnóstico</button>
+    </form>
+  </div>
+
+  <div id="autorizacionSection" style="display: none;">
+    <form id="autorizacionForm">
+      <h2>Autorización del Usuario</h2>
+      <label for="autorizacion">Autorización:</label>
+      <input type="checkbox" id="autorizacion"><br>
+      <label for="abono">Abono:</label>
+      <input type="number" id="abono" required><br>
+      <button type="submit">Autorizar Reparación</button>
+    </form>
+  </div>
+
+  <div id="tecnicoSection" style="display: none;">
+    <form id="tecnicoForm">
+      <h2>Asignar Técnico</h2>
+      <label for="tecnico">Técnico:</label>
+      <select id="tecnico"></select><br>
+      <button type="submit">Asignar Técnico</button>
+    </form>
+  </div>
+
+  <div id="repuestosSection" style="display: none;">
+    <form id="repuestosForm">
+      <h2>Agregar Repuestos</h2>
+      <label for="repuesto">Repuesto:</label>
+      <input type="text" id="repuesto" required><br>
+      <label for="costoRepuesto">Costo del Repuesto:</label>
+      <input type="number" id="costoRepuesto" required><br>
+      <button type="submit">Agregar Repuesto</button>
+    </form>
+  </div>
+
+  <div id="finalizarSection" style="display: none;">
+    <form id="finalizarForm">
+      <h2>Finalizar Reparación</h2>
+      <button type="submit">Finalizar Reparación</button>
+    </form>
+  </div>
+
+  <div id="pagoSection" style="display: none;">
+    <form id="pagoForm">
+      <h2>Pagar Saldo Restante</h2>
+      <p id="saldoRestante"></p>
+      <label for="pagoRestante">Pago Restante:</label>
+      <input type="number" id="pagoRestante" required><br>
+      <label for="entregado">¿Entregado?</label>
+      <input type="checkbox" id="entregado"><br>
+      <button type="submit">Pagar y Entregar</button>
+    </form>
+  </div>
+
+  <div id="telefonoStatus"></div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
