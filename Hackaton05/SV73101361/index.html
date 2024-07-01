@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reparación de Teléfonos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Reparación de Teléfonos</h1>
+        
+        <h2>Ingreso de Teléfono</h2>
+        <form id="phoneForm">
+            <label for="branch">Sucursal:</label>
+            <select id="branch" required>
+                <option value="">Seleccione una sucursal</option>
+                <option value="Sucursal 1">Sucursal 1</option>
+                <option value="Sucursal 2">Sucursal 2</option>
+            </select><br><br>
+            <label for="serialNumber">Número de Serie:</label>
+            <input type="text" id="serialNumber" required><br><br>
+            <label for="imei">IMEI:</label>
+            <input type="text" id="imei" required><br><br>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" required><br><br>
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" required><br><br>
+            <label for="diagnostico">Diagnóstico:</label>
+            <input type="text" id="diagnostico" required><br><br>
+            <label for="autorizacion">Autorización (S/N):</label>
+            <input type="text" id="autorizacion" required><br><br>
+            <label for="abono">Abono (%):</label>
+            <input type="text" id="abono" required><br><br>
+            <label for="tecnico">Técnico:</label>
+            <select id="tecnico" required>
+                <option value="">Seleccione un técnico</option>
+            </select><br><br>
+            <button type="submit" class="button">Ingresar Teléfono</button>
+        </form>
+
+        <h2>Estado de los Equipos</h2>
+        <table id="phoneTable">
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Número de Serie</th>
+                    <th>IMEI</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Diagnóstico</th>
+                    <th>Autorización</th>
+                    <th>Abono</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
