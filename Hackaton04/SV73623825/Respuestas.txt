@@ -1,0 +1,14 @@
+-  ¿Cómo defines una función?
+Hay 3 formas
+function myFunction(a, b) {
+  return a * b;
+}
+
+let myFunction = (a, b) => a * b;
+
+hello = function() {
+  return "Hello World!";
+}
+
+-  ¿Hasta cuantos argumentos puedes declarar en una función?
+No hay limite y puede ser de diferentes tipos (number,string,areglo,obj,map,etc)
