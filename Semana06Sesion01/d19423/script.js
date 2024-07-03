@@ -56,3 +56,69 @@ document.getElementById("generarPass").addEventListener("click", function(){
 })
 
 
+let x = document.getElementsByTagName("p");
+
+console.log(x);
+x[0].style.fontFamily = "Arial"
+x[1].innerText = "Este es mi parrafo 2 desde js"
+
+for (let index = 0; index < x.length; index++) {
+    const element = x[index];
+    element.style.color = "#00000"+index;
+    
+}
+
+let cls = document.getElementsByClassName("lista");
+console.log(cls)
+
+for (let index = 0; index < cls.length; index++) {
+    const element = cls[index];
+    element.style.listStyleType = "upper-roman";
+    
+}
+
+let li = document.querySelectorAll("li.lista1")
+console.log(li)
+li[0].style.listStyleType = "hebrew"
+
+let btn = document.getElementById("boton");
+btn.accessKey = "r";
+btn.addEventListener("click", function(){
+    console.log("Hizo click")
+})
+
+let carros = [
+    {
+        marca: "BMW",
+        combustible: "gasolina"
+    },
+    {
+        marca: "Mercedes",
+        combustible: "gasolina"
+    },
+    {
+        marca: "Audi",
+        combustible: "electrico"
+    }
+]
+let divCarros = document.getElementById("autos");
+let ul = document.createElement("ul");
+for (let index = 0; index < carros.length; index++) {
+    const element = carros[index];
+    let li = document.createElement("li");
+    li.innerText = element.marca
+    ul.appendChild(li);
+}
+divCarros.appendChild(ul)
+
+document.getElementById("htmlEjemplo").innerHTML = "<p><strong>Hola desde js</strong></p>"
+
+let sel = document.createElement("select");
+for (let index = 0; index < carros.length; index++) {
+    const element = carros[index];
+    let option = document.createElement("option");
+    option.value = element.combustible
+    option.text = element.marca
+    sel.appendChild(option);
+}
+document.getElementById("selector").appendChild(sel)
