@@ -14,6 +14,7 @@ let login;
 let objLocalGundams;
 let $table = $('#table');
 let arrGundams = [];
+
 window.accionEvents = {
     'click .like': function (e, value, row, index) {
         console.log(row)
