@@ -9,56 +9,70 @@
 </head>
 <body>
     <div class="container">
-        <h1>Reparaciones de celulares</h1>
+        <h1>Reparaciones de celulares!</h1>
 
         <div class="datos_celular">
             <p>Ingresa tus datos: </p>
 
             <div class="">
-                <label for="">Dueño:</label>
-                <input type="text" placeholder="Ingrese su nombre">
+                <label for="dueno">Dueño:</label>
+                <input type="text" id="dueno" class="" placeholder="Ingrese su nombre">
             </div>
             <div class="">
                 <label for="">Modelo de celular:</label>
-                <input type="text" placeholder="Modelo">
+                <!-- <input type="text" id="modeloDeCelular" placeholder="Modelo"> -->
+                <select name="" id="modeloDeCelular">
+                    <option value="Iphone">Iphone</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Nokia">Nokia</option>
+                    <option value="Motorola">Motorola</option>
+                    <option value="LG">LG</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                </select>
             </div>
             <div class="">
                 <label for="">Número de serie:</label>
-                <input type="text" placeholder="Número de serie">
+                <input type="text" id="numeroDeSerie" placeholder="Número de serie">
             </div>
             <div class="">
                 <label for="">IMEI:</label>
-                <input type="text" placeholder="IMEI">
+                <input type="text" id="imei" placeholder="IMEI">
             </div>
             <div class="">
-                <label for="">Batería</label>
-                <select name="" id="">
-                    <option value="">Bien</option>
-                    <option value="">Mal</option>
+                <label for="bateria">Batería</label>
+                <select name="" id="bateria">
+                    <option value="true">Bien</option>
+                    <option value="false">Mal</option>
                 </select>
-                <label for="">Pantalla</label>
-                <select name="" id="">
-                    <option value="">Bien</option>
-                    <option value="">Mal</option>
+                <label for="pantalla">Pantalla</label>
+                <select name="" id="pantalla">
+                    <option value="true">Bien</option>
+                    <option value="false">Mal</option>
                 </select>
-                <label for="">Cámara</label>
-                <select name="" id="">
-                    <option value="">Bien</option>
-                    <option value="">Mal</option>
+                <label for="camara">Cámara</label>
+                <select name="" id="camara">
+                    <option value="true">Bien</option>
+                    <option value="false">Mal</option>
                 </select>
-                <label for="">Botones</label>
-                <select name="" id="">
-                    <option value="">Bien</option>
-                    <option value="">Mal</option>
+                <label for="botones">Botones</label>
+                <select name="" id="botones">
+                    <option value="true">Bien</option>
+                    <option value="false">Mal</option>
                 </select>
             </div>
         </div>
     </div>
 
     <p>
-        <a href="#">Guardar móvil</a>
+        <a href="#" id="guardar">Guardar móvil</a>
     </p>
+
+    <div id="mostrarDatos"></div>
+    <div class="mostrarTecnicos" id="mostrarTecnicos"></div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="script_2.js"></script>
 </body>
 </html>
