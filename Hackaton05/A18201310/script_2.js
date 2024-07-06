@@ -113,11 +113,39 @@ function mostrarTecnicos(){
 window.onload = mostrarTecnicos;
 
 //Funcion para mostrar el tecnico que coincida con el modelo del equipo del cliente
-function mostrarTecnicoEspecialista(modeloDeCelular){
-    const tecnicoAdecuado = tecnicos.find(tecnico => tecnico.especialidad.toLowerCase() === modeloDeCelular.toLowerCase());
+function mostrarTecnicoEspecialista(cliente, contenedor){
+    // const tecnicoAdecuado = tecnicos.find(tecnico => tecnico.especialidad.toLowerCase() === modeloDeCelular.toLowerCase());
+    const tecnicoAdecuado = tecnicos.find(tecnico => tecnico.especialidad.toLowerCase() === cliente.modeloDeCelular.toLowerCase());
 
     if (tecnicoAdecuado) {
-        swal("Técnico Recomendado", `El técnico recomendado para reparar un ${modeloDeCelular} es ${tecnicoAdecuado.nombre} ${tecnicoAdecuado.segundoNombre}.`, "info");
+        swal("Técnico Recomendado", `El técnico recomendado para reparar un ${cliente.modeloDeCelular} es ${tecnicoAdecuado.nombre} ${tecnicoAdecuado.segundoNombre}.`, "info");
+
+        //Lista de componentes malos
+        let componentesMal = [];
+        if (cliente.bateria === 'false') componentesMal.push('Batería');
+        if (cliente.pantalla === 'false') componentesMal.push('Pantalla');
+        if (cliente.camara === 'false') componentesMal.push('Cámara');
+        if (cliente.botones === 'false') componentesMal.push('Botones');
+        //Creamos el HTML para mostrar los componentes que están mal
+        let componentesMalHTML = '';
+        if(componentesMal.length > 0){
+            componentesMalHTML = `
+                <p>Componentes para reparar:</p>
+                <ul>
+                    ${componentesMal.map(componente => `<li>${componente}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        const tecnicoInfo = `
+            <h3>Técnico recomendado para reparar: ${tecnicoAdecuado.nombre} ${tecnicoAdecuado.segundoNombre}</h3>
+            <p>Especialidad: ${tecnicoAdecuado.especialidad}</p>
+            <p>Tiempo de Experiencia: ${tecnicoAdecuado.tiempoExperiencia}</p>
+            <p>Móviles Reparados: ${tecnicoAdecuado.movilesArreglados}</p>
+            ${componentesMalHTML}
+            <hr>
+        `;
+        contenedor.insertAdjacentHTML('beforeend', tecnicoInfo);
     } else {
         swal("Técnico No Encontrado", `No se encontró un técnico especializado para reparar un ${modeloDeCelular}.`, "warning");
     }
@@ -138,6 +166,7 @@ function limpiarCampos() {
 //Funcion para mostrar el primer diagnostico
 function mostrarDatos(cliente){
     const mostrarDatosAdd = document.getElementById('mostrarDatos');
+    mostrarDatosAdd.innerHTML = ''; //limpia el codigo anterior
     mostrarDatosAdd.insertAdjacentHTML('beforeend', `
         <h2>Diagnóstico N°1 del móvil:</h2>
         <ul>
@@ -157,15 +186,14 @@ function mostrarDatos(cliente){
         <label for="monto">Ingrese el abonado del 50% (Monto total 100soles.):</label>
         <input type="number" id="monto" name="monto" min="1" max="100">
         <button id="validar">Validar y Guardar</button>
-
-        <h2>Mejor técnico según modelo de equipo</h2>
-        <p>El mejor ténico para el modelo del equipo es ---.</p>
-        <hr>
     `);
+
+    //Mostrar el tecnico especialista adecuado
+    mostrarTecnicoEspecialista(cliente, mostrarDatosAdd);
 
     document.getElementById('validar').addEventListener('click', function(event){
         event.preventDefault(); // impide la acción predeterminada del botón
-        validarYGuardar(cliente);
+        validarGuardarYReparar(cliente);
     });
 
     
@@ -209,8 +237,8 @@ function guardarDatos(){
     console.log(clientes);
 }
 
-// Funcion para validar y guardar los datos del formulario
-function validarYGuardar(cliente) {
+// Funcion para validar y guardar la autorización con el abonado del formulario 
+function validarGuardarYReparar(cliente) {
     let autorizacion = document.getElementById('autorizacion').value;
     let monto = document.getElementById('monto').value;
 
@@ -225,11 +253,40 @@ function validarYGuardar(cliente) {
     }
 
     // Si todas las validaciones son exitosas, guardar los datos
-    swal("Datos validados y guardados", "El diagnóstico y autorización han sido registrados exitosamente.", "success");
+    swal("Datos validados y guardados", "El diagnóstico y autorización han sido registrados exitosamente, empezamos a reparar el equipo móvil", "success");
 
-    //Funcion para llamar al tecnico que coincida con el movil del cliente
-    //Llamamos a la funcion para obtener el tecnico adecuado
-    mostrarTecnicoEspecialista(cliente.modeloDeCelular);d
+    //Actualizar el estado de los componentes a "Bien"
+    cliente.bateria = 'true';
+    cliente.pantalla = 'true';
+    cliente.camara = 'true';
+    cliente.botones = 'true';
+
+    // Mostrar el HTML con los componentes reparados y el input para el monto restante
+    const mostrarDatosAdd = document.getElementById('mostrarDatos');
+    mostrarDatosAdd.innerHTML = ''; // Limpiar el contenido anterior
+    mostrarDatosAdd.insertAdjacentHTML('beforeend', `
+        <h2>Reparación Completa</h2>
+        <p>Todos los componentes han sido reparados:</p>
+        <ul>
+            <li>Batería: Bien</li>
+            <li>Pantalla: Bien</li>
+            <li>Cámara: Bien</li>
+            <li>Botones: Bien</li>
+        </ul>
+        <label for="montoRestante">Ingrese el monto restante para completar el pago (Total: 100 soles):</label>
+        <input type="number" id="montoRestante" name="montoRestante" min="1" max="${100 - monto}">
+        <button id="pagarResto">Pagar resto de la reparación</button>
+    `);
+
+    document.getElementById('pagarResto').addEventListener('click', function(event){
+        event.preventDefault(); // Impide la acción predeterminada del botón
+        let montoRestante = document.getElementById('montoRestante').value;
+        if (parseInt(monto) + parseInt(montoRestante) >= 100) {
+            swal("Reparación Exitosa", "La reparación ha sido completada y el monto total ha sido pagado.", "success");
+        } else {
+            swal("Error", "El monto total no ha sido completado. Por favor, ingrese el monto restante.", "error");
+        }
+    });
 }
 
 //Evento para el boton de GUARDAR DATOS
