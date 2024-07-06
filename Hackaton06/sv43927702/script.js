@@ -4,7 +4,7 @@ localStorage.setItem("celReport", JSON.stringify(IMEI_REPORTED_STOLEN));
 const GundamStore = function () {
     login = JSON.parse(sessionStorage.getItem("login"));
     if (login == null) {
-        window.location.replace("/login.html");
+        window.location.replace("//Hackaton06/sv43927702/login.html");
     }
     objLocalGundams = localStorage.getItem("gundams");
     if (objLocalGundams != null) {

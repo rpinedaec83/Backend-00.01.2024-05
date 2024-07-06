@@ -23,7 +23,7 @@ loginform.addEventListener("submit",function login(e){
         else{
             sessionStorage.setItem("login", JSON.stringify({login:false}));
         }
-        window.location.replace("/index.html");
+        window.location.replace("//Hackaton06/sv43927702/index.html");
     }
 
 });
