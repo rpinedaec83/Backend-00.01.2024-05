@@ -29,8 +29,9 @@ window.accionEvents = {
 
 const GundamStore = function () { 
     login = JSON.parse(sessionStorage.getItem("login"));
-    if (login == null) {
-        window.location.replace("file:///Users/rpineda/Fuentes/Backend-00.01.2024-05/Semana06Sesion02/d19423/login.html");
+    if (login == null) {window.location.replace("/Semana06Sesion02/d19423/login.html");
+        
+        
     }
     objLocalGundams = localStorage.getItem("gundams");
     if (objLocalGundams != null) {
