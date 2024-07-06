@@ -17,16 +17,48 @@ let arrGundams = [];
 
 window.accionEvents = {
     'click .like': function (e, value, row, index) {
-        console.log(row)
-        console.log(index)
-        //editarItem(row);
+        editarItem(row);
     },
     'click .remove': function (e, value, row, index) {
-        //borrarItem(row);
+        borrarItem(row);
 
     }
 }
 
+function detailFormatter(index, row) {
+    console.log(row)
+    var html = []
+    $.each(row, function (key, value) {
+        switch (key) {
+            case "imagen":
+                html.push('<img src="img/' + value + '.jpg" alt="" srcset="" width="300px">')
+
+                break;
+            case "isCustom":
+                if (value) {
+                    let arrCustom = row.custom.split(',');
+                    console.log(arrCustom);
+                    let htmlstr = "<b>MODIFICACIONES:</b><ul>";
+                    arrCustom.forEach(element => {
+                        htmlstr += "<li>" + element + "</li>"
+                    });
+                    htmlstr += "</ul>";
+                    html.push('<p>' + htmlstr + '</p>')
+                }
+
+                break;
+            case "custom":
+                break;
+            default:
+                html.push('<p><b>' + key.toUpperCase() + ':</b> ' + value + '</p>')
+                break;
+        }
+
+
+
+    })
+    return html.join('')
+}
 const GundamStore = function () { 
     login = JSON.parse(sessionStorage.getItem("login"));
     if (login == null) {window.location.replace("/Semana06Sesion02/d19423/login.html");
@@ -115,12 +147,44 @@ function accionFormatter(value, row, index) {
     ].join('')
 }
 
-window.accionEvents = {
-    'click .like': function (e, value, row, index) {
-        //editarItem(row);
-    },
-    'click .remove': function (e, value, row, index) {
-        //borrarItem(row);
+function borrarItem(row){
+   
+    console.log(arrGundams);
 
+    const index = arrGundams.indexOf(row);
+    console.log(index);
+    if (index > -1) { // only splice array when item is found
+        arrGundams.splice(index, 1); // 2nd parameter means remove one item only
     }
+    console.log(arrGundams);
+    $table.bootstrapTable('load', arrGundams);
+    localStorage.setItem("gundams", JSON.stringify(arrGundams));
+}
+
+function editarItem(row){
+    console.log(arrGundams);
+    const index = arrGundams.indexOf(row);
+    console.log(index);
+    let nombre = prompt("Agrega el nuevo nombre");
+    let descripcion = prompt("Agrega la nueva descripcion");
+    let imagen = prompt("Agrega la nueva imagen");
+    let escala = prompt("Agrega la nueva escala");
+    let isCustom = prompt("Esta modificado???");
+    let custom = ""
+    if (isCustom == "SI") {
+        custom = prompt("Que le modificaste???");
+    }
+
+    arrGundams[index].nombre = nombre;
+    arrGundams[index].descripcion = descripcion;
+    arrGundams[index].imagen = imagen;
+    arrGundams[index].escala = escala;
+
+    arrGundams[index].isCustom = (isCustom == "SI" ? true : false);
+    arrGundams[index].custom = (isCustom == "SI" ? custom : "");
+
+    console.log(arrGundams);
+
+    $table.bootstrapTable('load', arrGundams);
+    localStorage.setItem("gundams", JSON.stringify(arrGundams));
 }
