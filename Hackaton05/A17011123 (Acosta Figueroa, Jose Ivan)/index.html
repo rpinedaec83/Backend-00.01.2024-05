@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Reparación de Celulares</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Sistema de Reparación de Celulares</h1>
+
+      <!-- Sección de Sucursales -->
+      <div class="card mt-4">
+        <div
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <h3>Sucursales</h3>
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#agregarSucursalModal"
+          >
+            Agregar Sucursal
+          </button>
+        </div>
+        <div class="card-body">
+          <ul id="sucursales-list" class="list-group">
+            <!-- Lista de sucursales se llenará dinámicamente -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sección de Técnicos -->
+      <div class="card mt-4">
+        <div
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <h3>Técnicos</h3>
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#agregarTecnicoModal"
+          >
+            Agregar Técnico
+          </button>
+        </div>
+        <div class="card-body">
+          <ul id="tecnicos-list" class="list-group">
+            <!-- Lista de técnicos se llenará dinámicamente -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sección de Tickets -->
+      <div class="card mt-4">
+        <div
+          class="card-header d-flex justify-content-between align-items-center"
+        >
+          <h3>Tickets</h3>
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#agregarTicketModal"
+          >
+            Agregar Ticket
+          </button>
+        </div>
+        <div class="card-body">
+          <ul id="tickets-list" class="list-group">
+            <!-- Lista de tickets se llenará dinámicamente -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Agregar Sucursal -->
+    <div
+      class="modal fade"
+      id="agregarSucursalModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="agregarSucursalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="agregarSucursalLabel">
+              Agregar Sucursal
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="form-agregar-sucursal">
+              <div class="form-group">
+                <label for="sucursal-nombre">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sucursal-nombre"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="sucursal-direccion">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sucursal-direccion"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="sucursal-contacto">Contacto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sucursal-contacto"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Agregar Técnico -->
+    <div
+      class="modal fade"
+      id="agregarTecnicoModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="agregarTecnicoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="agregarTecnicoLabel">
+              Agregar Técnico
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="form-agregar-tecnico">
+              <div class="form-group">
+                <label for="tecnico-sucursal">Sucursal</label>
+                <select id="tecnico-sucursal" class="form-control" required>
+                  <!-- Opciones llenadas dinámicamente -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tecnico-nombre">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tecnico-nombre"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="tecnico-apellido">Apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tecnico-apellido"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="tecnico-dni">DNI</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tecnico-dni"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="tecnico-celular">Celular</label>
+                <input type="text" class="form-control" id="tecnico-celular" />
+              </div>
+              <div class="form-group">
+                <label for="tecnico-email">Email</label>
+                <input type="email" class="form-control" id="tecnico-email" />
+              </div>
+              <div class="form-group">
+                <label for="tecnico-skills">Skills</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tecnico-skills"
+                  placeholder="Separados por comas"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Agregar Ticket -->
+    <div
+      class="modal fade"
+      id="agregarTicketModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="agregarTicketLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="agregarTicketLabel">Agregar Ticket</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="form-agregar-ticket">
+              <div class="form-group">
+                <label for="ticket-sucursal">Sucursal</label>
+                <select id="ticket-sucursal" class="form-control" required>
+                  <!-- Opciones llenadas dinámicamente -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ticket-imei">IMEI</label>
+                <div class="d-flex">
+                  <div class="col-8">
+                    <input
+                      type="text" class="form-control" id="ticket-imei" required
+                    />
+                  </div>
+                  <div class="col-4">
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      onclick="verificarIMEI()"
+                    >
+                      Verificar IMEI
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ticket-serie">Número de Serie</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ticket-serie"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticket-marca">Marca</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ticket-marca"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticket-modelo">Modelo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ticket-modelo"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticket-diagnostico">Diagnóstico</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ticket-diagnostico"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticket-autorizacion">Autorización</label>
+                <select id="ticket-autorizacion" class="form-control" required>
+                  <option value="true">Sí</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ticket-abono">Abono</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="ticket-abono"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="sistema.js"></script>
+  </body>
+</html>

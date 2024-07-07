@@ -1,0 +1,25 @@
+body {
+    background-color: #000; /* Fondo negro para toda la página */
+    color: #fff; /* Texto blanco para mejor contraste */
+}
+
+.exercise {
+    background-color: #333; /* Fondo gris oscuro para cada bloque de ejercicio */
+    padding: 10px; /* Espaciado interno para mejorar la legibilidad */
+    margin-bottom: 15px; /* Margen inferior entre cada bloque */
+}
+
+.btn-primary,
+.btn-secondary {
+    color: #fff; /* Texto blanco para los botones */
+    background-color: #555; /* Fondo gris para los botones */
+    border-color: #555; /* Color del borde igual al fondo para los botones */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #777; /* Cambio de color al pasar el mouse o enfocar */
+    border-color: #777; /* Cambio de color del borde */
+}
