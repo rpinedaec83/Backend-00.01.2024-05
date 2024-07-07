@@ -4,7 +4,7 @@ localStorage.setItem("celReport", JSON.stringify(IMEI_REPORTED_STOLEN));
 const GundamStore = function () {
     login = JSON.parse(sessionStorage.getItem("login"));
     if (login == null) {
-        window.location.replace("//Hackaton06/sv43927702/login.html");
+        window.location.replace("/Hackaton06/sv43927702/login.html");
     }
     objLocalGundams = localStorage.getItem("gundams");
     if (objLocalGundams != null) {
@@ -14,7 +14,23 @@ const GundamStore = function () {
     // $table.bootstrapTable('load', arrGundams);
     // modificarCSS();
 }();
-
+let tecnicos = [
+  { nombre: 'Técnico 1', skills: ['iPhone', 'Android'] },
+  { nombre: 'Técnico 2', skills: ['iPhone'] },
+  { nombre: 'Técnico 3', skills: ['Android', 'Tablet'] },
+  { nombre: 'Técnico 4', skills: ['iPhone', 'Tablet'] },
+  { nombre: 'Técnico 5', skills: ['Android', 'iPad'] },
+];
+function fillTecnicosDropdown() {
+  const tecnicoDropdown = document.getElementById('tecnico');
+  tecnicoDropdown.innerHTML = '';
+  tecnicos.forEach(t => {
+    const option = document.createElement('option');
+    option.value = t.nombre;
+    option.textContent = t.nombre;
+    tecnicoDropdown.appendChild(option);
+  });
+}
 class Telefono {
     constructor(numeroSerie, IMEI, marca) {
         this.numeroSerie = numeroSerie;
@@ -37,7 +53,8 @@ class Telefono {
         return resultado !== undefined ? "reportado" : "no reportado";
     }
     mostrarEstado() {
-        return `
+      
+        return  `
           Estado del teléfono: ${this.estado}
           Diagnóstico: ${this.diagnostico ? this.diagnostico : 'N/A'}
           Costo de la Reparación: ${this.costoReparacion ? this.costoReparacion.toFixed(2) : 'N/A'}
@@ -173,3 +190,56 @@ autorizacionForm.addEventListener('submit', function(event) {
   }
 
 })
+tecnicoForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const tecnicoSeleccionado = document.getElementById('tecnico').value;
+
+  telefono.asignarTecnico(tecnicoSeleccionado);
+  telefonoStatusDiv.innerHTML = telefono.mostrarEstado();
+
+  repuestosSection.style.display = 'block';
+  let seccion4=JSON.parse(sessionStorage.getItem("tel"));
+  seccion4.tecnico=tecnicoSeleccionado;
+  pagoSection.style.display = 'block';
+});
+repuestosForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const repuesto = document.getElementById('repuesto').value;
+  const costoRepuesto = document.getElementById('costoRepuesto').value;
+
+  telefono.agregarRepuesto(repuesto, costoRepuesto);
+  let seccion5=JSON.parse(sessionStorage.getItem("tel"));
+  seccion5.repuesto=repuesto;
+  seccion5.costoRepuesto=costoRepuesto;
+  telefonoStatusDiv.innerHTML = telefono.mostrarEstado();
+});
+
+finalizarForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  telefono.finalizarReparacion();
+  telefonoStatusDiv.innerHTML = telefono.mostrarEstado();
+
+  if (telefono.estado === 'Reparación Completada') {
+    let seccion6=JSON.parse(sessionStorage.getItem("tel"));
+    seccion6.saldoRestante=telefono.saldoRestante.toFixed(2);
+    pagoSection.style.display = 'block';
+    document.getElementById('saldoRestante').textContent = `Saldo Restante: ${telefono.saldoRestante.toFixed(2)} soles.`;
+  }
+});
+
+pagoForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const pagoRestante = document.getElementById('pagoRestante').value;
+  const entregado = document.getElementById('entregado').checked;
+
+  telefono.pagarSaldoRestante(pagoRestante, entregado);
+  telefonoStatusDiv.innerHTML = telefono.mostrarEstado();
+
+  if (telefono.estado === 'Cancelado y Entregado') {
+    pagoSection.style.display = 'none';
+    alert('El equipo ha sido entregado.');
+  }
+});
