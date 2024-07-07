@@ -67,6 +67,7 @@ class Telefono {
     estaReportado(imei) {
       return this.telefonosReportados.some(telefono => telefono.imei === imei);
     }
+    
   }
   
   // Inicio Sistema
