@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparaciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="main" style="width: 100%">
+        <div class="container mt-5">
+            <div id="content">
+                <h2>SISTEMA DE REPARACIÓN DE CELULARES</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>SEGUIMIENTO DE TICKETS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <button class="btn btn-primary" id="btnRegistrarTicket">Registrar Ticket</button>
+                        </div>
+                        <table id="table" class="table" data-search="true"  data-show-pagination-switch="true"
+                            data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true"
+                            data-show-columns="true">
+                            <thead>
+                                <tr>
+                                    <th data-field="idTicket" class="id">Número de Ticket</th>
+                                    <th data-field="cliente" data-formatter="clienteFormatter">Nombre del Cliente</th>
+                                    <th data-field="tecnico" data-formatter="tecnicoFormatter">Técnico Asignado</th>
+                                    <th data-field="diagnostico" data-formatter="diagnosticoFormatter">Diagnóstico</th>
+                                    <th data-field="cotizacion" data-formatter="cotizacionFormatter" class="importe">Cotización</th>
+                                    <th data-field="estado">Estado</th>
+                                    <th data-field="accion" data-formatter="accionFormatter" data-events="accionEvents">Acciones</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
+    <script src="src/classes.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>
