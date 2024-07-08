@@ -11,6 +11,8 @@ let objTelevision = {
     }
 };
 
+
+
 console.log(JSON.stringify(objTelevision));
 console.log(objTelevision);
 
@@ -19,6 +21,8 @@ let newObj = JSON.parse(strDato);
 
 let strJson = `{"nombre":"Roberto","apellidos":"Pineda","edad":40,"peso":82.55,"estadoCivil":false,"hijos":null,"hobbies":["Aeromodelismo","Gunpla"],"padres":[{"nombre":"Rene","apellido":"Pineda"},{"nombre":"Miriam","apellido":"Lopez"}]}`;
 let objDatos = JSON.parse(strJson);
+
+document.getElementById("prueba").innerText="nombre:"+objDatos.nombre+" Apellidos:"+objDatos.apellidos+" edad :";
 
 
 console.log(objDatos)
