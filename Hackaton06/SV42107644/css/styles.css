@@ -1,5 +1,5 @@
 body {
-    background: url('../images/background.jpg') no-repeat center center fixed;
+    background: url('../images/bckgrnd.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
     display: flex;
@@ -90,7 +90,7 @@ body {
 .card-header h3 {
     color: #000;
 }
-
+ 
 .importe {
     text-align: right !important;
 }

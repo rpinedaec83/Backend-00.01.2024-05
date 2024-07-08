@@ -83,7 +83,7 @@ class Celular {
     validarBloqueo() {
         this.bloqueado = !!(Math.random() * 2 | 0);
     }
-}
+} 
 
 class Ticket {
     revision;

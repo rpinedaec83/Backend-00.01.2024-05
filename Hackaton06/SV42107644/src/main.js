@@ -444,4 +444,4 @@ function verificarBloqueo(numSerie, IMEI){
     } else {
         return false; // Celular no bloqueado
     }
-}
+} 
