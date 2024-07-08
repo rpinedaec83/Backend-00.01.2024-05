@@ -120,7 +120,7 @@ class System {
     }
 
     estaReportado(imei) {
-        return this.telefonosReportados.some(tel => tel.IMEI === imei);
+        return this.telefonosReportados.some(Telefono => Telefono.IMEI === imei);
     }
 }
 
