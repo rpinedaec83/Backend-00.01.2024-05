@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparaciones</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="brand">
+            <h1>MP</h1>
+            <p>REPARACIÓN DE CELULARES</p>
+        </div>
+
+        <div class="login-container">
+            <form id="login-form" class="form" action="" method="post">
+                <div class="form-group" >
+                    <label for="txtusername">Usuario</label>
+                    <input type="text" class="form-control" id="txtusername" autocomplete="username" placeholder="Ingrese su usuario"/>
+                </div>
+                <div class="form-group">
+                    <label for="txtpassword">Contraseña</label>
+                    <input type="password" class="form-control" id="txtpassword" autocomplete="current-password" placeholder="Ingrese su contraseña"/>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="chbrememberme">
+                    <label class="form-check-label" for="chbrememberme">Recordarme</label>
+                </div>
+                <p class="msjerror" id="msjerror"></p>
+                <button type="submit" class="btn btn-primary btn-block" name="submit" value="submit">Iniciar sesión</button>	
+
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="src/classes.js"></script>
+<script src="src/init.js"></script>
+
+</html> 
