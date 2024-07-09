@@ -12,8 +12,10 @@
   "author": "Roberto Pineda",
   "license": "ISC",
   "dependencies": {
+    "@codinasion/string-to-upper-case": "^1.0.3",
     "axios": "^1.7.2",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "upper-case": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
