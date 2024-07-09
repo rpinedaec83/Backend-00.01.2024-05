@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reparación de Teléfonos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Gestión de Reparación de Teléfonos</h1>
+        <button id="addSucursalButton" class="btn btn-primary my-3">Agregar Nueva Sucursal</button>
+        <button id="addTecnicoButton" class="btn btn-secondary my-3">Agregar Nuevo Técnico</button>
+
+        <div id="addSucursalModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar Nueva Sucursal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addSucursalForm">
+                            <div class="form-group">
+                                <label for="sucursalNombre">Nombre de la Sucursal:</label>
+                                <input type="text" class="form-control" id="sucursalNombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sucursalDireccion">Dirección:</label>
+                                <input type="text" class="form-control" id="sucursalDireccion" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sucursalContacto">Contacto:</label>
+                                <input type="text" class="form-control" id="sucursalContacto">
+                            </div>
+                            <button type="submit" class="btn btn-success">Agregar Sucursal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addTecnicoModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar Nuevo Técnico</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addTecnicoForm">
+                            <div class="form-group">
+                                <label for="tecnicoSucursal">Sucursal:</label>
+                                <select id="tecnicoSucursal" class="form-control" required>
+                                    <option value="">Seleccione una sucursal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoNombre">Nombre:</label>
+                                <input type="text" class="form-control" id="tecnicoNombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoApellido">Apellido:</label>
+                                <input type="text" class="form-control" id="tecnicoApellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoDNI">DNI:</label>
+                                <input type="text" class="form-control" id="tecnicoDNI" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoCelular">Celular:</label>
+                                <input type="text" class="form-control" id="tecnicoCelular" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoEmail">Email:</label>
+                                <input type="email" class="form-control" id="tecnicoEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecnicoSkills">Skills (separados por comas):</label>
+                                <input type="text" class="form-control" id="tecnicoSkills" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Agregar Técnico</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5">Ingreso de Teléfono</h2>
+        <form id="phoneForm" class="mb-5">
+            <div class="form-group">
+                <label for="branch">Sucursal:</label>
+                <select id="branch" class="form-control" required>
+                    <option value="">Seleccione una sucursal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="serialNumber">Número de Serie:</label>
+                <input type="text" class="form-control" id="serialNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="imei">IMEI:</label>
+                <input type="text" class="form-control" id="imei" required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" class="form-control" id="marca" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="diagnostico">Diagnóstico:</label>
+                <input type="text" class="form-control" id="diagnostico" required>
+            </div>
+            <div class="form-group">
+                <label for="autorizacion">Autorización (S/N):</label>
+                <input type="text" class="form-control" id="autorizacion" required>
+            </div>
+            <div class="form-group">
+                <label for="abono">Abono (%):</label>
+                <input type="text" class="form-control" id="abono" required>
+            </div>
+            <div class="form-group">
+                <label for="tecnico">Técnico:</label>
+                <select id="tecnico" class="form-control" required>
+                    <option value="">Seleccione un técnico</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar Teléfono</button>
+        </form>
+
+        <h2>Estado de los Equipos</h2>
+        <div class="table-responsive">
+            <table id="phoneTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sucursal</th>
+                        <th>Número de Serie</th>
+                        <th>IMEI</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Diagnóstico</th>
+                        <th>Autorización</th>
+                        <th>Abono</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

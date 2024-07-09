@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparaciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="main" >
+        <div class="container mt-5">
+            <div id="content" class="w-100">
+                <h2>SISTEMA DE REPARACIÓN DE CELULARES</h2>
+                <div class="card card-fullscreen">
+                    <div class="card-header">
+                        <h3>DETALLE DEL TICKET</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <h5><strong>INFORMACIÓN DEL TICKET</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Código del Ticket:</span> <span class="detail" id="idTicket"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Estado:</span> <span class="detail" id="estado"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Fecha de Registro:</span> <span class="detail" id="fechaRegistro"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Usuario de Registro:</span> <span class="detail" id="usuarioRegistro"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Comentarios:</span> <span class="detail" id="comentariosCliente"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Motivo Cierre:</span> <span class="detail" id="motivoCierre"></span>
+                                </div>
+                                <br />
+                                <h5><strong>DATOS DEL CLIENTE</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Nombre:</span> <span class="detail" id="nombreCliente"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Apellido Paterno:</span> <span class="detail" id="apellidoPaternoCliente"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Apellido Materno:</span> <span class="detail" id="apellidoMaternoCliente"></span>
+                                </div>
+                                <br />
+                                <h5><strong>INFORMACIÓN DEL MANTENIMIENTO</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Tecnico:</span> <span class="detail" id="tecnicoMantenimiento"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Mantenimiento:</span> <span class="detail" id="tipoMantenimiento"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Observaciones:</span> <span class="detail" id="observacionesMantenimiento"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Autorizado:</span> <span class="detail" id="autorizado"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Cotización (S/):</span> <span class="detail" id="totalCotizacion"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-left">
+                                <h5><strong>DATOS DEL CELULAR</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Número Celular:</span> <span class="detail" id="numeroCelular"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Marca:</span> <span class="detail" id="marcaCelular"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Modelo:</span> <span class="detail" id="modeloCelular"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Número de Serie:</span> <span class="detail" id="numeroSerieCelular"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">IMEI:</span> <span class="detail" id="imeiCelular"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Bloqueado:</span> <span class="detail" id="bloqueadoCelular"></span>
+                                </div>
+                                <br />
+                                <h5><strong>INFORMACIÓN DEL DIAGNÓSTICO</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Tecnico:</span> <span class="detail" id="tecnicoRevision"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Diagnóstico:</span> <span class="detail" id="tipoDiagnosticoRevision"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Comentarios:</span> <span class="detail" id="comentariosRevision"></span>
+                                </div>
+                                <br />
+                                <h5><strong>INFORMACIÓN DEL PAGO</strong></h5>
+                                <div class="ticket-info">
+                                    <span class="label">Pago Adelantado (S/):</span> <span class="detail" id="pagoAdelantado"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Pago Pendiente (S/):</span> <span class="detail" id="pagoPendiente"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Total de Pago (S/):</span> <span class="detail" id="totalPago"></span>
+                                </div>
+                                <div class="ticket-info">
+                                    <span class="label">Tipo de Pago:</span> <span class="detail" id="tipoPago"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end" id="botones-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
+    <script src="src/classes.js"></script>
+    <script src="src/detail.js"></script>
+</body>
+
+</html> 
