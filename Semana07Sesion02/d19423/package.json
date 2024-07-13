@@ -1,21 +1,20 @@
 {
   "name": "d19423",
   "version": "1.0.0",
-  "description": "Proyecto de prueba de node",
   "main": "index.js",
   "scripts": {
-    "prod": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "echo 'Construyendo...' && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Roberto Pineda",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "@codinasion/string-to-upper-case": "^1.0.3",
     "axios": "^1.7.2",
-    "express": "^4.19.2",
-    "upper-case": "^3.0.0"
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

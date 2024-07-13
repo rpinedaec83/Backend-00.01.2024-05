@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Pokemon</h1>
+        <p>Consulta de Pokemones:</p>
+        <br>
+        <% if (pokemon) { %>
+            <h2>Nombre :<%=pokemon.name %></h2>
+            <p>Orden : <%=pokemon.order %></p>
+          <% }else{ %>
+            <h2>no data</h2>
+            
+            <% } %>
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
