@@ -1,0 +1,98 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+    .title-header {padding: .75rem 1.25rem; background-color: #f5f5f5; border-bottom: 1px solid transparent;}
+.title-header h3 {font-size: 0.80rem; margin: 0;}
+.movies {margin-top: 2rem;}
+.img-card {width: 100%; margin-bottom: .40rem;}
+.movies {margin-bottom: .60rem;}
+.series {margin-bottom: .60rem;}
+.footer {padding: 1rem 0; margin-top: 2rem; font-size: 80%; text-align: left;}
+.footer p {margin: 0;}
+.footer-links {padding-left: 0; margin-bottom: 1rem;}
+.footer-links li {display: inline-block;}
+.footer a {font-weight: 500; color: inherit;}
+.footer-links li + li {margin-left: 1rem;}
+/* Bug Bootstrap V4.0.6 - Mobile - SCSS _navbar*/ 
+.navbar {display: block;}
+</style>
+
+<header class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"><i class="fa fa-cloud"></i> WatchX</a>
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Movies
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#">Edit</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Series
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#">Edit</a>
+              <a class="dropdown-item" href="#">Edit</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search...">
+          <button class="btn btn-success my-2 my-sm-0" type="button"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+  </div>
+</header>
+<main class="container">
+<section class="movies" id="movies">
+    <h2>Featured Movies</h2>
+	<div class="row">
+        <% results.forEach(function(pelicula) { %>
+           
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<article class="card">
+				<header class="title-header">
+					<h3><%= pelicula.titleText.text %></h3>
+				</header>
+				<div class="card-block">
+					<div class="img-card">
+						<img src="<%= pelicula.primaryImage.url  %>" alt="Movie" class="w-100" />
+					</div>
+					<p class="tagline card-text text-xs-center"> <%= pelicula.primaryImage.caption.plainText  %> </p>
+					<a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i> Watch Now</a>
+				</div>
+			</article>
+		</div>
+        <% }); %>
+	</div>
+</section>
+</main>
+<footer class="footer text-muted text-xs-center text-md-left bg-inverse">
+    <div class="container">
+		<ul class="footer-links">
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Terms</a></li>
+			<li><a href="#">DMCA</a></li>
+		</ul>
+		<p>© 2016 - All rights reserved.</p>
+	</div>
+</footer>
