@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Data</title>
+</head>
+<body>
+    <h1>GitHub User Data for <%= githubData.login %></h1>
+    <p><strong>Username:</strong> <%= githubData.login %></p>
+    <p><strong>Name:</strong> <%= githubData.name %></p>
+    <p><strong>Bio:</strong> <%= githubData.bio %></p>
+    <p><strong>Location:</strong> <%= githubData.location %></p>
+    <p><strong>Public Repos:</strong> <%= githubData.public_repos %></p>
+    <p><strong>Followers:</strong> <%= githubData.followers %></p>
+    <p><strong>Following:</strong> <%= githubData.following %></p>
+    <img src="<%= githubData.avatar_url %>" alt="Avatar" width="150">
+</body>
+</html>

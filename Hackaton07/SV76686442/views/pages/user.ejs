@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+</head>
+<body>
+    <h1>Random User</h1>
+    <p><strong>Name:</strong> <%= userData.name.first %> <%= userData.name.last %></p>
+    <p><strong>Email:</strong> <%= userData.email %></p>
+    <p><strong>Location:</strong> <%= userData.location.city %>, <%= userData.location.country %></p>
+    <img src="<%= userData.picture.large %>" alt="User Picture">
+</body>
+</html>
