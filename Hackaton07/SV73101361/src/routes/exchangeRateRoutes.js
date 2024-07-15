@@ -1,5 +1,5 @@
 import express from 'express';
-import { getExchangeRate } from '../controllers/exchangeRateController';
+import { getExchangeRate } from '../controllers/exchangeRateController.js';
 
 const router = express.Router();
 

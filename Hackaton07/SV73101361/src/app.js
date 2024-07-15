@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import githubRoutes from './routes/githubRoutes.js';
 import weatherRoutes from './routes/weatherRoutes.js';
-//import exchangeRateRoutes from './routes/exchangeRateController.js';
+import exchangeRateRoutes from './routes/exchangeRateRoutes.js';
 import pokemonRoutes from './routes/pokemonRoutes.js';
 import rickMortyRoutes from './routes/rickMortyRoutes.js';
 import cocktailRoutes from './routes/cocktailRoutes.js';
@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use('/api/github', githubRoutes);
 app.use('/api/weather', weatherRoutes);
-//app.use('/api/exchange-rate', exchangeRateRoutes);
+app.use('/api/exchange-rate', exchangeRateRoutes);
 app.use('/api/pokemon', pokemonRoutes);
 app.use('/api/rick-morty', rickMortyRoutes);
 app.use('/api/cocktails', cocktailRoutes);
