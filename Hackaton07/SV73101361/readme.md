@@ -67,8 +67,8 @@ El API Gateway permite realizar consultas a las siguientes APIs:
 -Rick and Morty: GET /api/rick-morty, GET /api/rick-morty/:id 
 -Bebidas y Cócteles: GET /api/cocktails/top 
 -Productos de Tienda: GET /api/store/products 
--Unsplash: GET /api/unsplash/photos 
--Citas Famosas: GET /api/quotes/quotes 
+-Unsplash: GET /api/unsplash/photos || /api/unsplash/photos?query=nature
+-Citas Famosas: GET  
 -Usuario Aleatorio: GET /api/random-user/random-user 
 -Películas: GET /api/movies/top, GET /api/movies/:id
 -Marte: GET /api/mars/photos 
@@ -89,8 +89,6 @@ api-gateway/
 ```
 
 ## Licencia
-Este proyecto está licenciado bajo la licencia MIT.
-
 
 Este proyecto está licenciado bajo la licencia ISC.
 
