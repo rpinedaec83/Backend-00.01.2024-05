@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos del Usuario de GitHub</title>
+</head>
+<body>
+    <h1>Datos del Usuario de GitHub</h1>
+    <p><strong>Nombre de Usuario:</strong> <%= user.login %></p>
+    <p><strong>Nombre Completo:</strong> <%= user.name %></p>
+    <p><strong>Bio:</strong> <%= user.bio %></p>
+    <p><strong>Ubicación:</strong> <%= user.location %></p>
+    <p><strong>Repositiorios Públicos:</strong> <%= user.public_repos %></p>
+    <p><strong>Seguidores:</strong> <%= user.followers %></p>
+    <p><strong>Siguiendo:</strong> <%= user.following %></p>
+    <img src="<%= user.avatar_url %>" alt="Avatar" width="100" height="100">
+    <p><a href="<%= user.html_url %>">Perfil de GitHub</a></p>
+</body>
+</html>

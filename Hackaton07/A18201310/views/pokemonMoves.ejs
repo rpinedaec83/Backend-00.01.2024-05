@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimientos de <%= name %></title>
+</head>
+<body>
+    <h1>Movimientos de <%= name %></h1>
+    <ul>
+        <% moves.forEach(move => { %>
+            <li><%= move %></li>
+        <% }); %>
+    </ul>
+    <a href="/pokemon">Volver a la lista de Pokémon</a>
+</body>
+</html>
