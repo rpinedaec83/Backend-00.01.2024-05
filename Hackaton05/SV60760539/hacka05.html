@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación de Celulares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+        }
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Reparación de Celulares</h1>
+        <form id="repairForm">
+            <div class="form-group">
+                <label for="imei">IMEI: (15 digitos)</label>
+                <input type="text" id="imei" required pattern="\d{15}">
+            </div>
+            <div class="form-group">
+                <label for="numeroSerie">Número de Serie: (15 digitos)</label>
+                <input type="text" id="numeroSerie" required pattern="[A-Za-z0-9]{10,}">
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="diagnostico">Diagnóstico:</label>
+                <textarea id="diagnostico" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="autorizacion">Autorización:</label>
+                <button type="button" name="autorizacion" value="si">Sí</button>
+                <button type="button" name="autorizacion" value="no">No</button>
+            </div>
+            <div class="form-group">
+                <label for="abono">Abono: (SOLO EL %50)</label>
+                <input type="number" id="abono" required>
+            </div>
+            <div class="form-group">
+                <label for="technician">Seleccionar Técnico:</label>
+                <select id="technician">
+                    <option value="Juan Perez">Juan Perez - Skills: Samsung, Iphone, Huawei</option>
+                    <option value="Maria Lopez">Maria Lopez - Skills: Xiaomi, LG, Sony</option>
+                    <option value="Carlos Gomez">Carlos Gomez - Skills: Motorola, Nokia, Oppo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="branch">Seleccionar Sucursal:</label>
+                <select id="branch" required>
+                    <option value="sucursal1">Sucursal 1</option>
+                    <option value="sucursal2">Sucursal 2</option>
+                    <option value="sucursal3">Sucursal 3</option>
+                </select>
+            </div>
+            <button onclick="mostrarAlerta()">Crear Ticket de Reparacion</button>
+
+        </form>
+        <p>Los repuestos se agregarán a la reparación del teléfono.</p>
+
+    </div>
+    </script>
+    <script src="hacka05.js"></script>
+</body>
+</html>

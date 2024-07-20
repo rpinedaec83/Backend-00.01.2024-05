@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparaciones</title>
+</head>
+<body>
+    <h1>Sistema de Reparaciones de Celulares</h1>
+
+    <h2>Ingresar Teléfono</h2>
+    <form id="telefonoForm">
+        <input type="text" id="numeroSerie" placeholder="Número de Serie" required>
+        <input type="text" id="IMEI" placeholder="IMEI" required>
+        <input type="text" id="marca" placeholder="Marca" required>
+        <input type="text" id="modelo" placeholder="Modelo" required>
+        <button type="submit">Ingresar Teléfono</button>
+    </form>
+
+    <h2>Ingresar Técnico</h2>
+    <form id="tecnicoForm">
+        <input type="text" id="nombreTecnico" placeholder="Nombre del Técnico" required>
+        <input type="text" id="skills" placeholder="Skills (separados por coma)" required>
+        <button type="submit">Ingresar Técnico</button>
+    </form>
+
+    <h2>Crear Reparación</h2>
+    <form id="reparacionForm">
+        <select id="telefonoSelect"></select>
+        <select id="tecnicoSelect"></select>
+        <button type="submit">Crear Reparación</button>
+    </form>
+
+    <h2>Actualizar Reparación</h2>
+    <form id="actualizarReparacionForm">
+        <select id="reparacionSelect"></select>
+        <input type="text" id="diagnostico" placeholder="Diagnóstico">
+        <input type="checkbox" id="autorizacion"> Autorización
+        <input type="number" id="abono" placeholder="Abono">
+        <input type="text" id="nombreRepuesto" placeholder="Nombre del Repuesto">
+        <input type="number" id="precioRepuesto" placeholder="Precio del Repuesto">
+        <button type="submit">Actualizar Reparación</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

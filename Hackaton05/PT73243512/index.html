@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de reparaciones de celulares</title>
+  <link rel="stylesheet" href="CSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  
+  <h1>Sistema de reparaciones de celulares</h1>
+  <form id="crear-reparacion-form">
+    <label for="telefono-numero-serie">Numero de serie del telefono:</label>
+    <input type="text" id="telefono-numero-serie" required>
+    <br>
+    <label for="telefono-imei">IMEI del telefono:</label>
+    <input type="text" id="telefono-imei" required>
+    <br>
+    <label for="telefono-marca">Marca del telefono:</label>
+    <input type="text" id="telefono-marca" required>
+    <br>
+    <label for="telefono-modelo">Modelo del telefono:</label>
+    <input type="text" id="telefono-modelo" required>
+    <br>
+    <label for="sucursal">Sucursal:</label>
+    <select id="sucursal" required>
+      <option value="">Seleccione una sucursal</option>
+      <option value="Sucursal 1">Sucursal 1</option>
+      <option value="Sucursal 2">Sucursal 2</option>
+      <option value="Sucursal 3">Sucursal 3</option>
+    </select>
+    <br>
+    <label for="tecnico">Tecnico:</label>
+    <select id="tecnico" required>
+      <option value="">Seleccione un tecnico</option>
+      <option value="Tecnico 1">Tecnico 1</option>
+      <option value="Tecnico 2">Tecnico 2</option>
+      <option value="Tecnico 3">Tecnico 3</option>
+    </select>
+    <br>
+    
+    <button type="submit">CONSULATAR</button>
+  </form>
+
+  <div id="reparaciones-list">
+    <h2>Diagnostico</h2>
+    <ul id="reparaciones-ul"></ul>
+  </div>
+  
+  <div id="alert-container" style="display: none;">
+    <div id="alert-box">
+      <h2 id="alert-title">
+        <i class="fas fa-exclamation-triangle" id="alert-icon"></i>
+        Alerta
+      </h2>
+      <p id="alert-message">Este teléfono está reportado como robado. No se puede realizar la reparación.</p>
+      <button id="alert-close">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="datos-ingresados">
+    <h2>Datos ingresados</h2>
+    <p id="telefono-numero-serie-p">Numero de serie: <span id="telefono-numero-serie-span"></span></p>
+    <p id="telefono-imei-p">IMEI: <span id="telefono-imei-span"></span></p>
+    <p id="telefono-marca-p">Marca: <span id="telefono-marca-span"></span></p>
+    <p id="telefono-modelo-p">Modelo: <span id="telefono-modelo-span"></span></p>
+    <p id="sucursal-p">Sucursal: <span id="sucursal-span"></span></p>
+    <p id="tecnico-p">Tecnico: <span id="tecnico-span"></span></p>
+  </div>
+
+  <script src="script.js">
+    
+  </script>
+</body>
+</html>

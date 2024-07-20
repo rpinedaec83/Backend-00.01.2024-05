@@ -1,6 +1,6 @@
 # HACKATHON SEMANAL
 
-## LOGRO: utilizar nuevas funcionalidades ES6, utilizar Clases y Objetos. 
+## LOGRO: utilizar nuevas funcionalidades ES6, utilizar Clases, Objetos y WebStorage. 
 
 ### I.	Es hora de demostrar lo aprendido:
 Demostrarás todo lo aprendido en este reto que se basará en las clases dictadas durante la semana.
@@ -10,7 +10,7 @@ Demostrarás todo lo aprendido en este reto que se basará en las clases dictada
 
 ### III.	Descripción del reto
 - Investigar y resolver las preguntas y ejercicios planteados
-- Resolver problemas, definir algoritmos, utilizando las nuevas funcionalidades de ES6+ y los métodos de los Objetos y Clases de ECMASCRIPT
+- Resolver problemas, definir algoritmos, utilizando las nuevas funcionalidades de ES6+ y los métodos de los Objetos y Clases de ECMASCRIPT y WebStorage
 
 ### IV.	Pasos a seguir para resolver los retos: 
 
@@ -20,28 +20,17 @@ Demostrarás todo lo aprendido en este reto que se basará en las clases dictada
 
 ### TÍTULO: JavaScript y HTTP
 Utilizar Javascript para definir algoritmos mediante el uso de clases y objetos
-
 EL PROBLEMA: 
-
-Se necesita crear un sistema que maneje las reparaciones de celulares en un local con varias sucursales*
+Se necesita crear un sistema que maneje las reparaciones de celulares en un local con varias sucursales
 Tomar en cuenta los siguientes casos de uso:
-- El telefono ingresado debe tener numero de serie e IMEI que no esten reportados para acceder al servicio*
-- Un telefono primero debe pasar por una primera revision y se debe guardar el primer diagnostico*
+- El telefono ingresado debe tener numero de serie e IMEI que no esten reportados para acceder al servicio
+- Un telefono primero debe pasar por una primera revision y se debe guardar el primer diagnostico
 - Se debe tener la autorizacion escrita del usuario y el abono del 50% de la reparacion para que acceda al servicio
 - Los tecnicos pueden tener uno o varios skills que se adecuen a la marca de telefono que se necesita acceder al servicio
-- Los repuestos se agregaran a la reparacion de telefono
+- Los repuestos se agegaran a la reparacion de telefono
 - Se debe mostrar el estado del equipo en sus diferentes estaciones de trabajo 
+- Guardar los elementos de programacion necesarios en WebStorage, revisando si es LocalStorage o SesionStorage
 
-stwitch(getso)
-
-case 1 (android)
-xxxxxx
-
-case2 (ios)
-xxxx
-
-default
-xxx no hay tecnico para esta marca
 ### V.	Solución del reto
 - Para que el reto esté cumplido al 100%, se deben haber resuelto el ejercicio propuesto
 
