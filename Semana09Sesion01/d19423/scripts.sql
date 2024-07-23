@@ -69,3 +69,18 @@ WHERE contactname LIKE '[a-f]%';
 SELECT * FROM Customer
 WHERE custid not IN (
 SELECT custid FROM SalesOrder);
+
+SELECT * FROM Product
+WHERE unitPrice BETWEEN 10 AND 20;
+
+SELECT * FROM Product
+WHERE unitPrice >= 10 AND  unitPrice <= 20;
+
+
+SELECT * FROM SalesOrder
+where orderdate not between '2006-07-01' and '2006-08-31';
+
+SELECT COUNT(custid), Country
+FROM Customer
+GROUP BY Country
+having COUNT(custid) > 5;
