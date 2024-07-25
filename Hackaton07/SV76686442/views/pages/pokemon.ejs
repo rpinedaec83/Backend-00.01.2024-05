@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Details</title>
+</head>
+<body>
+    <h1>Pokémon Details</h1>
+    <h2>Name: <%= pokemon.name %></h2>
+    <h3>Moves:</h3>
+    <ul>
+        <% pokemon.moves.forEach(move => { %>
+            <li><%= move %></li>
+        <% }); %>
+    </ul>
+    <img src="/pokemon/<%= pokemon.name %>/image" alt="<%= pokemon.name %>" style="max-width: 200px;">
+</body>
+</html>
+
+</html>
+

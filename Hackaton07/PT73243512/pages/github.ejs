@@ -1,0 +1,12 @@
+<h1>GitHub Profile: <%= githubData.name %></h1>
+
+<p>Username: <%= githubData.login %></p>
+<p>Location: <%= githubData.location %></p>
+<p>Bio: <%= githubData.bio %></p>
+
+<h2>Repositories:</h2>
+<ul>
+  <% githubData.repos.forEach(function(repo) { %>
+    <li><a href="<%= repo.html_url %>"><%= repo.name %></a></li>
+  <% }); %>
+</ul>

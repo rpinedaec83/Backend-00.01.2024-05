@@ -1,0 +1,10 @@
+<h1>Fotos</h1>
+
+<ul>
+  <% fotos.forEach(function(foto) { %>
+    <li>
+      <img src="<%= foto.urls.full %>" alt="<%= foto.alt_description %>">
+      <p>Author: <%= foto.user.name %></p>
+    </li>
+  <% }); %>
+</ul>

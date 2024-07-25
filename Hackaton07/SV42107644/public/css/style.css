@@ -1,0 +1,26 @@
+body {
+    background-color: #032e58;
+}
+
+h1 {
+    text-align: center;
+    color: azure;
+    margin-top: 20px;
+}
+
+#output {
+    margin-top: 5px;
+    white-space: pre-wrap;
+}
+
+.custom-button {
+    width: 300px; /* Ancho de los botones */
+    margin-bottom: 5px; /* Reduce el margen inferior */
+
+}
+
+#output {
+    min-height: 620px; /* Ajusta la altura mínima */
+    max-height: 620px; /* Ajusta la altura máxima si lo deseas */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es largo */
+}

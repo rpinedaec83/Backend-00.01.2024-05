@@ -1,0 +1,11 @@
+<h1>Productos</h1>
+
+<ul>
+  <% productos.forEach(function(producto) { %>
+    <li>
+      <h2><%= producto.name %></h2>
+      <p>Precio: <%= producto.price %></p>
+      <p>Descripción: <%= producto.description %></p>
+    </li>
+  <% }); %>
+</ul>
