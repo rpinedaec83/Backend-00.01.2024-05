@@ -84,3 +84,9 @@ SELECT COUNT(custid), Country
 FROM Customer
 GROUP BY Country
 having COUNT(custid) > 5;
+
+
+SELECT distinct city FROM Customer;
+
+SELECT * FROM Customer
+WHERE Country <> 'Germany'
