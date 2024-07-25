@@ -74,7 +74,7 @@ app.get('/peliculas',async function (req,res){
       try {
           const response = await axios.request(config);
           console.log(JSON.stringify(response.data.results));
-          res.render('pages/peliculas', {
+          res.render('pages/peliculaS', {
             results: response.data.results
         });
       } catch (error) {
