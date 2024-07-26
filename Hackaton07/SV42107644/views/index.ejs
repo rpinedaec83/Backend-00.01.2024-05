@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>API Gateway</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="d-flex flex-column">
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('github')">Datos de usuario GitHub</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('weather')">Información de clima</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('exchange-rate')">Tipo de cambio USD-PEN</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('pokemons')">Lista Pokémons</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('pokemon')">Poderes de Pokémon</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('rickandmorty-characters')">Personajes Rick and Morty</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('rickandmorty-character')">Detalle de personajes Rick and Morty</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('cocktails')">Top 10 Cocktails</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('store-products')">Productos de Tienda</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('photos')">Fotografías</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('quotes')">Citas de Famosos</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('randomuser')">Datos ficticios</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('movies-top')">Top Películas</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('movie')">Detalle de Película</button>
+                    <button class="btn btn-primary custom-button mb-1" onclick="fetchData('mars')">Datos de Marte</button>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <pre id="output" class="p-3 border bg-light"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

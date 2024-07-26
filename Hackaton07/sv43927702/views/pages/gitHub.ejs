@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>gitHub</h1>
+        <p>Usuario:</p>
+        <br>
+        <% if (gitHub) { %>
+            <h2><%= gitHub.login %></h2>
+            <p><%= gitHub.url %></p>
+            
+            <p><img src=<%= gitHub.avatar_url %> alt="" srcset=""></p>
+           
+          <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

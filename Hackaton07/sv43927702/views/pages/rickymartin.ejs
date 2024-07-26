@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Rick and Morty - Personajes Principales</h1>
+        <p>Consulta los personajes principales de la serie:</p>
+        <br>
+        <% if (characters && characters.length > 0) { %>
+            <ul>
+                <% characters.forEach((character) => { %>
+                    <li>
+                        <h3><%= character.name %></h3>
+                        <p>Estado: <%= character.status %></p>
+                        <p>Especie: <%= character.species %></p>
+                        <img src="<%= character.image %>" alt="<%= character.name %>">
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontró información de los personajes.</p>
+        <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

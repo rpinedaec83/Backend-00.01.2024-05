@@ -1,0 +1,9 @@
+<h1>Citas Famosas</h1>
+
+<ul>
+  <% citas.forEach(function(cita) { %>
+    <li>
+      <p>"<%= cita.content %>" - <%= cita.author %></p>
+    </li>
+  <% }); %>
+</ul>

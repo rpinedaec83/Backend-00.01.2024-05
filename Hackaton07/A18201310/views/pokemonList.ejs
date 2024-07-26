@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pokémon</title>
+</head>
+<body>
+    <h1>Lista de Pokémon</h1>
+    <ul>
+        <% pokemon.forEach(poke => { %>
+            <li><%= poke.name %></li>
+        <% }); %>
+    </ul>
+    <a href="/">Volver a actualizar</a>
+</body>
+</html>
