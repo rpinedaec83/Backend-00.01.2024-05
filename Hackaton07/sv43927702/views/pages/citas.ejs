@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Citas Famosas</h1>
+        <p>Consulta citas famosas sobre el tema: "<%= category %>"</p>
+        <br>
+        <% if (quotes && quotes.length > 0) { %>
+            <ul>
+                <% quotes.forEach((quote) => { %>
+                    <li>
+                        <blockquote>
+                            <p>"<%= quote.quote %>"</p>
+                            <footer>— <%= quote.author %></footer>
+                        </blockquote>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontraron citas para la categoría especificada.</p>
+        <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

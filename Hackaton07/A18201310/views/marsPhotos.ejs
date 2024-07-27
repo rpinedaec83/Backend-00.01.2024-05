@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars Rover Photos</title>
+</head>
+<body>
+  <h1>Mars Rover Photos - Curiosity</h1>
+  <ul>
+    <% photos.forEach(photo => { %>
+      <li>
+        <img src="<%= photo.img_src %>" alt="Mars Photo">
+        <p><strong>Earth Date:</strong> <%= photo.earth_date %></p>
+        <p><strong>Sol:</strong> <%= photo.sol %></p>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

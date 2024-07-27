@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Drinks</title>
+</head>
+<body>
+  <h1>Top 10 Drinks and Cocktails</h1>
+  <ul>
+    <% drinks.forEach(drink => { %>
+      <li>
+        <h2><%= drink.strDrink %></h2>
+        <p><strong>Category:</strong> <%= drink.strCategory %></p>
+        <p><strong>Alcoholic:</strong> <%= drink.strAlcoholic %></p>
+        <p><strong>Glass:</strong> <%= drink.strGlass %></p>
+        <img src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>">
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

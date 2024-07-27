@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Fotos de Marte</h1>
+        <p>Consulta fotos del rover "<%= rover %>" en el sol "<%= sol %>":</p>
+        <br>
+        <% if (photos && photos.length > 0) { %>
+            <ul>
+                <% photos.forEach((photo) => { %>
+                    <li>
+                        <img src="<%= photo.img_src %>" alt="Foto tomada por el rover <%= photo.rover.name %>">
+                        <p>Rover: <%= photo.rover.name %></p>
+                        <p>Cámara: <%= photo.camera.full_name %></p>
+                        <p>Fecha de la Tierra: <%= photo.earth_date %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontraron fotos para el rover y sol especificados.</p>
+        <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

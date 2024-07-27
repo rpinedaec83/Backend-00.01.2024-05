@@ -1,0 +1,11 @@
+<h1>Bebidas</h1>
+
+<ul>
+  <% bebidas.forEach(function(bebida) { %>
+    <li>
+      <h2><%= bebida.strDrink %></h2>
+      <p>Ingredientes: <%= bebida.strIngredient1 %>, <%= bebida.strIngredient2 %>, ...</p>
+      <p>Instrucciones: <%= bebida.strInstructions %></p>
+    </li>
+  <% }); %>
+</ul>

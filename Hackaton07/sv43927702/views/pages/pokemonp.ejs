@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Pokemon Poder</h1>
+        <p>Consulta el Poder de Pokemones:</p>
+        <br>
+        <br>
+        <% if (pokemon) { %>
+            <h2><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h2>
+            <ul>
+                <% pokemon.abilities.forEach((ability, index) => { %>
+                    <li><%= index + 1 %>. <%= ability.ability.name %></li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontró información del Pokémon.</p>
+        <% } %>
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

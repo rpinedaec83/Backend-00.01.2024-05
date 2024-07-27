@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Info</title>
+</head>
+<body>
+    <h1>Información meteorolgica de <%= weather.location.name %></h1>
+    <p>Temperatura: <%= weather.current.temp_c %>°C</p>
+    <p>Condición: <%= weather.current.condition.text %></p>
+    <p>Humedad: <%= weather.current.humidity %>%</p>
+    <p>Viento: <%= weather.current.wind_kph %> kph</p>
+</body>
+</html>
