@@ -1,0 +1,12 @@
+<h1>Main Characters from Rick and Morty</h1>
+
+<ul>
+  <% characters.forEach(function(character) { %>
+    <li>
+      <h2><%= character.name %></h2>
+      <p>Species: <%= character.species %></p>
+      <p>Status: <%= character.status %></p>
+      <p>Image: <img src="<%= character.image %>" alt="<%= character.name %>"></p>
+    </li>
+  <% }); %>
+</ul>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Tienda</h1>
+        <p>Lista de Productos</p>
+        <br>
+        <% if (tienda) { %>
+            <ul>
+                <% tienda.forEach((character) => { %>
+                    <li>
+                        <h3><%= character.title %></h3>
+                        <p>Precio: <%= character.price %></p>
+                    
+                        <img src="<%= character.image %>" alt="<%= character.title %>">
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontró información de los personajes.</p>
+        <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

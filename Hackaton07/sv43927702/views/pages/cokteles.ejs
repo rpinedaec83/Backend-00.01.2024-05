@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Coktel</h1>
+        <p>Datos de Coktel</p>
+        <br>
+        <% if (cocktel) { %>
+            <ul>
+                <% cocktel.forEach((character) => { %>
+                    <li>
+                        <h3><%= character.strDrink %></h3>
+                        <p>Codigo: <%= character.idDrink %></p>
+                    
+                        <img src="<%= character.strDrinkThumb %>" alt="<%= character.strDrink %>">
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No se encontró información de los personajes.</p>
+        <% } %>
+      
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

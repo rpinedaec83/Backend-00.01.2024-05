@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famous Quotes</title>
+</head>
+<body>
+  <h1>Famous Quotes</h1>
+  <form action="/quotes" method="get">
+    <label for="query">Theme:</label>
+    <input type="text" id="query" name="query" placeholder="Enter theme" required>
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+    <% quotes.forEach(quote => { %>
+      <li>
+        <p>"<%= quote.body %>"</p>
+        <p><strong>- <%= quote.author %></strong></p>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

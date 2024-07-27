@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Drinks</title>
+</head>
+<body>
+    <h1>Top 10 Popular Drinks</h1>
+    <ul>
+        <% drinks.forEach(drink => { %>
+            <li>
+                <img src="<%= drink.image %>" alt="<%= drink.name %>" style="max-width: 200px;">
+                <h2><%= drink.name %></h2>
+                <p><strong>Ingredients:</strong> <%= drink.ingredients.join(', ') %></p>
+                <p><strong>Instructions:</strong> <%= drink.instructions %></p>
+            </li>
+            <br />
+            <br />
+        <% }); %>
+    </ul>
+</body>
+</html>
