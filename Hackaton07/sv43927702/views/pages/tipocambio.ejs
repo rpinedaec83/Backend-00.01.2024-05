@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Tipo de Cambio</h1>
+        <p>Consulta del tipo de cambio del dólar en Perú:</p>
+        <br>
+        <% if (rate) { %>
+            <h2>1 USD = <%= rate.precioVenta %> PEN</h2>
+        <% } else { %>
+            <h2>No se pudo obtener el tipo de cambio</h2>
+        <% } %>
+    </div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

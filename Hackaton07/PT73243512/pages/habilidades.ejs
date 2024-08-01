@@ -1,0 +1,7 @@
+<h1>Pokémon: <%= pokemon.name %></h1>
+<h2>Abilities:</h2>
+<ul>
+  <% abilities.forEach(function(ability) { %>
+    <li><%= ability.ability.name %></li>
+  <% }); %>
+</ul>

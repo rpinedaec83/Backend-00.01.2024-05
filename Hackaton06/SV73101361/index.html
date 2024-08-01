@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Reparación de Teléfonos</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="./script.js"></script>
@@ -16,14 +16,12 @@
         <button id="addSucursalButton" class="btn btn-primary my-3">Agregar Nueva Sucursal</button>
         <button id="addTecnicoButton" class="btn btn-secondary my-3">Agregar Nuevo Técnico</button>
 
-        <div id="addSucursalModal" class="modal fade" tabindex="-1" role="dialog">
+        <div id="addSucursalModal" class="modal fade" tabindex="-1">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Agregar Nueva Sucursal</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form id="addSucursalForm">
@@ -46,14 +44,12 @@
             </div>
         </div>
 
-        <div id="addTecnicoModal" class="modal fade" tabindex="-1" role="dialog">
+        <div id="addTecnicoModal" class="modal fade" tabindex="-1">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Agregar Nuevo Técnico</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form id="addTecnicoForm">

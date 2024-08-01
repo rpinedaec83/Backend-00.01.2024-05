@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rick and Morty Characters</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Main Characters from Rick and Morty</h1>
+  
+        <% mainCharacters.forEach(character => { %>           
+                <img src="<%= character.image %>" alt="<%= character.name %>">
+                <h2><%= character.name %></h2>
+                <p>Status: <%= character.status %></p>
+                <p>Species: <%= character.species %></p>
+                <p>Gender: <%= character.gender %></p>           
+            <br />
+            <br />
+        <% }) %>
+   
+</body>
+</html>
