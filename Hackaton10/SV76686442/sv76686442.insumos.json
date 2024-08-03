@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "66ae99d5d5b3db5a5be48f59"
+  },
+  "fecha": {
+    "$date": "2024-07-02T00:00:00.000Z"
+  },
+  "proveedor": "Proovedor C",
+  "insumo": "Pintura",
+  "cantidad": 50,
+  "costo": 1000
+},
+{
+  "_id": {
+    "$oid": "66ae99d5d5b3db5a5be48f5a"
+  },
+  "fecha": {
+    "$date": "2024-07-07T00:00:00.000Z"
+  },
+  "proovedor": "Proovedor D",
+  "insumo": "Barniz",
+  "cantidad": 30,
+  "costo": 600
+}]
