@@ -1,0 +1,1 @@
+{"_id":{"$oid":"66ae9f82856789039933ed16"},"fecha_compra":{"$date":"2024-08-01T00:00:00Z"},"nombre_proveedor":"Proveedor A","cantidad":1000,"tipo_material":"Madera","costo":5000.0}
