@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "66ae9d85be49578f36b5d05f"
+  },
+  "nombre": "juan",
+  "apellidos": "perez",
+  "tipo": "carpintero",
+  "salario": "1200",
+  "direccion": "av "
+},
+{
+  "_id": {
+    "$oid": "66ae9dbdbe49578f36b5d060"
+  },
+  "nombre": "pedro",
+  "apellidos": "chavez",
+  "tipo": "carpintero",
+  "salario": "1200",
+  "direccion": "av 2 "
+},
+{
+  "_id": {
+    "$oid": "66ae9dd2be49578f36b5d061"
+  },
+  "nombre": "jimmy",
+  "apellidos": "salvador",
+  "tipo": "pintor",
+  "salario": "1000",
+  "direccion": "av 3 "
+},
+{
+  "_id": {
+    "$oid": "66ae9de4be49578f36b5d062"
+  },
+  "nombre": "henry ",
+  "apellidos": "mendoza",
+  "tipo": "lijador",
+  "salario": "1000",
+  "direccion": "av 4 "
+}]
