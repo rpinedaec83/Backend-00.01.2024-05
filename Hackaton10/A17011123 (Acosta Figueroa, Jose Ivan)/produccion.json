@@ -1,0 +1,1 @@
+{"_id":{"$oid":"66aeb1fa856789039933ed1b"},"producto":"Armario","cantidad":10,"fechaProduccion":{"$date":"2024-08-03T00:00:00Z"},"materiaPrima":[{"$oid":"66ae9f82856789039933ed16"}],"insumos":[{"$oid":"66aea193856789039933ed17"}],"personal":[{"$oid":"66aeae6c856789039933ed19"}]}
