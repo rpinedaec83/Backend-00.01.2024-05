@@ -1,0 +1,230 @@
+[{
+  "_id": {
+    "$oid": "66aec542cbf49d4ceb6ae0c6"
+  },
+  "producto": "Mueble 3 pisos",
+  "cantidad": 1,
+  "fechaProduccion": {
+    "$date": "2020-03-15T15:00:00.000Z"
+  },
+  "costo": 8000,
+  "materiaPrima": [
+    {
+      "$oid": "66ae9c46cbf49d4ceb6ae0b1"
+    }
+  ],
+  "insumos": [
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bd"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0be"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bf"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c0"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c1"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c2"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c3"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c4"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c5"
+    }
+  ],
+  "Personal": [
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b8"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b9"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bb"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bc"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66aec542cbf49d4ceb6ae0c7"
+  },
+  "producto": "mesa para 6 personas",
+  "cantidad": 2,
+  "fechaProduccion": {
+    "$date": "2023-03-15T15:00:00.000Z"
+  },
+  "costo": 10000,
+  "materiaPrima": [
+    {
+      "$oid": "66ae9c46cbf49d4ceb6ae0b3"
+    }
+  ],
+  "insumos": [
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bd"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0be"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bf"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c0"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c1"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c2"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c3"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c4"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c5"
+    }
+  ],
+  "Personal": [
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b8"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b9"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bb"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66aec542cbf49d4ceb6ae0c8"
+  },
+  "producto": "sillas",
+  "cantidad": 6,
+  "fechaProduccion": {
+    "$date": "2024-06-12T15:00:00.000Z"
+  },
+  "costo": 500,
+  "materiaPrima": [
+    {
+      "$oid": "66ae9c46cbf49d4ceb6ae0b6"
+    }
+  ],
+  "insumos": [
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bd"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0be"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bf"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c0"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c1"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c2"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c3"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c4"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c5"
+    }
+  ],
+  "Personal": [
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b8"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b9"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bb"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66aec542cbf49d4ceb6ae0c9"
+  },
+  "producto": "armario",
+  "cantidad": 1,
+  "fechaProduccion": {
+    "$date": "2022-03-15T15:00:00.000Z"
+  },
+  "costo": 2500,
+  "materiaPrima": [
+    {
+      "$oid": "66ae9c46cbf49d4ceb6ae0b5"
+    }
+  ],
+  "insumos": [
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bd"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0be"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0bf"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c0"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c1"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c2"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c3"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c4"
+    },
+    {
+      "$oid": "66aebe18cbf49d4ceb6ae0c5"
+    }
+  ],
+  "Personal": [
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b8"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0b9"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bb"
+    },
+    {
+      "$oid": "66aea6a1cbf49d4ceb6ae0bc"
+    }
+  ]
+}]
