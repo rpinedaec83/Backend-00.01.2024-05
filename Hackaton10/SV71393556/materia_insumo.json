@@ -1,0 +1,182 @@
+[{
+  "_id": {
+    "$oid": "66af164d49b0060a30464cfc"
+  },
+  "nombre": "madera",
+  "cantidad": 100,
+  "proveedor": "A",
+  "Fechadecompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 500
+},
+{
+  "_id": {
+    "$oid": "66af179349b0060a30464cfd"
+  },
+  "nombre": "acero",
+  "cantidad": 100,
+  "proveedor": "B",
+  "Fechadecompra": {
+    "$date": "2024-07-02T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 1000
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464cfe"
+  },
+  "nombre": "Madera de Pino",
+  "cantidad": 150,
+  "proveedor": "A",
+  "fechaCompra": {
+    "$date": "2024-07-25T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 600
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464cff"
+  },
+  "nombre": "Madera de Roble",
+  "cantidad": 80,
+  "proveedor": "B",
+  "fechaCompra": {
+    "$date": "2024-08-15T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 800
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d00"
+  },
+  "nombre": "Clavos",
+  "cantidad": 500,
+  "proveedor": "C",
+  "fechaCompra": {
+    "$date": "2024-08-05T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 50
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d01"
+  },
+  "nombre": "Pintura",
+  "cantidad": 20,
+  "proveedor": "D",
+  "fechaCompra": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 120
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d02"
+  },
+  "nombre": "Tablas de Madera",
+  "cantidad": 200,
+  "proveedor": "E",
+  "fechaCompra": {
+    "$date": "2024-09-10T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 1000
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d03"
+  },
+  "nombre": "Contrachapado",
+  "cantidad": 50,
+  "proveedor": "F",
+  "fechaCompra": {
+    "$date": "2024-10-03T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 400
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d04"
+  },
+  "nombre": "Adhesivo",
+  "cantidad": 15,
+  "proveedor": "G",
+  "fechaCompra": {
+    "$date": "2024-10-15T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 80
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d05"
+  },
+  "nombre": "Brochas",
+  "cantidad": 30,
+  "proveedor": "H",
+  "fechaCompra": {
+    "$date": "2024-11-01T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 60
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d06"
+  },
+  "nombre": "Herrajes",
+  "cantidad": 150,
+  "proveedor": "I",
+  "fechaCompra": {
+    "$date": "2024-11-10T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 350
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d07"
+  },
+  "nombre": "Madera de Nogal",
+  "cantidad": 100,
+  "proveedor": "J",
+  "fechaCompra": {
+    "$date": "2024-12-01T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 900
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d08"
+  },
+  "nombre": "Lija de Papel",
+  "cantidad": 100,
+  "proveedor": "K",
+  "fechaCompra": {
+    "$date": "2024-12-10T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 45
+},
+{
+  "_id": {
+    "$oid": "66af186949b0060a30464d09"
+  },
+  "nombre": "Sierra Circular",
+  "cantidad": 5,
+  "proveedor": "L",
+  "fechaCompra": {
+    "$date": "2024-12-15T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 250
+}]
