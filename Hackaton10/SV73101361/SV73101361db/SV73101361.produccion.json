@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "66aec348563fe2eab0c2c50d"
+  },
+  "producto": "ropero",
+  "cantidad": 10,
+  "fechaProduccion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "materiaPrimaUtilizada": {
+    "$oid": "66aec0ba563fe2eab0c2c4fb"
+  },
+  "insumosUtilizados": [
+    {
+      "$oid": "66aec0c0563fe2eab0c2c4fc"
+    },
+    {
+      "$oid": "66aec0c7563fe2eab0c2c4fd"
+    },
+    {
+      "$oid": "66aec0d0563fe2eab0c2c4fe"
+    },
+    {
+      "$oid": "66aec0df563fe2eab0c2c4ff"
+    },
+    {
+      "$oid": "66aec0e4563fe2eab0c2c500"
+    },
+    {
+      "$oid": "66aec0ed563fe2eab0c2c501"
+    },
+    {
+      "$oid": "66aec0f8563fe2eab0c2c502"
+    },
+    {
+      "$oid": "66aec106563fe2eab0c2c503"
+    },
+    {
+      "$oid": "66aec10d563fe2eab0c2c504"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66aec356563fe2eab0c2c50e"
+  },
+  "producto": "armario",
+  "cantidad": 8,
+  "fechaProduccion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "materiaPrimaUtilizada": {
+    "$oid": "66aec0ba563fe2eab0c2c4fb"
+  },
+  "insumosUtilizados": [
+    {
+      "$oid": "66aec0c0563fe2eab0c2c4fc"
+    },
+    {
+      "$oid": "66aec0c7563fe2eab0c2c4fd"
+    },
+    {
+      "$oid": "66aec0d0563fe2eab0c2c4fe"
+    },
+    {
+      "$oid": "66aec0df563fe2eab0c2c4ff"
+    },
+    {
+      "$oid": "66aec0e4563fe2eab0c2c500"
+    },
+    {
+      "$oid": "66aec0ed563fe2eab0c2c501"
+    },
+    {
+      "$oid": "66aec0f8563fe2eab0c2c502"
+    },
+    {
+      "$oid": "66aec106563fe2eab0c2c503"
+    },
+    {
+      "$oid": "66aec10d563fe2eab0c2c504"
+    }
+  ]
+}]
