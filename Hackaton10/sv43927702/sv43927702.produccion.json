@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "66aead7dbe49578f36b5d065"
+  },
+  "producto": "mueble",
+  "cantidad": 5,
+  "fechapruduccion": {
+    "$date": "2024-08-02T00:00:00.000Z"
+  },
+  "materiaprima": [
+    "cedro",
+    "melamine"
+  ],
+  "insumo": [
+    "clavos",
+    "goma"
+  ],
+  "personal": "jimmy"
+},
+{
+  "_id": {
+    "$oid": "66aeaf7cbe49578f36b5d067"
+  },
+  "producto": "Armario",
+  "cantidad": 10,
+  "fechaProduccion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "materiaPrima": [
+    {
+      "$oid": "66ae93210374f3587374e5c6"
+    },
+    {
+      "$oid": "66ae93210374f3587374e5c6"
+    }
+  ],
+  "isumos": [
+    {
+      "$oid": "66ae937b0374f3587374e5c9"
+    }
+  ]
+}]
