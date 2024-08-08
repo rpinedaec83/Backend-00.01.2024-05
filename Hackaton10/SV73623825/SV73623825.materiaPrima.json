@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b1"
+  },
+  "nombre": "madera roble",
+  "cantidad": "20",
+  "proveedor": "Proveedor A",
+  "telefonoProveedor": "21231312",
+  "fechaCompra": {
+    "$date": "2024-03-15T15:00:00.000Z"
+  },
+  "costo": 2000
+},
+{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b2"
+  },
+  "nombre": "madera pino",
+  "cantidad": "5",
+  "proveedor": "Proveedor B",
+  "telefonoProveedor": "21231312",
+  "fechaCompra": {
+    "$date": "2024-05-15T15:00:00.000Z"
+  },
+  "costo": 150
+},
+{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b3"
+  },
+  "nombre": "madera cedro",
+  "cantidad": "15",
+  "proveedor": "Proveedor C",
+  "telefonoProveedor": "232345677",
+  "fechaCompra": {
+    "$date": "2024-06-15T15:00:00.000Z"
+  },
+  "costo": 130
+},
+{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b4"
+  },
+  "nombre": "madera caoba",
+  "cantidad": "90",
+  "proveedor": "Proveedor D",
+  "telefonoProveedor": "34345675",
+  "fechaCompra": {
+    "$date": "2024-05-15T15:00:00.000Z"
+  },
+  "costo": 3500
+},
+{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b5"
+  },
+  "nombre": "madera nogal",
+  "cantidad": "23",
+  "proveedor": "Proveedor A",
+  "telefonoProveedor": "95675656",
+  "fechaCompra": {
+    "$date": "2024-03-27T15:00:00.000Z"
+  },
+  "costo": 140
+},
+{
+  "_id": {
+    "$oid": "66ae9c46cbf49d4ceb6ae0b6"
+  },
+  "nombre": "madera ebano",
+  "cantidad": "15",
+  "proveedor": "Proveedor B",
+  "telefonoProveedor": "123221|1|1",
+  "fechaCompra": {
+    "$date": "2024-02-15T15:00:00.000Z"
+  },
+  "costo": 200
+}]

@@ -1,0 +1,97 @@
+-- Creo la base de datos
+use sv76686442
+
+--Agrego la colección materiaPrima
+db.createCollection("materiaPrima");
+
+-- Insertando data
+db.materiaPrima.insertMany([
+  {
+    fecha: new Date("2024-07-01"),
+    proveedor: "Proveedor A",
+    material: "Madera",
+    cantidad: 100,
+    costo: 5000
+  },
+  {
+    fecha: new Date("2024-07-05"),
+    proveedor: "Proveedor B",
+    material: "Clavos",
+    cantidad: 2000,
+    costo: 300
+  }
+]);
+
+
+--Agrego la colección insumos
+db.createCollection("insumos");
+-- Insertando data
+db.insumos.insertMany([
+  {
+    fecha: new Date("2024-07-02"),
+    proveedor: "Proveedor C",
+    insumo: "Pintura",
+    cantidad: 50,
+    costo: 1000
+  },
+  {
+    fecha: new Date("2024-07-07"),
+    proveedor: "Proveedor D",
+    insumo: "Barniz",
+    cantidad: 30,
+    costo: 600
+  }
+]);
+
+
+
+--Agrego la colección personal
+db.createCollection("personal");
+-- Insertando data
+db.personal.insertMany([
+{
+	nombre:"Juan Pérez",
+	puesto:"Carpintero",
+	salario:2000,
+	fechaContratacion: new Date("2024-01-15")
+},
+{
+nombre:"Ana Gómez",
+puesto:"Diseñadora",
+salario:2500,
+fechaContratacion: new Date("2024-03-20")}
+]);
+
+--Agrego la colección produccion
+db.createCollection("produccion")
+--Insertando data
+db.produccion.insertMany([
+  {
+    fecha: new Date("2024-07-10"),
+    producto: "Armario de 2 puertas",
+    cantidad: 10,
+    estado: "En producción",
+    responsableId: ObjectId("66ae9ae7d5b3db5a5be48f5b"),
+    insumosUsados: [
+      { insumoId: ObjectId("66ae99d5d5b3db5a5be48f59"), cantidad: 5 },
+      { insumoId: ObjectId("66ae99d5d5b3db5a5be48f5a"), cantidad: 2 }
+    ],
+    materiasPrimasUsadas: [
+      { materiaPrimaId: ObjectId("66ae9730d5b3db5a5be48f57"), cantidad: 50 }
+    ]
+  },
+  {
+    fecha: new Date("2024-07-15"),
+    producto: "Armario de 4 puertas",
+    cantidad: 5,
+    estado: "Finalizado",
+    responsableId: ObjectId("66ae9ae7d5b3db5a5be48f5c"),
+    insumosUsados: [
+      { insumoId: ObjectId("66ae99d5d5b3db5a5be48f59"), cantidad: 3 }
+    ],
+    materiasPrimasUsadas: [
+      { materiaPrimaId: ObjectId("66ae9730d5b3db5a5be48f57"), cantidad: 30 },
+      { materiaPrimaId: ObjectId("66ae9730d5b3db5a5be48f58"), cantidad: 500 }
+    ]
+  }
+]);
