@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "66ae9730d5b3db5a5be48f57"
+  },
+  "fecha": {
+    "$date": "2024-07-01T00:00:00.000Z"
+  },
+  "proveedor": "Proveedor A",
+  "material": "Madera",
+  "cantidad": 200,
+  "costo": 5000
+},
+{
+  "_id": {
+    "$oid": "66ae9730d5b3db5a5be48f58"
+  },
+  "fecha": {
+    "$date": "2024-07-05T00:00:00.000Z"
+  },
+  "proveedor": "Proovedor B",
+  "material": "Clavos",
+  "cantidad": 2000,
+  "costo": 300
+},
+{
+  "_id": {
+    "$oid": "66aeb25782de2a6e430087c7"
+  },
+  "fecha": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "proovedor": "Proovedor E",
+  "material": "Pegamento",
+  "cantidad": 100,
+  "costo": 20
+}]

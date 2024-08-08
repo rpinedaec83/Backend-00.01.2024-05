@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "66aea2c8d5b3db5a5be48f5f"
+  },
+  "fecha": {
+    "$date": "2024-07-10T00:00:00.000Z"
+  },
+  "producto": "Armario de 2 puertas",
+  "cantidad": 10,
+  "estado": "En producción",
+  "responsableId": {
+    "$oid": "66ae9ae7d5b3db5a5be48f5b"
+  },
+  "insumosUsados": [
+    {
+      "insumoId": {
+        "$oid": "66ae99d5d5b3db5a5be48f59"
+      },
+      "cantidad": 5
+    },
+    {
+      "insumoId": {
+        "$oid": "66ae99d5d5b3db5a5be48f5a"
+      },
+      "cantidad": 2
+    }
+  ],
+  "materiasPrimasUsadas": [
+    {
+      "materiaPrimaId": {
+        "$oid": "66ae9730d5b3db5a5be48f57"
+      },
+      "cantidad": 50
+    }
+  ]
+}]
