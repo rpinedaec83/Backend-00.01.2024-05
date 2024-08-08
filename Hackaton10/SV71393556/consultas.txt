@@ -1,0 +1,253 @@
+use SV71393556
+db.materia_insumo.insertOne({
+  nombre: "madera",
+  cantidad: 100,
+  proveedor: "A",
+  Fechadecompra: new Date ('2024-08-03'),
+  tipo: "materia",
+  costo: 500
+})
+db.materia_insumo.insertMany([
+  {
+    nombre: "Madera de Pino",
+    cantidad: 150,
+    proveedor: "A",
+    fechaCompra: new Date('2024-07-25'),
+    tipo: "materia",
+    costo: 600.00
+  },
+  {
+    nombre: "Madera de Roble",
+    cantidad: 80,
+    proveedor: "B",
+    fechaCompra: new Date('2024-08-15'),
+    tipo: "materia",
+    costo: 800.00
+  },
+  {
+    nombre: "Clavos",
+    cantidad: 500,
+    proveedor: "C",
+    fechaCompra: new Date('2024-08-05'),
+    tipo: "insumo",
+    costo: 50.00
+  },
+  {
+    nombre: "Pintura",
+    cantidad: 20,
+    proveedor: "D",
+    fechaCompra: new Date('2024-09-01'),
+    tipo: "insumo",
+    costo: 120.00
+  },
+  {
+    nombre: "Tablas de Madera",
+    cantidad: 200,
+    proveedor: "E",
+    fechaCompra: new Date('2024-09-10'),
+    tipo: "materia",
+    costo: 1000.00
+  },
+  {
+    nombre: "Contrachapado",
+    cantidad: 50,
+    proveedor: "F",
+    fechaCompra: new Date('2024-10-03'),
+    tipo: "materia",
+    costo: 400.00
+  },
+  {
+    nombre: "Adhesivo",
+    cantidad: 15,
+    proveedor: "G",
+    fechaCompra: new Date('2024-10-15'),
+    tipo: "insumo",
+    costo: 80.00
+  },
+  {
+    nombre: "Brochas",
+    cantidad: 30,
+    proveedor: "H",
+    fechaCompra: new Date('2024-11-01'),
+    tipo: "insumo",
+    costo: 60.00
+  },
+  {
+    nombre: "Herrajes",
+    cantidad: 150,
+    proveedor: "I",
+    fechaCompra: new Date('2024-11-10'),
+    tipo: "materia",
+    costo: 350.00
+  },
+  {
+    nombre: "Madera de Nogal",
+    cantidad: 100,
+    proveedor: "J",
+    fechaCompra: new Date('2024-12-01'),
+    tipo: "materia",
+    costo: 900.00
+  },
+  {
+    nombre: "Lija de Papel",
+    cantidad: 100,
+    proveedor: "K",
+    fechaCompra: new Date('2024-12-10'),
+    tipo: "insumo",
+    costo: 45.00
+  },
+  {
+    nombre: "Sierra Circular",
+    cantidad: 5,
+    proveedor: "L",
+    fechaCompra: new Date('2024-12-15'),
+    tipo: "insumo",
+    costo: 250.00
+  }
+]);
+db.materia_insumo.updateOne( { nombre: "Clavos" }, { $set: { tipo: "materia" } } ) 
+db.personal.insertOne({
+  nombre: "Alvaro",
+  apellido: "Alarcon",
+  puesto: "CEO",
+  Fechadecontratacion: new Date ('2020-07-03'),
+  salario: 10000
+})
+db.personal.insertMany([
+  {
+    _id: ObjectId("64af1b1349b0060a30464d0b"),
+    nombre: "Maria",
+    apellido: "Gomez",
+    puesto: "Directora Financiera",
+    fechaDeContratacion: new Date("2021-03-15T00:00:00.000Z"),
+    salario: 9500
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d0c"),
+    nombre: "Luis",
+    apellido: "Perez",
+    puesto: "Director de Tecnología",
+    fechaDeContratacion: new Date("2019-11-22T00:00:00.000Z"),
+    salario: 9000
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d0d"),
+    nombre: "Ana",
+    apellido: "Lopez",
+    puesto: "Gerente de Marketing",
+    fechaDeContratacion: new Date("2022-01-10T00:00:00.000Z"),
+    salario: 7500
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d0e"),
+    nombre: "Juan",
+    apellido: "Martinez",
+    puesto: "Gerente de Ventas",
+    fechaDeContratacion: new Date("2021-06-05T00:00:00.000Z"),
+    salario: 8000
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d0f"),
+    nombre: "Laura",
+    apellido: "Rodriguez",
+    puesto: "Especialista en Recursos Humanos",
+    fechaDeContratacion: new Date("2023-02-18T00:00:00.000Z"),
+    salario: 6000
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d10"),
+    nombre: "Carlos",
+    apellido: "Fernandez",
+    puesto: "Ingeniero de Software",
+    fechaDeContratacion: new Date("2022-08-23T00:00:00.000Z"),
+    salario: 8500
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d11"),
+    nombre: "Sofia",
+    apellido: "Jimenez",
+    puesto: "Diseñadora de Productos",
+    fechaDeContratacion: new Date("2020-12-12T00:00:00.000Z"),
+    salario: 8500
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d12"),
+    nombre: "Pedro",
+    apellido: "Ramirez",
+    puesto: "Analista de Negocios",
+    fechaDeContratacion: new Date("2023-05-09T00:00:00.000Z"),
+    salario: 7200
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d13"),
+    nombre: "Valeria",
+    apellido: "Castro",
+    puesto: "Analista Financiero",
+    fechaDeContratacion: new Date("2022-07-30T00:00:00.000Z"),
+    salario: 6800
+  },
+  {
+    _id: ObjectId("64af1b1349b0060a30464d14"),
+    nombre: "Ricardo",
+    apellido: "Hernandez",
+    puesto: "Gerente de Operaciones",
+    fechaDeContratacion: new Date("2019-10-21T00:00:00.000Z"),
+    salario: 8000
+  }
+]);
+db.produccion.insertOne({
+  cantidad: 20,
+  producto: "Armario basico",
+  materiaprima: "madera",
+  insumos: "pintura"
+})
+db.produccion.insertMany([
+  {
+    cantidad: 25,
+    producto: "Armario de Madera de Pino",
+    materiaprima: ["Madera de Pino", "Clavos"],
+    insumos: ["Pintura"]
+  },
+  {
+    cantidad: 10,
+    producto: "Armario de lujo de Madera de Roble",
+    materiaprima: ["Madera de Roble", "Clavos"],
+    insumos: ["Pintura", "Adhesivo"]
+  },
+  {
+    cantidad: 12,
+    producto: "Armario de esquina de Contrachapado",
+    materiaprima: ["Contrachapado", "Clavos"],
+    insumos: ["Pintura"]
+  },
+  {
+    cantidad: 20,
+    producto: "Armario pequeño de Madera de Nogal",
+    materiaprima: ["Madera de Nogal", "Clavos"],
+    insumos: ["Pintura", "Lija de Papel"]
+  },
+  {
+    cantidad: 18,
+    producto: "Armario modular",
+    materiaprima: ["madera","Herrajes", "Clavos"], 
+    insumos: ["Pintura", "Brochas"]
+  },
+  {
+    cantidad: 22,
+    producto: "Armario de pared de Madera de Pino",
+    materiaprima: ["Madera de Pino", "Clavos"],
+    insumos: ["Pintura", "Adhesivo"]
+  },
+  {
+    cantidad: 30,
+    producto: "Armario para salón de Madera de Roble",
+    materiaprima: ["Madera de Roble", "Clavos"],
+    insumos: ["Pintura"]
+  },
+  {
+    cantidad: 14,
+    producto: "Armario de cocina",
+    materiaprima: ["madera","Contrachapado", "Clavos"],
+    insumos: ["Pintura", "Brochas"]
+  }
+]);

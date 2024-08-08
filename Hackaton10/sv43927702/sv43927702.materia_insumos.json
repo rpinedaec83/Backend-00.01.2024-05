@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "66ae9ae5be49578f36b5d058"
+  },
+  "nombre": "melamine",
+  "proveedor": "Proveedor A",
+  "cantidad": 100,
+  "tipo": "materia",
+  "precio": 25
+},
+{
+  "_id": {
+    "$oid": "66ae9c58be49578f36b5d059"
+  },
+  "nombre": "pino",
+  "proveedor": "Proveedor A",
+  "cantidad": 400,
+  "tipo": "materia",
+  "precio": 120
+},
+{
+  "_id": {
+    "$oid": "66ae9c6cbe49578f36b5d05a"
+  },
+  "nombre": "cedro",
+  "proveedor": "Proveedor A",
+  "cantidad": 200,
+  "tipo": "materia",
+  "precio": 200
+},
+{
+  "_id": {
+    "$oid": "66ae9c81be49578f36b5d05b"
+  },
+  "nombre": "caoba",
+  "proveedor": "Proveedor b",
+  "cantidad": 100,
+  "tipo": "materia",
+  "precio": 50
+},
+{
+  "_id": {
+    "$oid": "66ae9c96be49578f36b5d05c"
+  },
+  "nombre": "clavos",
+  "proveedor": "Proveedor c",
+  "cantidad": 100,
+  "tipo": "insumo",
+  "precio": 500
+},
+{
+  "_id": {
+    "$oid": "66ae9ca5be49578f36b5d05d"
+  },
+  "nombre": "goma",
+  "proveedor": "Proveedor c",
+  "cantidad": 100,
+  "tipo": "insumo",
+  "precio": 600
+},
+{
+  "_id": {
+    "$oid": "66ae9cb7be49578f36b5d05e"
+  },
+  "nombre": "barniz",
+  "proveedor": "Proveedor c",
+  "cantidad": 50,
+  "tipo": "insumo",
+  "precio": 10
+},
+{
+  "_id": {
+    "$oid": "66aeae74be49578f36b5d066"
+  },
+  "nombre": "tripley",
+  "proveedor": "Proveedor A",
+  "cantidad": 100,
+  "tipo": "matria",
+  "precio": 20
+}]

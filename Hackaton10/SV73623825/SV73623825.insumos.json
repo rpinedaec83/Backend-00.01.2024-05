@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0bd"
+  },
+  "nombre": "Regla de aluminio",
+  "proveedor": "Proveedor Insumo A",
+  "precio": 30
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0be"
+  },
+  "nombre": "Martillo de carpintero",
+  "proveedor": "Proveedor Insumo B",
+  "precio": 15
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0bf"
+  },
+  "nombre": "Serrucho de carpintería",
+  "proveedor": "Proveedor Insumo C",
+  "precio": 50
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c0"
+  },
+  "nombre": "Cepillo carpintero",
+  "proveedor": "Proveedor Insumo A",
+  "precio": 90
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c1"
+  },
+  "nombre": "Sellador de madera",
+  "proveedor": "Proveedor Insumo D",
+  "precio": 30
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c2"
+  },
+  "nombre": "Lija para madera ",
+  "proveedor": "Proveedor Insumo A",
+  "precio": 25
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c3"
+  },
+  "nombre": "Sierras",
+  "proveedor": "Proveedor Insumo B",
+  "precio": 25
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c4"
+  },
+  "nombre": "Taladro",
+  "proveedor": "Proveedor Insumo C",
+  "precio": 23
+},
+{
+  "_id": {
+    "$oid": "66aebe18cbf49d4ceb6ae0c5"
+  },
+  "nombre": "Clavos",
+  "proveedor": "Proveedor Insumo F",
+  "precio": 0.2
+}]
