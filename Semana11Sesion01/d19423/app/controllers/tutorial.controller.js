@@ -1,5 +1,6 @@
 const db = require("../models");
 const Tutorial = db.tutorials;
+const  Comment = db.comments;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -128,3 +129,40 @@ exports.deleteAll = (req, res) => {
         });
       });
 };
+
+exports.findAllPublished = (req, res) => {
+    Tutorial.findAll({ where: { published: true } })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving tutorials."
+        });
+      });
+};
+
+
+exports.createComment = (req, res)=>{
+    const tutorialId = req.params.id;
+    const comment = {
+        name: req.body.name,
+        text: req.body.text
+      };
+    Comment.create({
+      name: comment.name,
+      text: comment.text,
+      tutorialId: tutorialId,
+    })
+    .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while creating the Tutorial."
+        });
+      });
+  };
+
