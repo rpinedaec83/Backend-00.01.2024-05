@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "66af1b1349b0060a30464d0b"
+  },
+  "nombre": "Alvaro",
+  "apellido": "Alarcon",
+  "puesto": "CEO",
+  "Fechadecontratacion": {
+    "$date": "2020-07-03T00:00:00.000Z"
+  },
+  "salario": 10000
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d0b"
+  },
+  "nombre": "Maria",
+  "apellido": "Gomez",
+  "puesto": "Directora Financiera",
+  "fechaDeContratacion": {
+    "$date": "2021-03-15T00:00:00.000Z"
+  },
+  "salario": 9500
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d0c"
+  },
+  "nombre": "Luis",
+  "apellido": "Perez",
+  "puesto": "Director de Tecnología",
+  "fechaDeContratacion": {
+    "$date": "2019-11-22T00:00:00.000Z"
+  },
+  "salario": 9000
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d0d"
+  },
+  "nombre": "Ana",
+  "apellido": "Lopez",
+  "puesto": "Gerente de Marketing",
+  "fechaDeContratacion": {
+    "$date": "2022-01-10T00:00:00.000Z"
+  },
+  "salario": 7500
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d0e"
+  },
+  "nombre": "Juan",
+  "apellido": "Martinez",
+  "puesto": "Gerente de Ventas",
+  "fechaDeContratacion": {
+    "$date": "2021-06-05T00:00:00.000Z"
+  },
+  "salario": 8000
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d0f"
+  },
+  "nombre": "Laura",
+  "apellido": "Rodriguez",
+  "puesto": "Especialista en Recursos Humanos",
+  "fechaDeContratacion": {
+    "$date": "2023-02-18T00:00:00.000Z"
+  },
+  "salario": 6000
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d10"
+  },
+  "nombre": "Carlos",
+  "apellido": "Fernandez",
+  "puesto": "Ingeniero de Software",
+  "fechaDeContratacion": {
+    "$date": "2022-08-23T00:00:00.000Z"
+  },
+  "salario": 8500
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d11"
+  },
+  "nombre": "Sofia",
+  "apellido": "Jimenez",
+  "puesto": "Diseñadora de Productos",
+  "fechaDeContratacion": {
+    "$date": "2020-12-12T00:00:00.000Z"
+  },
+  "salario": 8500
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d12"
+  },
+  "nombre": "Pedro",
+  "apellido": "Ramirez",
+  "puesto": "Analista de Negocios",
+  "fechaDeContratacion": {
+    "$date": "2023-05-09T00:00:00.000Z"
+  },
+  "salario": 7200
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d13"
+  },
+  "nombre": "Valeria",
+  "apellido": "Castro",
+  "puesto": "Analista Financiero",
+  "fechaDeContratacion": {
+    "$date": "2022-07-30T00:00:00.000Z"
+  },
+  "salario": 6800
+},
+{
+  "_id": {
+    "$oid": "64af1b1349b0060a30464d14"
+  },
+  "nombre": "Ricardo",
+  "apellido": "Hernandez",
+  "puesto": "Gerente de Operaciones",
+  "fechaDeContratacion": {
+    "$date": "2019-10-21T00:00:00.000Z"
+  },
+  "salario": 8000
+}]

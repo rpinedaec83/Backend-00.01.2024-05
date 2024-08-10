@@ -1,0 +1,1 @@
+{"_id":{"$oid":"66aeae6c856789039933ed19"},"nombre":"Juan Pérez","puesto":"Carpintero","fecha_ingreso":{"$date":"2023-01-15T00:00:00Z"},"salario":1500}

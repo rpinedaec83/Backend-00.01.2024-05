@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "66ae9ae7d5b3db5a5be48f5b"
+  },
+  "nombre": "Juan Pérez",
+  "puesto": "Carpintero",
+  "salario": 2000,
+  "fechaContratacion": {
+    "$date": "2024-01-15T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66ae9ae7d5b3db5a5be48f5c"
+  },
+  "nombre": "Ana Gómez",
+  "puesto": "Diseñadora",
+  "salario": 2500,
+  "fechaContratacion": {
+    "$date": "2024-03-20T00:00:00.000Z"
+  }
+}]
