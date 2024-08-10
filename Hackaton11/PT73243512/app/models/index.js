@@ -1,6 +1,7 @@
 const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
+
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
@@ -26,4 +27,5 @@ db.raza = require("./raza.model.js")(sequelize, Sequelize);
 db.sexo = require("./sexo.model.js")(sequelize, Sequelize);
 db.ubigeo = require("./ubigeo.model.js")(sequelize, Sequelize);
 db.vacuna = require("./vacuna.model.js")(sequelize, Sequelize);
-module.exports = db;
+
+module.exports = {db,sequelize};
