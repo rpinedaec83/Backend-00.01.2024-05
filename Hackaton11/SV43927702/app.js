@@ -25,6 +25,23 @@ app.get("/", (req, res) => {
     res.json({ message: "bienvenido a la aplicacion de Veterinaria" });
 });
 
+
+
+
+//rutas
+require("./app/routes/usuario.routes")(app);
+require("./app/routes/color.routes")(app);
+require("./app/routes/especie.routes")(app);
+require("./app/routes/raza.routes")(app);
+require("./app/routes/sexo.routes")(app);
+require("./app/routes/vacunas.routes")(app);
+require("./app/routes/ubigeo.routes")(app);
+require("./app/routes/nacionalidad.routes")(app);
+require("./app/routes/propietario.routes")(app);
+require("./app/routes/mascota.routes")(app);
+
+
+
 //para hacer correr
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
