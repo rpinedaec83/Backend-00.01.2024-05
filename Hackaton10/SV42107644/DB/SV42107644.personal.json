@@ -1,0 +1,374 @@
+[{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae04"
+  },
+  "dni": "08459356",
+  "nombre": "Juan Pérez",
+  "puesto": "Carpintero",
+  "salario": 2000,
+  "fecha_contratacion": {
+    "$date": "2023-01-15T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Corte de madera",
+    "Ensamblaje de muebles"
+  ],
+  "experiencia": "5 años en carpintería",
+  "certificaciones": [
+    "Certificado en seguridad industrial"
+  ],
+  "telefono": "555-1234",
+  "email": "juan.perez@mp.com",
+  "direccion": "Calle Ejemplo 123, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae05"
+  },
+  "dni": "03269854",
+  "nombre": "Emilio Castro",
+  "puesto": "Montador",
+  "salario": 2000,
+  "fecha_contratacion": {
+    "$date": "2023-01-15T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Corte de madera",
+    "Ensamblaje de muebles"
+  ],
+  "experiencia": "5 años en carpintería",
+  "certificaciones": [
+    "Certificado en seguridad industrial"
+  ],
+  "telefono": "555-2589",
+  "email": "emilio.castro@mp.com",
+  "direccion": "Calle Ejemplo 785, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae06"
+  },
+  "dni": "78549352",
+  "nombre": "Ana Gómez",
+  "puesto": "Diseñadora de interiores",
+  "salario": 2200,
+  "fecha_contratacion": {
+    "$date": "2022-07-01T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Diseño de armarios",
+    "Planificación de espacios"
+  ],
+  "experiencia": "7 años en diseño de interiores",
+  "certificaciones": [
+    "Certificación en diseño de interiores"
+  ],
+  "telefono": "555-5678",
+  "email": "ana.gomez@mp.com",
+  "direccion": "Avenida Principal 456, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae07"
+  },
+  "dni": "47584692",
+  "nombre": "Carlos Martínez",
+  "puesto": "Operador de maquinaria",
+  "salario": 1800,
+  "fecha_contratacion": {
+    "$date": "2023-03-20T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Manejo de sierras",
+    "Operación de fresadoras"
+  ],
+  "experiencia": "4 años en operación de maquinaria",
+  "certificaciones": [
+    "Licencia de operador de maquinaria"
+  ],
+  "telefono": "555-9876",
+  "email": "carlos.martinez@mp.com",
+  "direccion": "Calle Secundaria 789, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae08"
+  },
+  "dni": "25987652",
+  "nombre": "Laura Fernández",
+  "puesto": "Control de calidad",
+  "salario": 2100,
+  "fecha_contratacion": {
+    "$date": "2023-05-10T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Inspección de calidad",
+    "Pruebas de resistencia"
+  ],
+  "experiencia": "6 años en control de calidad",
+  "certificaciones": [
+    "Certificación en control de calidad"
+  ],
+  "telefono": "555-6543",
+  "email": "laura.fernandez@mp.com",
+  "direccion": "Calle Tercera 321, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae09"
+  },
+  "dni": "78546952",
+  "nombre": "Pedro López",
+  "puesto": "Montador de muebles",
+  "salario": 1900,
+  "fecha_contratacion": {
+    "$date": "2023-02-05T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Montaje de armarios",
+    "Instalación de estantes"
+  ],
+  "experiencia": "3 años en montaje de muebles",
+  "certificaciones": [
+    "Certificación en montaje de muebles"
+  ],
+  "telefono": "555-3456",
+  "email": "pedro.lopez@mp.com",
+  "direccion": "Calle Cuarta 654, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae0a"
+  },
+  "dni": "23654985",
+  "nombre": "María Rodríguez",
+  "puesto": "Técnica de acabados",
+  "salario": 2000,
+  "fecha_contratacion": {
+    "$date": "2023-04-15T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Aplicación de lacas",
+    "Barnizado de madera"
+  ],
+  "experiencia": "5 años en acabados de madera",
+  "certificaciones": [
+    "Certificación en acabados"
+  ],
+  "telefono": "555-8765",
+  "email": "maria.rodriguez@mp.com",
+  "direccion": "Calle Quinta 987, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae0b"
+  },
+  "dni": "65987652",
+  "nombre": "Luis Sánchez",
+  "puesto": "Almacenero",
+  "salario": 1700,
+  "fecha_contratacion": {
+    "$date": "2023-06-20T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Gestión de inventarios",
+    "Organización de almacén"
+  ],
+  "experiencia": "4 años en gestión de almacenes",
+  "certificaciones": [
+    "Certificación en gestión de inventarios"
+  ],
+  "telefono": "555-4321",
+  "email": "luis.sanchez@mp.com",
+  "direccion": "Calle Sexta 123, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae0c"
+  },
+  "dni": "59625462",
+  "nombre": "Claudia Pérez",
+  "puesto": "Asistente de producción",
+  "salario": 1600,
+  "fecha_contratacion": {
+    "$date": "2023-07-01T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Apoyo en producción",
+    "Manejo de herramientas básicas"
+  ],
+  "experiencia": "2 años en asistencia de producción",
+  "certificaciones": [
+    "Curso básico de carpintería"
+  ],
+  "telefono": "555-6789",
+  "email": "claudia.perez@mp.com",
+  "direccion": "Calle Séptima 456, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae0d"
+  },
+  "dni": "42516856",
+  "nombre": "Javier Gómez",
+  "puesto": "Planificador de producción",
+  "salario": 2300,
+  "fecha_contratacion": {
+    "$date": "2023-08-10T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Planificación de recursos",
+    "Optimización de procesos"
+  ],
+  "experiencia": "6 años en planificación de producción",
+  "certificaciones": [
+    "Certificación en gestión de producción"
+  ],
+  "telefono": "555-9870",
+  "email": "javier.gomez@mp.com",
+  "direccion": "Calle Octava 789, Ciudad"
+},
+{
+  "_id": {
+    "$oid": "66afef8f0d7d15a5e7bcae0e"
+  },
+  "dni": "75846952",
+  "nombre": "Sofía Morales",
+  "puesto": "Operaria de corte",
+  "salario": 1800,
+  "fecha_contratacion": {
+    "$date": "2023-09-15T00:00:00.000Z"
+  },
+  "tipo_contrato": "Tiempo completo",
+  "horario": {
+    "dias": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes"
+    ],
+    "horas_diarias": 8
+  },
+  "especialidades": [
+    "Corte de madera en sierras",
+    "Preparación de materiales"
+  ],
+  "experiencia": "3 años en corte de madera",
+  "certificaciones": [
+    "Certificación en manejo de sierras"
+  ],
+  "telefono": "555-3210",
+  "email": "sofia.morales@mp.com",
+  "direccion": "Calle Novena 123, Ciudad"
+}]

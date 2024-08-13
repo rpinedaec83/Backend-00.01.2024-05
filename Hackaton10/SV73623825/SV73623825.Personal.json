@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0b7"
+  },
+  "nombre": "Carlos",
+  "apellido": "Rivero",
+  "puesto": "Gerente General",
+  "fechacontratacion": {
+    "$date": "2020-03-15T15:00:00.000Z"
+  },
+  "salario": 8000
+},
+{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0b8"
+  },
+  "nombre": "Edison",
+  "apellido": "Ramos",
+  "puesto": "Asesor Comercial",
+  "fechacontratacion": {
+    "$date": "2020-08-15T15:00:00.000Z"
+  },
+  "salario": 3000
+},
+{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0b9"
+  },
+  "nombre": "Pedro",
+  "apellido": "Sangoro",
+  "puesto": "Fabricante 1",
+  "fechacontratacion": {
+    "$date": "2021-03-15T15:00:00.000Z"
+  },
+  "salario": 3000
+},
+{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0ba"
+  },
+  "nombre": "Manuel",
+  "apellido": "Gutierrez",
+  "puesto": "Fabricante 2",
+  "fechacontratacion": {
+    "$date": "2022-03-15T15:00:00.000Z"
+  },
+  "salario": 2800
+},
+{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0bb"
+  },
+  "nombre": "Priscila",
+  "apellido": "Rumina",
+  "puesto": "Transporte",
+  "fechacontratacion": {
+    "$date": "2020-03-15T15:00:00.000Z"
+  },
+  "salario": 2000
+},
+{
+  "_id": {
+    "$oid": "66aea6a1cbf49d4ceb6ae0bc"
+  },
+  "nombre": "Ricardo",
+  "apellido": "Meztas",
+  "puesto": "Pintor",
+  "fechacontratacion": {
+    "$date": "2022-03-15T15:00:00.000Z"
+  },
+  "salario": 2000
+}]

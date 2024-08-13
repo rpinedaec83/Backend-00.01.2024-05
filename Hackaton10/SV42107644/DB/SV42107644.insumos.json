@@ -1,0 +1,150 @@
+[{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadfa"
+  },
+  "nombre": "Clavos",
+  "cantidad": 1000,
+  "unidad": "piezas",
+  "precio_unitario": 0.05,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor Z",
+  "ubicación": "Almacén 1",
+  "descripción": "Clavos de acero para respaldo"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadfb"
+  },
+  "nombre": "Tornillos",
+  "cantidad": 500,
+  "unidad": "piezas",
+  "precio_unitario": 0.1,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor Z",
+  "ubicación": "Almacén 1",
+  "descripción": "Tornillos de acero para union de piezas"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadfc"
+  },
+  "nombre": "Bisagras",
+  "cantidad": 200,
+  "unidad": "piezas",
+  "precio_unitario": 1.5,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor Y",
+  "ubicación": "Almacén B",
+  "descripción": "Bisagras de acero para puertas de armario"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadfd"
+  },
+  "nombre": "Tiradores",
+  "cantidad": 50,
+  "unidad": "piezas",
+  "precio_unitario": 2,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor Z",
+  "ubicación": "Almacén C",
+  "descripción": "Tiradores de metal para cajones y puertas"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadfe"
+  },
+  "nombre": "Pegamento para madera",
+  "cantidad": 30,
+  "unidad": "botellas",
+  "precio_unitario": 3,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor A",
+  "ubicación": "Almacén A",
+  "descripción": "Adhesivo fuerte para unir piezas de madera"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcadff"
+  },
+  "nombre": "Pintura",
+  "cantidad": 10,
+  "unidad": "litros",
+  "precio_unitario": 12,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor B",
+  "ubicación": "Almacén B",
+  "descripción": "Pintura acrílica para acabados de madera"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcae00"
+  },
+  "nombre": "Masilla para madera",
+  "cantidad": 20,
+  "unidad": "tarros",
+  "precio_unitario": 5,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor C",
+  "ubicación": "Almacén C",
+  "descripción": "Masilla para rellenar imperfecciones en madera"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcae01"
+  },
+  "nombre": "Cerradura",
+  "cantidad": 50,
+  "unidad": "piezas",
+  "precio_unitario": 4,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor D",
+  "ubicación": "Almacén A",
+  "descripción": "Cerraduras para puertas de armario"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcae02"
+  },
+  "nombre": "Organizadores de cajones",
+  "cantidad": 40,
+  "unidad": "piezas",
+  "precio_unitario": 8,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor E",
+  "ubicación": "Almacén B",
+  "descripción": "Organizadores para subdividir cajones"
+},
+{
+  "_id": {
+    "$oid": "66afef7d0d7d15a5e7bcae03"
+  },
+  "nombre": "Rieles para estantes",
+  "cantidad": 60,
+  "unidad": "pares",
+  "precio_unitario": 3.5,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:41.785Z"
+  },
+  "proveedor": "Proveedor F",
+  "ubicación": "Almacén C",
+  "descripción": "Rieles para ajustar estantes en el armario"
+}]

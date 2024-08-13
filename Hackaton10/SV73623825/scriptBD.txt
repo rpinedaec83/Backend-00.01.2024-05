@@ -1,0 +1,247 @@
+db.materiaPrima.insertMany([  
+  {
+    nombre: "madera roble",
+    cantidad: "20",
+    proveedor: "Proveedor A",
+    telefonoProveedor: "21231312",
+    fechaCompra: new Date(2024, 2, 15, 10, 0, 0),
+	costo: 2000
+  },
+  {
+    nombre: "madera pino",
+    cantidad: "5",
+    proveedor: "Proveedor B",
+    telefonoProveedor: "21231312",
+    fechaCompra: new Date(2024, 4, 15, 10, 0, 0),
+	costo: 150
+  },
+  {
+    nombre: "madera cedro",
+    cantidad: "15",
+    proveedor: "Proveedor C",
+    telefonoProveedor: "232345677",
+    fechaCompra: new Date(2024, 5, 15, 10, 0, 0),
+	costo: 130
+  },
+  {
+    nombre: "madera caoba",
+    cantidad: "90",
+    proveedor: "Proveedor D",
+    telefonoProveedor: "34345675",
+    fechaCompra: new Date(2024, 4, 15, 10, 0, 0),
+	costo: 3500
+  },
+  {
+    nombre: "madera nogal",
+    cantidad: "23",
+    proveedor: "Proveedor A",
+    telefonoProveedor: "95675656",
+    fechaCompra: new Date(2024, 2, 27, 10, 0, 0),
+	costo: 140
+  },
+  {
+    nombre: "madera ebano",
+    cantidad: "15",
+    proveedor: "Proveedor B",
+    telefonoProveedor: "123221|1|1",
+    fechaCompra: new Date(2024, 1, 15, 10, 0, 0),
+	costo: 200
+  }
+])
+************************************************************
+db.insumos.insertMany([  
+  {
+    nombre: "Regla de aluminio",
+    proveedor: "Proveedor Insumo A",
+    precio: 30
+  },
+  {
+    nombre: "Martillo de carpintero",
+    proveedor: "Proveedor Insumo B",
+    precio: 15
+  },
+  {
+	nombre: "Serrucho de carpintería",
+    proveedor: "Proveedor Insumo C",
+    precio: 50
+  },
+  {
+   nombre: "Cepillo carpintero",
+    proveedor: "Proveedor Insumo A",
+    precio: 90
+  },
+  {
+   nombre: "Sellador de madera",
+    proveedor: "Proveedor Insumo D",
+    precio: 30
+  },
+  {
+    nombre: "Lija para madera ",
+    proveedor: "Proveedor Insumo A",
+    precio: 25
+  },
+  {
+    nombre: "Sierras",
+    proveedor: "Proveedor Insumo B",
+    precio: 25
+  },
+  {
+    nombre: "Taladro",
+    proveedor: "Proveedor Insumo C",
+    precio: 23
+  },
+  {
+    nombre: "Clavos",
+    proveedor: "Proveedor Insumo F",
+    precio: 0.2
+  }
+])
+
+
+*************************************************************
+db.Personal.insertMany([  
+  {
+    nombre: "Carlos",
+    apellido: "Rivero",
+    puesto: "Gerente General",
+    fechacontratacion: new Date(2020, 2, 15, 10, 0, 0),
+    salario: 8000,
+  },
+  {
+    nombre: "Edison",
+    apellido: "Ramos",
+    puesto: "Asesor Comercial",
+    fechacontratacion: new Date(2020, 7, 15, 10, 0, 0),
+    salario: 3000,
+  },
+  {
+	nombre: "Pedro",
+    apellido: "Sangoro",
+    puesto: "Fabricante 1",
+    fechacontratacion: new Date(2021, 2, 15, 10, 0, 0),
+    salario: 3000,
+  },
+  {
+    nombre: "Manuel",
+    apellido: "Gutierrez",
+    puesto: "Fabricante 2",
+    fechacontratacion: new Date(2022, 2, 15, 10, 0, 0),
+    salario: 2800,
+  },
+  {
+   nombre: "Priscila",
+    apellido: "Rumina",
+    puesto: "Transporte",
+    fechacontratacion: new Date(2020, 2, 15, 10, 0, 0),
+    salario: 2000,
+  },
+  {
+    nombre: "Ricardo",
+    apellido: "Meztas",
+    puesto: "Pintor",
+    fechacontratacion: new Date(2022, 2, 15, 10, 0, 0),
+    salario: 2000,
+  }
+])
+
+**********************************************************************************************************************
+db.produccion.insertMany([  
+  {
+    producto: "Mueble 3 pisos",
+    cantidad: 1,
+    fechaProduccion: new Date(2020, 2, 15, 10, 0, 0),
+    costo: 8000,
+	materiaPrima:[
+	ObjectId('66ae9c46cbf49d4ceb6ae0b1')
+	],
+	insumos:[
+	ObjectId('66aebe18cbf49d4ceb6ae0bd'),
+	ObjectId('66aebe18cbf49d4ceb6ae0be'),
+	ObjectId('66aebe18cbf49d4ceb6ae0bf'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c0'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c1'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c2'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c3'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c4'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c5')
+	],
+	Personal:[
+	ObjectId('66aea6a1cbf49d4ceb6ae0b8'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0b9'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bb'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bc')]
+  },
+  {
+   producto: "mesa para 6 personas",
+    cantidad: 2,
+    fechaProduccion: new Date(2023, 2, 15, 10, 0, 0),
+    costo: 10000,
+	materiaPrima:[
+	ObjectId('66ae9c46cbf49d4ceb6ae0b3')
+	],
+	insumos:[
+	ObjectId('66aebe18cbf49d4ceb6ae0bd'),
+	ObjectId('66aebe18cbf49d4ceb6ae0be'),
+	ObjectId('66aebe18cbf49d4ceb6ae0bf'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c0'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c1'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c2'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c3'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c4'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c5')
+	],
+	Personal:[
+	ObjectId('66aea6a1cbf49d4ceb6ae0b8'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0b9'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bb')]
+  },
+  {
+	producto: "sillas",
+    cantidad: 6,
+    fechaProduccion: new Date(2024, 5, 12, 10, 0, 0),
+    costo: 500,
+	materiaPrima:[
+	ObjectId('66ae9c46cbf49d4ceb6ae0b6')
+	],
+	insumos:[
+	ObjectId('66aebe18cbf49d4ceb6ae0bd'),
+	ObjectId('66aebe18cbf49d4ceb6ae0be'),
+	ObjectId('66aebe18cbf49d4ceb6ae0bf'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c0'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c1'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c2'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c3'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c4'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c5')
+	],
+	Personal:[
+	ObjectId('66aea6a1cbf49d4ceb6ae0b8'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0b9'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bb')]
+  },
+  {
+    producto: "armario",
+    cantidad: 1,
+    fechaProduccion: new Date(2022, 2, 15, 10, 0, 0),
+    costo: 2500,
+	materiaPrima:[
+	ObjectId('66ae9c46cbf49d4ceb6ae0b5')
+	],
+	insumos:[
+	ObjectId('66aebe18cbf49d4ceb6ae0bd'),
+	ObjectId('66aebe18cbf49d4ceb6ae0be'),
+	ObjectId('66aebe18cbf49d4ceb6ae0bf'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c0'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c1'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c2'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c3'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c4'),
+	ObjectId('66aebe18cbf49d4ceb6ae0c5')
+	],
+	Personal:[
+	ObjectId('66aea6a1cbf49d4ceb6ae0b8'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0b9'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bb'),
+	ObjectId('66aea6a1cbf49d4ceb6ae0bc')]
+  }
+])

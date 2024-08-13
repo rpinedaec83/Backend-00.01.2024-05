@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf0"
+  },
+  "nombre": "Madera R 19",
+  "cantidad": 100,
+  "largo": 2500,
+  "ancho": 762,
+  "espesor": 19.05,
+  "tipo": "Roble",
+  "precio_unitario": 0.75,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor A",
+  "ubicación": "Almacén 1",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf1"
+  },
+  "nombre": "Madera P 15",
+  "cantidad": 80,
+  "largo": 2000,
+  "ancho": 600,
+  "espesor": 15,
+  "tipo": "Pino",
+  "precio_unitario": 0.6,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor B",
+  "ubicación": "Almacén 2",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf2"
+  },
+  "nombre": "Madera C 25",
+  "cantidad": 150,
+  "largo": 3000,
+  "ancho": 800,
+  "espesor": 25,
+  "tipo": "Cedro",
+  "precio_unitario": 0.9,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor C",
+  "ubicación": "Almacén 3",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf3"
+  },
+  "nombre": "Madera H 12",
+  "cantidad": 90,
+  "largo": 2200,
+  "ancho": 700,
+  "espesor": 12,
+  "tipo": "Haya",
+  "precio_unitario": 0.7,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor B",
+  "ubicación": "Almacén 2",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf4"
+  },
+  "nombre": "Madera A 18",
+  "cantidad": 110,
+  "largo": 2800,
+  "ancho": 750,
+  "espesor": 18,
+  "tipo": "Aliso",
+  "precio_unitario": 0.85,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor C",
+  "ubicación": "Almacén 3",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf5"
+  },
+  "nombre": "Madera T 25",
+  "cantidad": 150,
+  "largo": 3200,
+  "ancho": 900,
+  "espesor": 25,
+  "tipo": "Teca",
+  "precio_unitario": 1,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor A",
+  "ubicación": "Almacén 1",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf6"
+  },
+  "nombre": "Madera",
+  "cantidad": 120,
+  "largo": 1800,
+  "ancho": 500,
+  "espesor": 10,
+  "tipo": "Roble",
+  "precio_unitario": 0.5,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor C",
+  "ubicación": "Almacén 3",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf7"
+  },
+  "nombre": "Madera",
+  "cantidad": 150,
+  "largo": 3000,
+  "ancho": 800,
+  "espesor": 25,
+  "tipo": "Cedro",
+  "precio_unitario": 0.9,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor A",
+  "ubicación": "Almacén 1",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf8"
+  },
+  "nombre": "Madera",
+  "cantidad": 130,
+  "largo": 2700,
+  "ancho": 800,
+  "espesor": 20,
+  "tipo": "Castaño",
+  "precio_unitario": 0.8,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor B",
+  "ubicación": "Almacén 2",
+  "unidad": "mm"
+},
+{
+  "_id": {
+    "$oid": "66afef6d0d7d15a5e7bcadf9"
+  },
+  "nombre": "Madera",
+  "cantidad": 100,
+  "largo": 2500,
+  "ancho": 762,
+  "espesor": 19.05,
+  "tipo": "Roble",
+  "precio_unitario": 0.75,
+  "fecha_compra": {
+    "$date": "2024-08-04T21:15:25.041Z"
+  },
+  "proveedor": "Proveedor C",
+  "ubicación": "Almacén 3",
+  "unidad": "mm"
+}]
