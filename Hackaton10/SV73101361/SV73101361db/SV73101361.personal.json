@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "66aec219563fe2eab0c2c505"
+  },
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "puesto": "Operario",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 1500
+},
+{
+  "_id": {
+    "$oid": "66aec21d563fe2eab0c2c506"
+  },
+  "nombre": "Carlos",
+  "apellido": "Lopez",
+  "puesto": "Gerente",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 3500
+},
+{
+  "_id": {
+    "$oid": "66aec221563fe2eab0c2c507"
+  },
+  "nombre": "Carlos",
+  "apellido": "Lopez",
+  "puesto": "Gerente",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 3500
+},
+{
+  "_id": {
+    "$oid": "66aec225563fe2eab0c2c508"
+  },
+  "nombre": "Miguel",
+  "apellido": "Rodriguez",
+  "puesto": "Almacenista",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 1800
+},
+{
+  "_id": {
+    "$oid": "66aec228563fe2eab0c2c509"
+  },
+  "nombre": "Elena",
+  "apellido": "Fernandez",
+  "puesto": "Secretaria",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 1600
+},
+{
+  "_id": {
+    "$oid": "66aec22b563fe2eab0c2c50a"
+  },
+  "nombre": "Sofia",
+  "apellido": "Ramirez",
+  "puesto": "Ingeniera",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 3000
+},
+{
+  "_id": {
+    "$oid": "66aec22f563fe2eab0c2c50b"
+  },
+  "nombre": "Ricardo",
+  "apellido": "Torres",
+  "puesto": "Técnico",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 1700
+},
+{
+  "_id": {
+    "$oid": "66aec232563fe2eab0c2c50c"
+  },
+  "nombre": "Fernando",
+  "apellido": "Sanchez",
+  "puesto": "Conductor",
+  "fechaContratacion": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "salario": 1400
+}]

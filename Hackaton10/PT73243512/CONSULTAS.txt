@@ -1,0 +1,147 @@
+ELIMINAR BASE DE DATOS
+
+db.dropDatabase()
+----------------------------------------------------------
+USAR LA BASE DE DATOS
+
+use PT73243512
+----------------------------------------------------------
+CREACIÓN DE TABLAS E INSERTAR DATOS
+
+TABLA MATERIA_PRIMA:
+Insertar datos uno por uno
+db.Materia_Prima.insertOne({
+nombre:"Martillo",
+cantidad:"250",
+proveedor:"D",
+fechaCompra: new Date('2022-09-30'),
+tipo:"Herramienta",
+costo:"120"});
+
+TABLA MATERIA_INSUMO:
+Insertar datos uno por uno
+db.Materia_Insumo.insertOne({
+nombre:"Madera",
+cantidad:"100",
+proveedor:"A",
+fechaCompra: new Date ('2024-08-03'),
+tipo:"materia",
+costo:"200"});
+
+TABLA Gestion_Personal:
+Insertar datos uno por uno
+db.Gestion_Personal.insertOne({
+nombre:"Pedro",
+apellido:"Lopez",
+cargo:"Gerente",
+fechaContrato: new Date('2021-01-25'),
+salario:"3000"});
+
+TABLA Produccion:
+Insertar datos uno por uno
+db.Produccion.insertOne({
+cantidad:"65",
+producto:"Maquinas",
+materiaPrima:[ObjectId('66aedb309be0fb6f76e7fac8')],
+insumos:[ObjectId('66aedc239be0fb6f76e7fac9')]});
+
+----------------------------------------------------------
+
+TABLA MATERIA_PRIMA:
+Insertar datos uno por grupo
+db.Materia_Prima.insertMany([
+  { nombre: "Destornillador", cantidad: 50, proveedor: "H", fechaCompra: new Date('2018-01-06'), tipo: "Herramienta", costo: 158 },
+  { nombre: "Alicates", cantidad: 149, proveedor: "P", fechaCompra: new Date('2019-05-20'), tipo: "Herramienta", costo: 167 },
+  { nombre: "Taladros", cantidad: 100, proveedor: "J", fechaCompra: new Date('2012-06-06'), tipo: "Herramienta", costo: 100 },
+  { nombre: "Combas", cantidad: 80, proveedor: "A", fechaCompra: new Date('2020-01-09'), tipo: "Herramienta", costo: 200 }
+]);
+
+TABLA MATERIA_INSUMO:
+Insertar datos uno por grupo
+db.Materia_Insumo.insertMany([
+  { nombre: "Mayolicas", cantidad: 50, proveedor: "H", fechaCompra: new Date('2018-01-06'), tipo: "Herramienta", costo: 158 },
+  { nombre: "Draibol", cantidad: 149, proveedor: "P", fechaCompra: new Date('2019-05-20'), tipo: "Herramienta", costo: 167 },
+  { nombre: "Melamine", cantidad: 100, proveedor: "J", fechaCompra: new Date('2012-06-06'), tipo: "Herramienta", costo: 100 },
+  { nombre: "Marmol", cantidad: 80, proveedor: "A", fechaCompra: new Date('2020-01-09'), tipo: "Herramienta", costo: 200 }
+]);
+
+TABLA Gestion_Personal:
+Insertar datos uno por grupo
+db.Gestion_Personal.insertMany([
+  { nombre: "Luis", apellido: "Herrera", cargo: "Tecnico", fechaContrato: new Date('2018-01-06'), salario: 1500 },
+  { nombre: "Mario", apellido: "Calderon", cargo: "Supervisor", fechaContrato: new Date('2018-01-06'), salario: 1700 },
+  { nombre: "Carlos", apellido: "Gonzales", cargo: "Limpieza", fechaContrato: new Date('2018-01-06'), salario: 900 },
+  { nombre: "Gonzalo", apellido: "Arias", cargo: "Subgerente", fechaContrato: new Date('2018-01-06'), salario: 3000 }
+]);
+
+
+TABLA Produccion:
+Insertar datos uno por grupo
+db.Produccion.insertMany([
+  { cantidad: 70, producto: "Mayolica", materiaPrima:[ObjectId('66aee5c39be0fb6f76e7facc')] , insumos:[ObjectId('66aee6499be0fb6f76e7fad0')] },
+  { cantidad: 80, producto: "Draibol", materiaPrima: [ObjectId('66aee5c39be0fb6f76e7facd')], insumos:[ObjectId('66aee6499be0fb6f76e7fad1')] },
+  { cantidad: 60, producto: "Melamine", materiaPrima: [ObjectId('66aee5c39be0fb6f76e7face')], insumos:[ObjectId('66aee6499be0fb6f76e7fad2')] },
+  { cantidad: 90, producto: "Marmol", materiaPrima: [ObjectId('66aee5c39be0fb6f76e7facf')], insumos: [ObjectId('66aee6499be0fb6f76e7fad3')]}
+]);
+
+----------------------------------------------------------
+
+EDITAR EL DATO DE UNA TABLA ESPECIFICA:
+
+TABLA Materia_Prima:
+db.Materia_Prima.replaceOne(
+  { nombre: "Destornillador" },
+  { nombre: "Destornillador", cantidad: 960, proveedor: "O", fechaCompra: new Date('2018-09-06'), tipo: "Herramienta", costo: 158 }
+);
+
+TABLA Materia_Insumo:
+db.Gestion_Personal.replaceOne(
+  { nombre: "Mayolicas" },
+  { nombre: "Mayolicas", cantidad: 650, proveedor: "Z", fechaCompra: new Date('2024-01-06'), tipo: "Material", costo: 158 }
+);
+
+TABLA Produccion:
+db.Produccion.replaceOne(
+  { producto: "Mayolica" },
+  { cantidad: 90, producto: "Mayólica x80", materiaPrima:[ObjectId('66aee5c39be0fb6f76e7facc')] , insumos:[ObjectId('66aee6499be0fb6f76e7fad0')]  }
+);
+
+TABLA Gestion_Personal:
+db.Gestion_Personal.replaceOne(
+  { nombre: "Mario" },
+  { nombre: "Mario", apellido: "Calderon", cargo: "Jefe de Equipo", fechaContrato: new Date('2018-01-06'), salario: 1800 }
+);
+
+----------------------------------------------------------
+Consulta para listar datos de la tabla:
+
+db.Materia_Prima.find()
+db.Materia_Insumo.find()
+db.Gestion_Personal.find()
+db.Produccion.find()
+
+----------------------------------------------------------
+
+ELIMINAR UN DATO DE UNA TABLA ESPECIFICA:
+
+db.Materia_Prima.deleteMany(
+  { nombre: "Destornillador" }
+);
+db.Materia_Insumo.deleteMany(
+  { nombre: "Mayolicas" }
+);
+db.Gestion_Personal.deleteMany(
+  { cargo: "Limpieza" }
+);
+db.Produccion.deleteMany(
+  { producto: "Draibol" }
+);
+
+consulta para buscar por dato especifico:
+
+db.Gestion_Personal.find({ nombre: "Mario" });
+db.Materia_Prima.find({ nombre: "Destornillador" });
+db.Materia_Insumo.find( { nombre: "Mayolicas" });
+db.Produccion.find({ producto: "Mayolica" });
+
+

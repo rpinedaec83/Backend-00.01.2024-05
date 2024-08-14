@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "66aec0ba563fe2eab0c2c4fb"
+  },
+  "nombre": "Tableros de Melamina",
+  "cantidad": 100,
+  "proveedor": "Proveedor A",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "materia",
+  "costo": 1200
+},
+{
+  "_id": {
+    "$oid": "66aec0c0563fe2eab0c2c4fc"
+  },
+  "nombre": "Cantos de Melamina",
+  "cantidad": 200,
+  "proveedor": "Proveedor B",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 300
+},
+{
+  "_id": {
+    "$oid": "66aec0c7563fe2eab0c2c4fd"
+  },
+  "nombre": "Tornillos de Ensamble",
+  "cantidad": 1000,
+  "proveedor": "Proveedor C",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 150
+},
+{
+  "_id": {
+    "$oid": "66aec0d0563fe2eab0c2c4fe"
+  },
+  "nombre": "Bisagras de Cazoleta",
+  "cantidad": 300,
+  "proveedor": "Proveedor D",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 200
+},
+{
+  "_id": {
+    "$oid": "66aec0df563fe2eab0c2c4ff"
+  },
+  "nombre": "Correderas Telescópicas",
+  "cantidad": 150,
+  "proveedor": "Proveedor E",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 500
+},
+{
+  "_id": {
+    "$oid": "66aec0e4563fe2eab0c2c500"
+  },
+  "nombre": "Pegamento de Contacto",
+  "cantidad": 50,
+  "proveedor": "Proveedor F",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 100
+},
+{
+  "_id": {
+    "$oid": "66aec0ed563fe2eab0c2c501"
+  },
+  "nombre": "Tiradores Metálicos",
+  "cantidad": 400,
+  "proveedor": "Proveedor G",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 250
+},
+{
+  "_id": {
+    "$oid": "66aec0f8563fe2eab0c2c502"
+  },
+  "nombre": "Patas Ajustables",
+  "cantidad": 300,
+  "proveedor": "Proveedor H",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 300
+},
+{
+  "_id": {
+    "$oid": "66aec106563fe2eab0c2c503"
+  },
+  "nombre": "Herrajes de Unión",
+  "cantidad": 500,
+  "proveedor": "Proveedor I",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 200
+},
+{
+  "_id": {
+    "$oid": "66aec10d563fe2eab0c2c504"
+  },
+  "nombre": "Perfiles de Aluminio",
+  "cantidad": 100,
+  "proveedor": "Proveedor J",
+  "fechaCompra": {
+    "$date": "2024-08-03T00:00:00.000Z"
+  },
+  "tipo": "insumo",
+  "costo": 400
+}]
