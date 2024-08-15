@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "66aff1ce0d7d15a5e7bcae10"
+  },
+  "num_pedido": 1235,
+  "nombre_armario": "Armario Modelo A",
+  "fecha_inicio": {
+    "$date": "2024-08-05T00:00:00.000Z"
+  },
+  "fecha_estimada": {
+    "$date": "2024-08-10T00:00:00.000Z"
+  },
+  "fecha_fin": null,
+  "estado": "Terminado",
+  "cantidad_materiales": {
+    "madera": {
+      "cantidad": 10000,
+      "nombre": "Madera R 19",
+      "unidad": "mm"
+    },
+    "insumos": {
+      "clavos": {
+        "cantidad": 100,
+        "unidad": "piezas"
+      },
+      "tornillos": {
+        "cantidad": 50,
+        "unidad": "piezas"
+      },
+      "bisagras": {
+        "cantidad": 10,
+        "unidad": "piezas"
+      },
+      "cerraduras": {
+        "cantidad": 5,
+        "unidad": "piezas"
+      },
+      "tiradores": {
+        "cantidad": 20,
+        "unidad": "piezas"
+      },
+      "pegamento": {
+        "cantidad": 2,
+        "unidad": "botellas"
+      },
+      "pintura": {
+        "cantidad": 1,
+        "unidad": "litros"
+      },
+      "masilla": {
+        "cantidad": 1,
+        "unidad": "tarros"
+      },
+      "organizadores": {
+        "cantidad": 15,
+        "unidad": "piezas"
+      },
+      "rieles": {
+        "cantidad": 10,
+        "unidad": "pares"
+      }
+    }
+  },
+  "trabajadores": [
+    {
+      "$oid": "66afef8f0d7d15a5e7bcae04"
+    },
+    {
+      "$oid": "66b0009c0d7d15a5e7bcae11"
+    }
+  ],
+  "observaciones": "",
+  "fecha_modificacion": {
+    "$date": "2024-08-04T22:55:56.449Z"
+  },
+  "sub_estado": "Enviado a Almacen",
+  "revisor": {
+    "$oid": "66afef8f0d7d15a5e7bcae08"
+  },
+  "observaciones_revision": "Revisión aprobada"
+}]

@@ -1,0 +1,158 @@
+-- Seleccionar los clientes que viven en el país de "USA"
+SELECT * FROM Customer WHERE country = 'USA';
+
+-- Seleccionar los proveedores que viven en la ciudad de "BERLIN"
+SELECT * FROM Supplier WHERE city = 'Berlin';
+
+-- Seleccionar los empleados con código 3, 5 y 8
+SELECT * FROM Employee WHERE employeeId IN (3, 5, 8);
+
+-- Seleccionar los productos que tienen stock mayor que cero y son del proveedor 1, 3 y 5
+SELECT * FROM Product WHERE unitsInStock > 0 AND supplierId IN (1, 3, 5);
+
+-- Seleccionar los productos con precio mayor o igual a 20 y menor o igual a 90
+SELECT * FROM Product WHERE unitPrice >= 20 AND unitPrice <= 90;
+
+-- Mostrar las órdenes de compra entre las fechas 01/01/1997 al 15/07/1997
+SELECT * FROM SalesOrder WHERE orderDate BETWEEN '1997-01-01' AND '1997-07-15';
+
+-- Mostrar las órdenes de compra hechas en el año 1997, que pertenecen a los empleados con códigos 1, 3, 4, 8
+SELECT * FROM SalesOrder WHERE YEAR(orderDate) = 1997 AND employeeId IN (1, 3, 4, 8);
+
+-- Mostrar las órdenes hechas en el año 1996
+SELECT * FROM SalesOrder WHERE YEAR(orderDate) = 1996;
+
+-- Mostrar las órdenes hechas en el año 1997, del mes de abril
+SELECT * FROM SalesOrder WHERE YEAR(orderDate) = 1997 AND MONTH(orderDate) = 4;
+
+-- Mostrar las órdenes hechas el primero de todos los meses, del año 1998
+SELECT * FROM SalesOrder WHERE YEAR(orderDate) = 1998 AND DAY(orderDate) = 1;
+
+-- Mostrar todos los clientes que no tienen fax
+SELECT * FROM Customer WHERE fax IS NULL;
+
+-- Mostrar todos los clientes que tienen fax
+SELECT * FROM Customer WHERE fax IS NOT NULL;
+
+-- Mostrar el nombre del producto, el precio, el stock y el nombre de la categoría a la que pertenece
+SELECT p.productName, p.unitPrice, p.unitsInStock, c.categoryName 
+FROM Product p 
+JOIN Category c ON p.categoryId = c.categoryId;
+
+-- Mostrar el nombre del producto, el precio producto, el código del proveedor y el nombre de la compañía proveedora
+SELECT p.productName, p.unitPrice, p.supplierId, s.companyName 
+FROM Product p 
+JOIN Supplier s ON p.supplierId = s.supplierId;
+
+-- Mostrar el número de orden, el código del producto, el precio, la cantidad y el total pagado por producto
+SELECT od.orderId, od.productId, od.unitPrice, od.quantity, (od.unitPrice * od.quantity) AS totalPagado
+FROM OrderDetail od;
+
+-- Mostrar el número de la orden, fecha, código del producto, precio, código del empleado y su nombre completo
+SELECT o.orderId, o.orderDate, od.productId, od.unitPrice, e.employeeId, CONCAT(e.firstName, ' ', e.lastName) AS nombreComp 
+FROM SalesOrder o 
+JOIN OrderDetail od ON o.orderId = od.orderId 
+JOIN Employee e ON o.employeeId = e.employeeId;
+
+-- Mostrar los 10 productos con menor stock
+SELECT * FROM Product ORDER BY unitsInStock ASC LIMIT 10;
+
+-- Mostrar los 10 productos con mayor stock
+SELECT * FROM Product ORDER BY unitsInStock DESC LIMIT 10;
+
+-- Mostrar los 10 productos con menor precio
+SELECT * FROM Product ORDER BY unitPrice ASC LIMIT 10;
+
+-- Mostrar los 10 productos con mayor precio
+SELECT * FROM Product ORDER BY unitPrice DESC LIMIT 10;
+
+-- Mostrar los 10 productos más baratos
+SELECT * FROM Product ORDER BY unitPrice ASC LIMIT 10;
+
+-- Mostrar los 10 productos más caros
+SELECT * FROM Product ORDER BY unitPrice DESC LIMIT 10;
+
+-- Seleccionar todos los campos de la tabla clientes, ordenar por compañía
+SELECT * FROM Customer ORDER BY companyName;
+
+-- Seleccionar todos los campos de clientes, cuya compañía empiece con la letra B y pertenezcan a UK, ordenar por nombre de la compañía
+SELECT * FROM Customer WHERE companyName LIKE 'B%' AND country = 'UK' ORDER BY companyName;
+
+-- Seleccionar todos los campos de productos de las categorías 1, 3 y 5, ordenar por categoría
+SELECT * FROM Product WHERE categoryId IN (1, 3, 5) ORDER BY categoryId;
+
+-- Seleccionar los productos cuyos precios unitarios están entre 50 y 200
+SELECT * FROM Product WHERE unitPrice BETWEEN 50 AND 200;
+
+-- Visualizar el nombre y el ID de la compañía del cliente, fecha, precio unitario y producto de la orden
+SELECT c.companyName, c.custId, o.orderDate, od.unitPrice, p.productName 
+FROM SalesOrder o 
+JOIN Customer c ON o.custId = c.custId 
+JOIN OrderDetail od ON o.orderId = od.orderId 
+JOIN Product p ON od.productId = p.productId;
+
+-- Visualizar el nombre de la categoría y el número de productos que hay por cada categoría
+SELECT c.categoryName, COUNT(p.productId) AS numberOfProducts 
+FROM Category c 
+JOIN Product p ON c.categoryId = p.categoryId 
+GROUP BY c.categoryName;
+
+-- Seleccionar los 5 productos más vendidos
+SELECT p.productName, SUM(od.quantity) AS totalSold 
+FROM OrderDetail od 
+JOIN Product p ON od.productId = p.productId 
+GROUP BY p.productName 
+ORDER BY totalSold DESC 
+LIMIT 5;
+
+-- Seleccionar los jefes de los empleados
+SELECT e.firstName AS employeeName, m.firstName AS managerName 
+FROM Employee e 
+LEFT JOIN Employee m ON e.mgrId = m.employeeId;
+
+-- Obtener todos los productos cuyo nombre comienzan con M y tienen un precio comprendido entre 28 y 129
+SELECT * FROM Product WHERE productName LIKE 'M%' AND unitPrice BETWEEN 28 AND 129;
+
+-- Obtener todos los clientes del País de USA, Francia y UK
+SELECT * FROM Customer WHERE country IN ('USA', 'France', 'UK');
+
+-- Obtener todos los productos descontinuados o con stock cero
+SELECT * FROM Product WHERE discontinued = '1' OR unitsInStock = 0;
+
+-- Obtener todas las órdenes hechas por el empleado King Robert
+SELECT * FROM SalesOrder o 
+JOIN Employee e ON o.employeeId = e.employeeId 
+WHERE e.firstName = 'Robert' AND e.lastName = 'King';
+
+-- Obtener todas las órdenes por el cliente cuya compañía es "Que delicia"
+SELECT * FROM SalesOrder o 
+JOIN Customer c ON o.custId = c.custId 
+WHERE c.companyName = 'Que delicia';
+
+-- Obtener todas las órdenes hechas por el empleado King Robert, Davolio Nancy y Fuller Andrew
+SELECT * FROM SalesOrder o 
+JOIN Employee e ON o.employeeId = e.employeeId 
+WHERE (e.firstName = 'Robert' AND e.lastName = 'King') 
+OR (e.firstName = 'Nancy' AND e.lastName = 'Davolio') 
+OR (e.firstName = 'Andrew' AND e.lastName = 'Fuller');
+
+-- Obtener todos los productos (código, nombre, precio, stock) de la orden 10257
+SELECT p.productId, p.productName, p.unitPrice, p.unitsInStock 
+FROM OrderDetail od 
+JOIN Product p ON od.productId = p.productId 
+WHERE od.orderId = 10257;
+
+-- Obtener todos los productos (código, nombre, precio, stock) de las órdenes hechas desde el 01/01/1998 al 31/12/1998
+SELECT p.productId, p.productName, p.unitPrice, p.unitsInStock 
+FROM SalesOrder o 
+JOIN OrderDetail od ON o.orderId = od.orderId 
+JOIN Product p ON od.productId = p.productId 
+WHERE o.orderDate BETWEEN '1998-01-01' AND '1998-12-31';
+
+-- Obtener todas las órdenes hechas por el cliente cuya compañía es "Que delicia", "Folies gourmandes" y "Escargots Nouveaux"
+SELECT * FROM SalesOrder o 
+JOIN Customer c ON o.custId = c.custId 
+WHERE c.companyName IN ('Que delicia', 'Folies gourmandes', 'Escargots Nouveaux');
+
+-- Obtener todos los empleados con cargo de manager (mngr)
+SELECT * FROM Employee WHERE title LIKE '%Manager%';

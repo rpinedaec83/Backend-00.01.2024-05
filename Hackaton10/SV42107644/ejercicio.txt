@@ -1,0 +1,662 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Creación de base de datos;
+use SV42107644
+
+// Creación de colecciones;
+db.createCollection("materia_prima");
+db.createCollection("insumos")
+db.createCollection("personal")
+db.createCollection("produccion")
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Registro de materia prima e insumos de almacenes
+
+// Materia Prima
+db.materia_prima.insertMany([
+  {
+    "nombre": "Madera R 19",
+    "cantidad": 100,
+    "largo": 2500,
+    "ancho": 762,
+    "espesor": 19.05,
+    "tipo": "Roble",
+    "precio_unitario": 0.75,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor A",
+    "ubicación": "Almacén 1",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera P 15",
+    "cantidad": 80,
+    "largo": 2000,
+    "ancho": 600,
+    "espesor": 15,
+    "tipo": "Pino",
+    "precio_unitario": 0.6,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor B",
+    "ubicación": "Almacén 2",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera C 25",
+    "cantidad": 150,
+    "largo": 3000,
+    "ancho": 800,
+    "espesor": 25,
+    "tipo": "Cedro",
+    "precio_unitario": 0.9,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor C",
+    "ubicación": "Almacén 3",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera H 12",
+    "cantidad": 90,
+    "largo": 2200,
+    "ancho": 700,
+    "espesor": 12,
+    "tipo": "Haya",
+    "precio_unitario": 0.7,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor B",
+    "ubicación": "Almacén 2",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera A 18",
+    "cantidad": 110,
+    "largo": 2800,
+    "ancho": 750,
+    "espesor": 18,
+    "tipo": "Aliso",
+    "precio_unitario": 0.85,
+      "fecha_compra": new Date(),
+    "proveedor": "Proveedor C",
+    "ubicación": "Almacén 3",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera T 25",
+    "cantidad": 150,
+    "largo": 3200,
+    "ancho": 900,
+    "espesor": 25,
+    "tipo": "Teca",
+    "precio_unitario": 1,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor A",
+    "ubicación": "Almacén 1",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera",
+    "cantidad": 120,
+    "largo": 1800,
+    "ancho": 500,
+    "espesor": 10,
+    "tipo": "Roble",
+    "precio_unitario": 0.5,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor C",
+    "ubicación": "Almacén 3",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera",
+    "cantidad": 150,
+    "largo": 3000,
+    "ancho": 800,
+    "espesor": 25,
+    "tipo": "Cedro",
+    "precio_unitario": 0.9,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor A",
+    "ubicación": "Almacén 1",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera",
+    "cantidad": 130,
+    "largo": 2700,
+    "ancho": 800,
+    "espesor": 20,
+    "tipo": "Castaño",
+    "precio_unitario": 0.8,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor B",
+    "ubicación": "Almacén 2",
+    "unidad": "mm"
+  },
+  {
+    "nombre": "Madera",
+    "cantidad": 100,
+    "largo": 2500,
+    "ancho": 762,
+    "espesor": 19.05,
+    "tipo": "Roble",
+    "precio_unitario": 0.75,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor C",
+    "ubicación": "Almacén 3",
+    "unidad": "mm"
+  }
+])
+
+// Insumos
+db.insumos.insertMany([
+  {
+    "nombre": "Clavos",
+    "cantidad": 1000,
+    "unidad": "piezas",
+    "precio_unitario": 0.05,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor Z",
+    "ubicación": "Almacén 1",
+    "descripción": "Clavos de acero para respaldo"
+  },
+  {
+    "nombre": "Tornillos",
+    "cantidad": 500,
+    "unidad": "piezas",
+    "precio_unitario": 0.10,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor Z",
+    "ubicación": "Almacén 1",
+    "descripción": "Tornillos de acero para union de piezas"
+  },
+  {
+    "nombre": "Bisagras",
+    "cantidad": 200,
+    "unidad": "piezas",
+    "precio_unitario": 1.50,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor Y",
+    "ubicación": "Almacén B",
+    "descripción": "Bisagras de acero para puertas de armario"
+  },
+  {
+    "nombre": "Tiradores",
+    "cantidad": 50,
+    "unidad": "piezas",
+    "precio_unitario": 2.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor Z",
+    "ubicación": "Almacén C",
+    "descripción": "Tiradores de metal para cajones y puertas"
+  },
+  {
+    "nombre": "Pegamento para madera",
+    "cantidad": 30,
+    "unidad": "botellas",
+    "precio_unitario": 3.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor A",
+    "ubicación": "Almacén A",
+    "descripción": "Adhesivo fuerte para unir piezas de madera"
+  },
+  {
+    "nombre": "Pintura",
+    "cantidad": 10,
+    "unidad": "litros",
+    "precio_unitario": 12.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor B",
+    "ubicación": "Almacén B",
+    "descripción": "Pintura acrílica para acabados de madera"
+  },
+  {
+    "nombre": "Masilla para madera",
+    "cantidad": 20,
+    "unidad": "tarros",
+    "precio_unitario": 5.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor C",
+    "ubicación": "Almacén C",
+    "descripción": "Masilla para rellenar imperfecciones en madera"
+  },
+  {
+    "nombre": "Cerradura",
+    "cantidad": 50,
+    "unidad": "piezas",
+    "precio_unitario": 4.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor D",
+    "ubicación": "Almacén A",
+    "descripción": "Cerraduras para puertas de armario"
+  },
+  {
+    "nombre": "Organizadores de cajones",
+    "cantidad": 40,
+    "unidad": "piezas",
+    "precio_unitario": 8.00,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor E",
+    "ubicación": "Almacén B",
+    "descripción": "Organizadores para subdividir cajones"
+  },
+  {
+    "nombre": "Rieles para estantes",
+    "cantidad": 60,
+    "unidad": "pares",
+    "precio_unitario": 3.50,
+    "fecha_compra": new Date(),
+    "proveedor": "Proveedor F",
+    "ubicación": "Almacén C",
+    "descripción": "Rieles para ajustar estantes en el armario"
+  }
+])
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Registro de personal por RRHH
+db.personal.insertMany([
+  {
+    "dni": "08459356",
+    "nombre": "Juan Pérez",
+    "puesto": "Carpintero",
+    "salario": 2000,
+    "fecha_contratacion": new Date("2023-01-15"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Corte de madera", "Ensamblaje de muebles"],
+    "experiencia": "5 años en carpintería",
+    "certificaciones": ["Certificado en seguridad industrial"],
+    "telefono": "555-1234",
+    "email": "juan.perez@mp.com",
+    "direccion": "Calle Ejemplo 123, Ciudad Lima"
+  },
+  {
+    "dni": "03269854",
+    "nombre": "Emilio Castro",
+    "puesto": "Montador",
+    "salario": 2000,
+    "fecha_contratacion": new Date("2023-01-15"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Corte de madera", "Ensamblaje de muebles"],
+    "experiencia": "5 años en carpintería",
+    "certificaciones": ["Certificado en seguridad industrial"],
+    "telefono": "555-2589",
+    "email": "emilio.castro@mp.com",
+    "direccion": "Calle Ejemplo 785, Ciudad Lima"
+  },
+  {
+    "dni": "78549352",
+    "nombre": "Ana Gómez",
+    "puesto": "Diseñadora de interiores",
+    "salario": 2200,
+    "fecha_contratacion": new Date("2022-07-01"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Diseño de armarios", "Planificación de espacios"],
+    "experiencia": "7 años en diseño de interiores",
+    "certificaciones": ["Certificación en diseño de interiores"],
+    "telefono": "555-5678",
+    "email": "ana.gomez@mp.com",
+    "direccion": "Avenida Principal 456, Ciudad Lima"
+  },
+  {
+    "dni": "47584692",
+    "nombre": "Carlos Martínez",
+    "puesto": "Operador de maquinaria",
+    "salario": 1800,
+    "fecha_contratacion": new Date("2023-03-20"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Manejo de sierras", "Operación de fresadoras"],
+    "experiencia": "4 años en operación de maquinaria",
+    "certificaciones": ["Licencia de operador de maquinaria"],
+    "telefono": "555-9876",
+    "email": "carlos.martinez@mp.com",
+    "direccion": "Calle Secundaria 789, Ciudad Lima"
+  },
+  {
+    "dni": "25987652",
+    "nombre": "Laura Fernández",
+    "puesto": "Control de calidad",
+    "salario": 2100,
+    "fecha_contratacion": new Date("2023-05-10"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Inspección de calidad", "Pruebas de resistencia"],
+    "experiencia": "6 años en control de calidad",
+    "certificaciones": ["Certificación en control de calidad"],
+    "telefono": "555-6543",
+    "email": "laura.fernandez@mp.com",
+    "direccion": "Calle Tercera 321, Ciudad Lima"
+  },
+  {
+    "dni": "78546952",
+    "nombre": "Pedro López",
+    "puesto": "Montador de muebles",
+    "salario": 1900,
+    "fecha_contratacion": new Date("2023-02-05"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Montaje de armarios", "Instalación de estantes"],
+    "experiencia": "3 años en montaje de muebles",
+    "certificaciones": ["Certificación en montaje de muebles"],
+    "telefono": "555-3456",
+    "email": "pedro.lopez@mp.com",
+    "direccion": "Calle Cuarta 654, Ciudad Lima"
+  },
+  {
+    "dni": "23654985",
+    "nombre": "María Rodríguez",
+    "puesto": "Técnica de acabados",
+    "salario": 2000,
+    "fecha_contratacion": new Date("2023-04-15"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Aplicación de lacas", "Barnizado de madera"],
+    "experiencia": "5 años en acabados de madera",
+    "certificaciones": ["Certificación en acabados"],
+    "telefono": "555-8765",
+    "email": "maria.rodriguez@mp.com",
+    "direccion": "Calle Quinta 987, Ciudad Lima"
+  },
+  {
+    "dni": "65987652",
+    "nombre": "Luis Sánchez",
+    "puesto": "Almacenero",
+    "salario": 1700,
+    "fecha_contratacion": new Date("2023-06-20"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Gestión de inventarios", "Organización de almacén"],
+    "experiencia": "4 años en gestión de almacenes",
+    "certificaciones": ["Certificación en gestión de inventarios"],
+    "telefono": "555-4321",
+    "email": "luis.sanchez@mp.com",
+    "direccion": "Calle Sexta 123, Ciudad Lima"
+  },
+  {
+    "dni": "59625462",
+    "nombre": "Claudia Pérez",
+    "puesto": "Asistente de producción",
+    "salario": 1600,
+    "fecha_contratacion": new Date("2023-07-01"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Apoyo en producción", "Manejo de herramientas básicas"],
+    "experiencia": "2 años en asistencia de producción",
+    "certificaciones": ["Curso básico de carpintería"],
+    "telefono": "555-6789",
+    "email": "claudia.perez@mp.com",
+    "direccion": "Calle Séptima 456, Ciudad Lima"
+  },
+  {
+    "dni": "42516856",
+    "nombre": "Javier Gómez",
+    "puesto": "Planificador de producción",
+    "salario": 2300,
+    "fecha_contratacion": new Date("2023-08-10"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Planificación de recursos", "Optimización de procesos"],
+    "experiencia": "6 años en planificación de producción",
+    "certificaciones": ["Certificación en gestión de producción"],
+    "telefono": "555-9870",
+    "email": "javier.gomez@mp.com",
+    "direccion": "Calle Octava 789, Ciudad Lima"
+  },
+  {
+    "dni": "75846952",
+    "nombre": "Sofía Morales",
+    "puesto": "Operaria de corte",
+    "salario": 1800,
+    "fecha_contratacion": new Date("2023-09-15"),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Corte de madera en sierras", "Preparación de materiales"],
+    "experiencia": "3 años en corte de madera",
+    "certificaciones": ["Certificación en manejo de sierras"],
+    "telefono": "555-3210",
+    "email": "sofia.morales@mp.com",
+    "direccion": "Calle Novena 123, Ciudad Lima"
+  }
+])
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Gestión de Producción
+
+// Registro de pedido de producción, nace como pendiente
+db.produccion.insertOne({
+  "num_pedido": 1235,
+  "nombre_armario": "Armario Modelo A",
+  "fecha_inicio": new Date("2024-08-05"),
+  "fecha_estimada": new Date("2024-08-10"),
+  "fecha_fin": null,
+  "estado": "Pendiente",
+  "cantidad_materiales": {
+    "madera": {
+      "cantidad": 10000, // Ejemplo: 10 metros
+      "nombre":"Madera R 19",
+      "unidad": "mm"
+    },
+    "insumos": {
+      "clavos": {
+        "cantidad": 100,
+        "unidad": "piezas"
+      },
+      "tornillos": {
+        "cantidad": 50,
+        "unidad": "piezas"
+      },
+      "bisagras": {
+        "cantidad": 10,
+        "unidad": "piezas"
+      },
+      "cerraduras": {
+        "cantidad": 5,
+        "unidad": "piezas"
+      },
+      "tiradores": {
+        "cantidad": 20,
+        "unidad": "piezas"
+      },
+      "pegamento": {
+        "cantidad": 2,
+        "unidad": "botellas"
+      },
+      "pintura": {
+        "cantidad": 1,
+        "unidad": "litros"
+      },
+      "masilla": {
+        "cantidad": 1,
+        "unidad": "tarros"
+      },
+      "organizadores": {
+        "cantidad": 15,
+        "unidad": "piezas"
+      },
+      "rieles": {
+        "cantidad": 10,
+        "unidad": "pares"
+      }
+    }
+  },
+  "trabajadores": [],
+  "observaciones": ""
+})
+
+
+// Actualización de pedido de producción, 
+// se asigna trabajadores y actualiza información:
+// - cambia estado a En Proceso 
+// - se crean los campos de sub estado "Preparación de Materiales" y fecha de modidicación
+
+// Se consulta desde front
+db.produccion.findOne({ "num_pedido": 1235 })
+
+// Se asigna trabajadores
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  { 
+    $push: { 
+      trabajadores: { 
+        $each: [
+          ObjectId("66afef8f0d7d15a5e7bcae04"),
+          ObjectId("66afef8f0d7d15a5e7bcae05")
+        ]
+      } 
+    } 
+  }
+)
+
+// Se realiza la actualización de estado
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  {
+    $set: {
+      "estado": "En Proceso",
+      "sub_estado": "Preparación de Materiales",
+      "fecha_modificacion": new Date()
+    }
+  }
+)
+
+// Actualización de pedido de producción, 
+// finaliza la Preparación de Materiales e inicia el Ensamblando
+
+// Se consulta desde front
+db.produccion.findOne({ "num_pedido": 1235 })
+
+// Se realiza la actualización
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  {
+    $set: {
+      "sub_estado": "Ensamblando",
+      "fecha_modificacion": new Date()
+    }
+  }
+)
+
+// Actualización de pedido de producción, 
+// uno de los trabajadores renuncia y se debe realizar el reemplazo
+
+// Contratamos nuevo colaborador
+db.personal.insertOne(
+  {
+    "dni": "01569874",
+    "nombre": "Rodrigo Mamani",
+    "puesto": "Carpintero",
+    "salario": 1800,
+    "fecha_contratacion": new Date(),
+    "tipo_contrato": "Tiempo completo",
+    "horario": {
+      "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      "horas_diarias": 8
+    },
+    "especialidades": ["Corte de madera", "Ensamblaje de muebles"],
+    "experiencia": "2 años en carpintería",
+    "certificaciones": ["Certificado en seguridad industrial"],
+    "telefono": "555-1734",
+    "email": "rodrigo.mamani@mp.com",
+    "direccion": "Calle Estrellas 123, Ciudad Lima"
+  }
+)
+
+// Reasignamos colaborador 
+// Eliminamos asignación de trabajador que renuncia
+db.produccion.updateOne(
+  { num_pedido: 1235 },
+  { $pull: { trabajadores: ObjectId("66afef8f0d7d15a5e7bcae05") } }
+);
+
+// Agregamos nuevo trabajador 
+const trabajador = db.personal.findOne({ dni: "01569874" });
+const idTrabajador = trabajador._id;
+db.produccion.updateOne(
+  { num_pedido: 1235 },
+  { $push: { trabajadores: idTrabajador } }
+);
+
+// Simulamos renuncia de trabajador eliminando el trabajador
+const trabajador = db.personal.findOne({ dni: "03269854" });
+const idTrabajador = trabajador._id;
+db.personal.deleteOne({ _id: trabajador._id });
+
+// Se agrega una observación
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  {
+    $set: {
+      "observaciones": "Retraso por reemplazo de trabajador",
+      "fecha_modificacion": new Date()
+    }
+  }
+)
+
+
+// Actualización de pedido de producción, 
+// cambia sub estado Control de Calidad
+// - se asigna revisor 
+const trabajador = db.personal.findOne({ dni: "25987652" });
+const idTrabajador = trabajador._id;
+
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  {
+    $set: {
+      "sub_estado": "Control de Calidad",
+      "revisor": idTrabajador,
+      "fecha_modificacion": new Date()
+    }
+  }
+)
+
+// Actualización de pedido de producción, 
+// cambia sub estado Enviado a Almacen
+// - se ingresan observaciones de revisor
+// - se finaliza producción 
+db.produccion.updateOne(
+  { "num_pedido": 1235 },
+  {
+    $set: {
+      "estado": "Terminado",
+      "sub_estado": "Enviado a Almacen",
+      "observaciones_revision": "Revisión aprobada",
+      "fecha_modificacion": new Date()
+    }
+  }
+)

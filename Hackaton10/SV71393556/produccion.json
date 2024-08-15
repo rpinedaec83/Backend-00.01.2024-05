@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "66af1e0949b0060a30464d0c"
+  },
+  "cantidad": 20,
+  "producto": "Armario basico",
+  "materiaprima": "madera",
+  "insumos": "pintura"
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d0d"
+  },
+  "cantidad": 25,
+  "producto": "Armario de Madera de Pino",
+  "materiaprima": [
+    "Madera de Pino",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d0e"
+  },
+  "cantidad": 10,
+  "producto": "Armario de lujo de Madera de Roble",
+  "materiaprima": [
+    "Madera de Roble",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura",
+    "Adhesivo"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d0f"
+  },
+  "cantidad": 12,
+  "producto": "Armario de esquina de Contrachapado",
+  "materiaprima": [
+    "Contrachapado",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d10"
+  },
+  "cantidad": 20,
+  "producto": "Armario pequeño de Madera de Nogal",
+  "materiaprima": [
+    "Madera de Nogal",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura",
+    "Lija de Papel"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d11"
+  },
+  "cantidad": 18,
+  "producto": "Armario modular",
+  "materiaprima": [
+    "madera",
+    "Herrajes",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura",
+    "Brochas"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d12"
+  },
+  "cantidad": 22,
+  "producto": "Armario de pared de Madera de Pino",
+  "materiaprima": [
+    "Madera de Pino",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura",
+    "Adhesivo"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d13"
+  },
+  "cantidad": 30,
+  "producto": "Armario para salón de Madera de Roble",
+  "materiaprima": [
+    "Madera de Roble",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66af216c49b0060a30464d14"
+  },
+  "cantidad": 14,
+  "producto": "Armario de cocina",
+  "materiaprima": [
+    "madera",
+    "Contrachapado",
+    "Clavos"
+  ],
+  "insumos": [
+    "Pintura",
+    "Brochas"
+  ]
+}]
