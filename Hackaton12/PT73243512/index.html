@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <script>
+
+        async function createTarea() {
+            const nombre = document.getElementById('nombre').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const fecha = document.getElementById('fecha').value;
+            const esCompletado = document.getElementById('esCompletado').checked;
+
+            try {
+                const response = await fetch('/tareas', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, descripcion, fecha, esCompletado })
+                });
+
+                if (response.ok) {
+                    const tarea = await response.json();
+                    alert(`Tarea creada: ${tarea.nombre}`);
+                    fetchTareas();  
+                    fetchCompletedTareas();
+                } else {
+                    alert('Error al crear la tarea');
+                }
+            } catch (error) {
+                alert('Error al crear la tarea');
+            }
+        }
+
+        async function fetchTareas() {
+            try {
+                const response = await fetch('/tareas/pending');
+                if (response.ok) {
+                    const tareas = await response.json();
+                    const tareasList = document.getElementById('tareas-list');
+                    tareasList.innerHTML = tareas.map(tarea => 
+                        `<li>${tarea.nombre} - ${tarea.descripcion} (${tarea.fecha})</li>`
+                    ).join('');
+                } else {
+                    alert('Error al obtener tareas pendientes');
+                }
+            } catch (error) {
+                alert('Error al obtener tareas pendientes');
+            }
+        }
+
+        async function fetchCompletedTareas() {
+            try {
+                const response = await fetch('/tareas/completed');
+                if (response.ok) {
+                    const tareas = await response.json();
+                    const tareasList = document.getElementById('completed-tareas-list');
+                    tareasList.innerHTML = tareas.map(tarea => 
+                        `<li>${tarea.nombre} - ${tarea.descripcion} (${tarea.fecha})</li>`
+                    ).join('');
+                } else {
+                    alert('Error al obtener tareas completadas');
+                }
+            } catch (error) {
+                alert('Error al obtener tareas completadas');
+            }
+        }
+        window.onload = () => {
+            fetchTareas();
+            fetchCompletedTareas();
+        };
+    </script>
+</head>
+<body style="background-color:rgb(253, 253, 253)">
+    <h1 style="font-family:verdana;font-weight: lighter;background-color:#303336;color:white;">Lista de Compras</h1>
+    <form onsubmit="event.preventDefault(); createTarea();">
+        <label style="font-family:verdana" for="nombre">Nombre:</label><br>
+        <input style="font-family:verdana" type="text" id="nombre" required><br>
+        <label style="font-family:verdana"for="descripcion">Descripción:</label><br>
+        <input style="font-family:verdana" type="text" id="descripcion" required><br>
+        <label style="font-family:verdana" for="fecha">Fecha:</label><br>
+        <input style="font-family:verdana" type="date" id="fecha" required> <br>
+        <label style="font-family:verdana"for="esCompletado">Completado:<br>
+        <input style="width: 20px;height: 20px;border: 2px solid #5c5858;font-family:verdana"type="checkbox" id="esCompletado">
+        <br>
+        <button style=" font-family:verdana;padding: 10px 20px; background-color: #45a049;color:white; border: none; border-radius: 10px" type="submit">Crear Tarea</button>
+    </form>
+    <h2 style="font-family:verdana;background-color:rgb(163, 5, 18);color:white;">Tareas Pendientes</h2>
+    <ol id="tareas-list"></ol>
+    <h2 style="font-family:verdana;background-color:rgb(3, 119, 13);color:white;">Tareas Completadas</h2>
+    <ol id="completed-tareas-list"></ol>
+</body>
+</html>
