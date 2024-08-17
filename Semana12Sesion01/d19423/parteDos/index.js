@@ -13,7 +13,7 @@ fetchData(function (data) {
 });
 console.log("Fin Callback")
 
-async function fetchData2() {
+function fetchData2() {
     return new Promise(function (resolve, reject) {
         // Simulación de una solicitud AJAX 
         setTimeout(function () {

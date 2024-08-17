@@ -1,0 +1,20 @@
+{
+  "name": "d19423",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@azure/identity": "^4.4.1",
+    "@azure/storage-blob": "^12.24.0",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4",
+    "uuid": "^10.0.0"
+  }
+}
