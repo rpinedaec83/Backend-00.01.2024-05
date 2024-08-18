@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(`
             <html>
-            <head><title>Lista de Compras</title></head>
+            <head><title>Lista de Compras.</title></head>
             <body>
                 <h1>Crear la Lista de Compras</h1>
                 <form action="/crear-lista" method="POST">
