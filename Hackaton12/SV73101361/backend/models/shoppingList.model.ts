@@ -1,50 +1,53 @@
-import { Sequelize, DataTypes, Model, Optional } from 'sequelize';
+// models/shoppingList.model.ts
+import { DataTypes, Model, Optional } from 'sequelize';
+import sequelize from '../config/db.config';
 
-export interface ShoppingListAttributes {
-    id?: number;
-    Nombre: string;
-    Descripcion?: string;
-    Fecha?: Date;
-    EsCompletado?: boolean;
+interface ShoppingListAttributes {
+  id?: number;
+  nombre: string;
+  descripcion?: string;
+  fecha?: Date;
+  es_completado?: boolean;
 }
 
-type ShoppingListCreationAttributes = Optional<ShoppingListAttributes, 'id'>;
+type ShoppingListCreationAttributes = Optional<ShoppingListAttributes, 'id' | 'es_completado'>;
 
 class ShoppingList extends Model<ShoppingListAttributes, ShoppingListCreationAttributes>
-    implements ShoppingListAttributes {
-    public id!: number;
-    public Nombre!: string;
-    public Descripcion!: string;
-    public Fecha!: Date;
-    public EsCompletado!: boolean;
+  implements ShoppingListAttributes {
+  public id!: number;
+  public nombre!: string;
+  public descripcion!: string;
+  public fecha!: Date;
+  public es_completado!: boolean;
 }
 
-export default (sequelize: Sequelize) => {
-    ShoppingList.init({
-        id: {
-            type: DataTypes.INTEGER.UNSIGNED,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        Nombre: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        Descripcion: {
-            type: DataTypes.TEXT
-        },
-        Fecha: {
-            type: DataTypes.DATE
-        },
-        EsCompletado: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false
-        }
-    }, {
-        tableName: 'shopping_list',
-        sequelize,
-        timestamps: false
-    });
+ShoppingList.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    descripcion: {
+      type: DataTypes.TEXT,
+    },
+    fecha: {
+      type: DataTypes.DATE,
+    },
+    es_completado: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+  },
+  {
+    tableName: 'items',
+    timestamps: false,
+    sequelize,
+  }
+);
 
-    return ShoppingList;
-};
+export default ShoppingList;

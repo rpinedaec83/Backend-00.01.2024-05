@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping List</title>
+    <title>Lista de Compras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Shopping List</h1>
-    <form id="shopping-form">
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="text" id="description" placeholder="Description" required>
-        <input type="date" id="date" required>
-        <input type="checkbox" id="isCompleted"> Completed
-        <button type="submit">Add Item</button>
-    </form>
-    <h2>Pending Items</h2>
-    <ul id="pending-items"></ul>
-    <h2>Completed Items</h2>
-    <ul id="completed-items"></ul>
+    <div class="container">
+        <h1>Lista de Compras</h1>
+
+        <form id="addItemForm">
+            <input type="text" id="itemName" placeholder="Nombre del Item" required>
+            <input type="text" id="itemDescription" placeholder="Descripción del Item">
+            <input type="date" id="itemDate">
+            <button type="submit">Añadir Item</button>
+        </form>
+
+        <h2>Items Pendientes</h2>
+        <ul id="pendingItemsList"></ul>
+
+        <h2>Items Completados</h2>
+        <ul id="completedItemsList"></ul>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

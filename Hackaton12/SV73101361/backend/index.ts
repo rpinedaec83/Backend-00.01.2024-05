@@ -1,34 +1,38 @@
+import http, { IncomingMessage, ServerResponse } from 'http';
 import dotenv from 'dotenv';
-import express from 'express';
+import sequelize from './config/db.config';
+import { routes } from './routes/shoppingList.routes';
 import cors from 'cors';
-import db from './models';
-import shoppingListRoutes from './routes/shoppingList.routes';
 
-// Cargar las variables de entorno desde el archivo .env
+// Cargar variables de entorno desde el archivo .env
 dotenv.config();
 
-const app = express();
+// Crear una instancia de CORS con opciones
+const corsMiddleware = cors({
+  origin: '*', // Permitir todas las solicitudes desde cualquier origen
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+});
 
-// Configurar CORS
-app.use(cors());
+// Crear el servidor HTTP
+const server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
+  // Aplicar el middleware CORS
+  corsMiddleware(req, res, () => {
+    routes(req, res);
+  });
+});
 
-// Middleware para manejar JSON
-app.use(express.json());
+// Sincronizar el modelo con la base de datos
+sequelize.sync()
+  .then(() => {
+    console.log('Base de datos sincronizada');
+  })
+  .catch((err: Error) => {
+    console.error('Error al sincronizar la base de datos:', err);
+  });
 
-// Sincronizar modelos con la base de datos
-db.sequelize.sync()
-    .then(() => {
-        console.log('Database synchronized');
-    })
-    .catch((err: Error) => {
-        console.error('Error synchronizing the database:', err);
-    });
-
-// Importar las rutas
-app.use('/api', shoppingListRoutes);
-
-// Iniciar el servidor
+// Iniciar el servidor en el puerto definido en el archivo .env
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
