@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <form id="shopping-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="date" id="date" required>
+        <input type="checkbox" id="isCompleted"> Completed
+        <button type="submit">Add Item</button>
+    </form>
+    <h2>Pending Items</h2>
+    <ul id="pending-items"></ul>
+    <h2>Completed Items</h2>
+    <ul id="completed-items"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
