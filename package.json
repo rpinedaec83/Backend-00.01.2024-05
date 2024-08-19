@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@azure/identity": "^4.4.1",
+    "@azure/storage-blob": "^12.24.0",
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Compras</h1>
+
+        <form id="addItemForm">
+            <input type="text" id="itemName" placeholder="Nombre del Item" required>
+            <input type="text" id="itemDescription" placeholder="Descripción del Item">
+            <input type="date" id="itemDate">
+            <button type="submit">Añadir Item</button>
+        </form>
+
+        <h2>Items Pendientes</h2>
+        <ul id="pendingItemsList"></ul>
+
+        <h2>Items Completados</h2>
+        <ul id="completedItemsList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
