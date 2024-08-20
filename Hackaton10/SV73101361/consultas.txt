@@ -1,0 +1,198 @@
+//Materia e insumos
+
+db.materia_insumo.insertOne({
+  nombre: "Tableros de Melamina",
+  cantidad: 100,
+  proveedor: "Proveedor A",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "materia",
+  costo: 1200
+})
+
+
+db.materia_insumo.insertOne({
+  nombre: "Cantos de Melamina",
+  cantidad: 200,
+  proveedor: "Proveedor B",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 300
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Tornillos de Ensamble",
+  cantidad: 1000,
+  proveedor: "Proveedor C",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 150
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Bisagras de Cazoleta",
+  cantidad: 300,
+  proveedor: "Proveedor D",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 200
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Correderas Telescópicas",
+  cantidad: 150,
+  proveedor: "Proveedor E",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 500
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Pegamento de Contacto",
+  cantidad: 50,
+  proveedor: "Proveedor F",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 100
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Tiradores Metálicos",
+  cantidad: 400,
+  proveedor: "Proveedor G",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 250
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Patas Ajustables",
+  cantidad: 300,
+  proveedor: "Proveedor H",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 300
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Herrajes de Unión",
+  cantidad: 500,
+  proveedor: "Proveedor I",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 200
+})
+
+db.materia_insumo.insertOne({
+  nombre: "Sistemas de Cierre",
+  cantidad: 250,
+  proveedor: "Proveedor K",
+  fechaCompra: new Date("2024-08-03"),
+  tipo: "insumo",
+  costo: 150
+})
+
+// Personal 
+
+db.personal.insertOne({
+  nombre: "Juan",
+  apellido: "Perez",
+  puesto: "Operario",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 1500
+})
+
+db.personal.insertOne({
+  nombre: "Carlos",
+  apellido: "Lopez",
+  puesto: "Gerente",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 3500
+})
+
+db.personal.insertOne({
+  nombre: "Lucia",
+  apellido: "Martinez",
+  puesto: "Contadora",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 2200
+})
+
+db.personal.insertOne({
+  nombre: "Miguel",
+  apellido: "Rodriguez",
+  puesto: "Almacenista",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 1800
+})
+
+db.personal.insertOne({
+  nombre: "Elena",
+  apellido: "Fernandez",
+  puesto: "Secretaria",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 1600
+})
+
+db.personal.insertOne({
+  nombre: "Sofia",
+  apellido: "Ramirez",
+  puesto: "Ingeniera",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 3000
+})
+
+db.personal.insertOne({
+  nombre: "Ricardo",
+  apellido: "Torres",
+  puesto: "Técnico",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 1700
+})
+
+db.personal.insertOne({
+  nombre: "Fernando",
+  apellido: "Sanchez",
+  puesto: "Conductor",
+  fechaContratacion: new Date("2024-08-03"),
+  salario: 1400
+})
+
+
+// Produccion
+
+db.produccion.insertOne({
+  producto: "ropero",
+  cantidad: 10,
+  fechaProduccion: new Date("2024-08-03"),
+  materiaPrimaUtilizada: ObjectId("66aec0ba563fe2eab0c2c4fb"), // Tableros de Melamina
+  insumosUtilizados: [
+    ObjectId("66aec0c0563fe2eab0c2c4fc"), // Cantos de Melamina
+    ObjectId("66aec0c7563fe2eab0c2c4fd"), // Tornillos de Ensamble
+    ObjectId("66aec0d0563fe2eab0c2c4fe"), // Bisagras de Cazoleta
+    ObjectId("66aec0df563fe2eab0c2c4ff"), // Correderas Telescópicas
+    ObjectId("66aec0e4563fe2eab0c2c500"), // Pegamento de Contacto
+    ObjectId("66aec0ed563fe2eab0c2c501"), // Tiradores Metálicos
+    ObjectId("66aec0f8563fe2eab0c2c502"), // Patas Ajustables
+    ObjectId("66aec106563fe2eab0c2c503"), // Herrajes de Unión
+    ObjectId("66aec10d563fe2eab0c2c504")  // Perfiles de Aluminio
+  ]
+})
+
+
+db.produccion.insertOne({
+  producto: "armario",
+  cantidad: 8,
+  fechaProduccion: new Date("2024-08-03"),
+  materiaPrimaUtilizada: ObjectId("66aec0ba563fe2eab0c2c4fb"), // Tableros de Melamina
+  insumosUtilizados: [
+    ObjectId("66aec0c0563fe2eab0c2c4fc"), // Cantos de Melamina
+    ObjectId("66aec0c7563fe2eab0c2c4fd"), // Tornillos de Ensamble
+    ObjectId("66aec0d0563fe2eab0c2c4fe"), // Bisagras de Cazoleta
+    ObjectId("66aec0df563fe2eab0c2c4ff"), // Correderas Telescópicas
+    ObjectId("66aec0e4563fe2eab0c2c500"), // Pegamento de Contacto
+    ObjectId("66aec0ed563fe2eab0c2c501"), // Tiradores Metálicos
+    ObjectId("66aec0f8563fe2eab0c2c502"), // Patas Ajustables
+    ObjectId("66aec106563fe2eab0c2c503"), // Herrajes de Unión
+    ObjectId("66aec10d563fe2eab0c2c504")  // Perfiles de Aluminio
+  ]
+})
