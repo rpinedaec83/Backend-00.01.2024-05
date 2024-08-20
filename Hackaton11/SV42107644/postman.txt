@@ -1,0 +1,266 @@
+creates
+
+localhost:9999/api/ubigeo/
+{
+    "ubigeo": "140110",
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "La Molina"
+}
+
+{
+    "ubigeo": "140115",
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Miraflores"
+}
+
+{
+    "ubigeo": "140124",
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Isidro"
+}
+
+{
+    "ubigeo": "140125",
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "Barranco"
+}
+
+{
+    "ubigeo": "140140",
+    "departamento": "Lima",
+    "provincia": "Lima",
+    "distrito": "San Borja"
+}
+
+
+localhost:9999/api/nacionalidad/
+{
+    "descripcion": "Peruana"
+}
+
+{
+    "descripcion": "Española"
+}
+
+{
+    "descripcion": "Americana"
+}
+
+
+localhost:9999/api/propietario/
+{
+    "nombres": "Juan",
+    "apellidos": "Perez Sanchez",
+    "telefono": "965823542",
+    "email": "jperez@email.com",
+    "ubigeo": "140140",
+    "idNacionalidad": 1
+}
+
+{
+    "nombres": "Antonio",
+    "apellidos": "García Gonzales",
+    "telefono": "986574563",
+    "email": "agarcia@email.com",
+    "ubigeo": "140115",
+    "idNacionalidad": 2
+}
+
+{
+    "nombres": "Noah",
+    "apellidos": "Smith Johnson",
+    "telefono": "975418652",
+    "email": "nsmith@email.com",
+    "ubigeo": "140124",
+    "idNacionalidad": 3
+}
+
+
+localhost:9999/api/sexo/
+{
+    "descripcion": "Macho"
+}
+
+{
+    "descripcion": "Hembra"
+}
+
+
+localhost:9999/api/raza/
+{
+    "descripcion": "Husky siberiano"
+}
+
+{
+    "descripcion": "Golden retriever"
+}
+
+{
+    "descripcion": "Pastor alemán"
+}
+
+{
+    "descripcion": "Yorkshire terrier"
+}
+
+{
+    "descripcion": "Dálmata"
+}
+
+{
+    "descripcion": "Bóxer"
+}
+
+{
+    "descripcion": "Chihuahua"
+}
+
+{
+    "descripcion": "Bulldog inglés"
+}
+
+{
+    "descripcion": "Beagle"
+}
+
+{
+    "descripcion": "San Bernardo"
+}
+
+
+localhost:9999/api/especie/
+{
+    "descripcion": "Perro"
+}
+
+{
+    "descripcion": "Gato"
+}
+
+{
+    "descripcion": "Conejo"
+}
+
+{
+    "descripcion": "Ave"
+}
+
+
+localhost:9999/api/color/
+{
+    "descripcion": "Negro"
+}
+
+{
+    "descripcion": "Café"
+}
+
+{
+    "descripcion": "Blanco"
+}
+
+
+localhost:9999/api/vacunas
+{
+    "descripcion": "Moquillo"
+}
+
+{
+    "descripcion": "Parvovirus"
+}
+
+{
+    "descripcion": "Rabia"
+}
+
+{
+    "descripcion": "Parainfluenza"
+}
+
+{
+    "descripcion": "Leptospirosis"
+}
+
+{
+    "descripcion": "Lyme"
+}
+
+{
+    "descripcion": "Coronavirus"
+}
+
+{
+    "descripcion": "Leishmaniosis"
+}
+
+
+localhost:9999/api/mascota
+{
+    "nombre": "Luna",
+    "fechaNacimiento": "2020-03-15",
+    "peso": 12.50,
+    "idPropietario": 3,
+    "idSexo": 2,
+    "idRaza": 10,
+    "idEspecie": 1,
+    "idColor": 2
+}
+  
+{
+    "nombre": "Rocky",
+    "fechaNacimiento": "2018-11-10",
+    "peso": 25.75,
+    "idPropietario": 1,
+    "idSexo": 1,
+    "idRaza": 6,
+    "idEspecie": 1,
+    "idColor": 2
+}
+{
+    "nombre": "Milo",
+    "fechaNacimiento": "2022-01-14",
+    "peso": 3.90,
+    "idPropietario": 1,
+    "idSexo": 1,
+    "idRaza": 8,
+    "idEspecie": 1,
+    "idColor": 3
+}
+  
+{
+    "nombre": "Charlie",
+    "fechaNacimiento": "2021-10-30",
+    "peso": 10.80,
+    "idPropietario": 2,
+    "idSexo": 1,
+    "idRaza": 3,
+    "idEspecie": 1,
+    "idColor": 1
+}
+
+
+addVacunas
+
+localhost:9999/api/mascota/1/vacunas
+{
+    "vacunas":[1, 2, 3, 6]
+}
+
+localhost:9999/api/mascota/2/vacunas
+{
+    "vacunas":[1, 2, 4, 7]
+}
+
+localhost:9999/api/mascota/3/vacunas
+{
+    "vacunas":[1, 2, 4, 6]
+}
+
+localhost:9999/api/mascota/4/vacunas
+{
+    "vacunas":[1, 3, 4, 8]
+}
