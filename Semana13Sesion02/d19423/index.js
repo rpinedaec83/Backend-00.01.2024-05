@@ -19,7 +19,10 @@ app.use(function (req, res, next) {
 app.use(express.json());
 
 const AuthorizationRouter = require('./authorization/routes.config');
+const UsersRouter = require('./users/routes.config');
 AuthorizationRouter.routesConfig(app);
+UsersRouter.routesConfig(app);
+
 
 app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
