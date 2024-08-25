@@ -6,7 +6,7 @@ import { ICoupon } from './Coupon';
 export interface IOrder extends Document{
     user: IUser['_id'];
     courses: Types.Array<ICourse['_id']>;
-    coupon?: ICoupon['_id'];
+    coupon: ICoupon['_id'];
     totalAmount: number;
     status: 'pending' | 'paid' | 'cancelled';
     createdAt: Date;

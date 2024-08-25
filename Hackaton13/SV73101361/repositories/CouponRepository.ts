@@ -1,6 +1,6 @@
 import { Coupon, ICoupon } from '../models/Coupon';
 
-export class CouponReposity {
+export class CouponRepository {
     async create(couponData: ICoupon): Promise<ICoupon> {
         const coupon = new Coupon(couponData);
         return await coupon.save();
