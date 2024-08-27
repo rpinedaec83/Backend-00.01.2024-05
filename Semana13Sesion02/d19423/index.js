@@ -19,8 +19,8 @@ app.use(function (req, res, next) {
 app.use(express.json());
 
 const AuthorizationRouter = require('./authorization/routes.config');
-const UsersRouter = require('./users/routes.config');
 AuthorizationRouter.routesConfig(app);
+const UsersRouter = require('./users/routes.config');
 UsersRouter.routesConfig(app);
 
 
