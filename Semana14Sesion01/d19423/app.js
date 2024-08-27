@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 const server = require('http').Server(app);
-//const https = require('https');
+const http = require('https');
 const WebSocketServer = require("websocket").server;
 
 const wsServer = new WebSocketServer({
