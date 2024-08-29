@@ -2,36 +2,27 @@ const express = require('express');
 const router = express.Router();
 const Mensaje = require('../models/mensaje');
 
-router.post('/mensaje', async (req, res) => {
-  const { user_id, username, mensaje } = req.body;
-  let responseMensaje = mensaje;
-
-  if (mensaje.toLowerCase().includes('hola bot')) {
-    responseMensaje = '¡Hola! ¿En qué puedo ayudarte?';
-  } else if (mensaje.toLowerCase().includes('hora')) {
-    responseMensaje = `La hora actual es ${new Date().toLocaleTimeString()}`;
-  }
-
-  const newMensaje = new Mensaje({ user_id, username, mensaje: responseMensaje });
-  await newMensaje.save();
-  res.status(201).send(newMensaje);
+router.get('/api/mensajes', async (req, res) => {
+    try {
+        const mensajes = await Mensaje.find();
+        res.json(mensajes);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 });
 
-router.get('/mensaje', async (req, res) => {
-  const mensajes = await Mensaje.find().sort({ timestamp: -1 });
-  res.send(mensajes);
-});
+router.post('/api/mensajes', async (req, res) => {
+    const mensaje = new Mensaje({
+        texto: req.body.texto,
+        usuario: req.body.usuario || 'Anónimo'
+    });
 
-router.delete('/mensaje', async (req, res) => {
-  await Mensaje.deleteMany({});
-  res.status(200).send({ mensaje: 'Historial borrado' });
-});
-
-router.put('/mensaje/:id', async (req, res) => {
-  const { id } = req.params;
-  const { mensaje } = req.body;
-  const updatedMensaje = await Mensaje.findByIdAndUpdate(id, { mensaje }, { new: true });
-  res.send(updatedMensaje);
+    try {
+        const nuevoMensaje = await mensaje.save();
+        res.status(201).json(nuevoMensaje);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 module.exports = router;
