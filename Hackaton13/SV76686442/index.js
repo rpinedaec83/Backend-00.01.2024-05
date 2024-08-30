@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
+
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -18,12 +19,19 @@ app.use(function (req, res, next) {
 
 app.use(express.json());
 
-const AuthorizationRouter = require('./authorization/routes.config');
-AuthorizationRouter.routesConfig(app);
-const UsersRouter = require('./users/routes.config');
+
+const AuthRouter = require('./routes/auth.routes.config');
+const UsersRouter = require('./routes/users.routes.config');
+const CoursesRouter = require('./routes/courses.routes.config');
+const OrdersRouter = require('./routes/orders.routes.config');
+const CouponsRouter = require('./routes/coupons.routes.config');
+
+AuthRouter.routesConfig(app);
 UsersRouter.routesConfig(app);
+CoursesRouter.routesConfig(app);
+OrdersRouter.routesConfig(app);
+CouponsRouter.routesConfig(app);
 
-
-app.listen(PORT, function () {
-    console.log('app listening at port %s', PORT);
+app.listen(PORT, () => {
+    console.log(`App listening at port ${PORT}`);
 });

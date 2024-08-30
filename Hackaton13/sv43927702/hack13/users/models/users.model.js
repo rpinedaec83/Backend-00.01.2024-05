@@ -13,12 +13,11 @@ const userSchema = new Schema({
 userSchema.virtual('id').get(function () {
     return this._id.toHexString();
 });
-//
 
+// Ensure virtual fields are serialised.
 userSchema.set('toJSON', {
     virtuals: true
 });
-
 userSchema.findById = function (cb) {
     return this.model('Users').find({id: this.id}, cb);
 };
@@ -76,4 +75,5 @@ exports.removeById = (userId) => {
         });
     });
 };
+
 
