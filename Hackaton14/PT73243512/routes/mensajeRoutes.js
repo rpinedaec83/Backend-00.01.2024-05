@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const Mensaje = require('../models/mensaje');
@@ -11,18 +12,17 @@ router.get('/api/mensajes', async (req, res) => {
     }
 });
 
-router.post('/api/mensajes', async (req, res) => {
-    const mensaje = new Mensaje({
-        texto: req.body.texto,
-        usuario: req.body.usuario || 'Anónimo'
-    });
-
+router.post('/mensajes', async (req, res) => {
     try {
-        const nuevoMensaje = await mensaje.save();
-        res.status(201).json(nuevoMensaje);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
+        const nuevoMensaje = new Mensaje(req.body);
+        await nuevoMensaje.save();
+        res.status(201).send(nuevoMensaje);
+    } catch (error) {
+        res.status(400).send(error);
     }
 });
+
+module.exports = router;
+
 
 module.exports = router;

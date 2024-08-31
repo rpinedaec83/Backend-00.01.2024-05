@@ -15,13 +15,13 @@ body {
   overflow-y: scroll;
 }
 
-#message-form {
+#mensaje-form {
   max-width: 600px;
   margin: 20px auto;
   display: flex;
 }
 
-#message-input {
+#mensaje-input {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
