@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
             if (typeof callback === 'function') {
                 callback('Error: No se pudo conectar al chatbot');
             }
-            // Notificar al cliente sobre el problema de cuota
+            
             socket.emit('mensjae', { usuario: 'Sistema', texto: 'Lo siento, el chatbot está actualmente fuera de servicio debido a limitaciones de cuota. Intenta nuevamente más tarde.' });
         }
     });
