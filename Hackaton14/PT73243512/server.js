@@ -1,42 +1,58 @@
+require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const http = require('http');
-const { Server } = require('socket.io');
+const socketIO = require('socket.io');
+const OpenAI = require('openai');
 
 const app = express();
-dotenv.config();
+const server = http.createServer(app);
+const io = socketIO(server);
+const port = process.env.PORT || 3000;
 
-console.log('MongoDB URI:', process.env.DATABASE_URL); 
-mongoose.connect(process.env.DATABASE_URL);  
-const db = mongoose.connection;
-db.on('error', (error) => console.error('Error al conectar a la base de datos:', error));
-db.once('open', () => console.log('Conectado a la base de datos'));
-
-app.use(express.json());
 app.use(express.static('public'));
 
-const mensajeRoutes = require('./routes/mensajeRoutes');
-const chatRouter = require('./routes/chat');
-
-app.use('/', chatRouter);
-app.use('/', mensajeRoutes);
-
-const server = http.createServer(app);
-const io = new Server(server);
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 
 io.on('connection', (socket) => {
-    console.log('Un usuario se ha conectado');
+    console.log('Nuevo usuario conectado');
+    const conversationHistory = [];
 
-    socket.on('sendMensaje', (data) => {
-        console.log('Mensaje recibido:', data);
-        io.emit('receiveMensaje', data);
+    socket.on('sendMensaje', async (mensaje, callback) => {
+        try {
+            console.log('Mensaje del usuario:', mensaje);
+            conversationHistory.push({ role: 'user', content: mensaje });
+
+            const completion = await openai.chat.completions.create({
+                model: process.env.MODEL || 'gpt-3.5-turbo',
+                mensajes: conversationHistory,
+            });
+
+            const response = completion.choices[0]?.mensaje?.content || 'No hay respuesta del bot';
+            console.log('Respuesta del bot:', response);
+            
+            conversationHistory.push({ role: 'assistant', content: response });
+            socket.emit('mensaje', { usuario: 'ChatBot', texto: response });
+
+            if (typeof callback === 'function') {
+                callback();
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            if (typeof callback === 'function') {
+                callback('Error: No se pudo conectar al chatbot');
+            }
+            // Notificar al cliente sobre el problema de cuota
+            socket.emit('mensjae', { usuario: 'Sistema', texto: 'Lo siento, el chatbot está actualmente fuera de servicio debido a limitaciones de cuota. Intenta nuevamente más tarde.' });
+        }
     });
 
     socket.on('disconnect', () => {
-        console.log('Un usuario se ha desconectado');
+        console.log('Usuario desconectado');
     });
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Servidor iniciado en el puerto ${PORT}`));
+server.listen(port, () => {
+    console.log(`Servidor en el puerto ${port}`);
+});
