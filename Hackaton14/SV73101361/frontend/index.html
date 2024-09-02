@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+          background: #f0f0f0;
+          display: grid;
+          place-content: center;
+          height: 100dvh;
+      }
+
+      main{
+        width: 400px;
+        max-width: 100%;
+        height: 70vh;
+
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        padding: 8px;
+        margin-bottom: 16px;
+
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+
+      ul{
+        display:flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0; 
+      }
+
+      .message {
+        display: flex;
+        flex-direction: column;
+        margin: 4px 0;
+        padding: 4px 8px;
+
+        span {
+            width: 36px;
+            height: 36px;
+            background: #5f5e5e;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 99999px;
+        }
+
+        p {
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        &.user{
+            align-self: flex-end;
+            align-items: flex-end;
+            span , p {
+                background: rgb(219, 236, 255);
+            }
+        }
+
+        &.bot {
+            align-self: flex-start;
+
+            span, p{
+                background: rgb(198, 255, 220);
+            }
+        }
+
+      }
+
+      form {
+        display: flex;
+
+        input {
+            border-radius: 9999999px;
+            flex-grow: 1;
+            border: 0;
+            padding: 8px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+      }
+
+      button {
+        background:  #09f;
+        border: 0;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 8px;
+
+        &:disabled {
+          background: #5f5e5e;
+          opacity: 0.6;
+          pointer-events: none;
+        }
+        &:hover {
+            background: rgb(11, 46, 70)
+        }
+      }
+
+
+    </style>
+
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+<script type="module">
+    const socket = io('http://localhost:3000');  // Conectar con el servidor Socket.io
+    const $ = el => document.querySelector(el);
+
+    const $form = $('form');
+    const $input = $('input');
+    const $template = $('#message-template');
+    const $messages = $('ul');
+    const $container = $('main');
+    const $button = $('button');
+
+    // Función para cargar el historial de mensajes al conectar
+    async function loadMessageHistory() {
+        const response = await fetch('http://localhost:3000/api/messages');
+        const messages = await response.json();
+        messages.forEach(message => {
+            addMessage(message.content, message.sender);
+        });
+    }
+
+    // Cargar el historial de mensajes cuando la página cargue
+    loadMessageHistory();
+
+    // Escuchar el envío de mensajes
+    $form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const messageText = $input.value.trim();
+
+        if (messageText != '') {
+            $input.value = '';
+            addMessage(messageText, 'user');
+            $button.setAttribute('disabled', true);
+
+            // Emitir el mensaje al servidor
+            socket.emit('message', messageText);
+            $button.removeAttribute('disabled');
+        }
+    });
+
+    // Escuchar los mensajes emitidos por el servidor
+    socket.on('message', (message) => {
+        addMessage(message.content, message.sender);
+    });
+
+    // Función para añadir mensajes a la interfaz
+    function addMessage(text, sender) {
+        const clonedTemplate = $template.content.cloneNode(true);
+        const $newMessage = clonedTemplate.querySelector('.message');
+
+        const $who = $newMessage.querySelector('span');
+        const $text = $newMessage.querySelector('p');
+
+        $text.textContent = text;
+        $who.textContent = sender === 'bot' ? 'GPT' : 'Tú';
+        $newMessage.classList.add(sender);
+        $messages.appendChild($newMessage);
+
+        $container.scrollTop = $container.scrollHeight;
+    }
+</script>
+
+
+
+
+  </head>
+  <body>
+    <main>
+      <ul>
+        <li class="message bot">
+          <span>GPT</span>
+          <p>Esta es la respuesta del bot</p>
+        </li>
+
+        <li class="message user">
+          <span>Tú</span>
+          <p>Esta es la respuesta del usuario</p>
+        </li>
+
+        <li class="message user">
+          <span>Tú</span>
+          <p>Esta es la respuesta del usuario rompe el usuario jejejejeje cuack cuack</p>
+        </li>
+      </ul>
+    </main>
+
+    <form>
+      <input placeholder="Escribe tu mensaje aquí ..." />
+      <button>Enviar</button>
+    </form>
+
+    <template id="message-template">
+      <li class="message">
+        <span></span>
+        <p></p>
+      </li>
+    </template>
+  </body>
+</html>
