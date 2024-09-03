@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",             // Versión de ECMAScript que se va a utilizar
+    "module": "commonjs",           // Módulo común de Node.js
+    "strict": true,                 // Activa las comprobaciones estrictas de TypeScript
+    "esModuleInterop": true,        // Compatibilidad con módulos ES6
+    "skipLibCheck": true,           // Omitir la verificación de tipos de las bibliotecas
+    "forceConsistentCasingInFileNames": true, // Fuerza el uso consistente de mayúsculas/minúsculas en los nombres de archivos
+    "outDir": "./dist",             // Carpeta de salida para los archivos compilados
+    "rootDir": "./src"              // Carpeta raíz para el código fuente
+  },
+  "include": ["src/**/*.ts"],       // Incluir todos los archivos TypeScript en src
+  "exclude": ["node_modules"]       // Excluir la carpeta node_modules
+}
