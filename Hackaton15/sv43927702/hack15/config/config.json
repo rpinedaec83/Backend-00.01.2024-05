@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "canela",
+    "database": "courier_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
