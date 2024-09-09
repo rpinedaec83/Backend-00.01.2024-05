@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courier Chat</title>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  <div class="container-principal">
+    <div class="chat-container">
+    
+      <header>
+        <h1>Courier Service Chat</h1>
+        <button id="logout-btn">Logout</button>
+      </header>
+  
+      <section id="messages-section">
+        <ul id="messages"></ul>
+      </section>
+  
+      <div class="message-box">
+        <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off">
+        <button id="send-btn">Send</button>
+      </div>
+  
+    </div>
+
+    
+    <section id="package-section">
+      <h2>Track Your Package</h2>
+      <input id="package-description" type="text" placeholder="Enter package description">
+  <input id="package-sender" type="text" placeholder="Enter package sender">
+  <input id="package-recipient" type="text" placeholder="Enter package recipient">
+  <input id="package-status" type="text" placeholder="Enter package status">
+  <input id="package-latitude" type="text" placeholder="Enter package latitude">
+  <input id="package-longitude" type="text" placeholder="Enter package longitude">
+  <div>
+    <button id="track-btn">Track Package</button>
+    <a target="_blank" href="./location.html" id="location-btn" >View Package Location</a>
+  </div>
+     
+     
+    </section>
+   
+  </div>
+  
+ 
+  
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Location</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwlIYqTdBJSv_j8d7DhEdWHOAd67npmn4"></script>
+
+  <style>
+        #map {
+    height: 500px;
+    width: 100%;
+  }
+    
+   
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+     
+    }
+
+    select:focus {
+      border-color: #007bff;
+      outline: none; /* Elimina el contorno por defecto */
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añade una sombra alrededor del select */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Package Location</h1>
+    <label for="package-select">Select Package:</label>
+    <select id="package-select">
+      <option value="">Select a package</option>
+      <!-- Options will be populated by JavaScript -->
+    </select>
+    <div id="map"></div>
+  </div>
+
+  <script>
+    const mapElement = document.getElementById('map');
+    let map;
+    let marker;
+
+    function initMap() {
+      map = new google.maps.Map(mapElement, {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    }
+
+    function loadPackages() {
+      fetch('/get-packages')
+        .then(response => response.json())
+        .then(data => {
+          const select = document.getElementById('package-select');
+          data.packages.forEach(package => {
+            const option = document.createElement('option');
+            option.value = package.id;
+            option.textContent = package.id;
+            select.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Error loading packages:', error));
+    }
+
+    function updateMap(packageId) {
+      fetch(`/get-package-location/${packageId}`)
+        .then(response => response.json())
+        .then(data => {
+          const { latitude, longitude } = data.location;
+          if (marker) {
+            marker.setMap(null);
+          }
+          marker = new google.maps.Marker({
+            position: { lat: parseFloat(latitude), lng: parseFloat(longitude) },
+            map: map,
+          });
+          map.setCenter(marker.getPosition());
+        })
+        .catch(error => console.error('Error loading package location:', error));
+    }
+
+    document.getElementById('package-select').addEventListener('change', function() {
+      const packageId = this.value;
+      if (packageId) {
+        updateMap(packageId);
+      }
+    });
+
+    window.onload = function() {
+      initMap();
+      loadPackages();
+    };
+  </script>
+</body>
+</html>
