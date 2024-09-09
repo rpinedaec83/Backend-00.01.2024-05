@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Usuario - Courier Service</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Panel de Usuario</h1>
+    <nav>
+      <span id="username"></span> <!-- Aquí se mostrará el nombre del usuario -->
+      <a href="#" id="logout">Cerrar sesión</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="package-list">
+      <h2>Mis Paquetes</h2>
+      <ul id="packages">
+        <!-- Aquí se llenarán los paquetes -->
+      </ul>
+    </section>
+
+    <section id="map-section">
+      <h2>Ubicación de Paquetes</h2>
+      <div id="map" style="height: 400px; width: 100%;"></div>
+    </section>
+
+    <section id="chat-section">
+      <h2>Chat de Soporte</h2>
+      <div id="messages"></div>
+      <input type="text" id="message-input" placeholder="Escribe un mensaje..." />
+      <button id="send-message">Enviar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Courier Service. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/packages.js"></script>
+  <script src="./js/chat.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkENwKflieAZQZc2xSH8IvV-jKl-VCxwg&callback=initMap" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+  <script>
+    // Función para obtener el token de la URL
+    const getTokenFromUrl = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('token');
+    };
+  
+    // Guardar el token en localStorage si está presente en la URL
+    const token = getTokenFromUrl();
+    if (token) {
+      localStorage.setItem('token', token);
+      // Limpiar el token de la URL después de almacenarlo
+      window.history.replaceState({}, document.title, "/Hackaton15/SV73101361-Final/public/dashboard.html");
+    }
+  
+    // Mostrar el nombre del usuario decodificando el token
+    const displayUsername = () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const decodedToken = jwt_decode(token);
+          const usernameElement = document.getElementById('username');
+          usernameElement.textContent = `Hola, ${decodedToken.name || "Usuario"}!`;
+        } catch (error) {
+          console.error('Error al decodificar el token JWT:', error);
+        }
+      }
+    };
+  
+    // Ejecutar la función al cargar la página
+    window.onload = displayUsername;
+  </script>
+  
+</body>
+</html>
