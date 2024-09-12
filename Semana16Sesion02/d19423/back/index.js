@@ -6,13 +6,17 @@ const app = express();
 const Culqi = require('culqi-node');
 const culqi = new Culqi({
     privateKey: process.env.privateKey,
+    publicKey: process.env.publicKey,
+    pciCompliant:true
 });
 
 
 
 // Middlewares here 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: '*'
+  }));
 
 // Routes here 
 app.get("/", (req, res) => {
@@ -21,26 +25,43 @@ app.get("/", (req, res) => {
 
 app.post("/api/process/pay", async (req, res) => {
     const product = req.body;
-    console.log(product);
-    try {
-        const charge = await culqi.charges.createCharge({
-            amount: product.amount * 100,
-            currency_code: product.currency_code,
-            email: product.email,
-            installments: product.installments,
-            description: product.description,
-            source_id: product.token,
 
-        }).then(respuesta => {
-            console.log(respuesta);
-            res.send({res:"recibido", respuesta});
+    
+        const token = await culqi.tokens.createToken({
+            card_number: '4111111111111111',
+            cvv: '123',
+            expiration_month: '09',
+            expiration_year: '2025',
+            email: 'richard@piedpiper.com',
+        }).then(restoken=>{
+            console.log(restoken);
+            console.log(product);
+            debugger
+            try {
+                const charge =  culqi.charges.createCharge({
+                    amount: product.amount * 100,
+                    currency_code: product.currency_code,
+                    email: product.email,
+                    installments: product.installments,
+                    description: product.description,
+                    source_id: restoken.id,
+        
+                }).then(respuesta => {
+                    console.log(respuesta);
+                    res.send({res:"recibido", respuesta});
+                });
+        
+        
+        
+            } catch (error) {
+                console.log(error)
+            }
+        }).catch(error =>{
+            console.error(error)
         });
-
-
-
-    } catch (error) {
-        console.log(error)
-    }
+        
+   
+   
 });
 
 
