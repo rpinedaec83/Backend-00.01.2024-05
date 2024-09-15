@@ -1,49 +1,33 @@
-const { Order, OrderItem } = require('../models/Order');
+const { Order } = require('../models/Order');
 const Course = require('../models/Course');
-const stripeService = require('../services/stripeService');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// Crear un nuevo pedido y procesar el pago
-exports.createOrder = async (req, res) => {
+// Crear una sesión de Stripe Checkout
+exports.createCheckoutSession = async (req, res) => {
   try {
-    const userId = req.user.id;
-    const { items } = req.body;
-
-    // Validar los cursos y calcular el total
-    let totalAmount = 0;
-    const courses = [];
-
-    for (const item of items) {
-      const course = await Course.findByPk(item.courseId);
-      if (!course) {
-        return res.status(404).json({ message: `Curso con ID ${item.courseId} no encontrado` });
-      }
-      const quantity = item.quantity || 1;
-      const price = parseFloat(course.price);
-      totalAmount += price * quantity;
-      courses.push({ course, quantity });
-    }
-
-    // Convertir el monto total a centavos (Stripe maneja montos en la unidad más pequeña de la moneda)
-    const amountInCents = Math.round(totalAmount * 100);
-
-    // Crear la intención de pago con Stripe
-    const paymentIntent = await stripeService.createPaymentIntent(amountInCents, 'usd', {
-      userId,
+    // Crear una sesión de Checkout con los items enviados en el body
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: req.body.items.map(item => ({
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: `Curso ID: ${item.courseId}`,
+          },
+          unit_amount: 5000, // Precio en centavos
+        },
+        quantity: item.quantity,
+      })),
+      mode: 'payment',
+      success_url: `${process.env.FRONTEND_URL}/success`,
+      cancel_url: `${process.env.FRONTEND_URL}/cancel`,
     });
 
-    const newOrder = await Order.create({
-      userId,
-      totalAmount,
-      status: 'pending',
-      paymentIntentId: paymentIntent.id,
-    });
-
-    // Devolver el clientSecret al frontend para completar el pago
-    res.status(200).json({
-      clientSecret: paymentIntent.client_secret,
-    });
+    // Devolver el sessionId para Stripe Checkout
+    res.json({ sessionId: session.id });
   } catch (error) {
-    res.status(500).json({ message: 'Error al crear el pedido', error: error.message });
+    console.error('Error al crear la sesión de Checkout:', error);
+    res.status(500).json({ error: 'No se pudo crear la sesión de pago' });
   }
 };
 
@@ -102,23 +86,23 @@ exports.handleStripeWebhook = async (req, res) => {
   let event;
 
   try {
-    event = stripeService.constructEvent(req.rawBody, sig, endpointSecret);
+    event = stripe.webhooks.constructEvent(req.rawBody, sig, endpointSecret);
   } catch (err) {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
   // Manejar el evento
-  if (event.type === 'payment_intent.succeeded') {
-  const paymentIntent = event.data.object;
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
 
-  // Actualizar el estado del pedido
-  const order = await Order.findOne({ where: { paymentIntentId: paymentIntent.id } });
+    // Aquí podrías actualizar el estado del pedido en tu base de datos
+    const order = await Order.findOne({ where: { paymentIntentId: session.payment_intent } });
 
-  if (order) {
-    order.status = 'completed';
-    await order.save();
+    if (order) {
+      order.status = 'completed';
+      await order.save();
+    }
   }
-}
 
   res.json({ received: true });
 };

@@ -18,7 +18,7 @@ const User = sequelize.define('User', {
   // Correo electrónico del usuario
   email: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
     unique: true,
     validate: {
       isEmail: true,
@@ -27,7 +27,7 @@ const User = sequelize.define('User', {
   // Contraseña (hashed)
   password: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   // Método de autenticación (local, google, github)
   authMethod: {

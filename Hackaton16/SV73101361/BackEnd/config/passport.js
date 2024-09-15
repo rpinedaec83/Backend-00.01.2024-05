@@ -3,27 +3,12 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const User = require('../src/models/User');
 const jwt = require('jsonwebtoken');
-
 require('dotenv').config();
 
 // Función para firmar el token JWT
 const generateToken = (user) => {
   return jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 };
-
-// Serializar y deserializar usuarios (opcional si no usas sesiones)
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findByPk(id);
-    done(null, user);
-  } catch (error) {
-    done(error, null);
-  }
-});
 
 // Estrategia de Google OAuth
 passport.use(
@@ -48,7 +33,11 @@ passport.use(
           });
         }
 
-        return done(null, user);
+        // Generar el token JWT
+        const token = generateToken(user);
+
+        // Devolver el usuario y el token en el callback
+        return done(null, { user, token });
       } catch (error) {
         return done(error, null);
       }
@@ -85,7 +74,11 @@ passport.use(
           });
         }
 
-        return done(null, user);
+        // Generar el token JWT
+        const token = generateToken(user);
+
+        // Devolver el usuario y el token en el callback
+        return done(null, { user, token });
       } catch (error) {
         return done(error, null);
       }

@@ -2,15 +2,13 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 require('dotenv').config();
 
+console.log('authMiddleware cargado');
+
 // Middleware para proteger rutas
-exports.protect = async (req, res, next) => {
+const protect = async (req, res, next) => {
   let token;
 
-  // Obtener el token del encabezado de autorización o cookies
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     token = req.headers.authorization.split(' ')[1];
   } else if (req.cookies && req.cookies.token) {
     token = req.cookies.token;
@@ -38,7 +36,7 @@ exports.protect = async (req, res, next) => {
 };
 
 // Middleware para verificar rol de administrador
-exports.admin = (req, res, next) => {
+const admin = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     next();
   } else {
@@ -46,6 +44,7 @@ exports.admin = (req, res, next) => {
   }
 };
 
+// Middleware para autenticar JWT en general
 const authenticateJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
@@ -65,4 +64,9 @@ const authenticateJWT = (req, res, next) => {
   }
 };
 
-module.exports = authenticateJWT;
+// Exportar todos los middlewares
+module.exports = {
+  protect,
+  admin,
+  authenticateJWT,
+};
