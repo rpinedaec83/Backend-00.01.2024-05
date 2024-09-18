@@ -41,11 +41,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/packages.js"></script>
   <script src="./js/chat.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkENwKflieAZQZc2xSH8IvV-jKl-VCxwg&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=API_MAPS_GOOGLE&callback=initMap" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
 
   <script>
@@ -60,7 +60,7 @@
     if (token) {
       localStorage.setItem('token', token);
       // Limpiar el token de la URL después de almacenarlo
-      window.history.replaceState({}, document.title, "/Hackaton15/SV73101361-Final/public/dashboard.html");
+      window.history.replaceState({}, document.title, "./dashboard.html");
     }
   
     // Mostrar el nombre del usuario decodificando el token
