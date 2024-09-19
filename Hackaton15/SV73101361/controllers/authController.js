@@ -10,7 +10,7 @@ const loginUser = (req, res) => {
   );
 
   // Redirigir al dashboard del frontend (en el puerto 5501)
-  res.redirect(`http://127.0.0.1:5501/Hackaton15/SV73101361-Final/public/dashboard.html?token=${token}`);
+  res.redirect(`dashboard.html?token=${token}`);
 };
 
 module.exports = { loginUser };
