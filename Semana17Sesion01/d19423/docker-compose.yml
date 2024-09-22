@@ -4,7 +4,7 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: Z@rverus11
     ports: 
       - '5432:5432'
     volumes:
@@ -17,11 +17,13 @@ services:
       DB_SCHEMA: postgres
       DB_USER: postgres
       DB_PASSWORD: postgres
-      DB_HOST: postgres
+      DB_HOST: postgres  # Se mantiene como el nombre del servicio de postgres
+      DB_PORT: 5432
+      DB_SSL: false
     depends_on:
       - postgres
     ports:
       - '9000:9000'
-        
+
 volumes:
   addressbook-db:
